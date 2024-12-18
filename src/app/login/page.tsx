@@ -28,8 +28,12 @@ const Login: React.FC = () => {
       console.log('Login successful:', data);
       // Redirect to dashboard or another page, e.g.,:
       // window.location.href = '/dashboard';
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong. Please try again.');
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            setError(err.message || 'Something went wrong.');
+        } else {
+            setError('Something went wrong.');
+        }
     } finally {
       setIsLoading(false);
     }

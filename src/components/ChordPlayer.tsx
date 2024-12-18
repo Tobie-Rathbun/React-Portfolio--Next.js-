@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as Tone from 'tone';
 
 // Dynamically generate pianoSounds from static files
@@ -22,7 +22,6 @@ const generatePianoSounds = () => {
 
     return sounds;
 };
-
 
 // Dynamically generated pianoSounds object
 const pianoSounds: Record<string, string> = generatePianoSounds();
@@ -56,16 +55,10 @@ const ChordPlayer: React.FC = () => {
         }).toDestination();
     }, []);
 
-    useEffect(() => {
-        if (isSamplerLoaded) {
-            selectChordNotes();
-        }
-    }, [currentRootNote, currentChordType, isSamplerLoaded, inversion]);
-
-    const selectChordNotes = () => {
+    const selectChordNotes = useCallback(() => {
         const intervals = chordIntervals[currentChordType];
         const startIndex = baseNoteOrder.indexOf(currentRootNote);
-    
+
         // Start from octave 3 (adjust as needed)
         const startingOctave = 3;
         const chordNotes = intervals.map((interval: number) => {
@@ -74,17 +67,23 @@ const ChordPlayer: React.FC = () => {
             const octave = startingOctave + Math.floor((startIndex + interval) / 12);
             return `${note}${octave}`;
         });
-    
+
         for (let i = 0; i < inversion; i++) {
             let note = chordNotes.shift();
             if (!note) continue; // Skip undefined notes
             note = note.replace(/[0-9]/, (match) => (parseInt(match) + 1).toString());
             chordNotes.push(note);
         }
-    
+
         setSelectedChordNotes(chordNotes);
-    };
-    
+    }, [currentRootNote, currentChordType, inversion]);
+
+    useEffect(() => {
+        if (isSamplerLoaded) {
+            selectChordNotes();
+        }
+    }, [isSamplerLoaded, selectChordNotes]);
+
     const invertChordUp = () => setInversion((prev) => prev + 1);
     const invertChordDown = () => setInversion((prev) => Math.max(prev - 1, 0));
     const playChord = async () => {
@@ -92,12 +91,11 @@ const ChordPlayer: React.FC = () => {
         if (Tone.context.state !== 'running') {
             await Tone.start();
         }
-    
+
         selectedChordNotes.forEach((note: string) => {
             samplerRef.current?.triggerAttackRelease(note, '1n');
         });
     };
-    
 
     return (
         <div className="chord-player">

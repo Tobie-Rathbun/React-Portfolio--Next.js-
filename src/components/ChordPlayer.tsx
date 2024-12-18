@@ -68,7 +68,7 @@ const ChordPlayer: React.FC = () => {
     
         // Start from octave 3 (adjust as needed)
         const startingOctave = 3;
-        let chordNotes = intervals.map((interval: number) => {
+        const chordNotes = intervals.map((interval: number) => {
             const noteIndex = (startIndex + interval) % 12;
             const note = baseNoteOrder[noteIndex];
             const octave = startingOctave + Math.floor((startIndex + interval) / 12);

@@ -1,21 +1,341 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Style Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color Variables */
+  --dark-background: #121212;
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #adadad;
+  --accent-color: #6200ee;
+  --highlight-color: #bb86fc;
+
+  /* Component-Specific Colors */
+  --chord-player-background: #333333;
+  --chord-element-background: #424242;
+  --chord-element-border: #636363;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* General styles */
+body {
+  background-color: var(--dark-background);
+  color: var(--primary-text-color);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary-text-color);
+}
+
+/* SiteNavbar */
+.site-navbar {
+  display: flex; /* Display items in a flex container */
+  justify-content: space-between; /* Align items evenly along the main axis */
+  align-items: center; /* Center items vertically */
+  background-color: rgba(255, 255, 255, 0.2); /* Opaque white background color */
+  border-radius: 10px; /* Rounded edges */
+  padding: 10px 20px; /* Add padding for space */
+  border: 1px solid #FFFFFF; /* Thin white border */
+}
+
+.site-navbar .navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFFFFF; /* White text */
+  text-decoration: none; /* Remove underline */
+}
+
+.site-navbar .nav-link {
+  color: #FFFFFF; /* White text */
+  font-size: 18px;
+  margin-right: 20px;
+  text-decoration: none; /* Remove underline */
+  opacity: 0.8; /* Initial opacity for non-active links */
+  transition: opacity 0.3s, transform 0.3s; /* Smooth transition for opacity and transform */
+}
+
+.site-navbar .nav-link:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+.site-navbar .nav-link:active {
+  transform: scale(0.95); /* Scale down on click */
+}
+
+/* Chord Player specific styles */
+.chord-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--chord-player-background);
+  border-radius: 8px;
+}
+
+.chord-select, .chord-button {
+  background-color: var(--chord-element-background);
+  color: var(--primary-text-color);
+  border: 1px solid var(--chord-element-border);
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+}
+
+.chord-select:focus, .chord-button:focus {
+  outline: none;
+  border-color: var(--highlight-color);
+}
+
+.chord-button {
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+.chord-button:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.chord-button:active {
+  transform: scale(0.95); /* Slightly reduce on click */
+}
+
+.chord-status {
+  margin-top: 15px;
+}
+
+/* Animations for other buttons and inputs */
+button:hover, input[type="text"]:hover, input[type="password"]:hover {
+  animation: hoverAnimation 0.3s forwards;
+}
+
+button:active, input[type="text"]:active, input[type="password"]:active {
+  animation: clickAnimation 0.1s forwards;
+}
+
+@keyframes hoverAnimation {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+@keyframes clickAnimation {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.95); }
+}
+
+/* Form styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--chord-player-background);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  background-color: var(--chord-element-background);
+  color: var(--primary-text-color);
+  border: 1px solid var(--chord-element-border);
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.login-form button {
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  border: none;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 106.25%;
+}
+
+
+/* About Styles */
+/* Skills Grid Container */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px; /* Adds padding around the grid for better spacing */
+}
+
+/* Skill Category Styles */
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  background: var(--chord-element-background); /* Optional for better visibility */
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden; /* Keeps the expanding content within the box */
+  min-height: 150px; /* Set a minimum height to prevent cutting off content */
+}
+
+.skill-category h3 {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.skill-category .skill-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  max-height: 0; /* Start with zero height */
+  overflow: hidden; /* Hide content initially */
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Smooth transition for max-height and padding */
+}
+
+.skill-category:hover .skill-list {
+  max-height: 500px; /* Set a consistent max-height for all skill lists */
+  padding: 10px; /* Add padding during hover */
+}
+
+
+#root {
+  height: 100%;
+}
+
+.gui-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+}
+
+.gui-container:active {
+  cursor: grabbing;
+}
+
+.debug-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  line-height: 0.5;
+}
+
+
+.debug-panel p {
+  margin-bottom: 1px; 
+}
+
+.debug-panel:active {
+  cursor: grabbing;
+}
+
+.slider-container {
+  margin-bottom: 10px;
+}
+
+.slider {
+  width: 300px;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.gui-button {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.gui-button:hover {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.gui-button:active {
+  transform: scale(0.95);
+}
+
+.purple-gui {
+  background-color: var(--chord-player-background);
+  border: 1px solid var(--chord-element-border);
+  box-shadow: 0 0 10px var(--highlight-color);
+  animation: pulsate 1.5s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.card-display {
+  position: absolute;
+  top: 70px; /* Adjusted to not overlay on the navbar */
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10; /* Ensure it overlays on top of everything */
+  font-size: 12px;
+}
+
+.-page {
+  text-align: center;
+  margin: 0 auto;
+  width: 80%; /* Adjust width as needed */
+}
+
+.-page h1 {
+  font-size: 2em;
+}
+
+.-page p {
+  margin: 10px 0;
+}
+
+.-page a {
+  text-decoration: none;
+  color: #007bff; /* Customize link color */
+}
+
+.-page a:hover {
+  text-decoration: underline;
+}
+
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
 }

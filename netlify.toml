@@ -1,8 +1,17 @@
 [build]
-functions = "netlify/functions"
-command = "npm run build"
+  command = "npm run build" # Command to build the site
+  publish = ".next" # Directory where Next.js outputs static files
+  functions = "netlify/functions" # Directory for Netlify serverless functions
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs" # Netlify plugin for Next.js support
 
 [[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/server"
-status = 200
+  from = "/api/*" # Redirect API requests to serverless functions
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

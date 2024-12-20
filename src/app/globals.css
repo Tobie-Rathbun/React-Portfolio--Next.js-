@@ -372,24 +372,28 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   color: var(--primary-text-color);
 }
 
-/* Community Cards */
 .community-cards {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  padding: 1rem 0;
 }
 
 .card {
   width: 50px;
   height: 70px;
-  border: 1px solid #ccc;
+  border: 2px solid #000;
   text-align: center;
   line-height: 70px;
-  background-color: var(--chord-element-background);
-  color: var(--primary-text-color);
+  background-color: white;
+  color: black;
   border-radius: 5px;
 }
+
+
+
 
 /* Player Actions */
 .player-actions {

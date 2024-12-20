@@ -31,10 +31,7 @@ const PokerGame: React.FC = () => {
 
   const [deck, setDeck] = useState<string[]>(generateDeck());
   const [pot, setPot] = useState<number>(0);
-  const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(0);
-  const [activePlayerIndexes, setActivePlayerIndexes] = useState<number[]>(
-    players.map((_, index) => index) // Initially, all players are active
-  );  
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(-1);
   const [communityCards, setCommunityCards] = useState<string[]>([]);
   const [bettingRound, setBettingRound] = useState<number>(1);
   const [gameRound, setGameRound] = useState<number>(0);
@@ -43,6 +40,9 @@ const PokerGame: React.FC = () => {
   const [blindIndex, setBlindIndex] = useState<number>(0); // Starts with the first player
   const isUserTurn = players[currentPlayerIndex]?.name === "You";
   const [playersWhoActed, setPlayersWhoActed] = useState<number[]>([]);
+  const [lastValidBet, setLastValidBet] = useState<number>(0);
+  const aiTurnTimer = 1000;
+
 
 
 
@@ -50,7 +50,7 @@ const PokerGame: React.FC = () => {
 
   useEffect(() => {
     if (!gameOver && players[currentPlayerIndex]?.name !== "You" && players[currentPlayerIndex]?.active) {
-      setTimeout(aiTakeTurn, 4000);
+      setTimeout(aiTakeTurn, aiTurnTimer);
     }
   }, [currentPlayerIndex, gameOver]);
 
@@ -67,14 +67,15 @@ const PokerGame: React.FC = () => {
   }
 
   function startNewGame() {
+    setPlayersWhoActed([]); // Reset at the start of a new game
+    setLastValidBet(0);
     setGameOver(false);
     setGameStarted(true);
-    setCommunityCards([]);
+    setCommunityCards(["", "", "", "", ""]);
     setPot(0);
     setBettingRound(1);
     setGameRound(gameRound + 1);
     setBlindIndex((prev) => (prev + 1) % players.length); // Rotate blinds
-    setActivePlayerIndexes(players.map((_, index) => index)); // Reset active players
     const resetPlayers = players.map((player) => ({
         ...player,
         active: true,
@@ -85,24 +86,24 @@ const PokerGame: React.FC = () => {
       }));
       setPlayers(resetPlayers);
     dealCards();
+    
   }
 
   function dealCards() {
-    const newPlayers = [...players];
     const newDeck = [...deck];
-
-    newPlayers.forEach((player) => {
-      player.cards = [newDeck.pop()!, newDeck.pop()!];
-      player.totalBet = 0;
-      player.active = true;
-      player.lastAction = "";
-      player.winLikelihood = 0;
-    });
-
-    setPlayers(newPlayers);
-    setDeck(newDeck);
-    postBlinds();
+    const updatedPlayers = players.map((player) => ({
+      ...player,
+      cards: [newDeck.pop()!, newDeck.pop()!], // Deal 2 unique cards
+      totalBet: 0,
+      active: true,
+      lastAction: "",
+      winLikelihood: 0,
+    }));
+  
+    setPlayers(updatedPlayers);
+    setDeck(newDeck); // Update the deck with remaining cards
   }
+  
 
   function postBlinds() {
     const newPlayers = [...players];
@@ -139,15 +140,19 @@ const PokerGame: React.FC = () => {
     communityCards: string[],
     activePlayers: Player[]
   ): number {
-    // Generate the remaining deck excluding player cards, community cards, and opponents' cards
     const dealtCards = [
       ...playerCards,
       ...communityCards,
       ...activePlayers.flatMap((player) => player.cards),
     ];
-    const remainingDeck = generateDeck().filter(
-      (card) => !dealtCards.includes(card)
-    );
+    const remainingDeck = generateDeck().filter((card) => !dealtCards.includes(card));
+  
+    // If duplicates are detected, throw an error (debugging)
+    const uniqueCards = new Set(dealtCards);
+    if (uniqueCards.size !== dealtCards.length) {
+      console.error("Duplicate cards detected:", dealtCards);
+      throw new Error("Duplicate cards found during simulation.");
+    }
   
     let wins = 0;
     const totalSimulations = 1000;
@@ -175,6 +180,7 @@ const PokerGame: React.FC = () => {
   
     return wins / totalSimulations;
   }
+  
   
   
   
@@ -206,54 +212,76 @@ const PokerGame: React.FC = () => {
     const newDeck = [...deck];
   
     if (round === 1) {
-      // Reveal 3 cards after the first betting round
-      newCommunityCards.push(newDeck.pop()!, newDeck.pop()!, newDeck.pop()!);
-    } else if (round === 2 || round === 3) {
-      // Reveal 1 card for subsequent rounds
-      newCommunityCards.push(newDeck.pop()!);
+      // Reveal the flop (3 cards)
+      newCommunityCards[0] = newDeck.pop()!;
+      newCommunityCards[1] = newDeck.pop()!;
+      newCommunityCards[2] = newDeck.pop()!;
+    } else if (round === 2) {
+      // Reveal the turn (1 card)
+      newCommunityCards[3] = newDeck.pop()!;
+    } else if (round === 3) {
+      // Reveal the river (1 card)
+      newCommunityCards[4] = newDeck.pop()!;
     }
   
     setCommunityCards(newCommunityCards);
     setDeck(newDeck);
     updateWinLikelihoods(); // Update win likelihoods based on new cards
   }
+  
 
   function endGame() {
-    const activePlayers = activePlayerIndexes.map((index) => players[index]);
-
-    const winner = activePlayers.reduce((prev, curr) => (prev.winLikelihood > curr.winLikelihood ? prev : curr));
+    const activePlayers = players.filter((player) => player.active);
+    const winner = activePlayers[0];
     winner.chips += pot;
     setPot(0);
-    alert(`${winner.name} wins with the pot of ${pot} chips!`);
+    alert(`${winner.name} wins the pot of ${pot} chips!`);
     setGameOver(true);
+    setCurrentPlayerIndex(-1); // Use -1 to indicate no active turn
   }
+  
 
   function fold() {
     const newPlayers = [...players];
-    newPlayers[currentPlayerIndex].active = false; // Mark the current player as folded
-    newPlayers[currentPlayerIndex].lastAction = "Fold"; // Update last action
+    const currentPlayer = newPlayers[currentPlayerIndex];
+    
+    currentPlayer.lastAction = "Fold"; // Update last action
+    currentPlayer.active = false; // Mark as inactive for this round
     setPlayers(newPlayers);
   
-    // Add current player to the list of players who acted
+    // Add the player to the list of those who have acted
     setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
+  
+    checkWin();
+    
   
     // Find the next active player
     let nextIndex = currentPlayerIndex;
     do {
       nextIndex = (nextIndex + 1) % players.length; // Move to the next player
-    } while (!newPlayers[nextIndex].active); // Skip folded players
+    } while (!players[nextIndex].active);
   
-    setCurrentPlayerIndex(nextIndex); // Set the turn to the next active player
-  
-    // Check if all active players have acted
-    const activePlayers = newPlayers.filter((player) => player.active);
-    if (playersWhoActed.length >= activePlayers.length - 1) {
-      if (areAllBetsEqual()) {
-        nextTurn(); // Advance to the next betting round
-        setPlayersWhoActed([]); // Reset for the next round
-      }
-    }
+    setCurrentPlayerIndex(nextIndex);
   }
+  
+  function endBettingRound() {
+    setPlayersWhoActed([]); // Reset actions for the next round
+  
+    if (bettingRound === 1) {
+      revealCommunityCards(1); // Flop: Reveal 3 cards
+    } else if (bettingRound === 2) {
+      revealCommunityCards(2); // Turn: Reveal 1 card
+    } else if (bettingRound === 3) {
+      revealCommunityCards(3); // River: Reveal 1 card
+    } else {
+      checkWin(); // End the game after the final betting round
+    }
+  
+    setBettingRound((prev) => prev + 1);
+  }
+  
+  
+  
 
   function check() {
     const currentPlayer = players[currentPlayerIndex];
@@ -296,26 +324,16 @@ const PokerGame: React.FC = () => {
       currentPlayer.totalBet += callAmount;
       setPot((prev) => prev + callAmount);
       currentPlayer.lastAction = "Call";
-  
-      // Add current player to the list of players who acted
+      setLastValidBet(currentPlayer.totalBet); // Set the last valid bet
+      // Add the player to the list of those who have acted
       setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
-  
-      // Move to the next active player
+      // Find the next active player
       let nextIndex = currentPlayerIndex;
       do {
-        nextIndex = (nextIndex + 1) % players.length; // Increment index
-      } while (!players[nextIndex].active); // Skip folded players
+        nextIndex = (nextIndex + 1) % players.length;
+      } while (!players[nextIndex].active);
   
       setCurrentPlayerIndex(nextIndex);
-  
-      // Check if all active players have acted
-      const activePlayers = players.filter((player) => player.active);
-      if (playersWhoActed.length >= activePlayers.length - 1) {
-        if (areAllBetsEqual()) {
-          nextTurn(); // Advance to the next betting round
-          setPlayersWhoActed([]); // Reset for the next round
-        }
-      }
     } else {
       alert("Not enough chips to call!");
     }
@@ -323,31 +341,75 @@ const PokerGame: React.FC = () => {
   
   
   
-  function play(amount: number) {
+  
+  function raise(amount: number) {
     const currentPlayer = players[currentPlayerIndex];
-    const minRaise = Math.ceil(SMALL_BLIND / 2);
-
-    if (amount < minRaise) {
-      alert(`Raise must be at least ${minRaise}`);
+  
+    // Validation: Ensure the raise is valid
+    if (amount <= lastValidBet) {
+      alert("Raise must be greater than the previous bet.");
       return;
     }
+  
     if (amount > currentPlayer.chips) {
-      alert("Not enough chips to bet!");
+      alert("You cannot raise more than your available chips.");
       return;
     }
-
+  
+    // Deduct the raise amount from the player's chips
     currentPlayer.chips -= amount;
     currentPlayer.totalBet += amount;
     setPot((prev) => prev + amount);
-    currentPlayer.lastAction = `Raise ${amount}`;
+  
+    // Calculate the raise amount
+    const raiseAmount = currentPlayer.totalBet - lastValidBet;
+  
+    // Update the last valid bet
+    setLastValidBet(currentPlayer.totalBet);
+  
+    // Update the player's last action
+    currentPlayer.lastAction = `Raise ${raiseAmount}`;
+  
+    setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
+
+    // Advance to the next turn
     nextTurn();
   }
+  
+  
+  
 
   function areAllBetsEqual() {
     const activePlayers = players.filter((player) => player.active);
     const maxBet = Math.max(...activePlayers.map((player) => player.totalBet));
+  
     return activePlayers.every((player) => player.totalBet === maxBet);
   }
+  
+  
+  function checkWin() {
+    // Check if only one player is left active
+    const activePlayers = players.filter((player) => player.active);
+    if (activePlayers.length === 1) {
+      const winner = activePlayers[0];
+      winner.chips += pot; // Award the pot to the last active player
+      setPot(0);
+      alert(`${winner.name} wins the pot of ${pot} chips!`);
+      setGameOver(true);
+      return;
+    }
+  
+    // Check if the round should end
+    if (playersWhoActed.length >= activePlayers.length) {
+      if (areAllBetsEqual()) {
+        endBettingRound();
+        
+        return;
+      }
+    }
+  }
+  
+  
   
   function getNextActivePlayer(startIndex: number) {
     let nextIndex = startIndex;
@@ -374,48 +436,22 @@ const PokerGame: React.FC = () => {
       call();
     } else {
       const raiseAmount = Math.max(SMALL_BLIND, Math.min(currentPlayer.chips, maxBet + SMALL_BLIND));
-      play(raiseAmount);
+      raise(raiseAmount);
     }
   }
 
   function nextTurn() {
-    const activePlayers = players.filter((player) => player.active);
+    let nextIndex = currentPlayerIndex;
   
-    // If only one player remains active, end the game
-    if (activePlayers.length === 1) {
-      const winner = activePlayers[0];
-      winner.chips += pot; // Award the pot to the last active player
-      setPot(0);
-      alert(`${winner.name} wins the pot of ${pot} chips!`);
-      setGameOver(true);
-      return;
-    }
+    do {
+      nextIndex = (nextIndex + 1) % players.length;
+    } while (!players[nextIndex].active || players[nextIndex].lastAction === "Fold");
   
-    // Check if all active players' bets are equal
-    if (areAllBetsEqual()) {
-      setBettingRound((prev) => prev + 1);
-  
-      if (bettingRound === 1) {
-        revealCommunityCards(1); // Reveal the flop (3 cards)
-      } else if (bettingRound === 2) {
-        revealCommunityCards(2); // Reveal the turn (1 card)
-      } else if (bettingRound === 3) {
-        revealCommunityCards(3); // Reveal the river (1 card)
-      } else {
-        endGame(); // End game after the final betting round
-      }
-  
-      // Set the turn to the player after the big blind for the next round
-      const bigBlindIndex = (blindIndex + 1) % players.length;
-      const nextPlayerIndex = getNextActivePlayer(bigBlindIndex + 1);
-      setCurrentPlayerIndex(nextPlayerIndex);
-      return;
-    }
-  
-    // Find the next active player
-    const nextIndex = getNextActivePlayer(currentPlayerIndex);
     setCurrentPlayerIndex(nextIndex);
   }
+  
+
+  
   
   
 
@@ -432,19 +468,30 @@ const PokerGame: React.FC = () => {
   {/* Game Info in One Line */}
   <div className="game-info-line">
     <span>Pot: {pot} chips</span>
+    <span>Previous Bet: {lastValidBet !== null ? `${lastValidBet} chips` : "None"}</span>
     <span>Round: {bettingRound}</span>
     <span>Game: {gameRound}</span>
-    <span>Current Turn: {players[currentPlayerIndex]?.name}</span>
+    <span>
+        Current Turn: {currentPlayerIndex >= 0 ? players[currentPlayerIndex]?.name : "Nobody"}
+    </span>
   </div>
 
   {/* Community Cards */}
   <div className="community-cards">
     {communityCards.map((card, index) => (
-      <div key={index} className="card">
-        {card}
-      </div>
+        <div
+        key={index}
+        className="card"
+        style={{
+            backgroundColor: card ? "white" : "gray",
+            color: card ? "black" : "transparent",
+        }}
+        >
+        {card || "?"} {/* Display placeholders as "?" */}
+        </div>
     ))}
-  </div>
+    </div>
+
 
   {/* Player Actions */}
   <div className="player-actions">
@@ -472,7 +519,7 @@ const PokerGame: React.FC = () => {
     <button
       onClick={() => {
         const betAmount = prompt("Enter bet amount:");
-        if (betAmount) play(Number(betAmount));
+        if (betAmount) raise(Number(betAmount));
       }}
       disabled={gameOver || !gameStarted || !isUserTurn}
       className="action-button"
@@ -485,11 +532,12 @@ const PokerGame: React.FC = () => {
   <div className="players-container">
     {players.map((player, index) => (
       <div
-        key={player.name}
-        className={`player-box ${
-          !player.active ? "player-folded" : index === currentPlayerIndex ? "player-current" : ""
-        }`}
-      >
+      key={player.name}
+      className={`player-box ${player.lastAction === "Fold" ? "player-folded" : ""} ${
+        index === currentPlayerIndex ? "player-current" : ""
+      }`}
+    >
+    
         <h3>{player.name}</h3>
         <p>Cards: {player.cards.length ? player.cards.join(", ") : "Not dealt"}</p>
         <p>Chips: {player.chips}</p>

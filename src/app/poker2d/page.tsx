@@ -84,8 +84,11 @@ const PokerGame: React.FC = () => {
         cards: [],
         winLikelihood: 0,
       }));
-      setPlayers(resetPlayers);
+    setPlayers(resetPlayers);
+    const newDeck = generateDeck();
+    setDeck(newDeck);
     dealCards();
+    postBlinds();
   }
 
   function dealCards() {
@@ -102,7 +105,6 @@ const PokerGame: React.FC = () => {
 
     setPlayers(newPlayers);
     setDeck(newDeck);
-    postBlinds();
   }
 
   function postBlinds() {

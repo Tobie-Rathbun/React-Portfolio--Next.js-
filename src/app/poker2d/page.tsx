@@ -420,83 +420,87 @@ const PokerGame: React.FC = () => {
   
 
   return (
-    <div style={{ textAlign: "center", margin: "2rem" }}>
-      <h1>Simple Poker Game</h1>
-      <button
-        onClick={startNewGame}
-        style={{
-            padding: "0.5rem 1rem",
-            margin: "1rem",
-        }}
-        >
-        Start New Game
-       </button>
+    <div style={{ margin: "2rem", position: "relative" }}>
+  {/* Start New Game Button */}
+  <button
+    onClick={startNewGame}
+    className="start-button"
+  >
+    Start New Game
+  </button>
 
-      <div style={{ marginTop: "2rem" }}>
-        <h2>Pot: {pot} chips</h2>
-        <h2>Round: {bettingRound}</h2>
-        <h2>Game: {gameRound}</h2>
-        <h2>Current Turn: {players[currentPlayerIndex]?.name}</h2>
-        <h3>Community Cards: {communityCards.join(", ")}</h3>
+  {/* Game Info in One Line */}
+  <div className="game-info-line">
+    <span>Pot: {pot} chips</span>
+    <span>Round: {bettingRound}</span>
+    <span>Game: {gameRound}</span>
+    <span>Current Turn: {players[currentPlayerIndex]?.name}</span>
+  </div>
+
+  {/* Community Cards */}
+  <div className="community-cards">
+    {communityCards.map((card, index) => (
+      <div key={index} className="card">
+        {card}
       </div>
-      <div>
-        <button
-          onClick={fold}
-          disabled={gameOver || !gameStarted || !isUserTurn}
-          style={{ padding: "0.5rem 1rem", margin: "1rem" }}
-        >
-          Fold
-        </button>
-        <button
-          onClick={check}
-          disabled={gameOver || !gameStarted || !isUserTurn}
-          style={{ padding: "0.5rem 1rem", margin: "1rem" }}
-        >
-          Check
-        </button>
-        <button
-          onClick={call}
-          disabled={gameOver || !gameStarted || !isUserTurn}
-          style={{ padding: "0.5rem 1rem", margin: "1rem" }}
-        >
-          Call
-        </button>
-        <button
-          onClick={() => {
-            const betAmount = prompt("Enter bet amount:");
-            if (betAmount) play(Number(betAmount));
-          }}
-          disabled={gameOver || !gameStarted || !isUserTurn}
-          style={{ padding: "0.5rem 1rem", margin: "1rem" }}
-        >
-          Raise
-        </button>
+    ))}
+  </div>
+
+  {/* Player Actions */}
+  <div className="player-actions">
+    <button
+      onClick={fold}
+      disabled={gameOver || !gameStarted || !isUserTurn}
+      className="action-button"
+    >
+      Fold
+    </button>
+    <button
+      onClick={check}
+      disabled={gameOver || !gameStarted || !isUserTurn}
+      className="action-button"
+    >
+      Check
+    </button>
+    <button
+      onClick={call}
+      disabled={gameOver || !gameStarted || !isUserTurn}
+      className="action-button"
+    >
+      Call
+    </button>
+    <button
+      onClick={() => {
+        const betAmount = prompt("Enter bet amount:");
+        if (betAmount) play(Number(betAmount));
+      }}
+      disabled={gameOver || !gameStarted || !isUserTurn}
+      className="action-button"
+    >
+      Raise
+    </button>
+  </div>
+
+  {/* Players Container */}
+  <div className="players-container">
+    {players.map((player, index) => (
+      <div
+        key={player.name}
+        className={`player-box ${
+          !player.active ? "player-folded" : index === currentPlayerIndex ? "player-current" : ""
+        }`}
+      >
+        <h3>{player.name}</h3>
+        <p>Cards: {player.cards.length ? player.cards.join(", ") : "Not dealt"}</p>
+        <p>Chips: {player.chips}</p>
+        <p>Total Bet: {player.totalBet}</p>
+        <p>Last Action: {player.lastAction}</p>
+        <p>Win Likelihood: {(player.winLikelihood * 100).toFixed(2)}%</p>
       </div>
-      {players.map((player, index) => (
-        <div
-          key={player.name}
-          style={{
-            border: "1px solid #ccc",
-            padding: "1rem",
-            margin: "1rem",
-            textAlign: "left",
-            display: "inline-block",
-            backgroundColor: !player.active
-              ? "#A0A09F"
-              : index === currentPlayerIndex
-              ? "#7E7E56"
-              : "#292929",
-          }}
-        >
-          <h3>{player.name}</h3>
-          <p>Cards: {player.cards.length ? player.cards.join(", ") : "Not dealt"}</p>
-          <p>Chips: {player.chips}</p>
-          <p>Total Bet: {player.totalBet}</p>
-          <p>Last Action: {player.lastAction}</p>
-          <p>Win Likelihood: {(player.winLikelihood * 100).toFixed(2)}%</p>
-        </div>
-      ))}
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 

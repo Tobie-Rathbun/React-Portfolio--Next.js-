@@ -339,3 +339,117 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   overflow: hidden;
   height: 100%;
 }
+
+
+
+/* Start New Game Button */
+.start-button {
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.start-button:hover {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+/* Game Info Line */
+.game-info-line {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 3rem 0 1rem; /* Adds spacing below the Start New Game button */
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-text-color);
+}
+
+/* Community Cards */
+.community-cards {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.card {
+  width: 50px;
+  height: 70px;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 70px;
+  background-color: var(--chord-element-background);
+  color: var(--primary-text-color);
+  border-radius: 5px;
+}
+
+/* Player Actions */
+.player-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.action-button:hover:enabled {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+/* Players Container */
+.players-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.player-box {
+  width: 15%; /* Each player container takes 15% of the width */
+  max-width: 15%;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: left;
+  background-color: var(--dark-background);
+  color: var(--primary-text-color);
+  border-radius: 5px;
+}
+
+
+
+.player-folded {
+  opacity: 0.5;
+  background-color: var(--chord-element-background);
+}
+
+.player-current {
+  border: 2px solid var(--accent-color);
+  background-color: var(--highlight-color);
+  color: var(--dark-background)
+}
+.player-current h3 {
+  color: var(--dark-background); /* Replace with your desired color */
+}

@@ -9,6 +9,7 @@ const SiteNavbar = () => {
         <Link href="/about" className="nav-link">About</Link>
         <a href="https://github.com/Tobie-Rathbun" className="nav-link">GitHub</a>
         <Link href="/pokerfrogs" className="nav-link">Poker Frogs</Link>
+        <Link href="/poker2d" className="nav-link">Poker 2D</Link>
         <Link href="/rps" className="nav-link">RPS</Link>
         <Link href="/chord-player" className="nav-link">Chord Player</Link>
         <Link href="/login" className="nav-link">Login</Link>

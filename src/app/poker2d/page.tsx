@@ -86,24 +86,24 @@ const PokerGame: React.FC = () => {
       }));
       setPlayers(resetPlayers);
     dealCards();
-    
   }
 
   function dealCards() {
+    const newPlayers = [...players];
     const newDeck = [...deck];
-    const updatedPlayers = players.map((player) => ({
-      ...player,
-      cards: [newDeck.pop()!, newDeck.pop()!], // Deal 2 unique cards
-      totalBet: 0,
-      active: true,
-      lastAction: "",
-      winLikelihood: 0,
-    }));
-  
-    setPlayers(updatedPlayers);
-    setDeck(newDeck); // Update the deck with remaining cards
+
+    newPlayers.forEach((player) => {
+      player.cards = [newDeck.pop()!, newDeck.pop()!];
+      player.totalBet = 0;
+      player.active = true;
+      player.lastAction = "";
+      player.winLikelihood = 0;
+    });
+
+    setPlayers(newPlayers);
+    setDeck(newDeck);
+    postBlinds();
   }
-  
 
   function postBlinds() {
     const newPlayers = [...players];
@@ -140,19 +140,15 @@ const PokerGame: React.FC = () => {
     communityCards: string[],
     activePlayers: Player[]
   ): number {
+    // Generate the remaining deck excluding player cards, community cards, and opponents' cards
     const dealtCards = [
       ...playerCards,
       ...communityCards,
       ...activePlayers.flatMap((player) => player.cards),
     ];
-    const remainingDeck = generateDeck().filter((card) => !dealtCards.includes(card));
-  
-    // If duplicates are detected, throw an error (debugging)
-    const uniqueCards = new Set(dealtCards);
-    if (uniqueCards.size !== dealtCards.length) {
-      console.error("Duplicate cards detected:", dealtCards);
-      throw new Error("Duplicate cards found during simulation.");
-    }
+    const remainingDeck = generateDeck().filter(
+      (card) => !dealtCards.includes(card)
+    );
   
     let wins = 0;
     const totalSimulations = 1000;
@@ -180,7 +176,6 @@ const PokerGame: React.FC = () => {
   
     return wins / totalSimulations;
   }
-  
   
   
   

@@ -341,6 +341,104 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 }
 
 
+/* Rock, Paper, Scissors RPS */
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.flex-item {
+  flex: 1;
+  margin: 0 1rem;
+  min-width: 250px; /* Prevent items from becoming too small */
+  text-align: left;
+}
+
+.btn {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:disabled {
+  background-color: var(--chord-element-background);
+  cursor: not-allowed;
+}
+
+.choice-btn {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.choice-btn:hover {
+  transform: scale(1.10);
+}
+
+.choice-btn:active {
+  transform: scale(0.90);
+}
+
+.results-container {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Ensure boxes wrap if the container width is too small */
+  gap: 1rem; /* Add spacing between boxes */
+}
+
+.stats-box {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid var(--chord-element-border);
+  background-color: var(--chord-element-background);
+  color: var(--primary-text-color);
+  margin: 1rem;
+  width: 250px; /* Ensure equal width */
+  min-height: 200px; /* Force consistent height */
+  box-sizing: border-box; /* Include padding in height */
+  border-radius: 8px;
+}
+
+.matrix-box {
+  width: 400px; /* Adjust the width to fit the matrix content */
+  min-height: 200px; /* Match the height of other boxes */
+  overflow-x: auto; /* Add horizontal scroll if needed */
+  border: 1px solid var(--chord-element-border);
+  background-color: var(--chord-player-background);
+  color: var(--primary-text-color);
+}
+
+
+
+
+
+
+/* Poker 2D */
+
 
 /* Start New Game Button */
 .start-button {

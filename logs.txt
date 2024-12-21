@@ -1,12 +1,998 @@
-unreachable code after return statement node_modules_c69c10._.js:1073:5
-unreachable code after return statement node_modules_c69c10._.js:1231:5
-unreachable code after return statement node_modules_c69c10._.js:1279:5
-unreachable code after return statement node_modules_c69c10._.js:1295:5
- * Tone.js v15.0.4 * node_modules_tone_build_esm_core_103bc3._.js:2124:13
-An AudioContext was prevented from starting automatically. It must be created or resumed after a user gesture on the page. node_modules_standardized-audio-context_build_es2019_2ea759._.js:1376:38
-An AudioContext was prevented from starting automatically. It must be created or resumed after a user gesture on the page. 9 node_modules_standardized-audio-context_build_es2019_2ea759._.js:1677:36
-An AudioContext was prevented from starting automatically. It must be created or resumed after a user gesture on the page. node_modules_standardized-audio-context_build_es2019_2ea759._.js:3836:44
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Last simulated user move updated to: Paper 2 _aa5d96._.js:264:17
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Last simulated user move updated to: Paper 2 _aa5d96._.js:264:17
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Last simulated user move updated to: Rock 2 _aa5d96._.js:264:17
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Last simulated user move updated to: Rock 2 _aa5d96._.js:264:17
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Last simulated user move updated to: Scissors 4 _aa5d96._.js:264:17
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 1 _aa5d96._.js:148:25
+Updated Paper -> Rock: 2 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 3 _aa5d96._.js:148:25
+Updated Paper -> Rock: 4 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 5 _aa5d96._.js:148:25
+Updated Paper -> Rock: 6 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 1 _aa5d96._.js:148:25
+Updated Paper -> Paper: 2 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 1 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 2 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 3 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 4 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 3 _aa5d96._.js:148:25
+Updated Paper -> Paper: 4 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 5 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 6 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 5 _aa5d96._.js:148:25
+Updated Paper -> Paper: 6 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 7 _aa5d96._.js:148:25
+Updated Paper -> Paper: 8 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 7 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 8 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 7 _aa5d96._.js:148:25
+Updated Paper -> Rock: 8 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 9 _aa5d96._.js:148:25
+Updated Paper -> Rock: 10 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 9 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 10 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 11 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 12 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 11 _aa5d96._.js:148:25
+Updated Paper -> Rock: 12 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 9 _aa5d96._.js:148:25
+Updated Paper -> Paper: 10 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 13 _aa5d96._.js:148:25
+Updated Paper -> Rock: 14 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 13 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 14 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 15 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 16 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 11 _aa5d96._.js:148:25
+Updated Paper -> Paper: 12 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 13 _aa5d96._.js:148:25
+Updated Paper -> Paper: 14 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 15 _aa5d96._.js:148:25
+Updated Paper -> Paper: 16 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 17 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 18 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 17 _aa5d96._.js:148:25
+Updated Paper -> Paper: 18 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 19 _aa5d96._.js:148:25
+Updated Paper -> Paper: 20 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 15 _aa5d96._.js:148:25
+Updated Paper -> Rock: 16 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 19 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 20 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 17 _aa5d96._.js:148:25
+Updated Paper -> Rock: 18 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 19 _aa5d96._.js:148:25
+Updated Paper -> Rock: 20 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 21 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 22 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 23 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 24 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 21 _aa5d96._.js:148:25
+Updated Paper -> Paper: 22 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 25 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 26 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 23 _aa5d96._.js:148:25
+Updated Paper -> Paper: 24 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 25 _aa5d96._.js:148:25
+Updated Paper -> Paper: 26 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 27 _aa5d96._.js:148:25
+Updated Paper -> Paper: 28 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 21 _aa5d96._.js:148:25
+Updated Paper -> Rock: 22 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 27 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 28 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 29 _aa5d96._.js:148:25
+Updated Paper -> Paper: 30 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 23 _aa5d96._.js:148:25
+Updated Paper -> Rock: 24 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 25 _aa5d96._.js:148:25
+Updated Paper -> Rock: 26 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 27 _aa5d96._.js:148:25
+Updated Paper -> Rock: 28 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 29 _aa5d96._.js:148:25
+Updated Paper -> Rock: 30 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 29 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 30 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 31 _aa5d96._.js:148:25
+Updated Paper -> Rock: 32 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 33 _aa5d96._.js:148:25
+Updated Paper -> Rock: 34 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 31 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 32 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 31 _aa5d96._.js:148:25
+Updated Paper -> Paper: 32 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 35 _aa5d96._.js:148:25
+Updated Paper -> Rock: 36 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 33 _aa5d96._.js:148:25
+Updated Paper -> Paper: 34 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 33 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 34 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 35 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 36 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 35 _aa5d96._.js:148:25
+Updated Paper -> Paper: 36 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 37 _aa5d96._.js:148:25
+Updated Paper -> Rock: 38 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 39 _aa5d96._.js:148:25
+Updated Paper -> Rock: 40 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 41 _aa5d96._.js:148:25
+Updated Paper -> Rock: 42 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 37 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 38 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 39 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 40 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 37 _aa5d96._.js:148:25
+Updated Paper -> Paper: 38 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 39 _aa5d96._.js:148:25
+Updated Paper -> Paper: 40 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 43 _aa5d96._.js:148:25
+Updated Paper -> Rock: 44 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 41 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 42 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 1 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 2 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 1 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 2 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 3 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 4 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 5 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 6 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 7 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 8 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 3 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 4 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 9 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 10 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 5 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 6 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 7 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 8 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 11 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 12 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 1 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 2 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 13 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 14 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 9 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 10 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 15 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 16 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 11 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 12 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 13 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 14 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 15 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 16 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 17 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 18 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 17 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 18 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 19 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 20 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 21 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 22 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 23 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 24 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 3 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 4 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 19 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 20 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 21 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 22 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 5 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 6 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 7 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 8 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 25 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 26 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 23 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 24 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 27 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 28 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 29 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 30 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 25 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 26 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 27 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 28 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 29 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 30 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 31 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 32 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 31 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 32 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 9 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 10 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 11 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 12 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 33 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 34 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 13 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 14 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 35 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 36 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 37 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 38 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 15 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 16 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 39 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 40 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 17 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 18 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 33 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 34 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 19 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 20 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 41 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 42 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 35 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 36 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 21 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 22 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 43 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 44 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 23 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 24 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 45 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 46 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 25 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 26 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 47 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 48 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 49 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 50 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 51 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 52 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 53 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 54 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 55 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 56 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 37 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 38 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 57 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 58 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 59 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 60 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 39 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 40 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 27 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 28 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 29 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 30 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 41 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 42 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 43 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 44 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 41 _aa5d96._.js:148:25
+Updated Paper -> Paper: 42 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 43 _aa5d96._.js:148:25
+Updated Paper -> Paper: 44 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 45 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 46 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 45 _aa5d96._.js:148:25
+Updated Paper -> Paper: 46 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 47 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 48 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 47 _aa5d96._.js:148:25
+Updated Paper -> Paper: 48 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 49 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 50 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 45 _aa5d96._.js:148:25
+Updated Paper -> Rock: 46 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 49 _aa5d96._.js:148:25
+Updated Paper -> Paper: 50 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 51 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 52 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 53 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 54 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 51 _aa5d96._.js:148:25
+Updated Paper -> Paper: 52 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 47 _aa5d96._.js:148:25
+Updated Paper -> Rock: 48 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 49 _aa5d96._.js:148:25
+Updated Paper -> Rock: 50 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 55 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 56 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 51 _aa5d96._.js:148:25
+Updated Paper -> Rock: 52 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 53 _aa5d96._.js:148:25
+Updated Paper -> Rock: 54 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 53 _aa5d96._.js:148:25
+Updated Paper -> Paper: 54 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 57 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 58 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 55 _aa5d96._.js:148:25
+Updated Paper -> Rock: 56 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 57 _aa5d96._.js:148:25
+Updated Paper -> Rock: 58 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 59 _aa5d96._.js:148:25
+Updated Paper -> Rock: 60 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 59 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 60 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 61 _aa5d96._.js:148:25
+Updated Paper -> Rock: 62 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 61 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 62 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 63 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 64 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 65 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 66 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 67 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 68 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 69 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 70 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 55 _aa5d96._.js:148:25
+Updated Paper -> Paper: 56 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 71 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 72 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 73 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 74 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 57 _aa5d96._.js:148:25
+Updated Paper -> Paper: 58 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 59 _aa5d96._.js:148:25
+Updated Paper -> Paper: 60 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 75 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 76 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 77 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 78 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 63 _aa5d96._.js:148:25
+Updated Paper -> Rock: 64 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 65 _aa5d96._.js:148:25
+Updated Paper -> Rock: 66 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 67 _aa5d96._.js:148:25
+Updated Paper -> Rock: 68 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 79 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 80 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 61 _aa5d96._.js:148:25
+Updated Paper -> Paper: 62 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 69 _aa5d96._.js:148:25
+Updated Paper -> Rock: 70 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 81 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 82 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 63 _aa5d96._.js:148:25
+Updated Paper -> Paper: 64 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 65 _aa5d96._.js:148:25
+Updated Paper -> Paper: 66 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 83 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 84 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 85 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 86 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 67 _aa5d96._.js:148:25
+Updated Paper -> Paper: 68 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 71 _aa5d96._.js:148:25
+Updated Paper -> Rock: 72 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 69 _aa5d96._.js:148:25
+Updated Paper -> Paper: 70 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 87 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 88 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 89 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 90 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 91 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 92 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 71 _aa5d96._.js:148:25
+Updated Paper -> Paper: 72 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 73 _aa5d96._.js:148:25
+Updated Paper -> Paper: 74 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 75 _aa5d96._.js:148:25
+Updated Paper -> Paper: 76 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 77 _aa5d96._.js:148:25
+Updated Paper -> Paper: 78 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 93 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 94 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 79 _aa5d96._.js:148:25
+Updated Paper -> Paper: 80 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 95 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 96 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 81 _aa5d96._.js:148:25
+Updated Paper -> Paper: 82 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 97 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 98 _aa5d96._.js:148:25
+Simulated transition from Paper to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Paper -> Rock: 73 _aa5d96._.js:148:25
+Updated Paper -> Rock: 74 _aa5d96._.js:148:25
+Simulated transition from Paper to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Paper -> Paper: 83 _aa5d96._.js:148:25
+Updated Paper -> Paper: 84 _aa5d96._.js:148:25
+Simulated transition from Paper to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Paper -> Scissors: 99 _aa5d96._.js:148:25
+Updated Paper -> Scissors: 100 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 31 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 32 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 33 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 34 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 61 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 62 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 43 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 44 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 35 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 36 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 37 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 38 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 63 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 64 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 45 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 46 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 47 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 48 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 49 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 50 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 39 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 40 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 41 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 42 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 51 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 52 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 43 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 44 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 53 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 54 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 45 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 46 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 55 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 56 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 57 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 58 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 65 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 66 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 59 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 60 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 61 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 62 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 67 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 68 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 47 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 48 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 63 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 64 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 49 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 50 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 65 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 66 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 69 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 70 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 71 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 72 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 67 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 68 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 73 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 74 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 69 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 70 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 75 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 76 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 51 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 52 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 71 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 72 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 73 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 74 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 53 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 54 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 55 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 56 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 57 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 58 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 59 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 60 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 61 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 62 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 75 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 76 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 77 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 78 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 79 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 80 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 77 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 78 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 79 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 80 _aa5d96._.js:148:25
+Simulated transition from Scissors to Paper _aa5d96._.js:257:21
+Last simulated user move updated to: Paper _aa5d96._.js:264:17
+Updated Scissors -> Paper: 81 _aa5d96._.js:148:25
+Updated Scissors -> Paper: 82 _aa5d96._.js:148:25
+Simulated transition from Scissors to Rock _aa5d96._.js:257:21
+Last simulated user move updated to: Rock _aa5d96._.js:264:17
+Updated Scissors -> Rock: 63 _aa5d96._.js:148:25
+Updated Scissors -> Rock: 64 _aa5d96._.js:148:25
+Simulated transition from Scissors to Scissors _aa5d96._.js:257:21
+Last simulated user move updated to: Scissors _aa5d96._.js:264:17
+Updated Scissors -> Scissors: 81 _aa5d96._.js:148:25
+Updated Scissors -> Scissors: 82 _aa5d96._.js:148:25
+[Fast Refresh] rebuilding 3 node_modules_next_dist_client_523921._.js:13662:25
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/app/rps/page.tsx
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
 URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
@@ -15,67 +1001,8 @@ computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js
 BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
 BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
 
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_c69c10._.js
-Source Map URL: node_modules_c69c10._.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/tone/Tone/core/util/TypeCheck.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_tone_build_esm_core_103bc3._.js
-Source Map URL: node_modules_tone_build_esm_core_103bc3._.js.map
-XHRGET
-http://localhost:8888/audio/Piano.ff.C0.mp3
-[HTTP/1.1 404 Not Found 2154ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.Db0.mp3
-[HTTP/1.1 404 Not Found 2215ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.D0.mp3
-[HTTP/1.1 404 Not Found 2199ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.Eb0.mp3
-[HTTP/1.1 404 Not Found 2154ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.E0.mp3
-[HTTP/1.1 404 Not Found 2214ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.Gb0.mp3
-[HTTP/1.1 404 Not Found 4959ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.F0.mp3
-[HTTP/1.1 404 Not Found 2204ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.G0.mp3
-[HTTP/1.1 404 Not Found 5004ms]
-
-XHRGET
-http://localhost:8888/audio/Piano.ff.Ab0.mp3
-[HTTP/1.1 404 Not Found 4987ms]
-
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/standardized-audio-context/src/factories/abort-error.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_standardized-audio-context_build_es2019_2ea759._.js
-Source Map URL: node_modules_standardized-audio-context_build_es2019_2ea759._.js.map
-[Fast Refresh] rebuilding 14 node_modules_next_dist_client_523921._.js:13662:25
+Resource URL: http://localhost:8888/_next/static/chunks/_aa5d96._.js
+Source Map URL: _aa5d96._.js.map
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/client/app-bootstrap.ts
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -87,4 +1014,3 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js
 Source Map URL: node_modules_next_dist_client_523921._.js.map
-[Fast Refresh] rebuilding 10 node_modules_next_dist_client_523921._.js:13662:25

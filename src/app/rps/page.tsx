@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 interface RegretRecord {
   Rock: number;
@@ -14,6 +15,9 @@ const RockPaperScissors: React.FC = () => {
   const [result, setResult] = useState<string | null>(null);
   const [regrets, setRegrets] = useState<RegretRecord>({ Rock: 0, Paper: 0, Scissors: 0 });
   const [scores, setScores] = useState({ user: 0, computer: 0, ties: 0 });
+  const [isRunning, setIsRunning] = useState(false); 
+  const [iterations, setIterations] = useState(0); 
+  
 
   const choices: (keyof RegretRecord)[] = ['Rock', 'Paper', 'Scissors'];
 
@@ -32,9 +36,34 @@ const RockPaperScissors: React.FC = () => {
   };
 
   const selectComputerMove = (): keyof RegretRecord => {
-    const maxRegret = Math.max(...choices.map((choice) => regrets[choice]));
-    return choices.find((choice) => regrets[choice] === maxRegret) || 'Rock';
+    // Calculate the total positive regret
+    const totalPositiveRegret = Object.values(regrets)
+      .filter((r) => r > 0)
+      .reduce((a, b) => a + b, 0);
+  
+    // If no positive regrets, choose randomly
+    if (totalPositiveRegret === 0) {
+      return choices[Math.floor(Math.random() * choices.length)];
+    }
+  
+    // Calculate the probabilities for each choice
+    const probabilities = choices.map((choice) => 
+      Math.max(0, regrets[choice]) / totalPositiveRegret
+    );
+  
+    // Choose a move based on the probabilities
+    let random = Math.random();
+    for (let i = 0; i < choices.length; i++) {
+      if (random < probabilities[i]) {
+        return choices[i];
+      }
+      random -= probabilities[i];
+    }
+  
+    // Fallback (shouldn't happen due to rounding issues)
+    return choices[0];
   };
+  
 
   const determineWinner = (user: keyof RegretRecord, computer: keyof RegretRecord) => {
     if (user === computer) {
@@ -55,25 +84,66 @@ const RockPaperScissors: React.FC = () => {
 
   const updateRegrets = (user: keyof RegretRecord) => {
     const newRegrets = { ...regrets };
-
+  
     choices.forEach((choice) => {
-      if (choice === user) {
-        // No regret change for the user's actual choice
-        return;
-      }
-
-      const counterfactualReward = rewards[choice][user]; // Reward if this choice was made instead of the actual one
-      const actualReward = rewards[user][user]; // Reward for the actual choice
-
-      newRegrets[choice] += counterfactualReward - actualReward;
+      if (choice === user) return;
+  
+      const counterfactualReward = rewards[choice][user]; // Reward if this choice was made
+      const actualReward = rewards[user][user]; // Actual reward for the selected choice
+  
+      // Amplify the regret difference to strengthen learning
+      const regretDifference = (counterfactualReward - actualReward) * 1.5;
+      newRegrets[choice] += regretDifference;
     });
-
+  
     setRegrets(newRegrets);
   };
+  
+
+  const simulateGame = () => {
+    const userSelection: keyof RegretRecord = choices[Math.floor(Math.random() * choices.length)];
+    const computerSelection = selectComputerMove();
+    determineWinner(userSelection, computerSelection);
+    updateRegrets(userSelection);
+    setIterations((prev) => prev + 1);
+  };
+
+  const startSimulation = () => {
+    setIsRunning(true);
+  };
+
+  const stopSimulation = () => {
+    setIsRunning(false);
+  };
+
+  useEffect(() => {
+    if (!isRunning) return;
+
+    const interval = setInterval(() => {
+      simulateGame();
+    }, 10); // Simulate every 100ms
+
+    return () => clearInterval(interval); // Cleanup on stop
+  }, [isRunning]);
 
   return (
     <div style={{ textAlign: 'center', margin: '2rem' }}>
       <h1>Rock, Paper, Scissors</h1>
+      <div>
+        <button onClick={startSimulation} disabled={isRunning} style={{ margin: '1rem', padding: '0.5rem 1rem' }}>
+          Start Simulation
+        </button>
+        <button onClick={stopSimulation} disabled={!isRunning} style={{ margin: '1rem', padding: '0.5rem 1rem' }}>
+          Stop Simulation
+        </button>
+      </div>
+      <div style={{ marginTop: '2rem' }}>
+        <h3>Iterations: {iterations}</h3>
+        <h3>Scores:</h3>
+        <p>User Wins: {scores.user}</p>
+        <p>Computer Wins: {scores.computer}</p>
+        <p>Ties: {scores.ties}</p>
+      </div>
       <div style={{ marginBottom: '1rem' }}>
         <h2>Make your choice:</h2>
         {choices.map((choice) => (

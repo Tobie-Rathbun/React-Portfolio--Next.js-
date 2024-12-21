@@ -66,30 +66,35 @@ const PokerGame: React.FC = () => {
     return deck.sort(() => Math.random() - 0.5);
   }
 
-  function startNewGame() {
+  function nextRound() {
     setPlayersWhoActed([]); // Reset at the start of a new game
     setLastValidBet(0);
     setGameOver(false);
     setGameStarted(true);
-    setCommunityCards(["", "", "", "", ""]);
+    setCommunityCards(["", "", "", "", ""]); // Reset community cards
     setPot(0);
     setBettingRound(1);
-    setGameRound(gameRound + 1);
+    setGameRound((prev) => prev + 1);
     setBlindIndex((prev) => (prev + 1) % players.length); // Rotate blinds
+  
+    // Reset players
     const resetPlayers = players.map((player) => ({
-        ...player,
-        active: true,
-        totalBet: 0,
-        lastAction: "",
-        cards: [],
-        winLikelihood: 0,
-      }));
+      ...player,
+      active: true,
+      totalBet: 0,
+      lastAction: "",
+      cards: [],
+      winLikelihood: 0,
+    }));
     setPlayers(resetPlayers);
+  
+    // Reset deck
     const newDeck = generateDeck();
     setDeck(newDeck);
     dealCards();
     postBlinds();
   }
+  
 
   function dealCards() {
     const newPlayers = [...players];
@@ -142,15 +147,15 @@ const PokerGame: React.FC = () => {
     communityCards: string[],
     activePlayers: Player[]
   ): number {
-    // Generate the remaining deck excluding player cards, community cards, and opponents' cards
+    // Filter out placeholders from community cards
+    const filteredCommunityCards = communityCards.filter((card) => card && card !== "?");
     const dealtCards = [
       ...playerCards,
-      ...communityCards,
+      ...filteredCommunityCards,
       ...activePlayers.flatMap((player) => player.cards),
     ];
-    const remainingDeck = generateDeck().filter(
-      (card) => !dealtCards.includes(card)
-    );
+  
+    const remainingDeck = generateDeck().filter((card) => !dealtCards.includes(card));
   
     let wins = 0;
     const totalSimulations = 1000;
@@ -158,8 +163,8 @@ const PokerGame: React.FC = () => {
     for (let i = 0; i < totalSimulations; i++) {
       const shuffledDeck = [...remainingDeck].sort(() => Math.random() - 0.5);
       const simulatedCommunity = [
-        ...communityCards,
-        ...shuffledDeck.slice(0, 5 - communityCards.length),
+        ...filteredCommunityCards,
+        ...shuffledDeck.slice(0, 5 - filteredCommunityCards.length),
       ];
   
       const opponentHands = activePlayers.map((player) =>
@@ -178,6 +183,7 @@ const PokerGame: React.FC = () => {
   
     return wins / totalSimulations;
   }
+  
   
   
   
@@ -227,15 +233,29 @@ const PokerGame: React.FC = () => {
   }
   
 
-  function endGame() {
-    const activePlayers = players.filter((player) => player.active);
-    const winner = activePlayers[0];
-    winner.chips += pot;
-    setPot(0);
-    alert(`${winner.name} wins the pot of ${pot} chips!`);
+  function endGame(winningPlayer?: Player) {
+    let winner: Player | undefined = winningPlayer;
+  
+    // If no winner is provided, determine the winner
+    if (!winner) {
+      const activePlayers = players.filter((player) => player.active);
+      if (activePlayers.length === 1) {
+        winner = activePlayers[0];
+      }
+    }
+  
+    if (winner) {
+      winner.chips += pot; // Award the pot to the winner
+      setPot(0);
+      alert(`${winner.name} wins the pot of ${pot} chips!`);
+    } else {
+      alert("No winner could be determined!");
+    }
+  
     setGameOver(true);
     setCurrentPlayerIndex(-1); // Use -1 to indicate no active turn
   }
+  
   
 
   function fold() {
@@ -248,17 +268,7 @@ const PokerGame: React.FC = () => {
   
     // Add the player to the list of those who have acted
     setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
-  
-    checkWin();
-    
-  
-    // Find the next active player
-    let nextIndex = currentPlayerIndex;
-    do {
-      nextIndex = (nextIndex + 1) % players.length; // Move to the next player
-    } while (!players[nextIndex].active);
-  
-    setCurrentPlayerIndex(nextIndex);
+    nextTurn();
   }
   
   function endBettingRound() {
@@ -271,12 +281,28 @@ const PokerGame: React.FC = () => {
     } else if (bettingRound === 3) {
       revealCommunityCards(3); // River: Reveal 1 card
     } else {
-      checkWin(); // End the game after the final betting round
+      const activePlayers = players.filter((player) => player.active);
+      const winner = determineWinner(activePlayers);
+      endGame(winner); // Call endGame with the determined winner
     }
   
     setBettingRound((prev) => prev + 1);
+    setPlayersWhoActed([]); // Reset actions for the next round
   }
   
+  
+  function determineWinner(activePlayers: Player[]): Player | undefined {
+    const solvedHands = activePlayers.map((player) => ({
+      player,
+      hand: Hand.solve([...player.cards, ...communityCards]),
+    }));
+  
+    // Sort hands by rank (ascending, since lower rank is better in poker)
+    solvedHands.sort((a, b) => a.hand.rank - b.hand.rank);
+  
+    // Return the player with the best hand
+    return solvedHands[0]?.player;
+  }
   
   
 
@@ -295,17 +321,8 @@ const PokerGame: React.FC = () => {
       do {
         nextIndex = (nextIndex + 1) % players.length; // Increment index
       } while (!players[nextIndex].active); // Skip folded players
-  
-      setCurrentPlayerIndex(nextIndex);
-  
-      // Check if all active players have acted
-      const activePlayers = players.filter((player) => player.active);
-      if (playersWhoActed.length >= activePlayers.length - 1) {
-        if (areAllBetsEqual()) {
-          nextTurn(); // Advance to the next betting round
-          setPlayersWhoActed([]); // Reset for the next round
-        }
-      }
+
+      nextTurn();
     } else {
       alert("Cannot check, bets do not match!");
     }
@@ -324,13 +341,8 @@ const PokerGame: React.FC = () => {
       setLastValidBet(currentPlayer.totalBet); // Set the last valid bet
       // Add the player to the list of those who have acted
       setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
-      // Find the next active player
-      let nextIndex = currentPlayerIndex;
-      do {
-        nextIndex = (nextIndex + 1) % players.length;
-      } while (!players[nextIndex].active);
-  
-      setCurrentPlayerIndex(nextIndex);
+      nextTurn();
+      
     } else {
       alert("Not enough chips to call!");
     }
@@ -369,6 +381,7 @@ const PokerGame: React.FC = () => {
   
     setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
 
+    
     // Advance to the next turn
     nextTurn();
   }
@@ -385,36 +398,33 @@ const PokerGame: React.FC = () => {
   
   
   function checkWin() {
-    // Check if only one player is left active
     const activePlayers = players.filter((player) => player.active);
+  
+    // Check if only one player is left active
     if (activePlayers.length === 1) {
-      const winner = activePlayers[0];
-      winner.chips += pot; // Award the pot to the last active player
-      setPot(0);
-      alert(`${winner.name} wins the pot of ${pot} chips!`);
-      setGameOver(true);
+      endGame(activePlayers[0]);
       return;
     }
   
     // Check if the round should end
-    if (playersWhoActed.length >= activePlayers.length) {
-      if (areAllBetsEqual()) {
-        endBettingRound();
-        
-        return;
-      }
+    if (playersWhoActed.length >= activePlayers.length && areAllBetsEqual()) {
+      endBettingRound();
     }
   }
+  
   
   
   
   function getNextActivePlayer(startIndex: number) {
     let nextIndex = startIndex;
+  
     do {
-      nextIndex = (nextIndex + 1) % players.length;
-    } while (!players[nextIndex].active);
+      nextIndex = (nextIndex + 1) % players.length; // Increment and loop
+    } while (!players[nextIndex].active); // Skip inactive players
+  
     return nextIndex;
   }
+  
   
 
   function aiTakeTurn() {
@@ -438,14 +448,23 @@ const PokerGame: React.FC = () => {
   }
 
   function nextTurn() {
-    let nextIndex = currentPlayerIndex;
+    const activePlayers = players.filter((player) => player.active);
   
-    do {
-      nextIndex = (nextIndex + 1) % players.length;
-    } while (!players[nextIndex].active || players[nextIndex].lastAction === "Fold");
+    checkWin();
   
+    // Find the next active player
+    const nextIndex = getNextActivePlayer(currentPlayerIndex);
     setCurrentPlayerIndex(nextIndex);
+  
+    // Check if all active players have acted
+    if (playersWhoActed.length >= activePlayers.length) {
+      if (areAllBetsEqual()) {
+        endBettingRound();
+      }
+    }
   }
+  
+  
   
 
   
@@ -456,7 +475,7 @@ const PokerGame: React.FC = () => {
     <div style={{ margin: "2rem", position: "relative" }}>
   {/* Start New Game Button */}
   <button
-    onClick={startNewGame}
+    onClick={nextRound}
     className="start-button"
   >
     Start New Game

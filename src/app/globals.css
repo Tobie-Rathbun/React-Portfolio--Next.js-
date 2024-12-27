@@ -256,7 +256,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   cursor: pointer;
 }
 
-.button-container {
+.horiz-container {
   display: flex;
   gap: 10px;
 }
@@ -360,8 +360,16 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   text-align: left;
 }
 
+.horiz-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Align the buttons vertically */
+  gap: 1rem; /* Add spacing between buttons */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin: 1rem 0; /* Add some vertical spacing */
+}
+
 .btn {
-  margin: 1rem;
   padding: 0.5rem 1rem;
   background-color: var(--accent-color);
   color: var(--primary-text-color);
@@ -369,12 +377,15 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  min-width: 120px; /* Ensure consistent button size */
+  text-align: center;
 }
 
 .btn:disabled {
   background-color: var(--chord-element-background);
   cursor: not-allowed;
 }
+
 
 .choice-btn {
   margin: 0.5rem;
@@ -431,6 +442,191 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   background-color: var(--chord-player-background);
   color: var(--primary-text-color);
 }
+
+
+.results-container h3 {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space the label and value */
+  gap: 1rem; /* Add space between text and value */
+  margin: 0.5rem 0; /* Add some vertical spacing between rows */
+}
+
+
+#c1 { top: 60px; left: 10px; }
+#c2 { top: 60px; left: 475px; }
+#c3 { top: 60px; left: 825px; }
+#c4 { top: 425px; left: 475px; }
+#c5 { top: 425px; left: 750px; }
+#c6 { top: 425px; left: 1025px; }
+
+#c1:active, #c2:active, #c3:active, #c4:active, #c5:active, #c6:active {
+  cursor: grabbing;
+}
+
+#c1, #c2, #c3, #c4, #c5, #c6 {
+  position: absolute;
+  cursor: grab;
+  user-select: none; /* Prevent text selection during dragging */
+  touch-action: none; /* Disable touch scrolling for mobile dragging */
+  max-width: 30%; /* Prevent overly large containers */
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  #container1 { top: 10px; left: 10px; }
+  #container2 { top: 120px; left: 10px; }
+  #container3 { top: 230px; left: 10px; }
+  #container4 { top: 340px; left: 10px; }
+  #container5 { top: 450px; left: 10px; }
+  #container6 { top: 560px; left: 10px; }
+}
+
+
+
+
+/* Flex container for alignment */
+.flex-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically by default */
+  justify-content: center;
+  align-items: center; /* Align items horizontally at the center */
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1200px; /* Optional: limit container width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* For horizontal alignment on larger screens */
+@media (min-width: 768px) {
+  .flex-container {
+    flex-direction: row; /* Switch to horizontal layout on larger screens */
+    flex-wrap: wrap; /* Allow wrapping if there’s insufficient space */
+  }
+}
+
+/* Flex items with equal spacing and alignment */
+.flex-item {
+  flex: 1 1 300px; /* Flexible width with a minimum of 300px */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: space-between; /* Space out child items vertically */
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: var(--chord-player-background); /* Match theme */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center align text */
+}
+
+#c1, #c3 h2 {
+  color: var(--primary-text-color);
+}
+
+#c1, #c3 {
+  flex: 1 1 300px; /* Flexible width with a minimum of 300px */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: space-between; /* Space out child items vertically */
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: var(--chord-element-border); /* Match theme */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center align text */
+}
+#c1, #c3 h1, h2, label {
+  color: #000;
+}
+
+#c1, #c3 h2 {
+  color: var(--dark-background);
+  font-size: 27px;
+}
+
+#c1, #c3 h3 {
+  color: var(--chord-player-background);
+}
+
+#c1, #c3 h4 {
+  color: var(--chord-element-background);
+  text-align: center;
+}
+
+#behavior-select {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons container */
+.btn {
+  width: 100%; /* Buttons take full width */
+  max-width: 200px; /* Optional: limit button size */
+  margin: 0.5rem 0; /* Space between buttons */
+  text-align: center;
+}
+
+/* Stats and matrix container */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap stats on small screens */
+  justify-content: center; /* Center content horizontally */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Stats box for consistent height and alignment */
+.stats-box {
+  flex: 1 1 250px; /* Flexible layout with minimum width */
+  min-height: 200px; /* Consistent height for all boxes */
+  padding: 1rem;
+  background-color: var(--chord-element-background);
+  border: 1px solid var(--chord-element-border);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  justify-content: space-between; /* Space content evenly */
+}
+
+/* Transition matrix box with wider width */
+.matrix-box {
+  flex: 2 1 400px; /* Make matrix box wider */
+  overflow-x: auto; /* Add horizontal scroll if needed */
+  padding: 1rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .flex-container {
+    padding: 1rem;
+  }
+
+  .flex-item, .stats-box, .matrix-box {
+    width: 100%; /* Full width for small screens */
+  }
+
+  .stats-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

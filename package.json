@@ -11,13 +11,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babylonjs/core": "^7.42.0",
+    "@babylonjs/inspector": "^7.42.0",
+    "@babylonjs/loaders": "^7.42.0",
     "@netlify/plugin-nextjs": "^5.9.1",
+    "axios": "^1.7.9",
     "concurrently": "^9.1.0",
     "express": "^4.21.2",
     "next": "15.1.1",
     "pokersolver": "^2.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hotkeys": "^2.0.0",
     "serverless-http": "^3.2.0",
     "tone": "^15.0.4"
   },

@@ -286,7 +286,9 @@ const PokerGame: React.FC = () => {
       endGame(winner); // Call endGame with the determined winner
     }
   
+    console.log("Current betting round:", bettingRound);
     setBettingRound((prev) => prev + 1);
+    console.log("Betting round updated to:", bettingRound + 1);
     setPlayersWhoActed([]); // Reset actions for the next round
   }
   
@@ -455,13 +457,6 @@ const PokerGame: React.FC = () => {
     // Find the next active player
     const nextIndex = getNextActivePlayer(currentPlayerIndex);
     setCurrentPlayerIndex(nextIndex);
-  
-    // Check if all active players have acted
-    if (playersWhoActed.length >= activePlayers.length) {
-      if (areAllBetsEqual()) {
-        endBettingRound();
-      }
-    }
   }
   
   

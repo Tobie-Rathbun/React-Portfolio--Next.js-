@@ -26,6 +26,58 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--secondary-text-color);
 }
 
+span.emoji {
+  display: inline-block;
+  font-size: 2rem; 
+  transition: transform 0.6s ease; 
+}
+
+span.emoji:hover {
+  animation: spin 0.6s ease;
+}
+
+
+
+/* Define the spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* For links inside a span */
+span.link a {
+  display: inline-block;
+  transition: opacity 0.4s, transform 0.4s ease-in-out;
+  color: var(--highlight-color);
+  opacity: 0.85;
+}
+
+span.link a:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+a.link {
+  display: inline-block; /* Required for transform to work */
+  transition: opacity 0.4s, transform 0.4s ease-in-out;
+  color: var(--highlight-color);
+  opacity: 0.65;
+}
+
+a.link:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+
+
+
+
+
 /* SiteNavbar */
 .site-navbar {
   display: flex; /* Display items in a flex container */
@@ -42,19 +94,26 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: #FFFFFF; /* White text */
   text-decoration: none; /* Remove underline */
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
 }
 
 .site-navbar .nav-link {
   color: #FFFFFF; /* White text */
+  display: inline-block;
   font-size: 18px;
   margin-right: 20px;
   text-decoration: none; /* Remove underline */
-  opacity: 0.8; /* Initial opacity for non-active links */
-  transition: opacity 0.3s, transform 0.3s; /* Smooth transition for opacity and transform */
+  opacity: 0.65; /* Initial opacity for non-active links */
+  transition: opacity 0.4s, transform 0.4s; /* Smooth transition for opacity and transform */
 }
 
 .site-navbar .nav-link:hover {
   opacity: 1; /* Full opacity on hover */
+  transform: scale(1.15);
 }
 
 .site-navbar .nav-link:active {

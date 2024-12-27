@@ -4,7 +4,7 @@ export default function About() {
     return (
         <div className="-page">
           <div className="skills">
-            <h2>Skills</h2>
+            <h1>Skills</h1>
             <div className="skill-category">
               <h3>JavaScript:</h3>
               <ul className="skill-list">
@@ -97,20 +97,15 @@ export default function About() {
             </ul>
           </div>
         </div>
-        <div className="bio_text">
-          <h3>Letter,</h3>
-          <p>
-            Growing up I had computer access and mentorship through my SQL developer mom and my COBAL developer grandfather. <br />
-            Testing and performing well in high school secured my scholarships covering tuition and board at Arizona State University. <br />
-            To utilize previous experience in both art and programming I entered the Graphic Information Technology B.S. with a core focus in web development and graphic design. <br />
-            Dual enrollment credits from high school and enrolling in up to 19 credit hours per semester allowed me to complete 5 full semesters from 2016 to 2018, but no degree was obtained.  <br />
-            While managing to secure relevant work overall, my immediate goal is to learn more about React by working as part of an Agile team.  <br />
-            I am interested in projects where I can incorporate art or music, but I am also motivated by any task that is challenging <br />
-            I am most passionate to work with React and to learn from more experienced colleagues. <br />
-          </p>
-          <a href="/images/Tobie%20Rathbun%20Resume%20August%202024.pdf" download>
-            Download Resume (PDF)
-          </a>
+        <div className="resume">
+          <h1>Check Out my Actual Resume</h1>
+          <object
+            data="/Tobie Rathbun Resume August 2024.pdf"
+            type="application/pdf"
+            width="100%"
+            height="600px">
+            <p>Your browser does not support viewing PDFs. <a href="/Tobie Rathbun Resume August 2024.pdf">Download the resume</a>.</p>
+          </object>
         </div>
       </div>
     );

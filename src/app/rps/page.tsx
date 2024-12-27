@@ -25,6 +25,7 @@ const RockPaperScissors: React.FC = () => {
     Paper: { Rock: 0, Paper: 0, Scissors: 0 },
     Scissors: { Rock: 0, Paper: 0, Scissors: 0 },
   });
+  const zIndMod = 6;
   
 
   // Constants for AI behavior
@@ -306,34 +307,35 @@ const RockPaperScissors: React.FC = () => {
   const useDraggable = (id: string, initialX: number, initialY: number) => {
     const [position, setPosition] = useState({ x: initialX, y: initialY });
     const [isDragging, setIsDragging] = useState(false);
-    const [initialMousePosition, setInitialMousePosition] = useState({ x: 0, y: 0 });
-    const [initialElementPosition, setInitialElementPosition] = useState({ x: 0, y: 0 });
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+    const [zIndex, setZIndex] = useState(0); // Add z-index state
   
     const handleMouseDown = (event: React.MouseEvent) => {
       setIsDragging(true);
+      setZIndex(9999);
   
-      // Record initial mouse and element positions
-      setInitialMousePosition({ x: event.clientX, y: event.clientY });
+      // Record the offset between the mouse position and the element's position
       const element = document.getElementById(id);
       if (element) {
         const rect = element.getBoundingClientRect();
-        setInitialElementPosition({ x: rect.left, y: rect.top });
+        setOffset({
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top,
+        });
       }
     };
-  
+    
     const handleMouseUp = () => {
       setIsDragging(false);
+      setZIndex(zIndMod + 1);
     };
   
     const handleMouseMove = (event: MouseEvent) => {
       if (!isDragging) return;
   
-      const deltaX = event.clientX - initialMousePosition.x;
-      const deltaY = event.clientY - initialMousePosition.y;
-  
       setPosition({
-        x: Math.max(0, initialElementPosition.x + deltaX),
-        y: Math.max(0, initialElementPosition.y + deltaY),
+        x: event.clientX - offset.x, // Adjust position by the offset
+        y: event.clientY - offset.y,
       });
     };
   
@@ -347,10 +349,11 @@ const RockPaperScissors: React.FC = () => {
         window.removeEventListener('mousemove', handleMouseMove);
         window.removeEventListener('mouseup', handleMouseUp);
       };
-    }, [isDragging, initialMousePosition, initialElementPosition]);
+    }, [isDragging, offset]);
   
-    return { position, handleMouseDown };
+    return { position, zIndex, handleMouseDown };
   };
+  
   
   
   
@@ -373,7 +376,12 @@ const RockPaperScissors: React.FC = () => {
   }, [scores]); // Trigger whenever scores are updated
   
   
-  
+  const c1Draggable = useDraggable('c1', 10, 60);
+  const c2Draggable = useDraggable('c2', 475, 60);
+  const c3Draggable = useDraggable('c3', 825, 60);
+  const c4Draggable = useDraggable('c4', 475, 425);
+  const c5Draggable = useDraggable('c5', 740, 425);
+  const c6Draggable = useDraggable('c6', 1020, 435);
   
 
   const startSimulation = () => {
@@ -396,7 +404,17 @@ const RockPaperScissors: React.FC = () => {
 
   return (
     <div className="flex-container">
-      <div id="c1" className="flex-item">
+      <div
+        id="c1"
+        className="flex-item"
+        style={{
+          position: 'absolute',
+          left: c1Draggable.position.x,
+          top: c1Draggable.position.y,
+          zIndex: c1Draggable.zIndex, 
+        }}
+        onMouseDown={c1Draggable.handleMouseDown}
+      >
         <h1>Rock, Paper, Scissors AI</h1>
         <div>
           <div>
@@ -425,7 +443,17 @@ const RockPaperScissors: React.FC = () => {
           </button>
         </div>
       </div>
-      <div id="c2" className="flex-item">
+      <div
+        id="c2"
+        className="flex-item"
+        style={{
+          position: 'absolute',
+          left: c2Draggable.position.x,
+          top: c2Draggable.position.y,
+          zIndex: c2Draggable.zIndex, // Apply dynamic z-index
+        }}
+        onMouseDown={c2Draggable.handleMouseDown}
+      >
         <h1>Iterations: {iterations}</h1>
         <div className='horiz-container'>
           <p>User: {scores.user}</p>
@@ -436,7 +464,17 @@ const RockPaperScissors: React.FC = () => {
           <h3>Dynamic Exponent: {dynamicTransitionExp.toFixed(2)}</h3>
         </div>
       </div>
-      <div id="c3" className="flex-item">
+      <div
+        id="c3"
+        className="flex-item"
+        style={{
+          position: 'absolute',
+          left: c3Draggable.position.x,
+          top: c3Draggable.position.y,
+          zIndex: c3Draggable.zIndex, // Apply dynamic z-index
+        }}
+        onMouseDown={c3Draggable.handleMouseDown}
+      >
         <h2>Make your choice:</h2>
         <div className='horiz-container'>
         {choices.map((choice) => (
@@ -458,19 +496,49 @@ const RockPaperScissors: React.FC = () => {
         </div>
       </div>
       <div className='stats-container'>
-        <div id="c4" className="stats-box">
+      <div
+        id="c4"
+        className="stats-box"
+        style={{
+          position: 'absolute',
+          left: c4Draggable.position.x,
+          top: c4Draggable.position.y,
+          zIndex: c4Draggable.zIndex, // Apply dynamic z-index
+        }}
+        onMouseDown={c4Draggable.handleMouseDown}
+      >
           <h3>Rounds Won:</h3>
           <p>User: {scores.user}</p>
           <p>AI: {scores.computer}</p>
           <p>Ties: {scores.ties}</p>
         </div>
-        <div id="c5" className="stats-box">
+        <div
+        id="c5"
+        className="stats-box"
+        style={{
+          position: 'absolute',
+          left: c5Draggable.position.x,
+          top: c5Draggable.position.y,
+          zIndex: c5Draggable.zIndex, // Apply dynamic z-index
+        }}
+        onMouseDown={c5Draggable.handleMouseDown}
+      >
           <h3>Regret Tracking:</h3>
           <p>Rock: {regrets.Rock.toFixed(2)}</p>
           <p>Paper: {regrets.Paper.toFixed(2)}</p>
           <p>Scissors: {regrets.Scissors.toFixed(2)}</p>
         </div>
-        <div id="c6" className="stats-box matrix-box">
+        <div
+          id="c6"
+          className="matrix-box"
+          style={{
+            position: 'absolute',
+            left: c6Draggable.position.x,
+            top: c6Draggable.position.y,
+            zIndex: c6Draggable.zIndex, // Apply dynamic z-index
+          }}
+          onMouseDown={c6Draggable.handleMouseDown}
+        >
           <h3>(Markov Chain) Transition Matrix:</h3>
           {formatTransitionMatrix()}
         </div>

@@ -426,7 +426,7 @@ const RockPaperScissors: React.FC = () => {
         </div>
       </div>
       <div id="c2" className="flex-item">
-        <h2>Iterations: {iterations}</h2>
+        <h1>Iterations: {iterations}</h1>
         <div className='horiz-container'>
           <p>User: {scores.user}</p>
           <p>AI: {scores.computer}</p>

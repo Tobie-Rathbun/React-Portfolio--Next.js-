@@ -11,6 +11,9 @@ import PokerGUI from '@components/PokerGUI';
 import DebugPanel from '@components/DebugPanel';
 
 
+
+
+
 type Card = string;
 type Mesh = BABYLON.Mesh;
 type Scene = BABYLON.Scene;
@@ -66,41 +69,49 @@ const PokerFrogs: React.FC = () => {
         });
     };
 
+    
+
     const deck = [
         '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '0H', 'JH', 'QH', 'KH', 'AH',
         '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '0D', 'JD', 'QD', 'KD', 'AD',
         '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '0C', 'JC', 'QC', 'KC', 'AC',
-        '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '0S', 'JS', 'QS', 'KS', 'AS'
+        '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '0S', 'JS', 'QS', 'KS', 'AS',
     ];
-
+    
     const shuffle = (array: string[]): string[] => {
-      let currentIndex = array.length;
-      while (currentIndex !== 0) {
-          const randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-          [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-      }
-      return array;
-    };
-  
-
-    const draw = (cards: string[]): string | undefined => {
-        return cards.shift();
+        let currentIndex = array.length;
+        while (currentIndex !== 0) {
+            const randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
     };
     
-    const drawHand = (cards: string[]): string[] => {
-      return [draw(cards)!, draw(cards)!].filter((card): card is string => card !== undefined);
-    };
-  
+    const draw = (cards: string[]): string | undefined => cards.shift();
+    
+    const drawHand = (cards: string[]): string[] => [
+        draw(cards)!, 
+        draw(cards)!,
+    ].filter((card): card is string => card !== undefined);
+    
+
 
    
     const initializeGame = () => {
-      const shuffledDeck = shuffle([...deck]);
-      const hands = Array.from({ length: 5 }, () => drawHand(shuffledDeck).filter((card): card is string => card !== undefined));
-      setHands(hands); // Now it's guaranteed to be `string[][]
-      console.log("Hands initialized:", hands);
-      console.log("Community cards initialized:", community);
+      const communityCards = hardcodedSceneConfig.cards.slice(0, 5).map(card => card.name);
+      const dealtHands = Array.from({ length: 5 }, () => communityCards.slice(0, 2));
+  
+      setHands(dealtHands);
+      setCommunity(communityCards);
+  
+      console.log("Using hardcoded community cards:", communityCards);
+      console.log("Using hardcoded dealt hands:", dealtHands);
     };
+  
+  
+  
+  
     
 
     const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -116,93 +127,102 @@ const PokerFrogs: React.FC = () => {
         setSliderValue(prevValue => Math.max(prevValue - 100, blind));
     };
 
-    const getCurrentCardNames = () => {
-        console.log("Hands state before cloning:", hands);
-        console.log("Community state before cloning:", community);
-
-        let clonedHands = hands.slice();
-        let clonedCommunity = community.slice();
-        let cardNames = [];
-
-        for (let i = 0; i <= 4; i++) {
-            if (clonedHands[i]) {
-                cardNames.push(clonedHands[i][0], clonedHands[i][1]);
-            }
-        }
-        cardNames.push(...clonedCommunity);
-        console.log("Generated card names:", cardNames);
-        return cardNames;
+    const getCurrentCardNames = (): string[] => {
+      const cardNames: string[] = [];
+      hands.forEach((hand) => cardNames.push(...hand));
+      cardNames.push(...community);
+  
+      console.log("Combined card names for current hand:", cardNames);
+      return cardNames;
     };
+  
+  
+  
+  
+  
+  
     
 
-    const loadCardDataFromScene = (sceneConfig: SceneConfig, scene: BABYLON.Scene): void => {
-      const cards = sceneConfig.cards || [];
-      const clonedCardNames = getCurrentCardNames().slice();
-  
-      if (cards.length < 15) {
-          console.error("Loading cards in scene configuration");
+    const loadCardDataFromScene = (scene: BABYLON.Scene): void => {
+      const cardNames = getCurrentCardNames();
+      if (cardNames.length < 15) {
+          console.error("Not enough cards in the current deck to create card meshes.");
           return;
       }
   
-      cards.forEach((card, index) => {
-          if (index < clonedCardNames.length) {
-              const cardName = clonedCardNames[index];
-              console.log("Scene before creating card:", scene);
-              console.log("Is scene disposed:", scene.isDisposed);
-              createCard(cardName, scene, card.position, card.rotation, card.scale);
-          } else {
-              console.warn(`No name found for card at index ${index}`);
+      console.log("Card names from shuffled deck:", cardNames);
+  
+      // Clear old card meshes from the scene
+      scene.meshes.forEach((mesh) => {
+          if (mesh.name.startsWith("Card_")) {
+              mesh.dispose();
           }
       });
+  
+      // Dynamically generate card positions and rotations
+      const cardPositions = [
+          [-2, 0, 2], [-1, 0, 2], [0, 0, 2], [1, 0, 2], [2, 0, 2], // Row 1
+          [-2, 0, 0], [-1, 0, 0], [0, 0, 0], [1, 0, 0], [2, 0, 0], // Row 2
+          [-2, 0, -2], [-1, 0, -2], [0, 0, -2], [1, 0, -2], [2, 0, -2], // Row 3
+      ];
+  
+      // Create cards and add them to the scene
+      cardNames.forEach((card, index) => {
+          const position: [number, number, number] = cardPositions[index] as [number, number, number];
+          const rotation: [number, number, number] = [0, 0, 0];
+          const scale: [number, number, number] = [1, 1, 1];
+  
+          
+          console.log(`Creating card ${card} at position ${position}`);
+          createCard(card, scene, position, rotation, scale);
+      });
     };
+  
+  
+  
     
 
     const getCardImage = (card: string): string => {
-      console.log('card name to pass: ', card);
-      return `/images/${card}.png`;
+      const imagePath = `/images/${card}.png`;
+      console.log(`Card image path for ${card}:`, imagePath);
+      return imagePath;
     };
   
 
+  
+
     const createCard = (
-        card: string, 
-        scene: BABYLON.Scene, 
-        position: [number, number, number], 
-        rotation: [number, number, number], 
+        card: string,
+        scene: BABYLON.Scene,
+        position: [number, number, number],
+        rotation: [number, number, number],
         scale: [number, number, number]
-    ): BABYLON.Mesh | undefined => {
-        if (!scene || typeof scene.getUniqueId !== 'function') {
-            console.error("Invalid scene object passed to createCard.");
-            return;
+    ): BABYLON.Mesh | null => {
+        try {
+            const cardMaterial = new BABYLON.StandardMaterial(`material_${card}`, scene);
+            cardMaterial.diffuseTexture = new BABYLON.Texture(getCardImage(card), scene);
+    
+            const cardMesh = BABYLON.MeshBuilder.CreateBox(
+                `Card_${card}`,
+                { width: 0.35, height: 0.005, depth: 0.25 },
+                scene
+            );
+    
+            cardMesh.material = cardMaterial;
+            cardMesh.position = new BABYLON.Vector3(...position);
+            cardMesh.rotation = new BABYLON.Vector3(...rotation);
+            cardMesh.scaling = new BABYLON.Vector3(...scale);
+    
+            console.log(`Card ${card} created at position ${position}`);
+            return cardMesh;
+        } catch (error) {
+            console.error(`Error creating card ${card}:`, error);
+            return null;
         }
-    
-        console.log(`Creating card: ${card}`);
-    
-        const cardMaterial = new BABYLON.StandardMaterial("cardMaterial", scene);
-        cardMaterial.diffuseTexture = new BABYLON.Texture(getCardImage(card), scene);
-        cardMaterial.emissiveTexture = cardMaterial.diffuseTexture;
-        cardMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
-    
-        const faceUV = [
-            new BABYLON.Vector4(0, 0, 1 / 114, 1),
-            new BABYLON.Vector4(1 / 114, 0, 2 / 114, 1),
-            new BABYLON.Vector4(2 / 114, 0, 3 / 114, 1),
-            new BABYLON.Vector4(3 / 114, 0, 4 / 114, 1),
-            new BABYLON.Vector4(4 / 114, 0, 59 / 114, 1),
-            new BABYLON.Vector4(59 / 114, 0, 1, 1),
-        ];
-    
-        const cardMesh = BABYLON.MeshBuilder.CreateBox(
-            card, 
-            { width: 0.35, height: 0.005, depth: 0.25, faceUV: faceUV }, 
-            scene
-        );
-        cardMesh.material = cardMaterial;
-        cardMesh.position = new BABYLON.Vector3(...position);
-        cardMesh.rotation = new BABYLON.Vector3(...rotation);
-        cardMesh.scaling = new BABYLON.Vector3(...scale);
-    
-        return cardMesh;
     };
+  
+  
+  
   
     
 
@@ -345,34 +365,32 @@ const PokerFrogs: React.FC = () => {
           window.removeEventListener("resize", handleResize);
           engine.dispose();
       };
-  }, []);
+    }, []);
   
 
     useEffect(() => {
-        if (scene && sceneConfig) {
-            if (hands.length && community.length) {
-                loadCardDataFromScene(sceneConfig, scene);
-                logAllMeshes(scene);
-            } else {
-                console.warn("Hands or Community not ready. Skipping card data load.");
-            }
+        if (scene && hands.length > 0 && community.length > 0) {
+            loadCardDataFromScene(scene);
+            console.log("Card data loaded into the scene.");
+        } else {
+            console.warn("Hands or community not ready. Skipping card data load.");
         }
-    }, [scene, sceneConfig, hands, community]);
+    }, [scene, hands, community]);
+
     
 
     useEffect(() => {
-        if (hands.length > 0 && community.length > 0) {  // Ensure hands and community are ready
-            const loadedCardNames = getCurrentCardNames().slice();  // Shallow copy of the array
-            if (loadedCardNames.length === 15) {  // Ensure array has all 15 cards
-                setCardNames(loadedCardNames);  // Update state only if array has 15 cards
-                console.log("Set card names:", loadedCardNames);
-            } else {
-                console.warn("Loaded card names do not contain 15 cards, skipping setCardNames.");
-            }
-        } else {
-            console.log("Hands or Community not ready");
-        }
+      if (hands.length > 0 && community.length > 0) {
+          const loadedCardNames = getCurrentCardNames(); // Get card names
+          if (loadedCardNames.length === 15) {
+              setCardNames(loadedCardNames); // Update state if 15 cards are found
+              console.log("Set card names:", loadedCardNames);
+          } else {
+              console.warn("Card names do not contain 15 cards, skipping setCardNames.");
+          }
+      }
     }, [hands, community]);
+  
  
     
     
@@ -835,7 +853,7 @@ const PokerFrogs: React.FC = () => {
             }
     
             // Load cards from the scene configuration
-            loadCardDataFromScene(sceneConfig, scene);
+            loadCardDataFromScene(scene);
     
             // Set up lighting and ground
             const light = new BABYLON.DirectionalLight("directionalLight", new BABYLON.Vector3(-1, -1, -1), scene);
@@ -1014,64 +1032,125 @@ const PokerFrogs: React.FC = () => {
   
 
     const resetBabylonInstanceAndLoadScene = (sceneId: number): void => {
-      useEffect(() => {
+      if (typeof window === 'undefined') {
+          console.error("This function must run in the browser.");
+          return;
+      }
+  
+      const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement | null;
+      if (!canvas) {
+          console.error("Canvas element with id 'renderCanvas' not found.");
+          return;
+      }
+  
+      const engine = new BABYLON.Engine(canvas, true);
+      const newScene = new BABYLON.Scene(engine);
+      setScene(newScene);
+  
+      loadSceneStateAsync(newScene, sceneId).then(() => {
+          engine.runRenderLoop(() => {
+              if (newScene && newScene.activeCamera) {
+                  newScene.render();
+              }
+          });
+      });
+    };
+  
+  
+  
+
+
+
+    useEffect(() => {
+      console.log("Scene:", scene);
+      console.log("SceneConfig:", sceneConfig);
+      console.log("Card Names:", cardNames);
+    }, [scene, sceneConfig, cardNames]);
+  
+
+    useEffect(() => {
+      console.log("Hands state:", hands);
+      console.log("Community state:", community);
+    }, [hands, community]);
+  
+    useEffect(() => {
+      if (scene) {
+          logAllMeshes(scene);
+      }
+    }, [scene]);
+
+    useEffect(() => {
+      const shuffledDeck = shuffle([...deck]);
+      setHands(Array.from({ length: 5 }, () => drawHand(shuffledDeck))); // Deal 5 hands
+      setCommunity(shuffledDeck.slice(0, 5)); // Pick 5 community cards
+    }, []);
+  
+    useEffect(() => {
+      if (typeof document !== "undefined") {
+          console.log("Document is available.");
           const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement | null;
           if (!canvas) {
               console.error("Canvas element with id 'renderCanvas' not found.");
               return;
           }
+          console.log("Canvas element found:", canvas);
+          // Initialize Babylon engine and scene here
+      } else {
+          console.error("Document is not available. Ensure this code runs on the client.");
+      }
+    }, []);
   
-          const engine = new BABYLON.Engine(canvas, true);
-          const newScene = new BABYLON.Scene(engine);
-          setScene(newScene);
-  
-          loadSceneStateAsync(newScene, sceneId).then(() => {
-              engine.runRenderLoop(() => {
-                  if (newScene && newScene.activeCamera) {
-                      newScene.render();
-                  }
-              });
-          });
-  
-          return () => {
-              engine.dispose();
-          };
-      }, [sceneId]);
-    };
-  
-
     useEffect(() => {
-        console.log("Scene:", scene);
-        console.log("SceneConfig:", sceneConfig);
-    }, [scene, sceneConfig]);
-
+      const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement | null;
+      if (!canvas) {
+          console.error("Canvas element not found.");
+          return;
+      }
+      const engine = new BABYLON.Engine(canvas, true);
+      const newScene = new BABYLON.Scene(engine);
+  
+      console.log("Babylon.js Engine and Scene created:", engine, newScene);
+  
+      setScene(newScene);
+      setIsSceneReady(true);
+  
+      return () => engine.dispose();
+    }, []);
+  
+    useEffect(() => {
+      initializeGame(); // Shuffle and deal cards before loading the scene
+    }, []);
+    
+    useEffect(() => {
+        if (scene && isSceneReady) {
+            loadCardDataFromScene(scene);
+        }
+    }, [scene, isSceneReady]);
+    
   
 
     return (
-        <HotKeys keyMap={keyMap} handlers={handlers}>
-            <div>
-                <canvas id="renderCanvas" style={{ width: '100%', height: '100vh' }}></canvas>
-                {scene && sceneConfig ? (
-                    <>
-                        <PokerGUI
-                          sliderValue={sliderValue}
-                          handleSliderChange={handleSliderChange}
-                          increaseBet={increaseBet}
-                          decreaseBet={decreaseBet}
-                          setSliderValue={setSliderValue}
-                          blind={blind}              
-                        />
-
-                        <DebugPanel cardNames={cardNames} />
-                    </>
-                ) : (
-                    <p>Loading scene...</p>
-                )}
-            </div>
-        </HotKeys>
-    );
-    
-    
+    <HotKeys keyMap={keyMap} handlers={handlers}>
+        <div>
+            <canvas id="renderCanvas" style={{ width: '100%', height: '100vh' }}></canvas>
+            {isSceneReady ? (
+                <>
+                    <PokerGUI
+                        sliderValue={sliderValue}
+                        handleSliderChange={handleSliderChange}
+                        increaseBet={increaseBet}
+                        decreaseBet={decreaseBet}
+                        setSliderValue={setSliderValue}
+                        blind={blind}
+                    />
+                    <DebugPanel cardNames={cardNames} />
+                </>
+            ) : (
+                <p>Loading scene...</p>
+            )}
+        </div>
+    </HotKeys>
+  );
 };
 
 export default PokerFrogs;

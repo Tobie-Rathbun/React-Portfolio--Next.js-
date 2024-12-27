@@ -1,113 +1,12 @@
+GET
+http://localhost:8888/pokerfrogs
+[HTTP/1.1 500 Internal Server Error 5196ms]
+
 unreachable code after return statement node_modules_@babylonjs_core_Meshes_bdb67b._.js:16085:17
 unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:1962:5
 unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2120:5
 unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2160:5
 unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2176:5
-WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER. node_modules_@babylonjs_core_Engines_thinEngine_3fb669.js:371:39
-BJS - [12:17:05]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
-Initializing Babylon.js scene... src_923de1._.js:768:33
-Loading scene configuration: 
-Object { camera: {…}, cows: (4) […], cards: (15) […] }
-src_923de1._.js:1231:21
-Old meshes removed src_923de1._.js:1257:21
-Hands or Community not ready src_923de1._.js:817:25
-unreachable code after return statement node_modules_@babylonjs_core_Meshes_bdb67b._.js:16085:17
-unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:1962:5
-unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2120:5
-unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2160:5
-unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2176:5
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Hands state before cloning: 
-Array []
-src_923de1._.js:597:17
-Community state before cloning: 
-Array []
-src_923de1._.js:598:17
-Generated card names: 
-Array []
-src_923de1._.js:608:17
-No name found for card at index 0 src_923de1._.js:625:25
-No name found for card at index 1 src_923de1._.js:625:25
-No name found for card at index 2 src_923de1._.js:625:25
-No name found for card at index 3 src_923de1._.js:625:25
-No name found for card at index 4 src_923de1._.js:625:25
-No name found for card at index 5 src_923de1._.js:625:25
-No name found for card at index 6 src_923de1._.js:625:25
-No name found for card at index 7 src_923de1._.js:625:25
-No name found for card at index 8 src_923de1._.js:625:25
-No name found for card at index 9 src_923de1._.js:625:25
-No name found for card at index 10 src_923de1._.js:625:25
-No name found for card at index 11 src_923de1._.js:625:25
-No name found for card at index 12 src_923de1._.js:625:25
-No name found for card at index 13 src_923de1._.js:625:25
-No name found for card at index 14 src_923de1._.js:625:25
-Scene 1 loaded successfully. src_923de1._.js:1377:21
-Scene state loaded. src_923de1._.js:770:33
-Hands initialized: 
-Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
-src_923de1._.js:584:17
-Community cards initialized: 
-Array []
-src_923de1._.js:585:17
-Game initialized. src_923de1._.js:773:33
-Hands or Community not ready src_923de1._.js:817:25
-[Fast Refresh] rebuilding 3 node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/components/PokerGUI.tsx
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/src_923de1._.js
-Source Map URL: src_923de1._.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/thinEngine.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/client/app-bootstrap.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js
-Source Map URL: node_modules_next_dist_client_523921._.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Misc/observable.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Misc_d7332b._.js
-Source Map URL: node_modules_%40babylonjs_core_Misc_d7332b._.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_bdb67b._.js
-Source Map URL: node_modules_%40babylonjs_core_Meshes_bdb67b._.js.map
-[Fast Refresh] rebuilding 2 node_modules_next_dist_client_523921._.js:13662:25
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -119,260 +18,415 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_19ce35._.js
 Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
-[Fast Refresh] rebuilding 6 node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Misc/observable.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Misc_d7332b._.js
-Source Map URL: node_modules_%40babylonjs_core_Misc_d7332b._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Misc_d7332b._.js
-Source Map URL: node_modules_%40babylonjs_core_Misc_d7332b._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/components/PokerGUI.tsx
-Resource URL: http://localhost:8888/_next/static/chunks/src_923de1._.js
-Source Map URL: src_923de1._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/thinEngine.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/FlowGraph/flowGraphConnection.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_FlowGraph_23e11d._.js
-Source Map URL: node_modules_%40babylonjs_core_FlowGraph_23e11d._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/client/app-bootstrap.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js
-Source Map URL: node_modules_next_dist_client_523921._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Culling/boundingBox.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Culling_0ae82e._.js
-Source Map URL: node_modules_%40babylonjs_core_Culling_0ae82e._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_47456a._.js
-Source Map URL: node_modules_47456a._.js.map
-Source map error: Invalid URL: turbopack://[turbopack]/browser/dev/hmr-client/websocket.ts
-Resource URL: http://localhost:8888/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_d6d8d4._.js
-Source Map URL: %5Bturbopack%5D_browser_dev_hmr-client_d6d8d4._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc._.js
-Source Map URL: node_modules_next_dist_compiled_react-dom_1f56dc._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_bdb67b._.js
 Source Map URL: node_modules_%40babylonjs_core_Meshes_bdb67b._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/PBR/pbrBRDFConfiguration.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_PBR_81dd3e._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_PBR_81dd3e._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_PBR_81dd3e._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_PBR_81dd3e._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/materials/src/cell/cell.fragment.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_materials_7f3bff._.js
-Source Map URL: node_modules_%40babylonjs_materials_7f3bff._.js.map
-[Fast Refresh] rebuilding 2 node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Rendering/renderingGroup.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Rendering_48f6aa._.js
-Source Map URL: node_modules_%40babylonjs_core_Rendering_48f6aa._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Maths/math.constants.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Maths_2f5ba5._.js
-Source Map URL: node_modules_%40babylonjs_core_Maths_2f5ba5._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Maths_2f5ba5._.js
-Source Map URL: node_modules_%40babylonjs_core_Maths_2f5ba5._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Layers/effectLayer.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Layers_ccf41b._.js
-Source Map URL: node_modules_%40babylonjs_core_Layers_ccf41b._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Lights/lightConstants.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Lights_4f8773._.js
-Source Map URL: node_modules_%40babylonjs_core_Lights_4f8773._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/dist/compiled/process/browser.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_compiled_107ce8._.js
-Source Map URL: node_modules_next_dist_compiled_107ce8._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/gui/src/2D/valueAndUnit.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_gui_2D_7ace32._.js
-Source Map URL: node_modules_%40babylonjs_gui_2D_7ace32._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Gizmos/gizmo.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Gizmos_04081c._.js
-Source Map URL: node_modules_%40babylonjs_core_Gizmos_04081c._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/Node/Blocks/Fragment/fragmentOutputBlock.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_Fragment_229328._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_Fragment_229328._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_Fragment_229328._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_Fragment_229328._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/shared/lib/router/utils/querystring.ts
-Resource URL: http://localhost:8888/_next/static/chunks/_f6ead7._.js
-Source Map URL: _f6ead7._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/_f6ead7._.js
-Source Map URL: _f6ead7._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/mesh.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_mesh_0c7f1f.js
-Source Map URL: node_modules_%40babylonjs_core_Meshes_mesh_0c7f1f.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/Node/Blocks/PBR/sheenBlock.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_PBR_5eaa5f._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_PBR_5eaa5f._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_PBR_5eaa5f._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_PBR_5eaa5f._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Shaders/postprocess.vertex.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Shaders_585c14._.js
-Source Map URL: node_modules_%40babylonjs_core_Shaders_585c14._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/serializers/src/OBJ/objSerializer.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_serializers_e3a681._.js
-Source Map URL: node_modules_%40babylonjs_serializers_e3a681._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Audio/Interfaces/IAudioEngine.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Audio_f65e0b._.js
-Source Map URL: node_modules_%40babylonjs_core_Audio_f65e0b._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/WebGPU/webgpuPerfCounter.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_WebGPU_8e4ce2._.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_WebGPU_8e4ce2._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_WebGPU_8e4ce2._.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_WebGPU_8e4ce2._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/scene.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_scene_3453c9.js
-Source Map URL: node_modules_%40babylonjs_core_scene_3453c9.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Physics/v1/physicsJoint.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Physics_7edb3a._.js
-Source Map URL: node_modules_%40babylonjs_core_Physics_7edb3a._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/axios/lib/defaults/transitional.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_axios_lib_c4c49c._.js
-Source Map URL: node_modules_axios_lib_c4c49c._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/shared/lib/router/utils/handle-smooth-scroll.ts
-Resource URL: http://localhost:8888/_next/static/chunks/_a91c21._.js
-Source Map URL: _a91c21._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/XR/webXRFeaturesManager.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_XR_614d69._.js
-Source Map URL: node_modules_%40babylonjs_core_XR_614d69._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/%40swc/helpers/cjs/_interop_require_default.cjs
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40swc_helpers_cjs_00636a._.js
-Source Map URL: node_modules_%40swc_helpers_cjs_00636a._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/gui/src/index.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_gui_index_7a3114.js
-Source Map URL: node_modules_%40babylonjs_gui_index_7a3114.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Sprites/thinSprite.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Sprites_44464e._.js
-Source Map URL: node_modules_%40babylonjs_core_Sprites_44464e._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/performanceConfigurator.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_5d7504._.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_5d7504._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_5d7504._.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_5d7504._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/effect.functions.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_913fcb._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_913fcb._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/Node/Enums/nodeMaterialBlockConnectionPointTypes.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_9485c2._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_9485c2._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_9485c2._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_9485c2._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/build/polyfills/process.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_4bb10e._.js
-Source Map URL: node_modules_next_dist_4bb10e._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_19ce35._.js
-Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Behaviors/behavior.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Behaviors_690a16._.js
-Source Map URL: node_modules_%40babylonjs_core_Behaviors_690a16._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Animations/animationRange.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Animations_c849d1._.js
-Source Map URL: node_modules_%40babylonjs_core_Animations_c849d1._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Animations_c849d1._.js
-Source Map URL: node_modules_%40babylonjs_core_Animations_c849d1._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Particles/baseParticleSystem.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Particles_3a69de._.js
-Source Map URL: node_modules_%40babylonjs_core_Particles_3a69de._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Debug/axesViewer.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Debug_6f8398._.js
-Source Map URL: node_modules_%40babylonjs_core_Debug_6f8398._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/react-hotkeys/es/utils/object/dictionaryFrom.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_react-hotkeys_a667b2._.js
-Source Map URL: node_modules_react-hotkeys_a667b2._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/PostProcesses/postProcessManager.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_PostProcesses_e4ed90._.js
-Source Map URL: node_modules_%40babylonjs_core_PostProcesses_e4ed90._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/Textures/textureSampler.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Textures_8b8ce3._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Textures_8b8ce3._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/loaders/src/glTF/glTFValidation.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_loaders_d04736._.js
-Source Map URL: node_modules_%40babylonjs_loaders_d04736._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/Builders/planeBuilder.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_Builders_873aef._.js
-Source Map URL: node_modules_%40babylonjs_core_Meshes_Builders_873aef._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/webgpuEngine.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_webgpuEngine_8af33c.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_webgpuEngine_8af33c.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_webgpuEngine_8af33c.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_webgpuEngine_8af33c.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/%40babylonjs/inspector/dist/babylon.inspector.bundle.max.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_inspector_dist_babylon_inspector_bundle_max_9d903c.js
-Source Map URL: node_modules_%40babylonjs_inspector_dist_babylon_inspector_bundle_max_9d903c.js.map
-Source map error: Invalid URL: turbopack://[turbopack]/shared/runtime-utils.ts
-Resource URL: http://localhost:8888/_next/static/chunks/_d95469._.js
-Source Map URL: _d95469._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/FrameGraph/Node/Types/nodeRenderGraphTypes.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_FrameGraph_29a040._.js
-Source Map URL: node_modules_%40babylonjs_core_FrameGraph_29a040._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/Node/Blocks/transformBlock.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_e471ba._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_e471ba._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/Node/Enums/nodeGeometryConnectionPointTypes.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_Node_4a4a4b._.js
-Source Map URL: node_modules_%40babylonjs_core_Meshes_Node_4a4a4b._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Materials/Node/Blocks/Dual/currentScreenBlock.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_Dual_ace823._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_Dual_ace823._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Materials_Node_Blocks_Dual_ace823._.js
-Source Map URL: node_modules_%40babylonjs_core_Materials_Node_Blocks_Dual_ace823._.js.map
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/Extensions/engine.alpha.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_Extensions_8063af._.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_Extensions_8063af._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Engines_Extensions_8063af._.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_Extensions_8063af._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/ShadersWGSL/picking.fragment.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_ShadersWGSL_9b4dd7._.js
-Source Map URL: node_modules_%40babylonjs_core_ShadersWGSL_9b4dd7._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Cameras/camera.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Cameras_d1ed91._.js
-Source Map URL: node_modules_%40babylonjs_core_Cameras_d1ed91._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/%40babylonjs/gui-editor/dist/babylon.guiEditor.max.js
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_gui-editor_dist_babylon_guiEditor_max_bc477c.js
-Source Map URL: node_modules_%40babylonjs_gui-editor_dist_babylon_guiEditor_max_bc477c.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Bones/bone.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Bones_8fb6cc._.js
-Source Map URL: node_modules_%40babylonjs_core_Bones_8fb6cc._.js.map
-Source map error: map is undefined
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Bones_8fb6cc._.js
-Source Map URL: node_modules_%40babylonjs_core_Bones_8fb6cc._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Loading/sceneLoaderFlags.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Loading_dd0ada._.js
-Source Map URL: node_modules_%40babylonjs_core_Loading_dd0ada._.js.map
-Source map error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/gui/src/3D/vector3WithInfo.ts
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_gui_3D_a4cec1._.js
-Source Map URL: node_modules_%40babylonjs_gui_3D_a4cec1._.js.map
-Source map error: request failed with status 404
+WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER. node_modules_@babylonjs_core_Engines_thinEngine_3fb669.js:371:39
+BJS - [13:43:21]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
+Loading scene configuration: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1273:21
+Old meshes removed src_923de1._.js:1299:21
+Hands or community not ready. Skipping card data load. src_923de1._.js:842:25
+Scene: null src_923de1._.js:1504:21
+SceneConfig: null src_923de1._.js:1505:21
+Card Names: 
+Array []
+src_923de1._.js:1506:21
+Hands state: 
+Array []
+src_923de1._.js:1515:21
+Community state: 
+Array []
+src_923de1._.js:1516:21
+Document is available. src_923de1._.js:1547:25
+Canvas element found: 
+<canvas id="renderCanvas" style="width: 100%; height: 100vh; touch-action: none;" touch-action="none" width="1472" height="559" data-engine="Babylon.js v7.42.0" tabindex="1">
+src_923de1._.js:1553:25
+BJS - [13:43:21]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
+Babylon.js Engine and Scene created: 
+Object { _colorWrite: true, _colorWriteChanged: true, _depthCullingState: {…}, _stencilStateComposer: {…}, _stencilState: {…}, _alphaState: {…}, _alphaMode: 1, _alphaEquation: 0, _activeRequests: [], _badOS: false, … }
+ 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1569:21
+Using hardcoded community cards: 
+Array(5) [ "3C", "QD", "4C", "QH", "0H" ]
+src_923de1._.js:578:17
+Using hardcoded dealt hands: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:579:17
+DebugPanel Received cardNames: 
+Array []
+src_923de1._.js:307:21
+Combined card names for current hand: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:594:17
+Card names from shuffled deck: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:603:17
+Creating card 3C at position -2,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -2,0,2 src_923de1._.js:723:21
+Creating card QD at position -1,0,2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -1,0,2 src_923de1._.js:723:21
+Creating card 3C at position 0,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 0,0,2 src_923de1._.js:723:21
+Creating card QD at position 1,0,2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 1,0,2 src_923de1._.js:723:21
+Creating card 3C at position 2,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 2,0,2 src_923de1._.js:723:21
+Creating card QD at position -2,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -2,0,0 src_923de1._.js:723:21
+Creating card 3C at position -1,0,0 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -1,0,0 src_923de1._.js:723:21
+Creating card QD at position 0,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 0,0,0 src_923de1._.js:723:21
+Creating card 3C at position 1,0,0 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 1,0,0 src_923de1._.js:723:21
+Creating card QD at position 2,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 2,0,0 src_923de1._.js:723:21
+Creating card 3C at position -2,0,-2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -2,0,-2 src_923de1._.js:723:21
+Creating card QD at position -1,0,-2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -1,0,-2 src_923de1._.js:723:21
+Creating card 4C at position 0,0,-2 src_923de1._.js:701:21
+Card image path for 4C: /images/4C.png src_923de1._.js:707:17
+Card 4C created at position 0,0,-2 src_923de1._.js:723:21
+Creating card QH at position 1,0,-2 src_923de1._.js:701:21
+Card image path for QH: /images/QH.png src_923de1._.js:707:17
+Card QH created at position 1,0,-2 src_923de1._.js:723:21
+Creating card 0H at position 2,0,-2 src_923de1._.js:701:21
+Card image path for 0H: /images/0H.png src_923de1._.js:707:17
+Card 0H created at position 2,0,-2 src_923de1._.js:723:21
+Card data loaded into the scene. src_923de1._.js:840:25
+Combined card names for current hand: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:594:17
+Set card names: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:856:29
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1504:21
+SceneConfig: null src_923de1._.js:1505:21
+Card Names: 
+Array []
+src_923de1._.js:1506:21
+Hands state: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:1515:21
+Community state: 
+Array(5) [ "3C", "QD", "4C", "QH", "0H" ]
+src_923de1._.js:1516:21
+Mesh: Card_3C src_923de1._.js:487:17
+Position: {X: -2 Y: 0 Z: 2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_3C src_923de1._.js:491:17
+Mesh: Card_QD src_923de1._.js:487:17
+Position: {X: -1 Y: 0 Z: 2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QD src_923de1._.js:491:17
+Mesh: Card_3C src_923de1._.js:487:17
+Position: {X: 0 Y: 0 Z: 2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_3C src_923de1._.js:491:17
+Mesh: Card_QD src_923de1._.js:487:17
+Position: {X: 1 Y: 0 Z: 2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QD src_923de1._.js:491:17
+Mesh: Card_3C src_923de1._.js:487:17
+Position: {X: 2 Y: 0 Z: 2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_3C src_923de1._.js:491:17
+Mesh: Card_QD src_923de1._.js:487:17
+Position: {X: -2 Y: 0 Z: 0} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QD src_923de1._.js:491:17
+Mesh: Card_3C src_923de1._.js:487:17
+Position: {X: -1 Y: 0 Z: 0} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_3C src_923de1._.js:491:17
+Mesh: Card_QD src_923de1._.js:487:17
+Position: {X: 0 Y: 0 Z: 0} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QD src_923de1._.js:491:17
+Mesh: Card_3C src_923de1._.js:487:17
+Position: {X: 1 Y: 0 Z: 0} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_3C src_923de1._.js:491:17
+Mesh: Card_QD src_923de1._.js:487:17
+Position: {X: 2 Y: 0 Z: 0} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QD src_923de1._.js:491:17
+Mesh: Card_3C src_923de1._.js:487:17
+Position: {X: -2 Y: 0 Z: -2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_3C src_923de1._.js:491:17
+Mesh: Card_QD src_923de1._.js:487:17
+Position: {X: -1 Y: 0 Z: -2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QD src_923de1._.js:491:17
+Mesh: Card_4C src_923de1._.js:487:17
+Position: {X: 0 Y: 0 Z: -2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_4C src_923de1._.js:491:17
+Mesh: Card_QH src_923de1._.js:487:17
+Position: {X: 1 Y: 0 Z: -2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_QH src_923de1._.js:491:17
+Mesh: Card_0H src_923de1._.js:487:17
+Position: {X: 2 Y: 0 Z: -2} src_923de1._.js:488:17
+Rotation: {X: 0 Y: 0 Z: 0} src_923de1._.js:489:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:490:17
+Material: Name: material_0H src_923de1._.js:491:17
+Combined card names for current hand: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:594:17
+Card names from shuffled deck: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:603:17
+Creating card 3C at position -2,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -2,0,2 src_923de1._.js:723:21
+Creating card QD at position -1,0,2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -1,0,2 src_923de1._.js:723:21
+Creating card 3C at position 0,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 0,0,2 src_923de1._.js:723:21
+Creating card QD at position 1,0,2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 1,0,2 src_923de1._.js:723:21
+Creating card 3C at position 2,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 2,0,2 src_923de1._.js:723:21
+Creating card QD at position -2,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -2,0,0 src_923de1._.js:723:21
+Creating card 3C at position -1,0,0 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -1,0,0 src_923de1._.js:723:21
+Creating card QD at position 0,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 0,0,0 src_923de1._.js:723:21
+Creating card 3C at position 1,0,0 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 1,0,0 src_923de1._.js:723:21
+Creating card QD at position 2,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 2,0,0 src_923de1._.js:723:21
+Creating card 3C at position -2,0,-2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -2,0,-2 src_923de1._.js:723:21
+Creating card QD at position -1,0,-2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -1,0,-2 src_923de1._.js:723:21
+Creating card 4C at position 0,0,-2 src_923de1._.js:701:21
+Card image path for 4C: /images/4C.png src_923de1._.js:707:17
+Card 4C created at position 0,0,-2 src_923de1._.js:723:21
+Creating card QH at position 1,0,-2 src_923de1._.js:701:21
+Card image path for QH: /images/QH.png src_923de1._.js:707:17
+Card QH created at position 1,0,-2 src_923de1._.js:723:21
+Creating card 0H at position 2,0,-2 src_923de1._.js:701:21
+Card image path for 0H: /images/0H.png src_923de1._.js:707:17
+Card 0H created at position 2,0,-2 src_923de1._.js:723:21
+DebugPanel Received cardNames:  
+Array []
+pokerfrogs:1:596
+DebugPanel Received cardNames: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:307:21
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1504:21
+SceneConfig: null src_923de1._.js:1505:21
+Card Names: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:1506:21
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/components/PokerGUI.tsx
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/src_923de1._.js
+Source Map URL: src_923de1._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Misc/observable.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Misc_d7332b._.js
+Source Map URL: node_modules_%40babylonjs_core_Misc_d7332b._.js.map
+unreachable code after return statement node_modules_@babylonjs_core_Meshes_bdb67b._.js:16085:17
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:1962:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2120:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2160:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2176:5
+Source map error: Error: request failed with status 404
+Stack in the worker:networkRequest@resource://devtools/client/shared/source-map-loader/utils/network-request.js:43:9
+
 Resource URL: null
 Source Map URL: installHook.js.map
-[Fast Refresh] rebuilding 3 node_modules_next_dist_client_523921._.js:13662:25
-Source map error: request failed with status 404
-Resource URL: null
-Source Map URL: react_devtools_backend_compact.js.map
+[Fast Refresh] rebuilding 11 node_modules_next_dist_client_523921._.js:13662:25
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_19ce35._.js
+Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_bdb67b._.js
+Source Map URL: node_modules_%40babylonjs_core_Meshes_bdb67b._.js.map
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/client/app-bootstrap.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js
+Source Map URL: node_modules_next_dist_client_523921._.js.map
+Combined card names for current hand: 
+Array []
+src_923de1._.js:594:17
+Not enough cards in the current deck to create card meshes. node_modules_next_dist_client_523921._.js:990:32
+Scene [object Object] loaded successfully. src_923de1._.js:1419:21
+Using hardcoded community cards: 
+Array(5) [ "3C", "QD", "4C", "QH", "0H" ]
+src_923de1._.js:578:17
+Using hardcoded dealt hands: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:579:17
+Combined card names for current hand: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:594:17
+Card names from shuffled deck: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:603:17
+Creating card 3C at position -2,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -2,0,2 src_923de1._.js:723:21
+Creating card QD at position -1,0,2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -1,0,2 src_923de1._.js:723:21
+Creating card 3C at position 0,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 0,0,2 src_923de1._.js:723:21
+Creating card QD at position 1,0,2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 1,0,2 src_923de1._.js:723:21
+Creating card 3C at position 2,0,2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 2,0,2 src_923de1._.js:723:21
+Creating card QD at position -2,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -2,0,0 src_923de1._.js:723:21
+Creating card 3C at position -1,0,0 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -1,0,0 src_923de1._.js:723:21
+Creating card QD at position 0,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 0,0,0 src_923de1._.js:723:21
+Creating card 3C at position 1,0,0 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position 1,0,0 src_923de1._.js:723:21
+Creating card QD at position 2,0,0 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position 2,0,0 src_923de1._.js:723:21
+Creating card 3C at position -2,0,-2 src_923de1._.js:701:21
+Card image path for 3C: /images/3C.png src_923de1._.js:707:17
+Card 3C created at position -2,0,-2 src_923de1._.js:723:21
+Creating card QD at position -1,0,-2 src_923de1._.js:701:21
+Card image path for QD: /images/QD.png src_923de1._.js:707:17
+Card QD created at position -1,0,-2 src_923de1._.js:723:21
+Creating card 4C at position 0,0,-2 src_923de1._.js:701:21
+Card image path for 4C: /images/4C.png src_923de1._.js:707:17
+Card 4C created at position 0,0,-2 src_923de1._.js:723:21
+Creating card QH at position 1,0,-2 src_923de1._.js:701:21
+Card image path for QH: /images/QH.png src_923de1._.js:707:17
+Card QH created at position 1,0,-2 src_923de1._.js:723:21
+Creating card 0H at position 2,0,-2 src_923de1._.js:701:21
+Card image path for 0H: /images/0H.png src_923de1._.js:707:17
+Card 0H created at position 2,0,-2 src_923de1._.js:723:21
+Card data loaded into the scene. src_923de1._.js:840:25
+Combined card names for current hand: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:594:17
+Set card names: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:856:29
+Hands state: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:1515:21
+Community state: 
+Array(5) [ "3C", "QD", "4C", "QH", "0H" ]
+src_923de1._.js:1516:21
+DebugPanel Received cardNames: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:307:21
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1504:21
+SceneConfig: null src_923de1._.js:1505:21
+Card Names: 
+Array(15) [ "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", "3C", "QD", … ]
+src_923de1._.js:1506:21
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25

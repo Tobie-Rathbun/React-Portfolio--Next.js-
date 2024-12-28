@@ -1,4 +1,373 @@
-[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+unreachable code after return statement node_modules_@babylonjs_core_Meshes_bdb67b._.js:16085:17
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:1962:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2120:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2160:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2176:5
+unreachable code after return statement node_modules_@babylonjs_core_Meshes_bdb67b._.js:16085:17
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:1962:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2120:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2160:5
+unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2176:5
+WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER. node_modules_@babylonjs_core_Engines_thinEngine_3fb669.js:371:39
+BJS - [10:46:12]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
+Initializing Babylon.js scene... src_923de1._.js:1401:37
+Loading scene configuration: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1122:21
+Old meshes removed src_923de1._.js:1148:21
+Scene: null src_923de1._.js:1457:21
+SceneConfig: null src_923de1._.js:1458:21
+Card Names: 
+Array []
+src_923de1._.js:1459:21
+Hands state: 
+Array []
+src_923de1._.js:1468:21
+Community state: 
+Array []
+src_923de1._.js:1469:21
+Document is available. src_923de1._.js:1500:25
+Canvas element found: 
+<canvas id="renderCanvas" style="width: 100%; height: 100vh; touch-action: none;" touch-action="none" width="1472" height="621" data-engine="Babylon.js v7.42.0" tabindex="1">
+src_923de1._.js:1506:25
+BJS - [10:46:12]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
+Babylon.js Engine and Scene created: 
+Object { _colorWrite: true, _colorWriteChanged: true, _depthCullingState: {…}, _stencilStateComposer: {…}, _stencilState: {…}, _alphaState: {…}, _alphaMode: 1, _alphaEquation: 0, _activeRequests: [], _badOS: false, … }
+ 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1523:25
+DebugPanel Received cardNames: 
+Array []
+src_923de1._.js:307:21
+Combined card names for current hand: 
+Array(15) [ "JH", "8D", "2D", "6H", "7H", "7C", "6C", "KS", "5C", "QS", … ]
+src_923de1._.js:600:17
+Loading card data... src_923de1._.js:609:17
+Creating card at index 0 with position: -0.189,0,-0.034, rotation: 0.04,-1.5201,3.1416, scale: 1.0000001854183471,0.999999782712439,1.0000001183916423 src_923de1._.js:619:21
+Card image path for Card_1: /images/Card_1.png src_923de1._.js:629:17
+Card Card_1 created at position -0.189,0,-0.034 src_923de1._.js:645:21
+Creating card at index 1 with position: 0.106,0,-0.05, rotation: 0.0236,-1.3562,3.1416, scale: 1.000000173071773,1.000000134919915,1.0000003204145689 src_923de1._.js:619:21
+Card image path for Card_2: /images/Card_2.png src_923de1._.js:629:17
+Card Card_2 created at position 0.106,0,-0.05 src_923de1._.js:645:21
+Creating card at index 2 with position: -1.618,0,1.156, rotation: 0,-2.7738,0, scale: 0.9999999595323771,1,0.9999999595323771 src_923de1._.js:619:21
+Card image path for Card_3: /images/Card_3.png src_923de1._.js:629:17
+Card Card_3 created at position -1.618,0,1.156 src_923de1._.js:645:21
+Creating card at index 3 with position: -1.55,0,1.549, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_4: /images/Card_4.png src_923de1._.js:629:17
+Card Card_4 created at position -1.55,0,1.549 src_923de1._.js:645:21
+Creating card at index 4 with position: -0.187,0,2.091, rotation: 0,-1.3146,0, scale: 1.000000012665419,1,1.000000012665419 src_923de1._.js:619:21
+Card image path for Card_5: /images/Card_5.png src_923de1._.js:629:17
+Card Card_5 created at position -0.187,0,2.091 src_923de1._.js:645:21
+Creating card at index 5 with position: 0.142,0,2.104, rotation: 0,-1.9379,0, scale: 1.000000150683327,1,1.000000150683327 src_923de1._.js:619:21
+Card image path for Card_6: /images/Card_6.png src_923de1._.js:629:17
+Card Card_6 created at position 0.142,0,2.104 src_923de1._.js:645:21
+Creating card at index 6 with position: 1.424,0,2.151, rotation: 0,1.553,0, scale: 1.0000001742299018,1,1.0000001742299018 src_923de1._.js:619:21
+Card image path for Card_7: /images/Card_7.png src_923de1._.js:629:17
+Card Card_7 created at position 1.424,0,2.151 src_923de1._.js:645:21
+Creating card at index 7 with position: 1.723,0,2.085, rotation: 0,-1.807,0, scale: 0.9999998488164599,1,0.9999998488164599 src_923de1._.js:619:21
+Card image path for Card_8: /images/Card_8.png src_923de1._.js:629:17
+Card Card_8 created at position 1.723,0,2.085 src_923de1._.js:645:21
+Creating card at index 8 with position: 2.372,0,1.496, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_9: /images/Card_9.png src_923de1._.js:629:17
+Card Card_9 created at position 2.372,0,1.496 src_923de1._.js:645:21
+Creating card at index 9 with position: 2.35,0,1.161, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_10: /images/Card_10.png src_923de1._.js:629:17
+Card Card_10 created at position 2.35,0,1.161 src_923de1._.js:645:21
+Creating card at index 10 with position: -0.583,0.046,0.939, rotation: 0,1.5887,0, scale: 1.000000268770012,1,1.000000268770012 src_923de1._.js:619:21
+Card image path for Card_11: /images/Card_11.png src_923de1._.js:629:17
+Card Card_11 created at position -0.583,0.046,0.939 src_923de1._.js:645:21
+Creating card at index 11 with position: -0.222,0,1.009, rotation: 0,-1.5758,0, scale: 0.9999999701966147,1,0.9999999701966147 src_923de1._.js:619:21
+Card image path for Card_12: /images/Card_12.png src_923de1._.js:629:17
+Card Card_12 created at position -0.222,0,1.009 src_923de1._.js:645:21
+Creating card at index 12 with position: 0.106,0,1.003, rotation: 0,-1.596,0, scale: 1.0000000298343323,1,1.0000000298343323 src_923de1._.js:619:21
+Card image path for Card_13: /images/Card_13.png src_923de1._.js:629:17
+Card Card_13 created at position 0.106,0,1.003 src_923de1._.js:645:21
+Creating card at index 13 with position: 0.477,0,1, rotation: 0,-1.5841,0, scale: 1.0000000347703584,1,1.0000000347703584 src_923de1._.js:619:21
+Card image path for Card_14: /images/Card_14.png src_923de1._.js:629:17
+Card Card_14 created at position 0.477,0,1 src_923de1._.js:645:21
+Creating card at index 14 with position: 0.837,0,1, rotation: 0,-1.5705,0, scale: 1.0000001706241837,1,1.0000001706241837 src_923de1._.js:619:21
+Card image path for Card_15: /images/Card_15.png src_923de1._.js:629:17
+Card Card_15 created at position 0.837,0,1 src_923de1._.js:645:21
+All cards loaded into the scene. src_923de1._.js:625:17
+Card data loaded into the scene. src_923de1._.js:1428:29
+Combined card names for current hand: 
+Array(15) [ "JH", "8D", "2D", "6H", "7H", "7C", "6C", "KS", "5C", "QS", … ]
+src_923de1._.js:600:17
+Set card names: 
+Array(15) [ "JH", "8D", "2D", "6H", "7H", "7C", "6C", "KS", "5C", "QS", … ]
+src_923de1._.js:1445:29
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1457:21
+SceneConfig: null src_923de1._.js:1458:21
+Card Names: 
+Array []
+src_923de1._.js:1459:21
+Hands state: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:1468:21
+Community state: 
+Array(5) [ "QC", "4C", "4D", "8C", "2C" ]
+src_923de1._.js:1469:21
+Mesh: Card_Card_1 src_923de1._.js:475:17
+Position: {X: -0.189 Y: 0 Z: -0.034} src_923de1._.js:476:17
+Rotation: {X: 0.04 Y: -1.5201 Z: 3.1416} src_923de1._.js:477:17
+Scale: {X: 1.0000001854183471 Y: 0.999999782712439 Z: 1.0000001183916423} src_923de1._.js:478:17
+Material: Name: material_Card_1 src_923de1._.js:479:17
+Mesh: Card_Card_2 src_923de1._.js:475:17
+Position: {X: 0.106 Y: 0 Z: -0.05} src_923de1._.js:476:17
+Rotation: {X: 0.0236 Y: -1.3562 Z: 3.1416} src_923de1._.js:477:17
+Scale: {X: 1.000000173071773 Y: 1.000000134919915 Z: 1.0000003204145689} src_923de1._.js:478:17
+Material: Name: material_Card_2 src_923de1._.js:479:17
+Mesh: Card_Card_3 src_923de1._.js:475:17
+Position: {X: -1.618 Y: 0 Z: 1.156} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -2.7738 Z: 0} src_923de1._.js:477:17
+Scale: {X: 0.9999999595323771 Y: 1 Z: 0.9999999595323771} src_923de1._.js:478:17
+Material: Name: material_Card_3 src_923de1._.js:479:17
+Mesh: Card_Card_4 src_923de1._.js:475:17
+Position: {X: -1.55 Y: 0 Z: 1.549} src_923de1._.js:476:17
+Rotation: {X: 0 Y: 3.1416 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:478:17
+Material: Name: material_Card_4 src_923de1._.js:479:17
+Mesh: Card_Card_5 src_923de1._.js:475:17
+Position: {X: -0.187 Y: 0 Z: 2.091} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.3146 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.000000012665419 Y: 1 Z: 1.000000012665419} src_923de1._.js:478:17
+Material: Name: material_Card_5 src_923de1._.js:479:17
+Mesh: Card_Card_6 src_923de1._.js:475:17
+Position: {X: 0.142 Y: 0 Z: 2.104} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.9379 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.000000150683327 Y: 1 Z: 1.000000150683327} src_923de1._.js:478:17
+Material: Name: material_Card_6 src_923de1._.js:479:17
+Mesh: Card_Card_7 src_923de1._.js:475:17
+Position: {X: 1.424 Y: 0 Z: 2.151} src_923de1._.js:476:17
+Rotation: {X: 0 Y: 1.553 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.0000001742299018 Y: 1 Z: 1.0000001742299018} src_923de1._.js:478:17
+Material: Name: material_Card_7 src_923de1._.js:479:17
+Mesh: Card_Card_8 src_923de1._.js:475:17
+Position: {X: 1.723 Y: 0 Z: 2.085} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.807 Z: 0} src_923de1._.js:477:17
+Scale: {X: 0.9999998488164599 Y: 1 Z: 0.9999998488164599} src_923de1._.js:478:17
+Material: Name: material_Card_8 src_923de1._.js:479:17
+Mesh: Card_Card_9 src_923de1._.js:475:17
+Position: {X: 2.372 Y: 0 Z: 1.496} src_923de1._.js:476:17
+Rotation: {X: 0 Y: 3.1416 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:478:17
+Material: Name: material_Card_9 src_923de1._.js:479:17
+Mesh: Card_Card_10 src_923de1._.js:475:17
+Position: {X: 2.35 Y: 0 Z: 1.161} src_923de1._.js:476:17
+Rotation: {X: 0 Y: 3.1416 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:478:17
+Material: Name: material_Card_10 src_923de1._.js:479:17
+Mesh: Card_Card_11 src_923de1._.js:475:17
+Position: {X: -0.583 Y: 0.046 Z: 0.939} src_923de1._.js:476:17
+Rotation: {X: 0 Y: 1.5887 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.000000268770012 Y: 1 Z: 1.000000268770012} src_923de1._.js:478:17
+Material: Name: material_Card_11 src_923de1._.js:479:17
+Mesh: Card_Card_12 src_923de1._.js:475:17
+Position: {X: -0.222 Y: 0 Z: 1.009} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.5758 Z: 0} src_923de1._.js:477:17
+Scale: {X: 0.9999999701966147 Y: 1 Z: 0.9999999701966147} src_923de1._.js:478:17
+Material: Name: material_Card_12 src_923de1._.js:479:17
+Mesh: Card_Card_13 src_923de1._.js:475:17
+Position: {X: 0.106 Y: 0 Z: 1.003} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.596 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.0000000298343323 Y: 1 Z: 1.0000000298343323} src_923de1._.js:478:17
+Material: Name: material_Card_13 src_923de1._.js:479:17
+Mesh: Card_Card_14 src_923de1._.js:475:17
+Position: {X: 0.477 Y: 0 Z: 1} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.5841 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.0000000347703584 Y: 1 Z: 1.0000000347703584} src_923de1._.js:478:17
+Material: Name: material_Card_14 src_923de1._.js:479:17
+Mesh: Card_Card_15 src_923de1._.js:475:17
+Position: {X: 0.837 Y: 0 Z: 1} src_923de1._.js:476:17
+Rotation: {X: 0 Y: -1.5705 Z: 0} src_923de1._.js:477:17
+Scale: {X: 1.0000001706241837 Y: 1 Z: 1.0000001706241837} src_923de1._.js:478:17
+Material: Name: material_Card_15 src_923de1._.js:479:17
+Loading card data... src_923de1._.js:609:17
+Creating card at index 0 with position: -0.189,0,-0.034, rotation: 0.04,-1.5201,3.1416, scale: 1.0000001854183471,0.999999782712439,1.0000001183916423 src_923de1._.js:619:21
+Card image path for Card_1: /images/Card_1.png src_923de1._.js:629:17
+Card Card_1 created at position -0.189,0,-0.034 src_923de1._.js:645:21
+Creating card at index 1 with position: 0.106,0,-0.05, rotation: 0.0236,-1.3562,3.1416, scale: 1.000000173071773,1.000000134919915,1.0000003204145689 src_923de1._.js:619:21
+Card image path for Card_2: /images/Card_2.png src_923de1._.js:629:17
+Card Card_2 created at position 0.106,0,-0.05 src_923de1._.js:645:21
+Creating card at index 2 with position: -1.618,0,1.156, rotation: 0,-2.7738,0, scale: 0.9999999595323771,1,0.9999999595323771 src_923de1._.js:619:21
+Card image path for Card_3: /images/Card_3.png src_923de1._.js:629:17
+Card Card_3 created at position -1.618,0,1.156 src_923de1._.js:645:21
+Creating card at index 3 with position: -1.55,0,1.549, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_4: /images/Card_4.png src_923de1._.js:629:17
+Card Card_4 created at position -1.55,0,1.549 src_923de1._.js:645:21
+Creating card at index 4 with position: -0.187,0,2.091, rotation: 0,-1.3146,0, scale: 1.000000012665419,1,1.000000012665419 src_923de1._.js:619:21
+Card image path for Card_5: /images/Card_5.png src_923de1._.js:629:17
+Card Card_5 created at position -0.187,0,2.091 src_923de1._.js:645:21
+Creating card at index 5 with position: 0.142,0,2.104, rotation: 0,-1.9379,0, scale: 1.000000150683327,1,1.000000150683327 src_923de1._.js:619:21
+Card image path for Card_6: /images/Card_6.png src_923de1._.js:629:17
+Card Card_6 created at position 0.142,0,2.104 src_923de1._.js:645:21
+Creating card at index 6 with position: 1.424,0,2.151, rotation: 0,1.553,0, scale: 1.0000001742299018,1,1.0000001742299018 src_923de1._.js:619:21
+Card image path for Card_7: /images/Card_7.png src_923de1._.js:629:17
+Card Card_7 created at position 1.424,0,2.151 src_923de1._.js:645:21
+Creating card at index 7 with position: 1.723,0,2.085, rotation: 0,-1.807,0, scale: 0.9999998488164599,1,0.9999998488164599 src_923de1._.js:619:21
+Card image path for Card_8: /images/Card_8.png src_923de1._.js:629:17
+Card Card_8 created at position 1.723,0,2.085 src_923de1._.js:645:21
+Creating card at index 8 with position: 2.372,0,1.496, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_9: /images/Card_9.png src_923de1._.js:629:17
+Card Card_9 created at position 2.372,0,1.496 src_923de1._.js:645:21
+Creating card at index 9 with position: 2.35,0,1.161, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_10: /images/Card_10.png src_923de1._.js:629:17
+Card Card_10 created at position 2.35,0,1.161 src_923de1._.js:645:21
+Creating card at index 10 with position: -0.583,0.046,0.939, rotation: 0,1.5887,0, scale: 1.000000268770012,1,1.000000268770012 src_923de1._.js:619:21
+Card image path for Card_11: /images/Card_11.png src_923de1._.js:629:17
+Card Card_11 created at position -0.583,0.046,0.939 src_923de1._.js:645:21
+Creating card at index 11 with position: -0.222,0,1.009, rotation: 0,-1.5758,0, scale: 0.9999999701966147,1,0.9999999701966147 src_923de1._.js:619:21
+Card image path for Card_12: /images/Card_12.png src_923de1._.js:629:17
+Card Card_12 created at position -0.222,0,1.009 src_923de1._.js:645:21
+Creating card at index 12 with position: 0.106,0,1.003, rotation: 0,-1.596,0, scale: 1.0000000298343323,1,1.0000000298343323 src_923de1._.js:619:21
+Card image path for Card_13: /images/Card_13.png src_923de1._.js:629:17
+Card Card_13 created at position 0.106,0,1.003 src_923de1._.js:645:21
+Creating card at index 13 with position: 0.477,0,1, rotation: 0,-1.5841,0, scale: 1.0000000347703584,1,1.0000000347703584 src_923de1._.js:619:21
+Card image path for Card_14: /images/Card_14.png src_923de1._.js:629:17
+Card Card_14 created at position 0.477,0,1 src_923de1._.js:645:21
+Creating card at index 14 with position: 0.837,0,1, rotation: 0,-1.5705,0, scale: 1.0000001706241837,1,1.0000001706241837 src_923de1._.js:619:21
+Card image path for Card_15: /images/Card_15.png src_923de1._.js:629:17
+Card Card_15 created at position 0.837,0,1 src_923de1._.js:645:21
+All cards loaded into the scene. src_923de1._.js:625:17
+DebugPanel Received cardNames:  
+Array []
+pokerfrogs:1:596
+DebugPanel Received cardNames: 
+Array(15) [ "JH", "8D", "2D", "6H", "7H", "7C", "6C", "KS", "5C", "QS", … ]
+src_923de1._.js:307:21
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1457:21
+SceneConfig: null src_923de1._.js:1458:21
+Card Names: 
+Array(15) [ "JH", "8D", "2D", "6H", "7H", "7C", "6C", "KS", "5C", "QS", … ]
+src_923de1._.js:1459:21
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_19ce35._.js
+Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_Meshes_bdb67b._.js
+Source Map URL: node_modules_%40babylonjs_core_Meshes_bdb67b._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_bdb67b._.js
+Source Map URL: node_modules_%40babylonjs_core_Meshes_bdb67b._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_19ce35._.js
+Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
+GET
+http://localhost:8888/images/Card_1.png
+[HTTP/1.1 404 Not Found 811ms]
+
+GET
+http://localhost:8888/images/Card_2.png
+[HTTP/1.1 404 Not Found 1131ms]
+
+GET
+http://localhost:8888/images/Card_3.png
+[HTTP/1.1 404 Not Found 759ms]
+
+GET
+http://localhost:8888/images/Card_4.png
+[HTTP/1.1 404 Not Found 1128ms]
+
+GET
+http://localhost:8888/images/Card_5.png
+[HTTP/1.1 404 Not Found 1500ms]
+
+GET
+http://localhost:8888/images/Card_6.png
+[HTTP/1.1 404 Not Found 1578ms]
+
+GET
+http://localhost:8888/images/Card_7.png
+[HTTP/1.1 404 Not Found 1569ms]
+
+GET
+http://localhost:8888/images/Card_8.png
+[HTTP/1.1 404 Not Found 1598ms]
+
+GET
+http://localhost:8888/images/Card_9.png
+[HTTP/1.1 404 Not Found 1609ms]
+
+GET
+http://localhost:8888/images/Card_10.png
+[HTTP/1.1 404 Not Found 1605ms]
+
+GET
+http://localhost:8888/images/Card_11.png
+[HTTP/1.1 404 Not Found 2078ms]
+
+GET
+http://localhost:8888/images/Card_12.png
+[HTTP/1.1 404 Not Found 2115ms]
+
+GET
+http://localhost:8888/images/Card_13.png
+[HTTP/1.1 404 Not Found 2354ms]
+
+GET
+http://localhost:8888/images/Card_14.png
+[HTTP/1.1 404 Not Found 2050ms]
+
+GET
+http://localhost:8888/images/Card_15.png
+[HTTP/1.1 404 Not Found 2117ms]
+
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/components/PokerGUI.tsx
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/src_923de1._.js
+Source Map URL: src_923de1._.js.map
+Source map error: Error: request failed with status 404
+Stack in the worker:networkRequest@resource://devtools/client/shared/source-map-loader/utils/network-request.js:43:9
+
+Resource URL: null
+Source Map URL: installHook.js.map
+[Fast Refresh] rebuilding 7 node_modules_next_dist_client_523921._.js:13662:25
+Inspector loaded src_923de1._.js:1559:57
+[Fast Refresh] rebuilding 2 node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding 3 node_modules_next_dist_client_523921._.js:13662:25
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/client/app-bootstrap.ts
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -10,24 +379,203 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js
 Source Map URL: node_modules_next_dist_client_523921._.js.map
-You: Simulated likelihood 0.559 _8a3409._.js:269:25
-Opponent 1: Simulated likelihood 0.372 _8a3409._.js:269:25
-Opponent 4: Simulated likelihood 0.656 _8a3409._.js:269:25
-Current betting round: 1 _8a3409._.js:348:17
-Betting round updated to: 2 _8a3409._.js:350:17
-You: Simulated likelihood 0.667 _8a3409._.js:269:25
-Opponent 1: Simulated likelihood 0.555 _8a3409._.js:269:25
-Opponent 4: Simulated likelihood 0.425 _8a3409._.js:269:25
-Current betting round: 1 _8a3409._.js:348:17
-Betting round updated to: 2 _8a3409._.js:350:17
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/app/poker2d/page.tsx
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+[Fast Refresh] rebuilding 3 node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads. 2
+WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads.
+Loading card data... src_923de1._.js:609:17
+Creating card at index 0 with position: -0.189,0,-0.034, rotation: 0.04,-1.5201,3.1416, scale: 1.0000001854183471,0.999999782712439,1.0000001183916423 src_923de1._.js:619:21
+Card image path for Card_1: /images/Card_1.png src_923de1._.js:629:17
+Card Card_1 created at position -0.189,0,-0.034 src_923de1._.js:645:21
+Creating card at index 1 with position: 0.106,0,-0.05, rotation: 0.0236,-1.3562,3.1416, scale: 1.000000173071773,1.000000134919915,1.0000003204145689 src_923de1._.js:619:21
+Card image path for Card_2: /images/Card_2.png src_923de1._.js:629:17
+Card Card_2 created at position 0.106,0,-0.05 src_923de1._.js:645:21
+Creating card at index 2 with position: -1.618,0,1.156, rotation: 0,-2.7738,0, scale: 0.9999999595323771,1,0.9999999595323771 src_923de1._.js:619:21
+Card image path for Card_3: /images/Card_3.png src_923de1._.js:629:17
+Card Card_3 created at position -1.618,0,1.156 src_923de1._.js:645:21
+Creating card at index 3 with position: -1.55,0,1.549, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_4: /images/Card_4.png src_923de1._.js:629:17
+Card Card_4 created at position -1.55,0,1.549 src_923de1._.js:645:21
+Creating card at index 4 with position: -0.187,0,2.091, rotation: 0,-1.3146,0, scale: 1.000000012665419,1,1.000000012665419 src_923de1._.js:619:21
+Card image path for Card_5: /images/Card_5.png src_923de1._.js:629:17
+Card Card_5 created at position -0.187,0,2.091 src_923de1._.js:645:21
+Creating card at index 5 with position: 0.142,0,2.104, rotation: 0,-1.9379,0, scale: 1.000000150683327,1,1.000000150683327 src_923de1._.js:619:21
+Card image path for Card_6: /images/Card_6.png src_923de1._.js:629:17
+Card Card_6 created at position 0.142,0,2.104 src_923de1._.js:645:21
+Creating card at index 6 with position: 1.424,0,2.151, rotation: 0,1.553,0, scale: 1.0000001742299018,1,1.0000001742299018 src_923de1._.js:619:21
+Card image path for Card_7: /images/Card_7.png src_923de1._.js:629:17
+Card Card_7 created at position 1.424,0,2.151 src_923de1._.js:645:21
+Creating card at index 7 with position: 1.723,0,2.085, rotation: 0,-1.807,0, scale: 0.9999998488164599,1,0.9999998488164599 src_923de1._.js:619:21
+Card image path for Card_8: /images/Card_8.png src_923de1._.js:629:17
+Card Card_8 created at position 1.723,0,2.085 src_923de1._.js:645:21
+Creating card at index 8 with position: 2.372,0,1.496, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_9: /images/Card_9.png src_923de1._.js:629:17
+Card Card_9 created at position 2.372,0,1.496 src_923de1._.js:645:21
+Creating card at index 9 with position: 2.35,0,1.161, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_10: /images/Card_10.png src_923de1._.js:629:17
+Card Card_10 created at position 2.35,0,1.161 src_923de1._.js:645:21
+Creating card at index 10 with position: -0.583,0.046,0.939, rotation: 0,1.5887,0, scale: 1.000000268770012,1,1.000000268770012 src_923de1._.js:619:21
+Card image path for Card_11: /images/Card_11.png src_923de1._.js:629:17
+Card Card_11 created at position -0.583,0.046,0.939 src_923de1._.js:645:21
+Creating card at index 11 with position: -0.222,0,1.009, rotation: 0,-1.5758,0, scale: 0.9999999701966147,1,0.9999999701966147 src_923de1._.js:619:21
+Card image path for Card_12: /images/Card_12.png src_923de1._.js:629:17
+Card Card_12 created at position -0.222,0,1.009 src_923de1._.js:645:21
+Creating card at index 12 with position: 0.106,0,1.003, rotation: 0,-1.596,0, scale: 1.0000000298343323,1,1.0000000298343323 src_923de1._.js:619:21
+Card image path for Card_13: /images/Card_13.png src_923de1._.js:629:17
+Card Card_13 created at position 0.106,0,1.003 src_923de1._.js:645:21
+Creating card at index 13 with position: 0.477,0,1, rotation: 0,-1.5841,0, scale: 1.0000000347703584,1,1.0000000347703584 src_923de1._.js:619:21
+Card image path for Card_14: /images/Card_14.png src_923de1._.js:629:17
+Card Card_14 created at position 0.477,0,1 src_923de1._.js:645:21
+Creating card at index 14 with position: 0.837,0,1, rotation: 0,-1.5705,0, scale: 1.0000001706241837,1,1.0000001706241837 src_923de1._.js:619:21
+Card image path for Card_15: /images/Card_15.png src_923de1._.js:629:17
+Card Card_15 created at position 0.837,0,1 src_923de1._.js:645:21
+All cards loaded into the scene. src_923de1._.js:625:17
+Scene 1 loaded successfully. src_923de1._.js:1268:21
+Scene state loaded. src_923de1._.js:1403:37
+Dealt hands: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:576:17
+Community cards: 
+Array(5) [ "8D", "QD", "3H", "JH", "KD" ]
+src_923de1._.js:577:17
+Game initialized. src_923de1._.js:1406:37
+GET
+http://localhost:8888/images/Card_1.png
+[HTTP/1.1 404 Not Found 744ms]
 
-Resource URL: http://localhost:8888/_next/static/chunks/_8a3409._.js
-Source Map URL: _8a3409._.js.map
+GET
+http://localhost:8888/images/Card_3.png
+[HTTP/1.1 404 Not Found 741ms]
+
+GET
+http://localhost:8888/images/Card_2.png
+[HTTP/1.1 404 Not Found 786ms]
+
+GET
+http://localhost:8888/images/Card_4.png
+[HTTP/1.1 404 Not Found 782ms]
+
+GET
+http://localhost:8888/images/Card_5.png
+[HTTP/1.1 404 Not Found 739ms]
+
+GET
+http://localhost:8888/images/Card_6.png
+[HTTP/1.1 404 Not Found 653ms]
+
+GET
+http://localhost:8888/images/Card_7.png
+[HTTP/1.1 404 Not Found 1354ms]
+
+GET
+http://localhost:8888/images/Card_8.png
+[HTTP/1.1 404 Not Found 1403ms]
+
+GET
+http://localhost:8888/images/Card_9.png
+[HTTP/1.1 404 Not Found 1402ms]
+
+GET
+http://localhost:8888/images/Card_10.png
+[HTTP/1.1 404 Not Found 1419ms]
+
+GET
+http://localhost:8888/images/Card_11.png
+[HTTP/1.1 404 Not Found 1457ms]
+
+GET
+http://localhost:8888/images/Card_12.png
+[HTTP/1.1 404 Not Found 1430ms]
+
+GET
+http://localhost:8888/images/Card_13.png
+[HTTP/1.1 404 Not Found 1800ms]
+
+GET
+http://localhost:8888/images/Card_15.png
+[HTTP/1.1 404 Not Found 1804ms]
+
+GET
+http://localhost:8888/images/Card_14.png
+[HTTP/1.1 404 Not Found 1819ms]
+
+WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads. 2
+Combined card names for current hand: 
+Array(15) [ "0D", "9H", "7S", "QS", "KS", "8S", "KH", "6H", "2C", "AD", … ]
+src_923de1._.js:600:17
+Loading card data... src_923de1._.js:609:17
+Creating card at index 0 with position: -0.189,0,-0.034, rotation: 0.04,-1.5201,3.1416, scale: 1.0000001854183471,0.999999782712439,1.0000001183916423 src_923de1._.js:619:21
+Card image path for Card_1: /images/Card_1.png src_923de1._.js:629:17
+Card Card_1 created at position -0.189,0,-0.034 src_923de1._.js:645:21
+Creating card at index 1 with position: 0.106,0,-0.05, rotation: 0.0236,-1.3562,3.1416, scale: 1.000000173071773,1.000000134919915,1.0000003204145689 src_923de1._.js:619:21
+Card image path for Card_2: /images/Card_2.png src_923de1._.js:629:17
+Card Card_2 created at position 0.106,0,-0.05 src_923de1._.js:645:21
+Creating card at index 2 with position: -1.618,0,1.156, rotation: 0,-2.7738,0, scale: 0.9999999595323771,1,0.9999999595323771 src_923de1._.js:619:21
+Card image path for Card_3: /images/Card_3.png src_923de1._.js:629:17
+Card Card_3 created at position -1.618,0,1.156 src_923de1._.js:645:21
+Creating card at index 3 with position: -1.55,0,1.549, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_4: /images/Card_4.png src_923de1._.js:629:17
+Card Card_4 created at position -1.55,0,1.549 src_923de1._.js:645:21
+Creating card at index 4 with position: -0.187,0,2.091, rotation: 0,-1.3146,0, scale: 1.000000012665419,1,1.000000012665419 src_923de1._.js:619:21
+Card image path for Card_5: /images/Card_5.png src_923de1._.js:629:17
+Card Card_5 created at position -0.187,0,2.091 src_923de1._.js:645:21
+Creating card at index 5 with position: 0.142,0,2.104, rotation: 0,-1.9379,0, scale: 1.000000150683327,1,1.000000150683327 src_923de1._.js:619:21
+Card image path for Card_6: /images/Card_6.png src_923de1._.js:629:17
+Card Card_6 created at position 0.142,0,2.104 src_923de1._.js:645:21
+Creating card at index 6 with position: 1.424,0,2.151, rotation: 0,1.553,0, scale: 1.0000001742299018,1,1.0000001742299018 src_923de1._.js:619:21
+Card image path for Card_7: /images/Card_7.png src_923de1._.js:629:17
+Card Card_7 created at position 1.424,0,2.151 src_923de1._.js:645:21
+Creating card at index 7 with position: 1.723,0,2.085, rotation: 0,-1.807,0, scale: 0.9999998488164599,1,0.9999998488164599 src_923de1._.js:619:21
+Card image path for Card_8: /images/Card_8.png src_923de1._.js:629:17
+Card Card_8 created at position 1.723,0,2.085 src_923de1._.js:645:21
+Creating card at index 8 with position: 2.372,0,1.496, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_9: /images/Card_9.png src_923de1._.js:629:17
+Card Card_9 created at position 2.372,0,1.496 src_923de1._.js:645:21
+Creating card at index 9 with position: 2.35,0,1.161, rotation: 0,3.1416,0, scale: 1,1,1 src_923de1._.js:619:21
+Card image path for Card_10: /images/Card_10.png src_923de1._.js:629:17
+Card Card_10 created at position 2.35,0,1.161 src_923de1._.js:645:21
+Creating card at index 10 with position: -0.583,0.046,0.939, rotation: 0,1.5887,0, scale: 1.000000268770012,1,1.000000268770012 src_923de1._.js:619:21
+Card image path for Card_11: /images/Card_11.png src_923de1._.js:629:17
+Card Card_11 created at position -0.583,0.046,0.939 src_923de1._.js:645:21
+Creating card at index 11 with position: -0.222,0,1.009, rotation: 0,-1.5758,0, scale: 0.9999999701966147,1,0.9999999701966147 src_923de1._.js:619:21
+Card image path for Card_12: /images/Card_12.png src_923de1._.js:629:17
+Card Card_12 created at position -0.222,0,1.009 src_923de1._.js:645:21
+Creating card at index 12 with position: 0.106,0,1.003, rotation: 0,-1.596,0, scale: 1.0000000298343323,1,1.0000000298343323 src_923de1._.js:619:21
+Card image path for Card_13: /images/Card_13.png src_923de1._.js:629:17
+Card Card_13 created at position 0.106,0,1.003 src_923de1._.js:645:21
+Creating card at index 13 with position: 0.477,0,1, rotation: 0,-1.5841,0, scale: 1.0000000347703584,1,1.0000000347703584 src_923de1._.js:619:21
+Card image path for Card_14: /images/Card_14.png src_923de1._.js:629:17
+Card Card_14 created at position 0.477,0,1 src_923de1._.js:645:21
+Creating card at index 14 with position: 0.837,0,1, rotation: 0,-1.5705,0, scale: 1.0000001706241837,1,1.0000001706241837 src_923de1._.js:619:21
+Card image path for Card_15: /images/Card_15.png src_923de1._.js:629:17
+Card Card_15 created at position 0.837,0,1 src_923de1._.js:645:21
+All cards loaded into the scene. src_923de1._.js:625:17
+Card data loaded into the scene. src_923de1._.js:1428:29
+Combined card names for current hand: 
+Array(15) [ "0D", "9H", "7S", "QS", "KS", "8S", "KH", "6H", "2C", "AD", … ]
+src_923de1._.js:600:17
+Set card names: 
+Array(15) [ "0D", "9H", "7S", "QS", "KS", "8S", "KH", "6H", "2C", "AD", … ]
+src_923de1._.js:1445:29
+Hands state: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:1468:21
+Community state: 
+Array(5) [ "8D", "QD", "3H", "JH", "KD" ]
+src_923de1._.js:1469:21
+DebugPanel Received cardNames: 
+Array(15) [ "0D", "9H", "7S", "QS", "KS", "8S", "KH", "6H", "2C", "AD", … ]
+src_923de1._.js:307:21
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1457:21
+SceneConfig: null src_923de1._.js:1458:21
+Card Names: 
+Array(15) [ "0D", "9H", "7S", "QS", "KS", "8S", "KH", "6H", "2C", "AD", … ]
+src_923de1._.js:1459:21
+WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads. 4
+[Fast Refresh] rebuilding 2 node_modules_next_dist_client_523921._.js:13662:25
+WebGL warning: texImage: Alpha-premult and y-flip are deprecated for non-DOM-Element uploads. 22
+After reporting 32, no further warnings will be reported for this WebGL context.
+[Fast Refresh] rebuilding 10 node_modules_next_dist_client_523921._.js:13662:25

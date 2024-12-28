@@ -490,7 +490,7 @@ const RockPaperScissors: React.FC = () => {
         {userChoice && computerChoice && (
           <div className="results-container">
             <h3><span>Your choice: </span><span>{userChoice}</span></h3>
-            <h3><span>AI&quot;s choice: </span><span>{computerChoice}</span></h3>
+            <h3><span>AI&#39;s choice: </span><span>{computerChoice}</span></h3>
             <h4>{result}</h4>
           </div>
         )}

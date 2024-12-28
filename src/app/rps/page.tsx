@@ -26,10 +26,6 @@ const RockPaperScissors: React.FC = () => {
     Scissors: { Rock: 0, Paper: 0, Scissors: 0 },
   });
   const zIndMod = 6;
-  
-
-  // Constants for AI behavior
-  const transitionExp = 3.5; // Exponent for transition matrix weighting
 
   // Constants for AI behavior
   
@@ -96,58 +92,63 @@ const RockPaperScissors: React.FC = () => {
 
   const selectComputerMove = (): keyof RegretRecord => {
     const lastMove = lastSimulatedUserMoveRef.current || lastUserMove;
-  
+
     if (lastMove) {
-      const userProbabilities = transitionMatrix[lastMove];
-      const aiProbabilities = aiResponseMatrix[lastMove];
-  
-      const totalUserTransitions = Object.values(userProbabilities).reduce((a, b) => a + b, 0);
-      const totalAiResponses = Object.values(aiProbabilities).reduce((a, b) => a + b, 0);
-  
-      if (totalUserTransitions > 0) {
-        const combinedProbabilities = { Rock: 0, Paper: 0, Scissors: 0 };
-  
-        choices.forEach((choice) => {
-          const userWeighting = (userProbabilities[choice] / totalUserTransitions) ** dynamicTransitionExp;
-          const aiWeighting = totalAiResponses > 0
-            ? (aiProbabilities[choice] / totalAiResponses) ** 1.5 // Keep smaller exponent for reactive behavior
-            : 0;
-  
-          combinedProbabilities[choice] =
-            baseUserWeight * userWeighting +
-            baseAiWeight * aiWeighting;
-        });
-  
-        const total = Object.values(combinedProbabilities).reduce((a, b) => a + b, 0);
-        const normalized = choices.map((choice) => combinedProbabilities[choice] / total);
-  
-        let random = Math.random();
-        for (let i = 0; i < choices.length; i++) {
-          if (random < normalized[i]) {
-            return choices[i];
-          }
-          random -= normalized[i];
+        const userProbabilities = transitionMatrix[lastMove];
+        const aiProbabilities = aiResponseMatrix[lastMove];
+
+        const totalUserTransitions = Object.values(userProbabilities).reduce((a, b) => a + b, 0);
+        const totalAiResponses = Object.values(aiProbabilities).reduce((a, b) => a + b, 0);
+
+        if (totalUserTransitions > 0) {
+            // Calculate combined probabilities
+            const combinedProbabilities: Record<keyof RegretRecord, number> = { Rock: 0, Paper: 0, Scissors: 0 };
+
+            choices.forEach((choice) => {
+                const userWeighting = (userProbabilities[choice] / totalUserTransitions) ** dynamicTransitionExp;
+                const aiWeighting = totalAiResponses > 0
+                    ? (aiProbabilities[choice] / totalAiResponses) ** 1.5 // Reactive behavior
+                    : 0;
+
+                combinedProbabilities[choice] =
+                    baseUserWeight * userWeighting +
+                    baseAiWeight * aiWeighting;
+            });
+
+            const total = Object.values(combinedProbabilities).reduce((a, b) => a + b, 0);
+            const normalized = choices.map((choice) => combinedProbabilities[choice] / total);
+
+            // Predict the most probable user move
+            let random = Math.random();
+            for (let i = 0; i < choices.length; i++) {
+                if (random < normalized[i]) {
+                    const predictedMove = choices[i];
+                    // Use `selectCounterMove` to counter the predicted move
+                    return selectCounterMove(predictedMove);
+                }
+                random -= normalized[i];
+            }
         }
-      }
     }
-  
+
     // Fallback to regret minimization
     const totalPositiveRegret = Object.values(regrets).filter((r) => r > 0).reduce((a, b) => a + b, 0);
-  
+
     if (totalPositiveRegret > 0) {
-      const probabilities = choices.map((choice) => Math.max(0, regrets[choice]) / totalPositiveRegret);
-      let random = Math.random();
-      for (let i = 0; i < choices.length; i++) {
-        if (random < probabilities[i]) {
-          return choices[i];
+        const probabilities = choices.map((choice) => Math.max(0, regrets[choice]) / totalPositiveRegret);
+        let random = Math.random();
+        for (let i = 0; i < choices.length; i++) {
+            if (random < probabilities[i]) {
+                return choices[i];
+            }
+            random -= probabilities[i];
         }
-        random -= probabilities[i];
-      }
     }
-  
+
     // Random fallback
     return choices[Math.floor(Math.random() * choices.length)];
-  };
+};
+
   
   
   
@@ -489,7 +490,7 @@ const RockPaperScissors: React.FC = () => {
         {userChoice && computerChoice && (
           <div className="results-container">
             <h3><span>Your choice: </span><span>{userChoice}</span></h3>
-            <h3><span>AI's choice: </span><span>{computerChoice}</span></h3>
+            <h3><span>AI&quot;s choice: </span><span>{computerChoice}</span></h3>
             <h4>{result}</h4>
           </div>
         )}

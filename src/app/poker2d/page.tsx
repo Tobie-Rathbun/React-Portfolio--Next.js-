@@ -239,6 +239,9 @@ const PokerGame: React.FC = () => {
     // If no winner is provided, determine the winner
     if (!winner) {
       const activePlayers = players.filter((player) => player.active);
+      activePlayers.forEach((player) => {
+          console.log(`${player.name} is still in the game.`);
+      });
       if (activePlayers.length === 1) {
         winner = activePlayers[0];
       }
@@ -282,10 +285,14 @@ const PokerGame: React.FC = () => {
       revealCommunityCards(3); // River: Reveal 1 card
     } else {
       const activePlayers = players.filter((player) => player.active);
+      activePlayers.forEach((player) => {
+          console.log(`${player.name} is still in the game.`);
+      });
       const winner = determineWinner(activePlayers);
       endGame(winner); // Call endGame with the determined winner
     }
   
+    
     console.log("Current betting round:", bettingRound);
     setBettingRound((prev) => prev + 1);
     console.log("Betting round updated to:", bettingRound + 1);
@@ -393,6 +400,9 @@ const PokerGame: React.FC = () => {
 
   function areAllBetsEqual() {
     const activePlayers = players.filter((player) => player.active);
+    activePlayers.forEach((player) => {
+        console.log(`${player.name} is still in the game.`);
+    });
     const maxBet = Math.max(...activePlayers.map((player) => player.totalBet));
   
     return activePlayers.every((player) => player.totalBet === maxBet);
@@ -401,7 +411,10 @@ const PokerGame: React.FC = () => {
   
   function checkWin() {
     const activePlayers = players.filter((player) => player.active);
-  
+    activePlayers.forEach((player) => {
+        console.log(`${player.name} is still in the game.`);
+    });
+
     // Check if only one player is left active
     if (activePlayers.length === 1) {
       endGame(activePlayers[0]);
@@ -451,6 +464,9 @@ const PokerGame: React.FC = () => {
 
   function nextTurn() {
     const activePlayers = players.filter((player) => player.active);
+    activePlayers.forEach((player) => {
+        console.log(`${player.name} is still in the game.`);
+    });
   
     checkWin();
   

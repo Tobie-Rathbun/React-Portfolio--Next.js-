@@ -41,11 +41,7 @@ interface SceneConfig {
 
 const PokerFrogs: React.FC = () => {
     const [sliderValue, setSliderValue] = useState<number>(50);
-    const [potSize, setPotSize] = useState<number>(0);
-    const [wallet, setWallet] = useState<number>(20000);
     const [blind, setBlind] = useState<number>(200);
-    const [betCurrent, setBetCurrent] = useState<number>(blind);
-    const [bets, setBets] = useState<{ [key: string]: number }>({ p0: 0, p1: 0, p2: 0, p3: 0, p4: 0 });
     const [hands, setHands] = useState<Card[][]>([]);
     const [community, setCommunity] = useState<Card[]>([]);
     const [cardNames, setCardNames] = useState<string[]>([]);

@@ -1,8 +1,8 @@
 
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Hand } from "pokersolver";
+import React, { useState, useEffect, useRef } from 'react';
+
 
 export const dynamic = 'force-dynamic';
 
@@ -45,6 +45,7 @@ const PokerGame: React.FC = () => {
   const [playersWhoActed, setPlayersWhoActed] = useState<number[]>([]);
   const [lastValidBet, setLastValidBet] = useState<number>(0);
   const aiTurnTimer = 1000;
+  const Hand = useRef<{ solve: Function } | null>(null);
 
 
 
@@ -164,25 +165,33 @@ const PokerGame: React.FC = () => {
     const totalSimulations = 1000;
   
     for (let i = 0; i < totalSimulations; i++) {
+      if (!Hand.current) {
+        console.error("Hand is not loaded yet.");
+        break; // Exit the loop if Hand is not available
+      }
+    
+      const { solve } = Hand.current; // Access the solve method
+    
       const shuffledDeck = [...remainingDeck].sort(() => Math.random() - 0.5);
       const simulatedCommunity = [
         ...filteredCommunityCards,
         ...shuffledDeck.slice(0, 5 - filteredCommunityCards.length),
       ];
-  
+    
       const opponentHands = activePlayers.map((player) =>
-        Hand.solve([...player.cards, ...simulatedCommunity])
+        solve([...player.cards, ...simulatedCommunity])
       );
-  
-      const playerHand = Hand.solve([...playerCards, ...simulatedCommunity]);
+    
+      const playerHand = solve([...playerCards, ...simulatedCommunity]);
       const bestHand = [...opponentHands, playerHand].reduce((best, hand) =>
         hand.rank < best.rank ? hand : best
       );
-  
+    
       if (playerHand.rank === bestHand.rank) {
         wins++;
       }
     }
+    
   
     return wins / totalSimulations;
   }
@@ -304,9 +313,16 @@ const PokerGame: React.FC = () => {
   
   
   function determineWinner(activePlayers: Player[]): Player | undefined {
+    if (!Hand.current) {
+      console.error("Hand is not loaded yet.");
+      return undefined; // Return early if Hand is not loaded
+    }
+  
+    const { solve } = Hand.current; // Access the solve method from Hand.current
+  
     const solvedHands = activePlayers.map((player) => ({
       player,
-      hand: Hand.solve([...player.cards, ...communityCards]),
+      hand: solve([...player.cards, ...communityCards]),
     }));
   
     // Sort hands by rank (ascending, since lower rank is better in poker)
@@ -315,6 +331,7 @@ const PokerGame: React.FC = () => {
     // Return the player with the best hand
     return solvedHands[0]?.player;
   }
+  
   
   
 
@@ -478,6 +495,16 @@ const PokerGame: React.FC = () => {
     setCurrentPlayerIndex(nextIndex);
   }
   
+
+
+
+
+  useEffect(() => {
+    import("pokersolver").then((module) => {
+      Hand.current = module.Hand;
+      console.log("Hand loaded:", Hand.current);
+    });
+  }, []);
   
   
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+export const dynamic = 'force-dynamic';
 
 interface RegretRecord {
   Rock: number;

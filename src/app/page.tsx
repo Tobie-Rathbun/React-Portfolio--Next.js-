@@ -1,6 +1,8 @@
 import Link from 'next/link'; // Use Next.js Link
 import './globals.css'; // Adjust the path if needed
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <div className="-page">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import './globals.css';
 import SiteNavbar from "../components/SiteNavbar"; // Adjust the path as needed
 
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: "Tobie Rathbun | Developer",

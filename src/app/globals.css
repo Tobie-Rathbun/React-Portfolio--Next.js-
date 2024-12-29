@@ -87,6 +87,8 @@ a.link:hover {
   border-radius: 10px; /* Rounded edges */
   padding: 10px 20px; /* Add padding for space */
   border: 1px solid #FFFFFF; /* Thin white border */
+  position: relative;
+  z-index: 9990;
 }
 
 .site-navbar .navbar-brand {
@@ -846,4 +848,13 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 }
 .player-current h3 {
   color: var(--dark-background); /* Replace with your desired color */
+}
+
+
+
+
+
+
+.loading-overlay.hidden {
+  display: none;
 }

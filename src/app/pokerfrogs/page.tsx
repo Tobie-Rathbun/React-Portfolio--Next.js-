@@ -14,24 +14,34 @@ type Mesh = BABYLON.Mesh;
 type Scene = BABYLON.Scene;
 
 interface SceneConfig {
-    camera: {
-        alpha: number;
-        beta: number;
-        radius: number;
-        wheelPrecision: number;
-    };
-    cows: Array<{
-        name: string;
-        position: [number, number, number];
-        rotation: [number, number, number];
-        scale: [number, number, number];
-    }>;
-    cards: Array<{
-        name: string;
-        position: [number, number, number];
-        rotation: [number, number, number];
-        scale: [number, number, number];
-    }>;
+  camera: {
+      alpha: number;
+      beta: number;
+      radius: number;
+      wheelPrecision: number;
+      position?: {
+          x: number;
+          y: number;
+          z: number;
+      };
+  };
+  cows: Array<{
+      name: string;
+      position: [number, number, number];
+      rotation: [number, number, number];
+      scale: [number, number, number];
+  }>;
+  cards: Array<{
+      name: string;
+      position: [number, number, number];
+      rotation: [number, number, number];
+      scale: [number, number, number];
+  }>;
+}
+
+
+interface LoadingOverlayProps {
+  loading: boolean;
 }
 
 
@@ -46,6 +56,9 @@ const PokerFrogs: React.FC = () => {
     const [scene, setScene] = useState<Scene | null>(null);
     const [isSceneReady, setIsSceneReady] = useState<boolean>(false);
     const [sceneConfig] = useState<SceneConfig | null>(null);
+    const [showOverlay, setShowOverlay] = useState(true);
+
+
 
 
 
@@ -66,7 +79,7 @@ const PokerFrogs: React.FC = () => {
         });
     };
 
-    const logCameraInfo = () => {
+    const logCameraInfo = (scene: Scene) => {
       if (!scene) {
           console.error("Scene is not initialized.");
           return;
@@ -77,20 +90,30 @@ const PokerFrogs: React.FC = () => {
           return;
       }
   
+      console.clear();
       const camera = scene.activeCamera;
   
       // Check if the camera has a rotation property
       if ('rotation' in camera) {
-          const cameraPosition = camera.position;
-          const cameraRotation = (camera as BABYLON.FreeCamera).rotation;
-  
-          console.log(`Camera World Position: (${cameraPosition.x.toFixed(2)}, ${cameraPosition.y.toFixed(2)}, ${cameraPosition.z.toFixed(2)})`);
-          console.log(`Camera Rotation: (${cameraRotation.x.toFixed(2)}, ${cameraRotation.y.toFixed(2)}, ${cameraRotation.z.toFixed(2)})`);
-      } else {
-          const cameraPosition = camera.position;
-          console.log(`Camera World Position: (${cameraPosition.x.toFixed(2)}, ${cameraPosition.y.toFixed(2)}, ${cameraPosition.z.toFixed(2)})`);
-          console.log("This camera type does not have a rotation property.");
+        const cameraPosition = camera.position;
+        const cameraRotation = (camera as BABYLON.FreeCamera).rotation;
+
+        console.log(`Camera World Position: (${cameraPosition.x.toFixed(2)}, ${cameraPosition.y.toFixed(2)}, ${cameraPosition.z.toFixed(2)})`);
+        console.log(`Camera Rotation: (${cameraRotation.x.toFixed(2)}, ${cameraRotation.y.toFixed(2)}, ${cameraRotation.z.toFixed(2)})`);
       }
+      if (camera instanceof BABYLON.ArcRotateCamera) {
+        const arcCamera = camera as BABYLON.ArcRotateCamera;
+        console.log(`Camera World Position: (${arcCamera.position.x.toFixed(2)}, ${arcCamera.position.y.toFixed(2)}, ${arcCamera.position.z.toFixed(2)})`);
+        console.log(`Alpha: ${arcCamera.alpha.toFixed(2)}`);
+        console.log(`Beta: ${arcCamera.beta.toFixed(2)}`);
+        console.log(`Radius: ${arcCamera.radius.toFixed(2)}`);
+        console.log(`Wheel Precision: ${arcCamera.wheelPrecision.toFixed(2)}`);
+      } else {
+        const cameraPosition = camera.position;
+        console.log(`Camera World Position: (${cameraPosition.x.toFixed(2)}, ${cameraPosition.y.toFixed(2)}, ${cameraPosition.z.toFixed(2)})`);
+        console.log("This camera type does not have a rotation property or alpha/beta/radius properties.");
+      }
+
     };
 
     
@@ -122,16 +145,49 @@ const PokerFrogs: React.FC = () => {
     };
   
 
-
+// Gameplay 
     const initializeGame = () => {
       if (!deck.length) {
           console.error("Deck is empty. Unable to initialize the game.");
           return;
       }
+
+      if (!scene) {
+        console.error("Scene is not initialized.");
+        return;
+      }
   
       try {
           console.log("Starting game initialization...");
           
+          // Cleanup existing card meshes
+          if (scene) {
+              console.log("Scene meshes before initializeGame cleanup:", scene.meshes.map(mesh => mesh.name));
+              scene.meshes.forEach((mesh) => {
+                // Helper function to identify card meshes
+                const isCardMesh = (name: string): boolean => {
+                  // Adjust logic based on how card names are dynamically set
+                  return /^[2-9TJQKA][CDHS]$/.test(name); // Matches card names like "2H", "7S", etc.
+                };  
+                if (isCardMesh(mesh.name)) {
+                    console.log(`Disposing card mesh: ${mesh.name}`);
+                    mesh.dispose(true, true);
+                  }
+              });
+
+              console.log("Scene meshes after initializeGame cleanup:", scene.meshes.map(mesh => mesh.name));
+
+              // Reset hands and community after cleanup
+              setHands([]);
+              setCommunity([]);
+            
+          } else {
+              console.error("Scene is not available for cleanup.");
+          }
+
+          
+
+
           // Shuffle deck and deal cards
           const shuffledDeck = shuffle([...deck]);
           const dealtHands = Array.from({ length: 5 }, () => drawHand(shuffledDeck));
@@ -140,9 +196,15 @@ const PokerFrogs: React.FC = () => {
           // Set state for hands and community cards
           setHands(dealtHands);
           setCommunity(communityCards);
-  
+
+          // Combine hands and community cards into a single array for card names
+          const newCardNames = [...dealtHands.flat(), ...communityCards];
+          setCardNames(newCardNames);
+
           console.log("Dealt hands:", dealtHands);
           console.log("Community cards:", communityCards);
+          console.log("Set card names:", newCardNames);
+
   
           // Dynamically assign card names to the scene configuration
           const updatedSceneConfig = assignCardNamesDynamically(
@@ -159,13 +221,35 @@ const PokerFrogs: React.FC = () => {
           } else {
               console.error("Scene is not available during initialization.");
           }
-  
+
           console.log("Game initialized successfully.");
       } catch (error) {
           console.error("Error during game initialization:", error);
       }
     };
   
+    const LoadingOverlay = ({ loading }: LoadingOverlayProps) => {
+      return (
+          <div
+              className={`loading-overlay ${loading ? "" : "hidden"}`}
+              style={{
+                  position: "fixed",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "black",
+                  zIndex: 1000,
+              }}
+          />
+      );
+    };
+  
+    const handleInitializeGameClick = () => {
+      console.log("Initialize Game button clicked");
+      setShowOverlay(false); // Hide the overlay
+      initializeGame(); // Start the game logic
+    };
   
 
     
@@ -174,7 +258,6 @@ const PokerFrogs: React.FC = () => {
       setSliderValue(parseInt(event.target.value));
     };
   
-
     const increaseBet = () => {
         setSliderValue(prevValue => Math.min(prevValue + 100, 1000));
     };
@@ -197,10 +280,15 @@ const PokerFrogs: React.FC = () => {
 // Scene management
     const hardcodedSceneConfig: SceneConfig = {
       camera: {
-          alpha: -1.04,
-          beta: 1.12,
-          radius: 10,
-          wheelPrecision: 100,
+        alpha: -8.35,
+        beta: 1,
+        radius: 0.75,
+        wheelPrecision: 125,
+        position: {
+            x: -1,
+            y: 1.7,
+            z: -2,
+        },
       },
       cows: [
         {
@@ -560,12 +648,23 @@ const PokerFrogs: React.FC = () => {
       console.log("Loading card data...");
   
       // Clear old card meshes from the scene
+      console.log("Scene meshes before loadCardDataFromScene cleanup:", scene.meshes.map(mesh => mesh.name));
       scene.meshes.forEach((mesh) => {
-        if (mesh.name.startsWith("Card_")) {
-            console.log(`Disposing existing card mesh: ${mesh.name}`);
-            mesh.dispose();
-        }
+          // Helper function to identify card meshes
+          const isCardMesh = (name: string): boolean => {
+            // Adjust logic based on how card names are dynamically set
+            return /^[2-9TJQKA][CDHS]$/.test(name); // Matches card names like "2H", "7S", etc.
+          };  
+          if (isCardMesh(mesh.name)) {
+              console.log(`Disposing card mesh: ${mesh.name}`);
+              mesh.dispose(true, true);
+            }
       });
+      console.log("Scene meshes after loadCardDataFromScene cleanup:", scene.meshes.map(mesh => mesh.name));
+      // Reset hands and community after cleanup
+      setHands([]);
+      setCommunity([]);
+
   
       // Iterate through the configuration and create cards
       cards.forEach((cardConfig, index) => {
@@ -603,16 +702,27 @@ const PokerFrogs: React.FC = () => {
   
       // Clear existing card meshes
       if (scene && scene.meshes) {
+        console.log("Scene meshes before cleanup:", scene.meshes.map(mesh => mesh.name));
         scene.meshes.forEach((mesh) => {
-            if (mesh.name.startsWith("Card_")) {
-                console.log(`Disposing existing card mesh: ${mesh.name}`);
-                mesh.dispose();
+          // Helper function to identify card meshes
+          const isCardMesh = (name: string): boolean => {
+            // Adjust logic based on how card names are dynamically set
+            return /^[2-9TJQKA][CDHS]$/.test(name); // Matches card names like "2H", "7S", etc.
+          };  
+          if (isCardMesh(mesh.name)) {
+              console.log(`Disposing card mesh: ${mesh.name}`);
+              mesh.dispose(true, true);
             }
         });
+        console.log("Scene meshes after cleanup:", scene.meshes.map(mesh => mesh.name));
+        
+        // Reset hands and community after cleanup
+        setHands([]);
+        setCommunity([]);
       } else {
           console.error("Scene or its meshes are not available for cleanup.");
       }
-      
+
     
       // Combine all cards from hands and community
       const allCards = [...hands.flat(), ...community];
@@ -654,10 +764,10 @@ const PokerFrogs: React.FC = () => {
       const canvas = scene.getEngine().getRenderingCanvas();
       const camera = new BABYLON.ArcRotateCamera("defaultCamera", 0, 0, 10, BABYLON.Vector3.Zero(), scene);
       camera.attachControl(canvas, true);
-      camera.alpha = -1.04;
-      camera.beta = 1.12;
-      camera.radius = 10;
-      camera.wheelPrecision = 100;
+      camera.alpha = -8.35;
+      camera.beta = 1;
+      camera.radius = 1;
+      camera.wheelPrecision = 125;
       scene.activeCamera = camera; // Ensure the camera is assigned to the scene's activeCamera
   
       const light = new BABYLON.DirectionalLight("directionalLight", new BABYLON.Vector3(-1, -1, -1), scene);
@@ -695,25 +805,62 @@ const PokerFrogs: React.FC = () => {
           console.log("Loading scene configuration:", sceneConfig);
   
           // Ensure a camera exists in the scene
-          if (!scene.activeCamera) {
-              const canvas = scene.getEngine().getRenderingCanvas();
-              const camera = new BABYLON.ArcRotateCamera("myCamera", 0, 0, 10, BABYLON.Vector3.Zero(), scene);
-              camera.attachControl(canvas, true);
-              camera.alpha = -1.04;
-              camera.beta = 1.12;
-              camera.radius = 1;
-              camera.wheelPrecision = 100;
-              scene.activeCamera = camera;
+        if (!scene.activeCamera) {
+          const canvas = scene.getEngine().getRenderingCanvas();
+          const cameraConfig = sceneConfig.camera;
+
+          const newCamera = new BABYLON.ArcRotateCamera(
+              "myCamera",
+              cameraConfig.alpha ?? -8.35,
+              cameraConfig.beta ?? 1,
+              cameraConfig.radius ?? 1,
+              cameraConfig.position
+                  ? new BABYLON.Vector3(
+                        cameraConfig.position.x,
+                        cameraConfig.position.y,
+                        cameraConfig.position.z
+                    )
+                  : new BABYLON.Vector3(0, 0, 0),
+              scene
+          );
+
+          newCamera.attachControl(canvas, true);
+          newCamera.wheelPrecision = cameraConfig.wheelPrecision || 100;
+
+          if (cameraConfig.position) {
+              newCamera.setPosition(
+                  new BABYLON.Vector3(
+                      cameraConfig.position.x,
+                      cameraConfig.position.y,
+                      cameraConfig.position.z
+                  )
+              );
           }
-  
+
+            scene.activeCamera = newCamera;
+          }
+
           // Set camera properties from sceneConfig
           const camera = scene.activeCamera;
           if (camera && camera instanceof BABYLON.ArcRotateCamera) {
-              camera.alpha = sceneConfig.camera.alpha;
-              camera.beta = sceneConfig.camera.beta;
-              camera.radius = sceneConfig.camera.radius;
-              camera.wheelPrecision = sceneConfig.camera.wheelPrecision;
+            camera.alpha = hardcodedSceneConfig.camera.alpha;
+            camera.beta = hardcodedSceneConfig.camera.beta;
+            camera.radius = hardcodedSceneConfig.camera.radius;
+            camera.wheelPrecision = hardcodedSceneConfig.camera.wheelPrecision;
+
+            // Update position if defined in sceneConfig
+            if (hardcodedSceneConfig.camera.position) {
+                camera.setPosition(
+                    new BABYLON.Vector3(
+                        hardcodedSceneConfig.camera.position.x,
+                        hardcodedSceneConfig.camera.position.y,
+                        hardcodedSceneConfig.camera.position.z
+                    )
+                );
+            }
           }
+
+
   
           // Remove old meshes before loading new ones
           scene.meshes.forEach((mesh) => {
@@ -849,7 +996,7 @@ const PokerFrogs: React.FC = () => {
                       deleteSelectedMesh();
                       break;
                   case 'c':
-                      logCameraInfo();
+                      logCameraInfo(scene);
                       break;
                   default:
                       break;
@@ -1183,8 +1330,9 @@ const PokerFrogs: React.FC = () => {
     return (
     <HotKeys>
         <div>
+            <LoadingOverlay loading={showOverlay} />
             <canvas id="renderCanvas" style={{ width: '100%', height: '100vh' }}></canvas>
-            <button onClick={initializeGame} style={{ position: "absolute", top: "10%", left: "10px", zIndex: 1000 }}>
+            <button onClick={handleInitializeGameClick} style={{ position: "absolute", top: "30%", left: "90%", zIndex: 1000 }}>
                 Initialize Game
             </button>
             {isSceneReady ? (

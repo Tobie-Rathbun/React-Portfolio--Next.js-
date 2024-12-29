@@ -9,356 +9,38 @@ unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js
 unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2160:5
 unreachable code after return statement node_modules_@babylonjs_core_19ce35._.js:2176:5
 WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER. node_modules_@babylonjs_core_Engines_thinEngine_3fb669.js:371:39
-BJS - [07:22:50]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
-Initializing Babylon.js scene... src_923de1._.js:1393:37
+BJS - [10:59:36]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
+Initializing Babylon.js scene... src_923de1._.js:1497:37
 Loading scene configuration: 
 Object { camera: {…}, cows: (4) […], cards: (15) […] }
-src_923de1._.js:1172:21
-Old meshes removed src_923de1._.js:1198:21
-Babylon.js scene initialized. src_923de1._.js:1406:25
-Scene is not ready or hands/community are not set. src_923de1._.js:1432:25
-Scene: null src_923de1._.js:1458:21
-SceneConfig: null src_923de1._.js:1459:21
+src_923de1._.js:1192:21
+Old meshes removed src_923de1._.js:1220:21
+Babylon.js scene initialized. src_923de1._.js:1529:25
+Scene is not ready or hands/community are not set. src_923de1._.js:1573:25
+Scene: null src_923de1._.js:1584:21
+SceneConfig: null src_923de1._.js:1585:21
 Card Names: 
 Array []
-src_923de1._.js:1460:21
+src_923de1._.js:1586:21
 Hands state: 
 Array []
-src_923de1._.js:1469:21
+src_923de1._.js:1596:21
 Community state: 
 Array []
-src_923de1._.js:1470:21
+src_923de1._.js:1597:21
 Scene is null or not initialized. node_modules_next_dist_client_523921._.js:990:32
-Document is available. src_923de1._.js:1505:25
-Canvas element found: 
-<canvas id="renderCanvas" style="width: 100%; height: 100vh; touch-action: none;" touch-action="none" width="1472" height="538" data-engine="Babylon.js v7.42.0" tabindex="1">
-src_923de1._.js:1511:25
-BJS - [07:22:50]: Babylon.js v7.42.0 - WebGL2 node_modules_@babylonjs_core_Misc_d7332b._.js:525:30
-Babylon.js Engine and Scene created: 
-Object { _colorWrite: true, _colorWriteChanged: true, _depthCullingState: {…}, _stencilStateComposer: {…}, _stencilState: {…}, _alphaState: {…}, _alphaMode: 1, _alphaEquation: 0, _activeRequests: [], _badOS: false, … }
- 
-Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
-src_923de1._.js:1528:25
-DebugPanel Received cardNames: 
-Array []
-src_923de1._.js:307:21
-Assigning card names: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:733:21
-Card at index 0: QD src_923de1._.js:743:25
-Card at index 1: JD src_923de1._.js:743:25
-Card at index 2: 9S src_923de1._.js:743:25
-Card at index 3: JC src_923de1._.js:743:25
-Card at index 4: 4S src_923de1._.js:743:25
-Card at index 5: KH src_923de1._.js:743:25
-Card at index 6: 2D src_923de1._.js:743:25
-Card at index 7: KS src_923de1._.js:743:25
-Card at index 8: 0D src_923de1._.js:743:25
-Card at index 9: 0S src_923de1._.js:743:25
-Card at index 10: QC src_923de1._.js:743:25
-Card at index 11: 5S src_923de1._.js:743:25
-Card at index 12: 2C src_923de1._.js:743:25
-Card at index 13: QS src_923de1._.js:743:25
-Card at index 14: AS src_923de1._.js:743:25
-Updated card configuration: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:750:21
-Updated sceneConfig: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:1422:25
-Starting scene update with cards using sceneConfig: 
-Object { camera: {…}, cows: (4) […], cards: (15) […] }
-src_923de1._.js:685:17
-SceneConfig: 
-Object { camera: {…}, cows: (4) […], cards: (15) […] }
-src_923de1._.js:686:17
-Cards to place: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:701:17
-Creating card: QD at index 0 with position: 
-Array(3) [ -0.189, 0, -0.034 ]
-src_923de1._.js:715:21
-Creating card QD with texture... src_923de1._.js:645:21
-Card image path for QD: /images/QD.png src_923de1._.js:640:17
-Texture path for QD: /images/QD.png src_923de1._.js:651:21
-Card QD created with material and mesh. src_923de1._.js:677:21
-Card created successfully: QD, Material: Name: material_QD src_923de1._.js:720:25
-Creating card: JD at index 1 with position: 
-Array(3) [ 0.106, 0, -0.05 ]
-src_923de1._.js:715:21
-Creating card JD with texture... src_923de1._.js:645:21
-Card image path for JD: /images/JD.png src_923de1._.js:640:17
-Texture path for JD: /images/JD.png src_923de1._.js:651:21
-Card JD created with material and mesh. src_923de1._.js:677:21
-Card created successfully: JD, Material: Name: material_JD src_923de1._.js:720:25
-Creating card: 9S at index 2 with position: 
-Array(3) [ -1.618, 0, 1.156 ]
-src_923de1._.js:715:21
-Creating card 9S with texture... src_923de1._.js:645:21
-Card image path for 9S: /images/9S.png src_923de1._.js:640:17
-Texture path for 9S: /images/9S.png src_923de1._.js:651:21
-Card 9S created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 9S, Material: Name: material_9S src_923de1._.js:720:25
-Creating card: JC at index 3 with position: 
-Array(3) [ -1.55, 0, 1.549 ]
-src_923de1._.js:715:21
-Creating card JC with texture... src_923de1._.js:645:21
-Card image path for JC: /images/JC.png src_923de1._.js:640:17
-Texture path for JC: /images/JC.png src_923de1._.js:651:21
-Card JC created with material and mesh. src_923de1._.js:677:21
-Card created successfully: JC, Material: Name: material_JC src_923de1._.js:720:25
-Creating card: 4S at index 4 with position: 
-Array(3) [ -0.187, 0, 2.091 ]
-src_923de1._.js:715:21
-Creating card 4S with texture... src_923de1._.js:645:21
-Card image path for 4S: /images/4S.png src_923de1._.js:640:17
-Texture path for 4S: /images/4S.png src_923de1._.js:651:21
-Card 4S created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 4S, Material: Name: material_4S src_923de1._.js:720:25
-Creating card: KH at index 5 with position: 
-Array(3) [ 0.142, 0, 2.104 ]
-src_923de1._.js:715:21
-Creating card KH with texture... src_923de1._.js:645:21
-Card image path for KH: /images/KH.png src_923de1._.js:640:17
-Texture path for KH: /images/KH.png src_923de1._.js:651:21
-Card KH created with material and mesh. src_923de1._.js:677:21
-Card created successfully: KH, Material: Name: material_KH src_923de1._.js:720:25
-Creating card: 2D at index 6 with position: 
-Array(3) [ 1.424, 0, 2.151 ]
-src_923de1._.js:715:21
-Creating card 2D with texture... src_923de1._.js:645:21
-Card image path for 2D: /images/2D.png src_923de1._.js:640:17
-Texture path for 2D: /images/2D.png src_923de1._.js:651:21
-Card 2D created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 2D, Material: Name: material_2D src_923de1._.js:720:25
-Creating card: KS at index 7 with position: 
-Array(3) [ 1.723, 0, 2.085 ]
-src_923de1._.js:715:21
-Creating card KS with texture... src_923de1._.js:645:21
-Card image path for KS: /images/KS.png src_923de1._.js:640:17
-Texture path for KS: /images/KS.png src_923de1._.js:651:21
-Card KS created with material and mesh. src_923de1._.js:677:21
-Card created successfully: KS, Material: Name: material_KS src_923de1._.js:720:25
-Creating card: 0D at index 8 with position: 
-Array(3) [ 2.372, 0, 1.496 ]
-src_923de1._.js:715:21
-Creating card 0D with texture... src_923de1._.js:645:21
-Card image path for 0D: /images/0D.png src_923de1._.js:640:17
-Texture path for 0D: /images/0D.png src_923de1._.js:651:21
-Card 0D created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 0D, Material: Name: material_0D src_923de1._.js:720:25
-Creating card: 0S at index 9 with position: 
-Array(3) [ 2.35, 0, 1.161 ]
-src_923de1._.js:715:21
-Creating card 0S with texture... src_923de1._.js:645:21
-Card image path for 0S: /images/0S.png src_923de1._.js:640:17
-Texture path for 0S: /images/0S.png src_923de1._.js:651:21
-Card 0S created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 0S, Material: Name: material_0S src_923de1._.js:720:25
-Creating card: QC at index 10 with position: 
-Array(3) [ -0.583, 0.046, 0.939 ]
-src_923de1._.js:715:21
-Creating card QC with texture... src_923de1._.js:645:21
-Card image path for QC: /images/QC.png src_923de1._.js:640:17
-Texture path for QC: /images/QC.png src_923de1._.js:651:21
-Card QC created with material and mesh. src_923de1._.js:677:21
-Card created successfully: QC, Material: Name: material_QC src_923de1._.js:720:25
-Creating card: 5S at index 11 with position: 
-Array(3) [ -0.222, 0, 1.009 ]
-src_923de1._.js:715:21
-Creating card 5S with texture... src_923de1._.js:645:21
-Card image path for 5S: /images/5S.png src_923de1._.js:640:17
-Texture path for 5S: /images/5S.png src_923de1._.js:651:21
-Card 5S created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 5S, Material: Name: material_5S src_923de1._.js:720:25
-Creating card: 2C at index 12 with position: 
-Array(3) [ 0.106, 0, 1.003 ]
-src_923de1._.js:715:21
-Creating card 2C with texture... src_923de1._.js:645:21
-Card image path for 2C: /images/2C.png src_923de1._.js:640:17
-Texture path for 2C: /images/2C.png src_923de1._.js:651:21
-Card 2C created with material and mesh. src_923de1._.js:677:21
-Card created successfully: 2C, Material: Name: material_2C src_923de1._.js:720:25
-Creating card: QS at index 13 with position: 
-Array(3) [ 0.477, 0, 1 ]
-src_923de1._.js:715:21
-Creating card QS with texture... src_923de1._.js:645:21
-Card image path for QS: /images/QS.png src_923de1._.js:640:17
-Texture path for QS: /images/QS.png src_923de1._.js:651:21
-Card QS created with material and mesh. src_923de1._.js:677:21
-Card created successfully: QS, Material: Name: material_QS src_923de1._.js:720:25
-Creating card: AS at index 14 with position: 
-Array(3) [ 0.837, 0, 1 ]
-src_923de1._.js:715:21
-Creating card AS with texture... src_923de1._.js:645:21
-Card image path for AS: /images/AS.png src_923de1._.js:640:17
-Texture path for AS: /images/AS.png src_923de1._.js:651:21
-Card AS created with material and mesh. src_923de1._.js:677:21
-Card created successfully: AS, Material: Name: material_AS src_923de1._.js:720:25
-All cards placed in the scene. src_923de1._.js:723:17
-Mesh in scene: QD Position: 
-Object { _isDirty: true, _x: -0.189, _y: 0, _z: -0.034 }
-src_923de1._.js:1429:61
-Mesh in scene: JD Position: 
-Object { _isDirty: true, _x: 0.106, _y: 0, _z: -0.05 }
-src_923de1._.js:1429:61
-Mesh in scene: 9S Position: 
-Object { _isDirty: true, _x: -1.618, _y: 0, _z: 1.156 }
-src_923de1._.js:1429:61
-Mesh in scene: JC Position: 
-Object { _isDirty: true, _x: -1.55, _y: 0, _z: 1.549 }
-src_923de1._.js:1429:61
-Mesh in scene: 4S Position: 
-Object { _isDirty: true, _x: -0.187, _y: 0, _z: 2.091 }
-src_923de1._.js:1429:61
-Mesh in scene: KH Position: 
-Object { _isDirty: true, _x: 0.142, _y: 0, _z: 2.104 }
-src_923de1._.js:1429:61
-Mesh in scene: 2D Position: 
-Object { _isDirty: true, _x: 1.424, _y: 0, _z: 2.151 }
-src_923de1._.js:1429:61
-Mesh in scene: KS Position: 
-Object { _isDirty: true, _x: 1.723, _y: 0, _z: 2.085 }
-src_923de1._.js:1429:61
-Mesh in scene: 0D Position: 
-Object { _isDirty: true, _x: 2.372, _y: 0, _z: 1.496 }
-src_923de1._.js:1429:61
-Mesh in scene: 0S Position: 
-Object { _isDirty: true, _x: 2.35, _y: 0, _z: 1.161 }
-src_923de1._.js:1429:61
-Mesh in scene: QC Position: 
-Object { _isDirty: true, _x: -0.583, _y: 0.046, _z: 0.939 }
-src_923de1._.js:1429:61
-Mesh in scene: 5S Position: 
-Object { _isDirty: true, _x: -0.222, _y: 0, _z: 1.009 }
-src_923de1._.js:1429:61
-Mesh in scene: 2C Position: 
-Object { _isDirty: true, _x: 0.106, _y: 0, _z: 1.003 }
-src_923de1._.js:1429:61
-Mesh in scene: QS Position: 
-Object { _isDirty: true, _x: 0.477, _y: 0, _z: 1 }
-src_923de1._.js:1429:61
-Mesh in scene: AS Position: 
-Object { _isDirty: true, _x: 0.837, _y: 0, _z: 1 }
-src_923de1._.js:1429:61
-Combined card names for current hand: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:601:17
-Set card names: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:1446:29
+Scene is not ready or hands/community are not set. src_923de1._.js:1573:25
 Scene: 
 Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
-src_923de1._.js:1458:21
-SceneConfig: null src_923de1._.js:1459:21
+src_923de1._.js:1584:21
+SceneConfig: null src_923de1._.js:1585:21
 Card Names: 
 Array []
-src_923de1._.js:1460:21
-Hands state: 
-Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
-src_923de1._.js:1469:21
-Community state: 
-Array(5) [ "QC", "5S", "2C", "QS", "AS" ]
-src_923de1._.js:1470:21
+src_923de1._.js:1586:21
 Scene initialized: 
 Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
-src_923de1._.js:1481:25
-Logging all meshes in the scene: src_923de1._.js:1482:25
-Mesh: QD src_923de1._.js:473:17
-Position: {X: -0.189 Y: 0 Z: -0.034} src_923de1._.js:474:17
-Rotation: {X: 0.04 Y: -1.5201 Z: 3.1416} src_923de1._.js:475:17
-Scale: {X: 1.0000001854183471 Y: 0.999999782712439 Z: 1.0000001183916423} src_923de1._.js:476:17
-Material: Name: material_QD src_923de1._.js:477:17
-Mesh: JD src_923de1._.js:473:17
-Position: {X: 0.106 Y: 0 Z: -0.05} src_923de1._.js:474:17
-Rotation: {X: 0.0236 Y: -1.3562 Z: 3.1416} src_923de1._.js:475:17
-Scale: {X: 1.000000173071773 Y: 1.000000134919915 Z: 1.0000003204145689} src_923de1._.js:476:17
-Material: Name: material_JD src_923de1._.js:477:17
-Mesh: 9S src_923de1._.js:473:17
-Position: {X: -1.618 Y: 0 Z: 1.156} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -2.7738 Z: 0} src_923de1._.js:475:17
-Scale: {X: 0.9999999595323771 Y: 1 Z: 0.9999999595323771} src_923de1._.js:476:17
-Material: Name: material_9S src_923de1._.js:477:17
-Mesh: JC src_923de1._.js:473:17
-Position: {X: -1.55 Y: 0 Z: 1.549} src_923de1._.js:474:17
-Rotation: {X: 0 Y: 3.1416 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:476:17
-Material: Name: material_JC src_923de1._.js:477:17
-Mesh: 4S src_923de1._.js:473:17
-Position: {X: -0.187 Y: 0 Z: 2.091} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.3146 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.000000012665419 Y: 1 Z: 1.000000012665419} src_923de1._.js:476:17
-Material: Name: material_4S src_923de1._.js:477:17
-Mesh: KH src_923de1._.js:473:17
-Position: {X: 0.142 Y: 0 Z: 2.104} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.9379 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.000000150683327 Y: 1 Z: 1.000000150683327} src_923de1._.js:476:17
-Material: Name: material_KH src_923de1._.js:477:17
-Mesh: 2D src_923de1._.js:473:17
-Position: {X: 1.424 Y: 0 Z: 2.151} src_923de1._.js:474:17
-Rotation: {X: 0 Y: 1.553 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.0000001742299018 Y: 1 Z: 1.0000001742299018} src_923de1._.js:476:17
-Material: Name: material_2D src_923de1._.js:477:17
-Mesh: KS src_923de1._.js:473:17
-Position: {X: 1.723 Y: 0 Z: 2.085} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.807 Z: 0} src_923de1._.js:475:17
-Scale: {X: 0.9999998488164599 Y: 1 Z: 0.9999998488164599} src_923de1._.js:476:17
-Material: Name: material_KS src_923de1._.js:477:17
-Mesh: 0D src_923de1._.js:473:17
-Position: {X: 2.372 Y: 0 Z: 1.496} src_923de1._.js:474:17
-Rotation: {X: 0 Y: 3.1416 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:476:17
-Material: Name: material_0D src_923de1._.js:477:17
-Mesh: 0S src_923de1._.js:473:17
-Position: {X: 2.35 Y: 0 Z: 1.161} src_923de1._.js:474:17
-Rotation: {X: 0 Y: 3.1416 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1 Y: 1 Z: 1} src_923de1._.js:476:17
-Material: Name: material_0S src_923de1._.js:477:17
-Mesh: QC src_923de1._.js:473:17
-Position: {X: -0.583 Y: 0.046 Z: 0.939} src_923de1._.js:474:17
-Rotation: {X: 0 Y: 1.5887 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.000000268770012 Y: 1 Z: 1.000000268770012} src_923de1._.js:476:17
-Material: Name: material_QC src_923de1._.js:477:17
-Mesh: 5S src_923de1._.js:473:17
-Position: {X: -0.222 Y: 0 Z: 1.009} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.5758 Z: 0} src_923de1._.js:475:17
-Scale: {X: 0.9999999701966147 Y: 1 Z: 0.9999999701966147} src_923de1._.js:476:17
-Material: Name: material_5S src_923de1._.js:477:17
-Mesh: 2C src_923de1._.js:473:17
-Position: {X: 0.106 Y: 0 Z: 1.003} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.596 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.0000000298343323 Y: 1 Z: 1.0000000298343323} src_923de1._.js:476:17
-Material: Name: material_2C src_923de1._.js:477:17
-Mesh: QS src_923de1._.js:473:17
-Position: {X: 0.477 Y: 0 Z: 1} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.5841 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.0000000347703584 Y: 1 Z: 1.0000000347703584} src_923de1._.js:476:17
-Material: Name: material_QS src_923de1._.js:477:17
-Mesh: AS src_923de1._.js:473:17
-Position: {X: 0.837 Y: 0 Z: 1} src_923de1._.js:474:17
-Rotation: {X: 0 Y: -1.5705 Z: 0} src_923de1._.js:475:17
-Scale: {X: 1.0000001706241837 Y: 1 Z: 1.0000001706241837} src_923de1._.js:476:17
-Material: Name: material_AS src_923de1._.js:477:17
-Loading card data... src_923de1._.js:610:17
-Invalid card name: card_1. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_2. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_3. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_4. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_5. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_6. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_7. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_8. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_9. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_10. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_11. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_12. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_13. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_14. Using default texture. src_923de1._.js:621:25
-Invalid card name: card_15. Using default texture. src_923de1._.js:621:25
-All cards loaded into the scene. src_923de1._.js:632:17
-DebugPanel Received cardNames:  
-Array []
-pokerfrogs:1:596
+src_923de1._.js:1609:25
+Logging all meshes in the scene: src_923de1._.js:1610:25
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -381,17 +63,6 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_19ce35._.js
 Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_19ce35._.js
-Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Meshes/subMesh.ts
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -403,16 +74,17 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_Meshes_bdb67b._.js
 Source Map URL: node_modules_%40babylonjs_core_Meshes_bdb67b._.js.map
-DebugPanel Received cardNames: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:307:21
-Scene: 
-Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
-src_923de1._.js:1458:21
-SceneConfig: null src_923de1._.js:1459:21
-Card Names: 
-Array(15) [ "QD", "JD", "9S", "JC", "4S", "KH", "2D", "KS", "0D", "0S", … ]
-src_923de1._.js:1460:21
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Actions/abstractActionManager.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_%40babylonjs_core_19ce35._.js
+Source Map URL: node_modules_%40babylonjs_core_19ce35._.js.map
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/src/components/PokerGUI.tsx
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -424,17 +96,6 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/src_923de1._.js
 Source Map URL: src_923de1._.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Misc/observable.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_Misc_d7332b._.js
-Source Map URL: node_modules_%40babylonjs_core_Misc_d7332b._.js.map
 Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/node_modules/next/src/client/app-bootstrap.ts
 Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
 setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
@@ -446,29 +107,303 @@ BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib
 
 Resource URL: http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js
 Source Map URL: node_modules_next_dist_client_523921._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Misc/observable.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_Misc_d7332b._.js
+Source Map URL: node_modules_%40babylonjs_core_Misc_d7332b._.js.map
+Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/thinEngine.ts
+Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
+setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
+URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
+createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
+computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
+BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
+BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
+
+Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_Engines_thinEngine_3fb669.js
+Source Map URL: node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js.map
+Initialize Game button clicked src_923de1._.js:681:17
+Starting game initialization... src_923de1._.js:606:21
+Scene meshes before initializeGame cleanup: 
+Array []
+src_923de1._.js:609:25
+Scene meshes after initializeGame cleanup: 
+Array []
+src_923de1._.js:621:25
+Dealt hands: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:645:21
+Community cards: 
+Array(5) [ "5C", "4D", "7C", "JD", "QD" ]
+src_923de1._.js:646:21
+Set card names: 
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:647:21
+Assigning card names: 
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:1410:21
+Card at index 0: QS src_923de1._.js:1420:25
+Card at index 1: 3D src_923de1._.js:1420:25
+Card at index 2: 2D src_923de1._.js:1420:25
+Card at index 3: 0H src_923de1._.js:1420:25
+Card at index 4: KH src_923de1._.js:1420:25
+Card at index 5: 4H src_923de1._.js:1420:25
+Card at index 6: 9H src_923de1._.js:1420:25
+Card at index 7: 7D src_923de1._.js:1420:25
+Card at index 8: 8C src_923de1._.js:1420:25
+Card at index 9: 6C src_923de1._.js:1420:25
+Card at index 10: 5C src_923de1._.js:1420:25
+Card at index 11: 4D src_923de1._.js:1420:25
+Card at index 12: 7C src_923de1._.js:1420:25
+Card at index 13: JD src_923de1._.js:1420:25
+Card at index 14: QD src_923de1._.js:1420:25
+Updated card configuration: 
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:1427:21
+Updated SceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:650:21
+Starting scene update with cards using sceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1104:17
+SceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1105:17
+Scene meshes before cleanup: 
+Array []
+src_923de1._.js:1110:21
+Scene meshes after cleanup: 
+Array []
+src_923de1._.js:1122:21
+Cards to place: 
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:1134:17
+Creating card: QS at index 0 with position: 
+Array(3) [ -0.189, 0, -0.034 ]
+src_923de1._.js:1148:21
+Creating card QS with texture... src_923de1._.js:1361:21
+Card image path for QS: /images/QS.png src_923de1._.js:1356:17
+Texture path for QS: /images/QS.png src_923de1._.js:1367:21
+Card QS created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: QS, Material: Name: material_QS src_923de1._.js:1153:25
+Creating card: 3D at index 1 with position: 
+Array(3) [ 0.106, 0, -0.05 ]
+src_923de1._.js:1148:21
+Creating card 3D with texture... src_923de1._.js:1361:21
+Card image path for 3D: /images/3D.png src_923de1._.js:1356:17
+Texture path for 3D: /images/3D.png src_923de1._.js:1367:21
+Card 3D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 3D, Material: Name: material_3D src_923de1._.js:1153:25
+Creating card: 2D at index 2 with position: 
+Array(3) [ -1.618, 0, 1.156 ]
+src_923de1._.js:1148:21
+Creating card 2D with texture... src_923de1._.js:1361:21
+Card image path for 2D: /images/2D.png src_923de1._.js:1356:17
+Texture path for 2D: /images/2D.png src_923de1._.js:1367:21
+Card 2D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 2D, Material: Name: material_2D src_923de1._.js:1153:25
+Creating card: 0H at index 3 with position: 
+Array(3) [ -1.55, 0, 1.549 ]
+src_923de1._.js:1148:21
+Creating card 0H with texture... src_923de1._.js:1361:21
+Card image path for 0H: /images/0H.png src_923de1._.js:1356:17
+Texture path for 0H: /images/0H.png src_923de1._.js:1367:21
+Card 0H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 0H, Material: Name: material_0H src_923de1._.js:1153:25
+Creating card: KH at index 4 with position: 
+Array(3) [ -0.187, 0, 2.091 ]
+src_923de1._.js:1148:21
+Creating card KH with texture... src_923de1._.js:1361:21
+Card image path for KH: /images/KH.png src_923de1._.js:1356:17
+Texture path for KH: /images/KH.png src_923de1._.js:1367:21
+Card KH created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: KH, Material: Name: material_KH src_923de1._.js:1153:25
+Creating card: 4H at index 5 with position: 
+Array(3) [ 0.142, 0, 2.104 ]
+src_923de1._.js:1148:21
+Creating card 4H with texture... src_923de1._.js:1361:21
+Card image path for 4H: /images/4H.png src_923de1._.js:1356:17
+Texture path for 4H: /images/4H.png src_923de1._.js:1367:21
+Card 4H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 4H, Material: Name: material_4H src_923de1._.js:1153:25
+Creating card: 9H at index 6 with position: 
+Array(3) [ 1.424, 0, 2.151 ]
+src_923de1._.js:1148:21
+Creating card 9H with texture... src_923de1._.js:1361:21
+Card image path for 9H: /images/9H.png src_923de1._.js:1356:17
+Texture path for 9H: /images/9H.png src_923de1._.js:1367:21
+Card 9H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 9H, Material: Name: material_9H src_923de1._.js:1153:25
+Creating card: 7D at index 7 with position: 
+Array(3) [ 1.723, 0, 2.085 ]
+src_923de1._.js:1148:21
+Creating card 7D with texture... src_923de1._.js:1361:21
+Card image path for 7D: /images/7D.png src_923de1._.js:1356:17
+Texture path for 7D: /images/7D.png src_923de1._.js:1367:21
+Card 7D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 7D, Material: Name: material_7D src_923de1._.js:1153:25
+Creating card: 8C at index 8 with position: 
+Array(3) [ 2.372, 0, 1.496 ]
+src_923de1._.js:1148:21
+Creating card 8C with texture... src_923de1._.js:1361:21
+Card image path for 8C: /images/8C.png src_923de1._.js:1356:17
+Texture path for 8C: /images/8C.png src_923de1._.js:1367:21
+Card 8C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 8C, Material: Name: material_8C src_923de1._.js:1153:25
+Creating card: 6C at index 9 with position: 
+Array(3) [ 2.35, 0, 1.161 ]
+src_923de1._.js:1148:21
+Creating card 6C with texture... src_923de1._.js:1361:21
+Card image path for 6C: /images/6C.png src_923de1._.js:1356:17
+Texture path for 6C: /images/6C.png src_923de1._.js:1367:21
+Card 6C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 6C, Material: Name: material_6C src_923de1._.js:1153:25
+Creating card: 5C at index 10 with position: 
+Array(3) [ -0.583, 0.046, 0.939 ]
+src_923de1._.js:1148:21
+Creating card 5C with texture... src_923de1._.js:1361:21
+Card image path for 5C: /images/5C.png src_923de1._.js:1356:17
+Texture path for 5C: /images/5C.png src_923de1._.js:1367:21
+Card 5C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 5C, Material: Name: material_5C src_923de1._.js:1153:25
+Creating card: 4D at index 11 with position: 
+Array(3) [ -0.222, 0, 1.009 ]
+src_923de1._.js:1148:21
+Creating card 4D with texture... src_923de1._.js:1361:21
+Card image path for 4D: /images/4D.png src_923de1._.js:1356:17
+Texture path for 4D: /images/4D.png src_923de1._.js:1367:21
+Card 4D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 4D, Material: Name: material_4D src_923de1._.js:1153:25
+Creating card: 7C at index 12 with position: 
+Array(3) [ 0.106, 0, 1.003 ]
+src_923de1._.js:1148:21
+Creating card 7C with texture... src_923de1._.js:1361:21
+Card image path for 7C: /images/7C.png src_923de1._.js:1356:17
+Texture path for 7C: /images/7C.png src_923de1._.js:1367:21
+Card 7C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 7C, Material: Name: material_7C src_923de1._.js:1153:25
+Creating card: JD at index 13 with position: 
+Array(3) [ 0.477, 0, 1 ]
+src_923de1._.js:1148:21
+Creating card JD with texture... src_923de1._.js:1361:21
+Card image path for JD: /images/JD.png src_923de1._.js:1356:17
+Texture path for JD: /images/JD.png src_923de1._.js:1367:21
+Card JD created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: JD, Material: Name: material_JD src_923de1._.js:1153:25
+Creating card: QD at index 14 with position: 
+Array(3) [ 0.837, 0, 1 ]
+src_923de1._.js:1148:21
+Creating card QD with texture... src_923de1._.js:1361:21
+Card image path for QD: /images/QD.png src_923de1._.js:1356:17
+Texture path for QD: /images/QD.png src_923de1._.js:1367:21
+Card QD created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: QD, Material: Name: material_QD src_923de1._.js:1153:25
+All cards placed in the scene. src_923de1._.js:1156:17
+Game initialized successfully. src_923de1._.js:657:21
+Scene is not ready or hands/community are not set. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1584:21
+SceneConfig: null src_923de1._.js:1585:21
+Card Names: 
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:1586:21
+Hands state: 
+Array []
+src_923de1._.js:1596:21
+Community state: 
+Array []
+src_923de1._.js:1597:21
+Inspector loaded src_923de1._.js:1633:57
+[Fast Refresh] rebuilding 8 node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding 7 node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
 Source map error: Error: request failed with status 404
 Stack in the worker:networkRequest@resource://devtools/client/shared/source-map-loader/utils/network-request.js:43:9
 
 Resource URL: null
-Source Map URL: installHook.js.map
-Inspector loaded src_923de1._.js:1564:57
-[Fast Refresh] rebuilding 12 node_modules_next_dist_client_523921._.js:13662:25
-Texture for 9S loaded successfully. src_923de1._.js:654:420
-Texture for JD loaded successfully. src_923de1._.js:654:420
-Texture for QD loaded successfully. src_923de1._.js:654:420
-Texture for JC loaded successfully. src_923de1._.js:654:420
-Texture for 4S loaded successfully. src_923de1._.js:654:420
-Texture for KH loaded successfully. src_923de1._.js:654:420
-Texture for 2D loaded successfully. src_923de1._.js:654:420
-Texture for KS loaded successfully. src_923de1._.js:654:420
-Texture for 0D loaded successfully. src_923de1._.js:654:420
-Texture for 0S loaded successfully. src_923de1._.js:654:420
-Texture for QC loaded successfully. src_923de1._.js:654:420
-Texture for 5S loaded successfully. src_923de1._.js:654:420
-Texture for 2C loaded successfully. src_923de1._.js:654:420
-Texture for AS loaded successfully. src_923de1._.js:654:420
-Texture for QS loaded successfully. src_923de1._.js:654:420
-Loading card data... src_923de1._.js:610:17
+Source Map URL: react_devtools_backend_compact.js.map
+Texture for 3D loaded successfully. src_923de1._.js:1370:420
+Texture for KH loaded successfully. src_923de1._.js:1370:420
+Texture for 8C loaded successfully. src_923de1._.js:1370:420
+Texture for 9H loaded successfully. src_923de1._.js:1370:420
+Texture for 0H loaded successfully. src_923de1._.js:1370:420
+Texture for 2D loaded successfully. src_923de1._.js:1370:420
+Texture for 6C loaded successfully. src_923de1._.js:1370:420
+Texture for 7D loaded successfully. src_923de1._.js:1370:420
+Texture for 4H loaded successfully. src_923de1._.js:1370:420
+Texture for QD loaded successfully. src_923de1._.js:1370:420
+Texture for JD loaded successfully. src_923de1._.js:1370:420
+Texture for 5C loaded successfully. src_923de1._.js:1370:420
+Texture for 4D loaded successfully. src_923de1._.js:1370:420
+Texture for 7C loaded successfully. src_923de1._.js:1370:420
+Texture for QS loaded successfully. src_923de1._.js:1370:420
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+Loading card data... src_923de1._.js:1068:17
+Scene meshes before loadCardDataFromScene cleanup: 
+Array(23) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:1070:17
+Disposing card mesh: QS src_923de1._.js:1078:25
+Disposing card mesh: 2D src_923de1._.js:1078:25
+Disposing card mesh: KH src_923de1._.js:1078:25
+Disposing card mesh: 9H src_923de1._.js:1078:25
+Disposing card mesh: 8C src_923de1._.js:1078:25
+Disposing card mesh: 5C src_923de1._.js:1078:25
+Disposing card mesh: 7C src_923de1._.js:1078:25
+Disposing card mesh: QD src_923de1._.js:1078:25
+Scene meshes after loadCardDataFromScene cleanup: 
+Array(15) [ "3D", "0H", "4H", "7D", "6C", "4D", "JD", "Cow1", "cow", "Cow2", … ]
+src_923de1._.js:1082:17
 Invalid card name: card_1. Using default texture. pokerfrogs:13851:25
 Invalid card name: card_2. Using default texture. pokerfrogs:13851:25
 Invalid card name: card_3. Using default texture. pokerfrogs:13851:25
@@ -484,59 +419,1191 @@ Invalid card name: card_12. Using default texture. pokerfrogs:13851:25
 Invalid card name: card_13. Using default texture. pokerfrogs:13851:25
 Invalid card name: card_14. Using default texture. pokerfrogs:13851:25
 Invalid card name: card_15. Using default texture. pokerfrogs:13851:25
-All cards loaded into the scene. src_923de1._.js:632:17
-Scene 1 loaded successfully. src_923de1._.js:1318:21
-Scene state loaded. src_923de1._.js:1395:37
-Starting game initialization... src_923de1._.js:567:21
+All cards loaded into the scene. src_923de1._.js:1101:17
+Scene 1 loaded successfully. src_923de1._.js:1343:21
+Scene state loaded. src_923de1._.js:1500:37
+Scene is not initialized. node_modules_next_dist_client_523921._.js:990:32
+Game initialized. src_923de1._.js:1512:37
+DebugPanel Received cardNames: 
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+src_923de1._.js:307:21
+Starting game initialization... src_923de1._.js:606:21
+Scene meshes before initializeGame cleanup: 
+Array(16) [ "3D", "0H", "4H", "7D", "6C", "4D", "JD", "Cow1", "cow", "Cow2", … ]
+src_923de1._.js:609:25
+Disposing card mesh: 3D src_923de1._.js:617:33
+Disposing card mesh: 4H src_923de1._.js:617:33
+Disposing card mesh: 6C src_923de1._.js:617:33
+Disposing card mesh: JD src_923de1._.js:617:33
+Scene meshes after initializeGame cleanup: 
+Array(12) [ "0H", "7D", "4D", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", … ]
+src_923de1._.js:621:25
 Dealt hands: 
 Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
-src_923de1._.js:575:21
+src_923de1._.js:645:21
 Community cards: 
-Array(5) [ "JS", "0D", "6H", "AH", "QC" ]
-src_923de1._.js:576:21
+Array(5) [ "JC", "AC", "QH", "2D", "KS" ]
+src_923de1._.js:646:21
+Set card names: 
+Array(15) [ "6H", "9S", "5S", "3H", "4S", "AD", "7S", "KH", "2S", "3C", … ]
+src_923de1._.js:647:21
 Assigning card names: 
-Array(15) [ "JH", "AC", "9C", "7H", "6S", "9S", "QD", "5H", "7C", "QS", … ]
-src_923de1._.js:733:21
-Card at index 0: JH src_923de1._.js:743:25
-Card at index 1: AC src_923de1._.js:743:25
-Card at index 2: 9C src_923de1._.js:743:25
-Card at index 3: 7H src_923de1._.js:743:25
-Card at index 4: 6S src_923de1._.js:743:25
-Card at index 5: 9S src_923de1._.js:743:25
-Card at index 6: QD src_923de1._.js:743:25
-Card at index 7: 5H src_923de1._.js:743:25
-Card at index 8: 7C src_923de1._.js:743:25
-Card at index 9: QS src_923de1._.js:743:25
-Card at index 10: JS src_923de1._.js:743:25
-Card at index 11: 0D src_923de1._.js:743:25
-Card at index 12: 6H src_923de1._.js:743:25
-Card at index 13: AH src_923de1._.js:743:25
-Card at index 14: QC src_923de1._.js:743:25
+Array(15) [ "6H", "9S", "5S", "3H", "4S", "AD", "7S", "KH", "2S", "3C", … ]
+src_923de1._.js:1410:21
+Card at index 0: 6H src_923de1._.js:1420:25
+Card at index 1: 9S src_923de1._.js:1420:25
+Card at index 2: 5S src_923de1._.js:1420:25
+Card at index 3: 3H src_923de1._.js:1420:25
+Card at index 4: 4S src_923de1._.js:1420:25
+Card at index 5: AD src_923de1._.js:1420:25
+Card at index 6: 7S src_923de1._.js:1420:25
+Card at index 7: KH src_923de1._.js:1420:25
+Card at index 8: 2S src_923de1._.js:1420:25
+Card at index 9: 3C src_923de1._.js:1420:25
+Card at index 10: JC src_923de1._.js:1420:25
+Card at index 11: AC src_923de1._.js:1420:25
+Card at index 12: QH src_923de1._.js:1420:25
+Card at index 13: 2D src_923de1._.js:1420:25
+Card at index 14: KS src_923de1._.js:1420:25
 Updated card configuration: 
-Array(15) [ "JH", "AC", "9C", "7H", "6S", "9S", "QD", "5H", "7C", "QS", … ]
-src_923de1._.js:750:21
+Array(15) [ "6H", "9S", "5S", "3H", "4S", "AD", "7S", "KH", "2S", "3C", … ]
+src_923de1._.js:1427:21
 Updated SceneConfig: 
 Object { camera: {…}, cows: (4) […], cards: (15) […] }
-src_923de1._.js:578:21
-Scene is not available during initialization. node_modules_next_dist_client_523921._.js:990:32
-Game initialized. src_923de1._.js:1398:37
-[Fast Refresh] rebuilding 2 node_modules_next_dist_client_523921._.js:13662:25
+src_923de1._.js:650:21
+Starting scene update with cards using sceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1104:17
+SceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1105:17
+Existing mesh: 0H src_923de1._.js:1107:46
+Existing mesh: 7D src_923de1._.js:1107:46
+Existing mesh: 4D src_923de1._.js:1107:46
+Existing mesh: Cow1 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: Cow2 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: Cow3 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: Cow4 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: defaultGround src_923de1._.js:1107:46
+Scene meshes before cleanup: 
+Array(12) [ "0H", "7D", "4D", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", … ]
+src_923de1._.js:1110:21
+Disposing card mesh: 7D src_923de1._.js:1118:29
+Scene meshes after cleanup: 
+Array(11) [ "0H", "4D", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", … ]
+src_923de1._.js:1122:21
+Cards to place: 
+Array(15) [ "6H", "9S", "5S", "3H", "4S", "AD", "7S", "KH", "2S", "3C", … ]
+src_923de1._.js:1134:17
+Creating card: 6H at index 0 with position: 
+Array(3) [ -0.189, 0, -0.034 ]
+src_923de1._.js:1148:21
+Creating card 6H with texture... src_923de1._.js:1361:21
+Card image path for 6H: /images/6H.png src_923de1._.js:1356:17
+Texture path for 6H: /images/6H.png src_923de1._.js:1367:21
+Card 6H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 6H, Material: Name: material_6H src_923de1._.js:1153:25
+Creating card: 9S at index 1 with position: 
+Array(3) [ 0.106, 0, -0.05 ]
+src_923de1._.js:1148:21
+Creating card 9S with texture... src_923de1._.js:1361:21
+Card image path for 9S: /images/9S.png src_923de1._.js:1356:17
+Texture path for 9S: /images/9S.png src_923de1._.js:1367:21
+Card 9S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 9S, Material: Name: material_9S src_923de1._.js:1153:25
+Creating card: 5S at index 2 with position: 
+Array(3) [ -1.618, 0, 1.156 ]
+src_923de1._.js:1148:21
+Creating card 5S with texture... src_923de1._.js:1361:21
+Card image path for 5S: /images/5S.png src_923de1._.js:1356:17
+Texture path for 5S: /images/5S.png src_923de1._.js:1367:21
+Card 5S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 5S, Material: Name: material_5S src_923de1._.js:1153:25
+Creating card: 3H at index 3 with position: 
+Array(3) [ -1.55, 0, 1.549 ]
+src_923de1._.js:1148:21
+Creating card 3H with texture... src_923de1._.js:1361:21
+Card image path for 3H: /images/3H.png src_923de1._.js:1356:17
+Texture path for 3H: /images/3H.png src_923de1._.js:1367:21
+Card 3H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 3H, Material: Name: material_3H src_923de1._.js:1153:25
+Creating card: 4S at index 4 with position: 
+Array(3) [ -0.187, 0, 2.091 ]
+src_923de1._.js:1148:21
+Creating card 4S with texture... src_923de1._.js:1361:21
+Card image path for 4S: /images/4S.png src_923de1._.js:1356:17
+Texture path for 4S: /images/4S.png src_923de1._.js:1367:21
+Card 4S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 4S, Material: Name: material_4S src_923de1._.js:1153:25
+Creating card: AD at index 5 with position: 
+Array(3) [ 0.142, 0, 2.104 ]
+src_923de1._.js:1148:21
+Creating card AD with texture... src_923de1._.js:1361:21
+Card image path for AD: /images/AD.png src_923de1._.js:1356:17
+Texture path for AD: /images/AD.png src_923de1._.js:1367:21
+Card AD created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: AD, Material: Name: material_AD src_923de1._.js:1153:25
+Creating card: 7S at index 6 with position: 
+Array(3) [ 1.424, 0, 2.151 ]
+src_923de1._.js:1148:21
+Creating card 7S with texture... src_923de1._.js:1361:21
+Card image path for 7S: /images/7S.png src_923de1._.js:1356:17
+Texture path for 7S: /images/7S.png src_923de1._.js:1367:21
+Card 7S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 7S, Material: Name: material_7S src_923de1._.js:1153:25
+Creating card: KH at index 7 with position: 
+Array(3) [ 1.723, 0, 2.085 ]
+src_923de1._.js:1148:21
+Creating card KH with texture... src_923de1._.js:1361:21
+Card image path for KH: /images/KH.png src_923de1._.js:1356:17
+Texture path for KH: /images/KH.png src_923de1._.js:1367:21
+Card KH created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: KH, Material: Name: material_KH src_923de1._.js:1153:25
+Creating card: 2S at index 8 with position: 
+Array(3) [ 2.372, 0, 1.496 ]
+src_923de1._.js:1148:21
+Creating card 2S with texture... src_923de1._.js:1361:21
+Card image path for 2S: /images/2S.png src_923de1._.js:1356:17
+Texture path for 2S: /images/2S.png src_923de1._.js:1367:21
+Card 2S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 2S, Material: Name: material_2S src_923de1._.js:1153:25
+Creating card: 3C at index 9 with position: 
+Array(3) [ 2.35, 0, 1.161 ]
+src_923de1._.js:1148:21
+Creating card 3C with texture... src_923de1._.js:1361:21
+Card image path for 3C: /images/3C.png src_923de1._.js:1356:17
+Texture path for 3C: /images/3C.png src_923de1._.js:1367:21
+Card 3C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 3C, Material: Name: material_3C src_923de1._.js:1153:25
+Creating card: JC at index 10 with position: 
+Array(3) [ -0.583, 0.046, 0.939 ]
+src_923de1._.js:1148:21
+Creating card JC with texture... src_923de1._.js:1361:21
+Card image path for JC: /images/JC.png src_923de1._.js:1356:17
+Texture path for JC: /images/JC.png src_923de1._.js:1367:21
+Card JC created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: JC, Material: Name: material_JC src_923de1._.js:1153:25
+Creating card: AC at index 11 with position: 
+Array(3) [ -0.222, 0, 1.009 ]
+src_923de1._.js:1148:21
+Creating card AC with texture... src_923de1._.js:1361:21
+Card image path for AC: /images/AC.png src_923de1._.js:1356:17
+Texture path for AC: /images/AC.png src_923de1._.js:1367:21
+Card AC created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: AC, Material: Name: material_AC src_923de1._.js:1153:25
+Creating card: QH at index 12 with position: 
+Array(3) [ 0.106, 0, 1.003 ]
+src_923de1._.js:1148:21
+Creating card QH with texture... src_923de1._.js:1361:21
+Card image path for QH: /images/QH.png src_923de1._.js:1356:17
+Texture path for QH: /images/QH.png src_923de1._.js:1367:21
+Card QH created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: QH, Material: Name: material_QH src_923de1._.js:1153:25
+Creating card: 2D at index 13 with position: 
+Array(3) [ 0.477, 0, 1 ]
+src_923de1._.js:1148:21
+Creating card 2D with texture... src_923de1._.js:1361:21
+Card image path for 2D: /images/2D.png src_923de1._.js:1356:17
+Texture path for 2D: /images/2D.png src_923de1._.js:1367:21
+Card 2D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 2D, Material: Name: material_2D src_923de1._.js:1153:25
+Creating card: KS at index 14 with position: 
+Array(3) [ 0.837, 0, 1 ]
+src_923de1._.js:1148:21
+Creating card KS with texture... src_923de1._.js:1361:21
+Card image path for KS: /images/KS.png src_923de1._.js:1356:17
+Texture path for KS: /images/KS.png src_923de1._.js:1367:21
+Card KS created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: KS, Material: Name: material_KS src_923de1._.js:1153:25
+All cards placed in the scene. src_923de1._.js:1156:17
+Game initialized successfully. src_923de1._.js:657:21
+Scene is not ready or hands/community are not set. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Hands state: 
+Array []
+src_923de1._.js:1596:21
+Community state: 
+Array []
+src_923de1._.js:1597:21
+Loading card data... src_923de1._.js:1068:17
+Scene meshes before loadCardDataFromScene cleanup: 
+Array(26) [ "0H", "4D", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", … ]
+src_923de1._.js:1070:17
+Disposing card mesh: 4D src_923de1._.js:1078:25
+Disposing card mesh: 6H src_923de1._.js:1078:25
+Disposing card mesh: 5S src_923de1._.js:1078:25
+Disposing card mesh: 4S src_923de1._.js:1078:25
+Disposing card mesh: 7S src_923de1._.js:1078:25
+Disposing card mesh: 2S src_923de1._.js:1078:25
+Disposing card mesh: JC src_923de1._.js:1078:25
+Disposing card mesh: QH src_923de1._.js:1078:25
+Disposing card mesh: KS src_923de1._.js:1078:25
+Scene meshes after loadCardDataFromScene cleanup: 
+Array(17) [ "0H", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", "defaultGround", … ]
+src_923de1._.js:1082:17
+Invalid card name: card_1. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_2. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_3. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_4. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_5. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_6. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_7. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_8. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_9. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_10. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_11. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_12. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_13. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_14. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Invalid card name: card_15. Using default texture. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+All cards loaded into the scene. src_923de1._.js:1101:17
+DebugPanel Received cardNames:  
+Array(15) [ "QS", "3D", "2D", "0H", "KH", "4H", "9H", "7D", "8C", "6C", … ]
+pokerfrogs:13898:27
+DebugPanel Received cardNames: 
+Array(15) [ "6H", "9S", "5S", "3H", "4S", "AD", "7S", "KH", "2S", "3C", … ]
+src_923de1._.js:307:21
+Scene is not ready or hands/community are not set. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1584:21
+SceneConfig: null src_923de1._.js:1585:21
+Card Names: 
+Array(15) [ "6H", "9S", "5S", "3H", "4S", "AD", "7S", "KH", "2S", "3C", … ]
+src_923de1._.js:1586:21
+Hands state: 
+Array []
+src_923de1._.js:1596:21
+Community state: 
+Array []
+src_923de1._.js:1597:21
+Texture for KH loaded successfully. src_923de1._.js:1370:420
+Texture for 2D loaded successfully. src_923de1._.js:1370:420
+Failed to load texture for card AD: Error while trying to load image: /images/AD.png - Fallback texture was used node_modules_next_dist_client_523921._.js:990:32
 [Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+Texture for 9S loaded successfully. src_923de1._.js:1370:420
+Texture for 3H loaded successfully. src_923de1._.js:1370:420
 [Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
-[Fast Refresh] rebuilding 7 node_modules_next_dist_client_523921._.js:13662:25
-Source map error: Error: request failed with status 404
-Stack in the worker:networkRequest@resource://devtools/client/shared/source-map-loader/utils/network-request.js:43:9
-
-Resource URL: null
-Source Map URL: react_devtools_backend_compact.js.map
-Source map error: Error: Invalid URL: file://C%3A/Users/Tobie/Desktop/portfolio/dev/core/src/Engines/thinEngine.ts
-Stack in the worker:URLImpl@resource://devtools/client/shared/vendor/whatwg-url.js:22:13
-setup@resource://devtools/client/shared/vendor/whatwg-url.js:537:14
-URL@resource://devtools/client/shared/vendor/whatwg-url.js:246:18
-createSafeHandler/<@resource://devtools/client/shared/vendor/source-map/lib/util.js:181:17
-computeSourceURL@resource://devtools/client/shared/vendor/source-map/lib/util.js:437:22
-BasicSourceMapConsumer/</that._absoluteSources<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:213:23
-BasicSourceMapConsumer/<@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:212:33
-
-Resource URL: http://localhost:8888/_next/static/chunks/node_modules_@babylonjs_core_Engines_thinEngine_3fb669.js
-Source Map URL: node_modules_%40babylonjs_core_Engines_thinEngine_3fb669.js.map
+Texture for 3C loaded successfully. src_923de1._.js:1370:420
+Texture for AC loaded successfully. src_923de1._.js:1370:420
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+[Fast Refresh] rebuilding 3 node_modules_next_dist_client_523921._.js:13662:25
+Initialize Game button clicked src_923de1._.js:681:17
+Starting game initialization... src_923de1._.js:606:21
+Scene meshes before initializeGame cleanup: 
+Array(17) [ "0H", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", "defaultGround", … ]
+src_923de1._.js:609:25
+Disposing card mesh: 9S src_923de1._.js:617:33
+Disposing card mesh: AD src_923de1._.js:617:33
+Disposing card mesh: 3C src_923de1._.js:617:33
+Disposing card mesh: 2D src_923de1._.js:617:33
+Scene meshes after initializeGame cleanup: 
+Array(13) [ "0H", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", "defaultGround", … ]
+src_923de1._.js:621:25
+Dealt hands: 
+Array(5) [ (2) […], (2) […], (2) […], (2) […], (2) […] ]
+src_923de1._.js:645:21
+Community cards: 
+Array(5) [ "6S", "AH", "5C", "9D", "QC" ]
+src_923de1._.js:646:21
+Set card names: 
+Array(15) [ "3D", "5H", "9S", "0H", "QS", "AD", "9C", "3C", "AC", "8D", … ]
+src_923de1._.js:647:21
+Assigning card names: 
+Array(15) [ "3D", "5H", "9S", "0H", "QS", "AD", "9C", "3C", "AC", "8D", … ]
+src_923de1._.js:1410:21
+Card at index 0: 3D src_923de1._.js:1420:25
+Card at index 1: 5H src_923de1._.js:1420:25
+Card at index 2: 9S src_923de1._.js:1420:25
+Card at index 3: 0H src_923de1._.js:1420:25
+Card at index 4: QS src_923de1._.js:1420:25
+Card at index 5: AD src_923de1._.js:1420:25
+Card at index 6: 9C src_923de1._.js:1420:25
+Card at index 7: 3C src_923de1._.js:1420:25
+Card at index 8: AC src_923de1._.js:1420:25
+Card at index 9: 8D src_923de1._.js:1420:25
+Card at index 10: 6S src_923de1._.js:1420:25
+Card at index 11: AH src_923de1._.js:1420:25
+Card at index 12: 5C src_923de1._.js:1420:25
+Card at index 13: 9D src_923de1._.js:1420:25
+Card at index 14: QC src_923de1._.js:1420:25
+Updated card configuration: 
+Array(15) [ "3D", "5H", "9S", "0H", "QS", "AD", "9C", "3C", "AC", "8D", … ]
+src_923de1._.js:1427:21
+Updated SceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:650:21
+Starting scene update with cards using sceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1104:17
+SceneConfig: 
+Object { camera: {…}, cows: (4) […], cards: (15) […] }
+src_923de1._.js:1105:17
+Existing mesh: 0H src_923de1._.js:1107:46
+Existing mesh: Cow1 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: Cow2 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: Cow3 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: Cow4 src_923de1._.js:1107:46
+Existing mesh: cow src_923de1._.js:1107:46
+Existing mesh: defaultGround src_923de1._.js:1107:46
+Existing mesh: 3H src_923de1._.js:1107:46
+Existing mesh: KH src_923de1._.js:1107:46
+Existing mesh: AC src_923de1._.js:1107:46
+Scene meshes before cleanup: 
+Array(13) [ "0H", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", "defaultGround", … ]
+src_923de1._.js:1110:21
+Disposing card mesh: 3H src_923de1._.js:1118:29
+Disposing card mesh: AC src_923de1._.js:1118:29
+Scene meshes after cleanup: 
+Array(11) [ "0H", "Cow1", "cow", "Cow2", "cow", "Cow3", "cow", "Cow4", "cow", "defaultGround", … ]
+src_923de1._.js:1122:21
+Cards to place: 
+Array(15) [ "3D", "5H", "9S", "0H", "QS", "AD", "9C", "3C", "AC", "8D", … ]
+src_923de1._.js:1134:17
+Creating card: 3D at index 0 with position: 
+Array(3) [ -0.189, 0, -0.034 ]
+src_923de1._.js:1148:21
+Creating card 3D with texture... src_923de1._.js:1361:21
+Card image path for 3D: /images/3D.png src_923de1._.js:1356:17
+Texture path for 3D: /images/3D.png src_923de1._.js:1367:21
+Card 3D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 3D, Material: Name: material_3D src_923de1._.js:1153:25
+Creating card: 5H at index 1 with position: 
+Array(3) [ 0.106, 0, -0.05 ]
+src_923de1._.js:1148:21
+Creating card 5H with texture... src_923de1._.js:1361:21
+Card image path for 5H: /images/5H.png src_923de1._.js:1356:17
+Texture path for 5H: /images/5H.png src_923de1._.js:1367:21
+Card 5H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 5H, Material: Name: material_5H src_923de1._.js:1153:25
+Creating card: 9S at index 2 with position: 
+Array(3) [ -1.618, 0, 1.156 ]
+src_923de1._.js:1148:21
+Creating card 9S with texture... src_923de1._.js:1361:21
+Card image path for 9S: /images/9S.png src_923de1._.js:1356:17
+Texture path for 9S: /images/9S.png src_923de1._.js:1367:21
+Card 9S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 9S, Material: Name: material_9S src_923de1._.js:1153:25
+Creating card: 0H at index 3 with position: 
+Array(3) [ -1.55, 0, 1.549 ]
+src_923de1._.js:1148:21
+Creating card 0H with texture... src_923de1._.js:1361:21
+Card image path for 0H: /images/0H.png src_923de1._.js:1356:17
+Texture path for 0H: /images/0H.png src_923de1._.js:1367:21
+Card 0H created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 0H, Material: Name: material_0H src_923de1._.js:1153:25
+Creating card: QS at index 4 with position: 
+Array(3) [ -0.187, 0, 2.091 ]
+src_923de1._.js:1148:21
+Creating card QS with texture... src_923de1._.js:1361:21
+Card image path for QS: /images/QS.png src_923de1._.js:1356:17
+Texture path for QS: /images/QS.png src_923de1._.js:1367:21
+Card QS created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: QS, Material: Name: material_QS src_923de1._.js:1153:25
+Creating card: AD at index 5 with position: 
+Array(3) [ 0.142, 0, 2.104 ]
+src_923de1._.js:1148:21
+Creating card AD with texture... src_923de1._.js:1361:21
+Card image path for AD: /images/AD.png src_923de1._.js:1356:17
+Texture path for AD: /images/AD.png src_923de1._.js:1367:21
+Card AD created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: AD, Material: Name: material_AD src_923de1._.js:1153:25
+Creating card: 9C at index 6 with position: 
+Array(3) [ 1.424, 0, 2.151 ]
+src_923de1._.js:1148:21
+Creating card 9C with texture... src_923de1._.js:1361:21
+Card image path for 9C: /images/9C.png src_923de1._.js:1356:17
+Texture path for 9C: /images/9C.png src_923de1._.js:1367:21
+Card 9C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 9C, Material: Name: material_9C src_923de1._.js:1153:25
+Creating card: 3C at index 7 with position: 
+Array(3) [ 1.723, 0, 2.085 ]
+src_923de1._.js:1148:21
+Creating card 3C with texture... src_923de1._.js:1361:21
+Card image path for 3C: /images/3C.png src_923de1._.js:1356:17
+Texture path for 3C: /images/3C.png src_923de1._.js:1367:21
+Card 3C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 3C, Material: Name: material_3C src_923de1._.js:1153:25
+Creating card: AC at index 8 with position: 
+Array(3) [ 2.372, 0, 1.496 ]
+src_923de1._.js:1148:21
+Creating card AC with texture... src_923de1._.js:1361:21
+Card image path for AC: /images/AC.png src_923de1._.js:1356:17
+Texture path for AC: /images/AC.png src_923de1._.js:1367:21
+Card AC created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: AC, Material: Name: material_AC src_923de1._.js:1153:25
+Creating card: 8D at index 9 with position: 
+Array(3) [ 2.35, 0, 1.161 ]
+src_923de1._.js:1148:21
+Creating card 8D with texture... src_923de1._.js:1361:21
+Card image path for 8D: /images/8D.png src_923de1._.js:1356:17
+Texture path for 8D: /images/8D.png src_923de1._.js:1367:21
+Card 8D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 8D, Material: Name: material_8D src_923de1._.js:1153:25
+Creating card: 6S at index 10 with position: 
+Array(3) [ -0.583, 0.046, 0.939 ]
+src_923de1._.js:1148:21
+Creating card 6S with texture... src_923de1._.js:1361:21
+Card image path for 6S: /images/6S.png src_923de1._.js:1356:17
+Texture path for 6S: /images/6S.png src_923de1._.js:1367:21
+Card 6S created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 6S, Material: Name: material_6S src_923de1._.js:1153:25
+Creating card: AH at index 11 with position: 
+Array(3) [ -0.222, 0, 1.009 ]
+src_923de1._.js:1148:21
+Creating card AH with texture... src_923de1._.js:1361:21
+Card image path for AH: /images/AH.png src_923de1._.js:1356:17
+Texture path for AH: /images/AH.png src_923de1._.js:1367:21
+Card AH created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: AH, Material: Name: material_AH src_923de1._.js:1153:25
+Creating card: 5C at index 12 with position: 
+Array(3) [ 0.106, 0, 1.003 ]
+src_923de1._.js:1148:21
+Creating card 5C with texture... src_923de1._.js:1361:21
+Card image path for 5C: /images/5C.png src_923de1._.js:1356:17
+Texture path for 5C: /images/5C.png src_923de1._.js:1367:21
+Card 5C created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 5C, Material: Name: material_5C src_923de1._.js:1153:25
+Creating card: 9D at index 13 with position: 
+Array(3) [ 0.477, 0, 1 ]
+src_923de1._.js:1148:21
+Creating card 9D with texture... src_923de1._.js:1361:21
+Card image path for 9D: /images/9D.png src_923de1._.js:1356:17
+Texture path for 9D: /images/9D.png src_923de1._.js:1367:21
+Card 9D created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: 9D, Material: Name: material_9D src_923de1._.js:1153:25
+Creating card: QC at index 14 with position: 
+Array(3) [ 0.837, 0, 1 ]
+src_923de1._.js:1148:21
+Creating card QC with texture... src_923de1._.js:1361:21
+Card image path for QC: /images/QC.png src_923de1._.js:1356:17
+Texture path for QC: /images/QC.png src_923de1._.js:1367:21
+Card QC created with material and mesh. src_923de1._.js:1395:21
+Card created successfully: QC, Material: Name: material_QC src_923de1._.js:1153:25
+All cards placed in the scene. src_923de1._.js:1156:17
+Game initialized successfully. src_923de1._.js:657:21
+DebugPanel Received cardNames: 
+Array(15) [ "3D", "5H", "9S", "0H", "QS", "AD", "9C", "3C", "AC", "8D", … ]
+src_923de1._.js:307:21
+Scene is not ready or hands/community are not set. 
+PokerFrogs@http://localhost:8888/_next/static/chunks/src_923de1._.js:464:217
+ClientPageRoot@http://localhost:8888/_next/static/chunks/_a91c21._.js:2035:57
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+InnerLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:285:18
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+LoadingBoundary@http://localhost:8888/_next/static/chunks/_a91c21._.js:380:33
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+InnerScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:193:9
+ScrollAndFocusHandler@http://localhost:8888/_next/static/chunks/_a91c21._.js:270:37
+RenderFromTemplateContext@http://localhost:8888/_next/static/chunks/_a91c21._.js:518:44
+OuterLayoutRouter@http://localhost:8888/_next/static/chunks/_a91c21._.js:416:158
+main
+RootLayout (Server)
+RedirectErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4643:9
+RedirectBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:4651:24
+HTTPAccessFallbackErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6084:9
+HTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6092:59
+DevRootHTTPAccessFallbackBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:6161:24
+ReactDevOverlay@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13124:9
+HotReload@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:13802:37
+Router@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14148:40
+ErrorBoundaryHandler@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3676:9
+ErrorBoundary@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:3721:67
+AppRouter@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:14522:114
+ServerRoot@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17361:46
+Root@http://localhost:8888/_next/static/chunks/node_modules_next_dist_client_523921._.js:17380:24 pokerfrogs:13851:25
+Scene: 
+Object { _inputManager: {…}, cameraToUseForPointers: null, _isScene: true, _blockEntityCollection: false, autoClear: true, autoClearDepthAndStencil: true, _clearColor: {…}, onClearColorChangedObservable: {…}, ambientColor: {…}, environmentIntensity: 1, … }
+src_923de1._.js:1584:21
+SceneConfig: null src_923de1._.js:1585:21
+Card Names: 
+Array(15) [ "3D", "5H", "9S", "0H", "QS", "AD", "9C", "3C", "AC", "8D", … ]
+src_923de1._.js:1586:21
+Hands state: 
+Array []
+src_923de1._.js:1596:21
+Community state: 
+Array []
+src_923de1._.js:1597:21
+Texture for 0H loaded successfully. src_923de1._.js:1370:420
+Failed to load texture for card AD: Error while trying to load image: /images/AD.png - Fallback texture was used node_modules_next_dist_client_523921._.js:990:32
+Texture for QS loaded successfully. src_923de1._.js:1370:420
+Texture for 5H loaded successfully. src_923de1._.js:1370:420
+Texture for AC loaded successfully. src_923de1._.js:1370:420
+Texture for 3D loaded successfully. src_923de1._.js:1370:420
+Texture for 9S loaded successfully. src_923de1._.js:1370:420
+Texture for 9C loaded successfully. src_923de1._.js:1370:420
+Texture for 8D loaded successfully. src_923de1._.js:1370:420
+Texture for 6S loaded successfully. src_923de1._.js:1370:420
+Texture for 3C loaded successfully. src_923de1._.js:1370:420
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+Texture for AH loaded successfully. src_923de1._.js:1370:420
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+Texture for 5C loaded successfully. src_923de1._.js:1370:420
+[Fast Refresh] rebuilding node_modules_next_dist_client_523921._.js:13662:25
+Texture for QC loaded successfully. src_923de1._.js:1370:420
+Texture for 9D loaded successfully. src_923de1._.js:1370:420

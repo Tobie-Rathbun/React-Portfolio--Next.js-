@@ -45,7 +45,8 @@ const PokerGame: React.FC = () => {
   const [playersWhoActed, setPlayersWhoActed] = useState<number[]>([]);
   const [lastValidBet, setLastValidBet] = useState<number>(0);
   const aiTurnTimer = 1000;
-  const Hand = useRef<{ solve: Function } | null>(null);
+  const Hand = useRef<{ solve: (cards: string[]) => { rank: number } } | null>(null);
+
 
 
 
@@ -151,50 +152,55 @@ const PokerGame: React.FC = () => {
     communityCards: string[],
     activePlayers: Player[]
   ): number {
+    // Ensure Hand.current is loaded
+    if (!Hand.current || typeof Hand.current.solve !== "function") {
+      console.error("Hand is not loaded or solve method is missing.");
+      return 0;
+    }
+  
+    const { solve } = Hand.current;
+  
     // Filter out placeholders from community cards
-    const filteredCommunityCards = communityCards.filter((card) => card && card !== "?");
+    const filteredCommunityCards = communityCards.filter(
+      (card) => card && card !== "?"
+    );
     const dealtCards = [
       ...playerCards,
       ...filteredCommunityCards,
       ...activePlayers.flatMap((player) => player.cards),
     ];
   
-    const remainingDeck = generateDeck().filter((card) => !dealtCards.includes(card));
+    const remainingDeck = generateDeck().filter(
+      (card) => !dealtCards.includes(card)
+    );
   
     let wins = 0;
     const totalSimulations = 1000;
   
     for (let i = 0; i < totalSimulations; i++) {
-      if (!Hand.current) {
-        console.error("Hand is not loaded yet.");
-        break; // Exit the loop if Hand is not available
-      }
-    
-      const { solve } = Hand.current; // Access the solve method
-    
       const shuffledDeck = [...remainingDeck].sort(() => Math.random() - 0.5);
       const simulatedCommunity = [
         ...filteredCommunityCards,
         ...shuffledDeck.slice(0, 5 - filteredCommunityCards.length),
       ];
-    
+  
       const opponentHands = activePlayers.map((player) =>
         solve([...player.cards, ...simulatedCommunity])
       );
-    
+  
       const playerHand = solve([...playerCards, ...simulatedCommunity]);
       const bestHand = [...opponentHands, playerHand].reduce((best, hand) =>
         hand.rank < best.rank ? hand : best
       );
-    
+  
       if (playerHand.rank === bestHand.rank) {
         wins++;
       }
     }
-    
   
     return wins / totalSimulations;
   }
+  
   
   
   
@@ -313,12 +319,12 @@ const PokerGame: React.FC = () => {
   
   
   function determineWinner(activePlayers: Player[]): Player | undefined {
-    if (!Hand.current) {
-      console.error("Hand is not loaded yet.");
+    if (!Hand.current || typeof Hand.current.solve !== 'function') {
+      console.error("Hand is not loaded or solve method is missing.");
       return undefined; // Return early if Hand is not loaded
     }
   
-    const { solve } = Hand.current; // Access the solve method from Hand.current
+    const { solve } = Hand.current;
   
     const solvedHands = activePlayers.map((player) => ({
       player,
@@ -331,6 +337,7 @@ const PokerGame: React.FC = () => {
     // Return the player with the best hand
     return solvedHands[0]?.player;
   }
+  
   
   
   
@@ -506,6 +513,11 @@ const PokerGame: React.FC = () => {
     });
   }, []);
   
+  useEffect(() => {
+    if (!gameOver && players[currentPlayerIndex]?.name !== "You" && players[currentPlayerIndex]?.active) {
+      setTimeout(aiTakeTurn, aiTurnTimer);
+    }
+  }, [currentPlayerIndex, gameOver, players, aiTakeTurn]);
   
 
   

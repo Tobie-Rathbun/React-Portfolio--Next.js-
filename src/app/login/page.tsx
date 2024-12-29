@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 
+export const dynamic = 'force-dynamic';
+
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');

@@ -1,5 +1,7 @@
 import ChordPlayer from '../../components/ChordPlayer';
 
+export const dynamic = 'force-dynamic';
+
 export default function Jazzbot() {
   return (
     <div className="-page">

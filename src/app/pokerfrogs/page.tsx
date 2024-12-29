@@ -8,6 +8,8 @@ import { HotKeys } from 'react-hotkeys';
 import PokerGUI from '@components/PokerGUI';
 import DebugPanel from '@components/DebugPanel';
 
+export const dynamic = 'force-dynamic';
+
 
 type Card = string;
 type Mesh = BABYLON.Mesh;

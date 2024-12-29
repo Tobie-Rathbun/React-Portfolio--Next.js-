@@ -4,6 +4,9 @@
 import React, { useState, useEffect } from 'react';
 import { Hand } from "pokersolver";
 
+export const dynamic = 'force-dynamic';
+
+
 
 interface Player {
   name: string;

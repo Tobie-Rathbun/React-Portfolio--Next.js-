@@ -20,7 +20,7 @@ export default function Home() {
         The <span className='link'><Link href="/chord-player">Chord Player</Link></span> will play any four note piano chord by simultaneously playing four separate .mp3 files each containing the sound of a different piano note. The GUI contains dropdown elements to choose the root note and the chord type, and then displays the selected notes. It also contains buttons to translate the chord to a higher inversion which involves playing one of the same notes in a higher octave, effectively making it higher pitched. The &quot;Play Chord&quot; button can be pushed many times and duplicates of the sound files are loaded to support the latency.
       </p>
       <p>
-        The <span className='link'><Link href="/pokerfrogs">3D Poker Game</Link></span> is not finished, but showcases draggable panel components connected to live data, and the loading of 3D animations from animation groups stored in a typical exported file type from Blender. The scene is successfully created, and at stages of development all assets were rendered as intended (aside from the 2 of hearts card, which I couldn&#39;t make sense of).
+        The <span className='link'><Link href="/pokerfrogs">3D Poker Game</Link></span> showcases draggable panel components that are imported and update with live data from the cards dealt within the game logic that runs alongside the Babylon 3D scene in the page.tsx that contains the code for the webpage.
       </p>
     </div>
   );

@@ -39,6 +39,7 @@ const PokerGame: React.FC = () => {
   const [bettingRound, setBettingRound] = useState<number>(1);
   const [gameRound, setGameRound] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
+  const gameOverRef = useRef(false);
   const [gameStarted, setGameStarted] = useState<boolean>(false);
   const [blindIndex, setBlindIndex] = useState<number>(0); // Starts with the first player
   const isUserTurn = players[currentPlayerIndex]?.name === "You";
@@ -252,8 +253,13 @@ const PokerGame: React.FC = () => {
   
 
   function endGame(winningPlayer?: Player) {
-    let winner: Player | undefined = winningPlayer;
+    
   
+    if (gameOverRef.current) return; // Prevent duplicate execution
+    gameOverRef.current = true;
+
+    let winner: Player | undefined = winningPlayer;
+
     // If no winner is provided, determine the winner
     if (!winner) {
       const activePlayers = players.filter((player) => player.active);
@@ -273,7 +279,7 @@ const PokerGame: React.FC = () => {
       alert("No winner could be determined!");
     }
   
-    setGameOver(true);
+    
     setCurrentPlayerIndex(-1); // Use -1 to indicate no active turn
   }
   

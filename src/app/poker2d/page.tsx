@@ -487,11 +487,25 @@ const PokerGame: React.FC = () => {
 
     if (decision < 0.3) {
       fold();
-    } else if (decision < 0.7) {
+  } else if (decision < 0.7) {
       call();
-    } else {
-      const raiseAmount = Math.max(SMALL_BLIND, Math.min(currentPlayer.chips, maxBet + SMALL_BLIND));
-      raise(raiseAmount);
+  } else {
+      let raiseAmount = maxBet + SMALL_BLIND; // Default raise amount
+
+      // Ensure raiseAmount is valid
+      if (raiseAmount <= lastValidBet) {
+          raiseAmount = lastValidBet + SMALL_BLIND; // Minimum valid raise
+      }
+
+      // Cap raiseAmount to AI's chips
+      raiseAmount = Math.min(raiseAmount, currentPlayer.chips);
+
+      if (raiseAmount > currentPlayer.chips) {
+          // If AI cannot make a valid raise, it should call or fold
+          call();
+      } else {
+          raise(raiseAmount);
+      }
     }
   }
 

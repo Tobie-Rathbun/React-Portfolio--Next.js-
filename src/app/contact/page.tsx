@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
         data-netlify="true"
         netlify-honeypot="bot-field"
         method='POST'
-
+        name='contact'
       >
         <input
           type="text"
@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
-        <input type="hidden" name="form-name" value="contact-form" />
+        <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="bot-field" />
       </form>
     </div>

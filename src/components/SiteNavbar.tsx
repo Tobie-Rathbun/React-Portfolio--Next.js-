@@ -6,9 +6,15 @@ import { useState, useEffect } from "react";
 
 const SiteNavbar = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLinkClick = () => {
     setIsLoading(true);
+    setIsDropdownOpen(false); // Close dropdown when a link is clicked
+  };
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   useEffect(() => {
@@ -36,22 +42,33 @@ const SiteNavbar = () => {
           >
             GitHub
           </a>
-          <Link href="/pokerfrogs" className="nav-link" onClick={handleLinkClick}>
-            Poker3D
-          </Link>
-          <Link href="/poker2d" className="nav-link" onClick={handleLinkClick}>
-            Poker2D
-          </Link>
-          <Link href="/rps" className="nav-link" onClick={handleLinkClick}>
-            RPS
-          </Link>
-          <Link
-            href="/chord-player"
-            className="nav-link"
-            onClick={handleLinkClick}
-          >
-            Chords
-          </Link>
+          
+
+          <div className="dropdown">
+            <button
+              className="dropdown-toggle"
+              onClick={handleDropdownToggle}
+            >
+              Projects
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-menu">
+                <Link href="/poker2d" className="nav-link" onClick={handleLinkClick}>
+                  Poker 2D
+                </Link>
+                <Link href="/pokerfrogs" className="nav-link" onClick={handleLinkClick}>
+                  Poker Frogs 3D
+                </Link>
+                <Link href="/rps" className="nav-link" onClick={handleLinkClick}>
+                  Rock, Paper, Scissors
+                </Link>
+                <Link href="/chord-player" className="nav-link" onClick={handleLinkClick}>
+                  Chord Machine 
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link href="/contact" className="nav-link" onClick={handleLinkClick}>
             Contact
           </Link>

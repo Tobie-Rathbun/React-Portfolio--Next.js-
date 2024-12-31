@@ -89,6 +89,7 @@ a.link:hover {
   border: 1px solid #FFFFFF; /* Thin white border */
   position: relative;
   z-index: 9990;
+  flex-wrap: nowrap;
 }
 
 .site-navbar .navbar-brand {
@@ -121,6 +122,71 @@ a.link:hover {
 .site-navbar .nav-link:active {
   transform: scale(0.95); /* Scale down on click */
 }
+
+/* Dropdown Container */
+.dropdown {
+  display: inline-flex;
+  align-items: center; /* Aligns toggle button with other navbar links */
+  position: relative;
+  margin-right: 20px; /* Same spacing as other nav-links */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Dropdown Toggle Button */
+.dropdown-toggle {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: #FFFFFF; /* Match navbar link text color */
+  font-size: 18px; /* Match navbar link font size */
+  cursor: pointer;
+  padding: 10px 0; /* Consistent padding with other nav-links */
+  text-decoration: none; /* Remove underline */
+  opacity: 0.65; /* Match initial opacity */
+  transition: opacity 0.4s, transform 0.4s; /* Smooth transitions */
+}
+
+/* Hover Effects for Dropdown Toggle */
+.dropdown-toggle:hover {
+  opacity: 1; /* Full opacity on hover */
+  transform: scale(1.05); /* Slight scaling for interaction */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Align directly below toggle button */
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2); /* Match navbar background */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded edges */
+  padding: 10px; /* Inner padding */
+  display: none; /* Hide by default */
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Show Dropdown Menu When Active */
+.dropdown:hover .dropdown-menu {
+  display: flex; /* Display dropdown on hover */
+}
+
+/* Links in Dropdown Menu */
+.dropdown-menu .nav-link {
+  color: #FFFFFF; /* White text */
+  font-size: 16px; /* Slightly smaller than the navbar links */
+  margin: 5px 0; /* Spacing between links */
+  text-decoration: none; /* Remove underline */
+  opacity: 0.65; /* Initial opacity */
+  transition: opacity 0.4s, transform 0.4s; /* Smooth transitions */
+}
+
+/* Hover Effects for Dropdown Links */
+.dropdown-menu .nav-link:hover {
+  opacity: 1; /* Full opacity on hover */
+  transform: scale(1.05); /* Slight scaling for interaction */
+}
+
 
 .loading-indicator {
   position: fixed;
@@ -278,7 +344,8 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 .contact-form .error-message {
   color: var(--error-color, #d9534f); /* Use a variable or default to red */
   font-size: 14px;
-  margin-bottom: 10px;
+  margin: 2%;
+  margin-left: 0%;
   text-align: center;
 }
 

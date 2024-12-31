@@ -1,49 +1,43 @@
+const sendgrid = require('@sendgrid/mail');
+
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
 exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed',
+    };
+  }
+
   try {
-    // Check for POST request
-    if (event.httpMethod !== 'POST') {
-      return {
-        statusCode: 405,
-        body: JSON.stringify({ error: 'Method Not Allowed' }),
-      };
-    }
+    const { name, email, message } = JSON.parse(event.body);
 
-    // Parse the request body
-    const data = JSON.parse(event.body);
-
-    // Basic validation
-    const { name, email, message } = data;
-    if (!name || !email || !message) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'All fields are required' }),
-      };
-    }
-
-    // Log the submission (optional, for debugging purposes)
-    console.log('Form submission received:', { name, email, message });
-
-    // Optional: Add functionality such as sending an email
-    // Example: Use a third-party service like SendGrid or AWS SES
-    /*
-    await sendEmail({
-      to: 'your-email@example.com',
+    // Compose the email
+    const msg = {
+      to: 'your-email@example.com', // Replace with your email address
+      from: 'your-email@example.com', // Must be a verified sender in SendGrid
       subject: `New Contact Form Submission from ${name}`,
-      text: `Message: ${message}\nFrom: ${email}`,
-    });
-    */
+      html: `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
 
-    // Return success response
+    // Send the email
+    await sendgrid.send(msg);
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Form submitted successfully!' }),
+      body: JSON.stringify({ message: 'Your message has been sent successfully!' }),
     };
   } catch (error) {
-    console.error('Error handling contact form submission:', error);
-
+    console.error('Error sending email:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Internal Server Error' }),
+      body: JSON.stringify({ error: 'Failed to send message. Please try again later.' }),
     };
   }
 };

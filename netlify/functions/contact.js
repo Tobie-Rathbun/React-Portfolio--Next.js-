@@ -15,8 +15,8 @@ exports.handler = async (event) => {
 
     // Compose the email
     const msg = {
-      to: 'your-email@example.com', // Replace with your email address
-      from: 'your-email@example.com', // Must be a verified sender in SendGrid
+      to: process.env.SENDGRID_TO_EMAIL, // Use recipient from environment variable
+      from: process.env.SENDGRID_FROM_EMAIL, // Use sender from environment variable
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>

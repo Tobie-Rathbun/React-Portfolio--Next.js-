@@ -19,7 +19,7 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/.netlify/functions/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message }),
@@ -29,7 +29,8 @@ const ContactForm: React.FC = () => {
         throw new Error('Failed to send message. Please try again later.');
       }
 
-      setSuccess('Your message has been sent successfully!');
+      const result = await response.json();
+      setSuccess(result.message);
       setName('');
       setEmail('');
       setMessage('');
@@ -47,13 +48,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className="contact-form">
       <h1>Contact Me</h1>
-      <form 
-        onSubmit={handleContactSubmit}
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        method='POST'
-        name='contact'
-      >
+      <form onSubmit={handleContactSubmit}>
         <input
           type="text"
           placeholder="Your Name"
@@ -79,11 +74,11 @@ const ContactForm: React.FC = () => {
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="hidden" name="bot-field" />
       </form>
     </div>
   );
-};
+  
+  };
+
 
 export default ContactForm;

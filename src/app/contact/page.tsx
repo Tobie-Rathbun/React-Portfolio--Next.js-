@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 
-export const dynamic = 'force-dynamic';
-
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -14,8 +12,8 @@ const ContactForm: React.FC = () => {
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(null); // Clear any previous errors
-    setSuccess(null); // Clear any previous success message
+    setError(null);
+    setSuccess(null);
     setIsSubmitting(true);
 
     try {
@@ -48,12 +46,35 @@ const ContactForm: React.FC = () => {
   return (
     <div className="contact-form">
       <h1>Contact Me</h1>
-      <form onSubmit={handleContactSubmit}>
+
+      {/* Hidden Static Form for Netlify Detection */}
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
+
+      {/* Dynamic React Form */}
+      <form
+        onSubmit={handleContactSubmit}
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        method="POST"
+        name="contact"
+      >
         <input
           type="text"
           placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          name="name"
           required
         />
         <input
@@ -61,12 +82,14 @@ const ContactForm: React.FC = () => {
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          name="email"
           required
         />
         <textarea
           placeholder="Your message to me"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          name="message"
           required
         ></textarea>
         {error && <p className="error-message">{error}</p>}
@@ -74,11 +97,11 @@ const ContactForm: React.FC = () => {
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
       </form>
     </div>
   );
-  
-  };
-
+};
 
 export default ContactForm;

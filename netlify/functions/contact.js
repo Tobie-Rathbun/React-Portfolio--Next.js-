@@ -13,9 +13,16 @@ exports.handler = async (event) => {
   try {
     const { name, email, message } = JSON.parse(event.body);
 
+    // Ensure the recipient (to) email is set
+    const recipientEmail = process.env.SENDGRID_TO_EMAIL || 'tsrathbun@gmail.com'; // Replace with a fallback email if needed
+
+    if (!recipientEmail) {
+      throw new Error('Recipient email address is missing');
+    }
+
     // Compose the email
     const msg = {
-      to: process.env.SENDGRID_TO_EMAIL, // Use recipient from environment variable
+      to: recipientEmail, // Use recipient from environment variable
       from: process.env.SENDGRID_FROM_EMAIL, // Use sender from environment variable
       subject: `New Contact Form Submission from ${name}`,
       html: `

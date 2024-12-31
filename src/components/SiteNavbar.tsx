@@ -7,11 +7,25 @@ import { useState, useEffect } from "react";
 const SiteNavbar = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const pathname = usePathname();
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = event.currentTarget as HTMLAnchorElement;
+    const href = target.getAttribute("href");
+    
+  
+    if (href === pathname) {
+      // Prevent unnecessary loading when clicking on the current page
+      event.preventDefault();
+      setIsDropdownOpen(false);
+      console.log("Already on the current page");
+      return;
+    }
+  
     setIsLoading(true);
     setIsDropdownOpen(false); // Close dropdown when a link is clicked
   };
+  
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -53,6 +67,7 @@ const SiteNavbar = () => {
             </button>
             {isDropdownOpen && (
               <div className="dropdown-menu">
+                
                 <Link href="/poker2d" className="nav-link" onClick={handleLinkClick}>
                   Poker 2D
                 </Link>

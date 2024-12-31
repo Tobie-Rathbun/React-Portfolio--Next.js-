@@ -363,9 +363,11 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 /* Skills Grid Container */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1%));
+  gap: 10px;
   padding: 20px; /* Adds padding around the grid for better spacing */
+  margin-left: 0%;
+  flex-grow: 1; /* Allow the skills grid to take available space */
 }
 
 /* Skill Category Styles */
@@ -376,7 +378,10 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   padding: 10px;
   border-radius: 8px;
   overflow: hidden; /* Keeps the expanding content within the box */
-  min-height: 150px; /* Set a minimum height to prevent cutting off content */
+  min-height: 3%; /* Set a minimum height to prevent cutting off content */
+  transition: background 5s ease-in-out; /* Smooth background color transition */
+  transition: max-height 0.5s ease-in, padding 0.25s ease-in, margin 0.5s ease-in-out;
+  transition: max-height 2s ease-out, padding 1s ease-out; /* Smooth transition for max-height and padding */
 }
 
 .skill-category h3 {
@@ -390,13 +395,85 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   margin-top: 0;
   max-height: 0; /* Start with zero height */
   overflow: hidden; /* Hide content initially */
-  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Smooth transition for max-height and padding */
+  transition: max-height 0.5s ease-in, padding 0.25s ease-in, margin 0.5s ease-in-out, background 5s ease-in-out;
+  transition: max-height 2s ease-out, padding 1s ease-out; /* Smooth transition for max-height and padding */
 }
 
 .skill-category:hover .skill-list {
   max-height: 500px; /* Set a consistent max-height for all skill lists */
   padding: 10px; /* Add padding during hover */
 }
+.skill-category:hover {
+  background: var(--accent-color);
+}
+
+.skill-list {
+  text-align: left;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between; /* Align text and grid on the same row */
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Add spacing between the two sections */
+}
+
+.skills-text {
+  display: flex;
+  flex-direction: column; /* Stack "Skills" and "Resume" vertically */
+  text-align: left; /* Align text to the left */
+  flex-shrink: 0; /* Prevent shrinking of the text container */
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.resume {
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10%;
+  position: absolute;
+}
+
+.resume-link {
+  color: var(--accent-color); /* Use an accent color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+  margin-top: 50%;
+}
+
+.resume-link:hover {
+  color: var(--accent-hover-color); /* Change color on hover */
+  text-decoration: underline; /* Optional underline on hover */
+}
+
+
+.-page {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%; /* Adjust width as needed */
+}
+
+.-page h1 {
+  font-size: 2em;
+}
+
+.-page p {
+  margin: 10px 0;
+}
+
+.-page a {
+  text-decoration: none;
+  color: #007bff; /* Customize link color */
+}
+
+.-page a:hover {
+  text-decoration: underline;
+}
+
+
+
+
 
 
 #root {
@@ -511,28 +588,6 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   font-size: 12px;
 }
 
-.-page {
-  text-align: center;
-  margin: 0 auto;
-  width: 80%; /* Adjust width as needed */
-}
-
-.-page h1 {
-  font-size: 2em;
-}
-
-.-page p {
-  margin: 10px 0;
-}
-
-.-page a {
-  text-decoration: none;
-  color: #007bff; /* Customize link color */
-}
-
-.-page a:hover {
-  text-decoration: underline;
-}
 
 
 .no-scroll {

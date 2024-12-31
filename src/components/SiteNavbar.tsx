@@ -52,8 +52,8 @@ const SiteNavbar = () => {
           >
             Chords
           </Link>
-          <Link href="/login" className="nav-link" onClick={handleLinkClick}>
-            Login
+          <Link href="/contact" className="nav-link" onClick={handleLinkClick}>
+            Contact
           </Link>
         </div>
       </nav>

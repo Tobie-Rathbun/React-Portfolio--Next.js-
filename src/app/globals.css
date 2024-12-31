@@ -224,37 +224,72 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 }
 
 /* Form styles */
-.login-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--chord-player-background);
-  padding: 20px;
+  padding: 4% 3%;
   border-radius: 8px;
+  max-width: 33%;
+  min-height: 50%;
+  margin: 3% auto;
 }
 
-.login-form input[type="text"], .login-form input[type="password"] {
+.contact-form h1 {
+  padding-top: 0;
+  margin-top: -4%;
+  margin-left: -2%;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
   background-color: var(--chord-element-background);
   color: var(--primary-text-color);
   border: 1px solid var(--chord-element-border);
-  padding: 10px 15px;
-  margin: 5px 0;
+  padding: 2% 1%;
   border-radius: 4px;
   font-size: 16px;
-  width: 100%;
+  width: 90%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 2% auto;
+  margin-left: 3.5%;
 }
 
-.login-form button {
+.contact-form textarea {
+  resize: vertical;
+  height: 30%;
+}
+
+.contact-form button {
   background-color: var(--accent-color);
   color: var(--primary-text-color);
   border: none;
-  padding: 10px 15px;
-  margin: 5px 0;
+  padding: 2% 2%;
+  margin: 2% auto 5%;
+  margin-left: 3.5%;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  width: 106.25%;
+  width: 92.5%;
 }
+
+.contact-form .error-message {
+  color: var(--error-color, #d9534f); /* Use a variable or default to red */
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-form .success-message {
+  color: var(--success-color, #5cb85c); /* Use a variable or default to green */
+  font-size: 14px;
+  margin: 2%;
+  margin-left: 0%;
+  text-align: center;
+}
+
 
 
 /* About Styles */

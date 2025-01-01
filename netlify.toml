@@ -5,7 +5,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  inputs = { disableNextImage = false }
 
 [[redirects]]
   from = "/api/*" # Redirect API requests to serverless functions
@@ -16,4 +15,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-

@@ -14,7 +14,6 @@
     "@babylonjs/core": "^7.42.0",
     "@babylonjs/inspector": "^7.42.0",
     "@babylonjs/loaders": "^7.42.0",
-    "@netlify/plugin-nextjs": "^5.9.1",
     "@sendgrid/mail": "^8.1.4",
     "axios": "^1.7.9",
     "concurrently": "^9.1.0",
@@ -30,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@netlify/plugin-nextjs": "^5.9.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

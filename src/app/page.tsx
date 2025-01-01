@@ -1,27 +1,61 @@
-import Link from 'next/link'; // Use Next.js Link
-import './globals.css'; // Adjust the path if needed
+'use client';
 
-export const dynamic = 'force-dynamic';
+import { useAnimate } from "framer-motion";
+import Link from "next/link";
+import './globals.css';
 
 export default function Home() {
+  const [scope, animate] = useAnimate();
+
+  function handleHover() {
+    animate([
+      [scope.current, { rotate: -90 }],
+      [scope.current, { scale: 1.15 }],
+      [scope.current, { rotate: 0 }],
+      [scope.current, { scale: 1.5 }]
+    ]);
+  }
+
+  function handleLeave() {
+    animate([
+      [scope.current, { scale: 1 }]
+    ]);
+  }
+
   return (
-    <div className="-page">
-      <h1>Howdy <span className='emoji'>&#x1F920;</span></h1>
-      <p>
-        If you are looking for my qualifications and skillsets check out my <span className='link'><Link href="/about">About</Link></span> page.
-      </p>
-      <p>
-        The <span className='link'><Link href="/rps">Rock, Paper, Scissors Simulator</Link></span> runs through many iterations of gameplay where the user decision is random and the AI computer makes guesses based on past decisions and their previous turn on a decision matrix known as a Markov Chain. It balances its decisions with a dynamic exponent to use the regret tracking data to minimize the counterfactual regret. Different computer move patterns can be selected with a dropdown before starting the simulation allowing for different results.
-      </p>
-      <p>
-        The <span className='link'><Link href="/poker2d">2D Poker Game</Link></span> uses an AI logic with a decision matrix and counterfactual regret minimization that is based around the concepts I explored in the rock, paper, scissors game. The AI will make turns and over many iterations will learn to play better hands. The win likelihood percentage is calculated from an external &quot;pokersolver&quot; library with credit and thanks to goldfire.
-      </p>
-      <p>
-        The <span className='link'><Link href="/chord-player">Chord Player</Link></span> will play any four note piano chord by simultaneously playing four separate .mp3 files each containing the sound of a different piano note. The GUI contains dropdown elements to choose the root note and the chord type, and then displays the selected notes. It also contains buttons to translate the chord to a higher inversion which involves playing one of the same notes in a higher octave, effectively making it higher pitched. The &quot;Play Chord&quot; button can be pushed many times and duplicates of the sound files are loaded to support the latency.
-      </p>
-      <p>
-        The <span className='link'><Link href="/pokerfrogs">3D Poker Game</Link></span> showcases draggable panel components that are imported and update with live data from the cards dealt within the game logic that runs alongside the Babylon 3D scene in the page.tsx that contains the code for the webpage.
-      </p>
-    </div>
+    <>
+      {/* Main Content */}
+      <div className="-page">
+        <h1>
+          Howdy <span className="emoji">&#x1F920;</span>
+        </h1>
+        <p>
+          If you are looking for my qualifications and skillsets, check out my{' '}
+          <span className="link">
+            <Link href="/about">About</Link>
+          </span>{' '}
+          page.
+        </p>
+
+        <div className="cards-container">
+          <div
+            className="animated-card"
+            ref={scope}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+          >
+            <Link href="/rps" style={{ textDecoration: 'none' }}>
+              <div className="card-content">
+                <h2>
+                  <span className="emoji" id="rock">&#129704;</span>
+                  <span className="emoji">&#128220;</span>
+                  <span className="emoji">&#9986;&#65039;</span>
+                </h2>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

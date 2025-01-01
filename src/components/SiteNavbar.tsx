@@ -1,5 +1,6 @@
 "use client";
 
+import "../app/globals.css";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -37,7 +38,7 @@ const SiteNavbar = () => {
   }, [usePathname(), useSearchParams()]);
 
   return (
-    <div>
+    <div className="navbar-wrapper">
       <nav className="site-navbar">
         <Link href="/" className="navbar-brand" onClick={handleLinkClick}>
           Tobie Rathbun
@@ -72,7 +73,7 @@ const SiteNavbar = () => {
                   Poker 2D
                 </Link>
                 <Link href="/pokerfrogs" className="nav-link" onClick={handleLinkClick}>
-                  Poker Frogs 3D
+                  Poker Frogs 3D (Demo)
                 </Link>
                 <Link href="/rps" className="nav-link" onClick={handleLinkClick}>
                   Rock, Paper, Scissors

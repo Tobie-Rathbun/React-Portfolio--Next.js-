@@ -5,7 +5,9 @@
   --primary-text-color: #e0e0e0;
   --secondary-text-color: #adadad;
   --accent-color: #6200ee;
+  --accent-color-dark: #170138;
   --highlight-color: #bb86fc;
+  --highlight-color-dark: #352745;
 
   /* Component-Specific Colors */
   --chord-player-background: #333333;
@@ -15,30 +17,55 @@
 
 /* General styles */
 body {
-  background-color: var(--dark-background);
-  color: var(--primary-text-color);
-  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: var(--primary-text-color);
+  position: relative;
+  background: none;
+}
+
+/* Main content */
+main {
+  position: relative;
+  z-index: 1; /* Ensure content is above the background */
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--secondary-text-color);
 }
 
-span.emoji {
-  display: inline-block;
-  font-size: 2rem; 
-  transition: transform 0.6s ease; 
+/* General layout wrapper */
+.layout-wrapper {
+  position: relative; /* Create stacking context */
+  overflow: hidden;
+  z-index: 1;
 }
 
-span.emoji:hover {
-  animation: spin 0.6s ease;
+.animated-background {
+  position: fixed; /* Ensures it stays in place as you scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(
+  45deg,
+  var(--highlight-color-dark),
+  var(--accent-color-dark),
+  var(--dark-background),
+  #040115,
+  #000
+  
+);
+
+  background-size: 400% 400%; /* Makes the gradient larger than the viewport for smooth animation */
+  z-index: -1;
 }
 
 
 
-/* Define the spin animation */
+
+/* Animations */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -48,24 +75,56 @@ span.emoji:hover {
   }
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+/* Links */
+
 /* For links inside a span */
 span.link a {
   display: inline-block;
-  transition: opacity 0.4s, transform 0.4s ease-in-out;
+  transition: opacity 0.75s, transform 0.75s ease-in-out, padding 0.75s ease-in-out;
   color: var(--highlight-color);
-  opacity: 0.85;
+  opacity: 1;
+  padding: 0;
 }
 
 span.link a:hover {
   transform: scale(1.03);
   opacity: 1;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 a.link {
   display: inline-block; /* Required for transform to work */
   transition: opacity 0.4s, transform 0.4s ease-in-out;
   color: var(--highlight-color);
-  opacity: 0.65;
+  opacity: 1;
 }
 
 a.link:hover {
@@ -75,24 +134,42 @@ a.link:hover {
 
 
 
-
-
-
 /* SiteNavbar */
+.navbar-wrapper {
+  z-index: 9991;
+}
+
 .site-navbar {
   display: flex; /* Display items in a flex container */
   justify-content: space-between; /* Align items evenly along the main axis */
   align-items: center; /* Center items vertically */
-  background-color: rgba(255, 255, 255, 0.2); /* Opaque white background color */
+  background: linear-gradient(
+    45deg,
+    var(--accent-color-dark) 0%,
+    var(--dark-background) 100%
+  );
   border-radius: 10px; /* Rounded edges */
   padding: 10px 20px; /* Add padding for space */
   border: 1px solid #FFFFFF; /* Thin white border */
   position: relative;
   z-index: 9990;
   flex-wrap: nowrap;
+  opacity: 65%;
+  width: 90%;
+  margin: 1% auto;
+  transition: background-position 1s cubic-bezier(0.42, 0, 0.58, 1), 
+    opacity 1s cubic-bezier(0.42, 0, 0.58, 1);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
 }
 
-.site-navbar .navbar-brand {
+.site-navbar:hover {
+  background-position: 100% 50%;
+  opacity: 1;
+}
+
+
+.navbar-brand {
   font-size: 24px;
   font-weight: bold;
   color: #FFFFFF; /* White text */
@@ -104,13 +181,13 @@ a.link:hover {
   transform: scale(1.05);
 }
 
-.site-navbar .nav-link {
+.nav-link {
   color: #FFFFFF; /* White text */
   display: inline-block;
   font-size: 18px;
   margin-right: 20px;
   text-decoration: none; /* Remove underline */
-  opacity: 0.65; /* Initial opacity for non-active links */
+  opacity: 0.85; /* Initial opacity for non-active links */
   transition: opacity 0.4s, transform 0.4s; /* Smooth transition for opacity and transform */
 }
 
@@ -141,7 +218,7 @@ a.link:hover {
   cursor: pointer;
   padding: 10px 0; /* Consistent padding with other nav-links */
   text-decoration: none; /* Remove underline */
-  opacity: 0.65; /* Match initial opacity */
+  opacity: 0.85; /* Match initial opacity */
   transition: opacity 0.4s, transform 0.4s; /* Smooth transitions */
 }
 
@@ -211,21 +288,9 @@ a.link:hover {
   
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 
-
-
-
-
-/* Chord Player specific styles */
+/* Chord Player */
 .chord-player {
   display: flex;
   flex-direction: column;
@@ -289,7 +354,12 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   100% { transform: scale(0.95); }
 }
 
-/* Form styles */
+
+
+
+
+
+/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -356,6 +426,8 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   margin-left: 0%;
   text-align: center;
 }
+
+
 
 
 
@@ -443,7 +515,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 }
 
 .resume-link:hover {
-  color: var(--accent-hover-color); /* Change color on hover */
+  color: var(--highlight-color); /* Change color on hover */
   text-decoration: underline; /* Optional underline on hover */
 }
 
@@ -452,6 +524,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   text-align: center;
   margin: 0 auto;
   width: 100%; /* Adjust width as needed */
+  z-index: 1;
 }
 
 .-page h1 {
@@ -471,10 +544,17 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   text-decoration: underline;
 }
 
+.about-bio {
+  width: 75%;
+  text-align: left;
+  margin-left: 12.5%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
 
 
 
-
+/* Poker Frogs 3D */
 
 #root {
   height: 100%;
@@ -564,17 +644,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   animation: pulsate 1.5s infinite;
 }
 
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+
 
 .card-display {
   position: absolute;
@@ -594,6 +664,9 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   overflow: hidden;
   height: 100%;
 }
+
+
+
 
 
 /* Rock, Paper, Scissors RPS */
@@ -730,6 +803,9 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 
 
+
+
+/* Media Queries */
 
 @media (max-width: 768px) {
   #container1 { top: 10px; left: 10px; }
@@ -1011,7 +1087,67 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 
 
+/* Home Page */
 
 .loading-overlay.hidden {
   display: none;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Spacing between cards */
+  margin-top: 40px; /* Space above the container */
+  height: 100%;
+  padding-bottom: 25%;
+}
+
+.emoji {
+  margin-top: -8%;
+}
+
+span.emoji {
+  display: inline-block;
+  font-size: 2rem; 
+  transition: transform 0.6s ease; 
+}
+
+span.emoji:hover {
+  animation: spin 0.6s ease;
+}
+
+#rock {
+  font-size: 173%;
+  position: relative;
+  top: 6%;
+}
+
+.animated-card {
+  width: 150px;
+  height: 150px;
+  background-color: var(--highlight-color);
+  color: var(--primary-text-color);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.animated-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove underline from links */
+.animated-card .card-content {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Ensures the text color matches parent */
+}
+
+.animated-card .card-content:hover {
+  text-decoration: none; /* Ensure underline is not added on hover */
 }

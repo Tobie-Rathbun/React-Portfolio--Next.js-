@@ -18,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {/* Animated Background as a Client Component */}
-        <AnimatedBackground />
+        <Suspense fallback={<div>Loading Background...</div>}>
+          <AnimatedBackground />
+        </Suspense>
 
         {/* Main container for stacking context */}
         <div className="layout-wrapper">

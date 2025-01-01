@@ -302,43 +302,54 @@ const RockPaperScissors: React.FC = () => {
   };
   
   
+  type Position = { x: number; y: number };
+  type Positions = {
+    c1: Position;
+    c2: Position;
+    c3: Position;
+    c4: Position;
+    c5: Position;
+    c6: Position;
+  };
+
+  const useDraggable = (
+    id: keyof Positions,
+    setPositions: React.Dispatch<React.SetStateAction<Positions>>
+  ): {
+    position: Position;
+    zIndex: number;
+    handleMouseDown: (event: React.MouseEvent<HTMLDivElement>) => void;
+  } => {
+    const [isDragging, setIsDragging] = useState<boolean>(false);
+    const [offset, setOffset] = useState<Position>({ x: 0, y: 0 });
+    const [zIndex, setZIndex] = useState<number>(0);
   
-  
-  
-  
-  const useDraggable = (id: string, initialX: number, initialY: number) => {
-    const [position, setPosition] = useState({ x: initialX, y: initialY });
-    const [isDragging, setIsDragging] = useState(false);
-    const [offset, setOffset] = useState({ x: 0, y: 0 });
-    const [zIndex, setZIndex] = useState(0); // Add z-index state
-  
-    const handleMouseDown = (event: React.MouseEvent) => {
+    const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>): void => {
       setIsDragging(true);
       setZIndex(9999);
   
-      // Record the offset between the mouse position and the element's position
-      const element = document.getElementById(id);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        setOffset({
-          x: event.clientX - rect.left,
-          y: event.clientY - rect.top,
-        });
-      }
-    };
-    
-    const handleMouseUp = () => {
-      setIsDragging(false);
-      setZIndex(zIndMod + 1);
+      const elementPosition = positions[id]; // Get the current position from state
+      setOffset({
+        x: event.clientX - elementPosition.x, // Calculate the offset relative to the stored position
+        y: event.clientY - elementPosition.y,
+      });
     };
   
-    const handleMouseMove = (event: MouseEvent) => {
+    const handleMouseUp = (): void => {
+      setIsDragging(false);
+      setZIndex(6); // Reset z-index
+    };
+  
+    const handleMouseMove = (event: MouseEvent): void => {
       if (!isDragging) return;
   
-      setPosition({
-        x: event.clientX - offset.x, // Adjust position by the offset
-        y: event.clientY - offset.y,
-      });
+      setPositions((prev) => ({
+        ...prev,
+        [id]: {
+          x: event.clientX - offset.x, // Adjust position by the offset
+          y: event.clientY - offset.y,
+        },
+      }));
     };
   
     useEffect(() => {
@@ -353,13 +364,81 @@ const RockPaperScissors: React.FC = () => {
       };
     }, [isDragging, offset]);
   
-    return { position, zIndex, handleMouseDown };
+    return { position: positions[id], zIndex, handleMouseDown };
+  };
+  
+
+
+
+
+
+  const [positions, setPositions] = useState<Positions>({
+    c1: { x: 0, y: 0 },
+    c2: { x: 0, y: 0 },
+    c3: { x: 0, y: 0 },
+    c4: { x: 0, y: 0 },
+    c5: { x: 0, y: 0 },
+    c6: { x: 0, y: 0 },
+  });
+  
+  useEffect(() => {
+    setPositions(initializePositions());
+  }, []);
+  
+  
+  const c1Draggable = useDraggable('c1', setPositions);
+  const c2Draggable = useDraggable('c2', setPositions);
+  const c3Draggable = useDraggable('c3', setPositions);
+  const c4Draggable = useDraggable('c4', setPositions);
+  const c5Draggable = useDraggable('c5', setPositions);
+  const c6Draggable = useDraggable('c6', setPositions);
+  
+  const initializePositions = (): Positions => {
+    const isSmallScreen = window.innerWidth <= 1300;
+    const isVerySmallScreen = window.innerWidth <= 480;
+  
+    if (isVerySmallScreen) {
+      return {
+        c1: { x: window.innerWidth * 0.1, y: window.innerHeight * 0.05 },
+        c2: { x: window.innerWidth * 0.3, y: window.innerHeight * 0.05 },
+        c3: { x: window.innerWidth * 0.5, y: window.innerHeight * 0.05 },
+        c4: { x: window.innerWidth * 0.7, y: window.innerHeight * 0.3 },
+        c5: { x: window.innerWidth * 0.9, y: window.innerHeight * 0.3 },
+        c6: { x: window.innerWidth * 0.7, y: window.innerHeight * 0.6 },
+      };
+    }
+  
+    if (isSmallScreen) {
+      return {
+        c1: { x: window.innerWidth * 0.02, y: window.innerHeight * 0 }, // 5% from left, 10% from top
+        c2: { x: window.innerWidth * 0.343, y: window.innerHeight * 0 }, // 35% from left, 10% from top
+        c3: { x: window.innerWidth * 0.665, y: window.innerHeight * 0 }, // 65% from left, 10% from top
+        c4: { x: window.innerWidth * 0.327, y: window.innerHeight * 0.45 }, // 25% from left, 50% from top
+        c5: { x: window.innerWidth * 0.53, y: window.innerHeight * 0.45 },  // 50% from left, 50% from top
+        c6: { x: window.innerWidth * 0.75, y: window.innerHeight * 0.485 }, // 75% from left, 50% from top
+      };
+    }
+  
+    return {
+      c1: { x: window.innerWidth * 0.02, y: window.innerHeight * 0 }, // 5% from left, 10% from top
+      c2: { x: window.innerWidth * 0.25, y: window.innerHeight * 0 }, // 35% from left, 10% from top
+      c3: { x: window.innerWidth * 0.48, y: window.innerHeight * 0 }, // 65% from left, 10% from top
+      c4: { x: window.innerWidth * 0.24, y: window.innerHeight * 0.35 }, // 25% from left, 50% from top
+      c5: { x: window.innerWidth * 0.47, y: window.innerHeight * 0.35 },  // 50% from left, 50% from top
+      c6: { x: window.innerWidth * 0.7, y: window.innerHeight * 0.37 }, // 75% from left, 50% from top
+    };
+  };
+  
+  const startSimulation = () => {
+    setIsRunning(true);
+  };
+
+  const stopSimulation = () => {
+    setIsRunning(false);
   };
   
   
-  
-  
-  
+  /* Ai Performance Check*/
   useEffect(() => {
     const performanceRatio = calculatePerformanceRatio();
   
@@ -377,23 +456,8 @@ const RockPaperScissors: React.FC = () => {
     });
   }, [scores]); // Trigger whenever scores are updated
   
-  
-  const c1Draggable = useDraggable('c1', 10, 60);
-  const c2Draggable = useDraggable('c2', 475, 60);
-  const c3Draggable = useDraggable('c3', 825, 60);
-  const c4Draggable = useDraggable('c4', 475, 425);
-  const c5Draggable = useDraggable('c5', 740, 425);
-  const c6Draggable = useDraggable('c6', 1020, 435);
-  
 
-  const startSimulation = () => {
-    setIsRunning(true);
-  };
-
-  const stopSimulation = () => {
-    setIsRunning(false);
-  };
-
+  // Run Simulation
   useEffect(() => {
     if (!isRunning) return;
 
@@ -403,6 +467,56 @@ const RockPaperScissors: React.FC = () => {
 
     return () => clearInterval(interval); // Cleanup on stop
   }, [isRunning]);
+
+
+  // Update Positions
+  useEffect(() => {
+    const updatePositions = () => {
+      setPositions({
+        c1: { x: window.innerWidth * 0.05, y: window.innerHeight * 0.0 },
+        c2: { x: window.innerWidth * 0.35, y: window.innerHeight * 0.0 },
+        c3: { x: window.innerWidth * 0.65, y: window.innerHeight * 0.0 },
+        c4: { x: window.innerWidth * 0.4, y: window.innerHeight * 0.4 },
+        c5: { x: window.innerWidth * 0.6, y: window.innerHeight * 0.4 },
+        c6: { x: window.innerWidth * 0.8, y: window.innerHeight * 0.4 },
+      });
+    };
+  
+    window.addEventListener('resize', updatePositions);
+    return () => window.removeEventListener('resize', updatePositions);
+  }, []);
+
+
+
+  // Handle Resize
+  useEffect(() => {
+    const handleResize = () => {
+      document.documentElement.style.setProperty('--dynamic-scale', Math.min(window.innerWidth / 1200, 1).toString());
+    };
+  
+    window.addEventListener('resize', handleResize);
+    handleResize();
+  
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const updateDynamicPositions = () => {
+      const newPositions = initializePositions();
+      setPositions(newPositions);
+    };
+  
+    // Set initial positions and add resize listener
+    updateDynamicPositions();
+    window.addEventListener('resize', updateDynamicPositions);
+  
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateDynamicPositions);
+    };
+  }, []);
+  
+  
 
   return (
     <div className="flex-container">

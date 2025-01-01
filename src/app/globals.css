@@ -23,6 +23,7 @@ body {
   color: var(--primary-text-color);
   position: relative;
   background: none;
+  overflow-y: auto;
 }
 
 /* Main content */
@@ -673,20 +674,21 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 .flex-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-  gap: 1rem;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  min-height: 100vh; /* Ensure full vertical height */
+  padding: 2rem; /* Add spacing around content */
+  box-sizing: border-box; /* Include padding in element dimensions */
+  overflow-y: visible;
 }
 
 .flex-item {
-  flex: 1;
-  margin: 0 1rem;
-  min-width: 250px; /* Prevent items from becoming too small */
-  text-align: left;
+  flex: 1 1 auto; /* Allow flexible resizing */
+  min-width: 300px; /* Ensure minimum width */
+  text-align: left; /* Center-align content */
 }
+
 
 .horiz-container {
   display: flex;
@@ -796,8 +798,11 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   cursor: grab;
   user-select: none; /* Prevent text selection during dragging */
   touch-action: none; /* Disable touch scrolling for mobile dragging */
-  max-width: 30%; /* Prevent overly large containers */
+  width: 20%; /* Set proportional width */
+  max-width: 30%; /* Limit the maximum width */
+  height: auto; /* Allow height to adjust based on content */
 }
+
 
 
 
@@ -807,14 +812,14 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 /* Media Queries */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #container1 { top: 10px; left: 10px; }
   #container2 { top: 120px; left: 10px; }
   #container3 { top: 230px; left: 10px; }
   #container4 { top: 340px; left: 10px; }
   #container5 { top: 450px; left: 10px; }
   #container6 { top: 560px; left: 10px; }
-}
+} */
 
 
 
@@ -852,6 +857,12 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   border-radius: 8px; /* Rounded corners */
   text-align: center; /* Center align text */
 }
+
+.flex-item, .stats-box {
+  transform: scale(var(--dynamic-scale));
+  transform-origin: top left; /* Adjust the scaling origin */
+}
+
 
 #c1, #c3 h2 {
   color: var(--primary-text-color);
@@ -907,6 +918,8 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   justify-content: center; /* Center content horizontally */
   gap: 1rem;
   margin-top: 2rem;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 /* Stats box for consistent height and alignment */
@@ -928,24 +941,44 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 .matrix-box {
   flex: 2 1 400px; /* Make matrix box wider */
   overflow-x: auto; /* Add horizontal scroll if needed */
+  overflow-y: auto;
   padding: 1rem;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-  .flex-container {
-    padding: 1rem;
-  }
+.flex-item, .stats-box, .matrix-box {
+  flex: 1 1 300px; /* Flexible width with a minimum of 300px */
+  max-width: 300px; /* Limit maximum width */
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--chord-player-background);
+}
 
+/* Add responsive scaling */
+@media (max-width: 768px) {
   .flex-item, .stats-box, .matrix-box {
-    width: 100%; /* Full width for small screens */
+    flex: 1 1 100%; /* Full width for smaller screens */
+    max-width: 100%; /* Ensure content does not overflow */
+    padding: 0.5rem;
   }
 
-  .stats-container {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
+  .btn, .choice-btn {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    padding: 0.4rem 0.8rem; /* Adjust padding */
   }
 }
+
+@media (max-width: 480px) {
+  .flex-item, .stats-box, .matrix-box {
+    padding: 0.2rem;
+  }
+
+  .btn, .choice-btn {
+    font-size: 12px;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
 
 
 

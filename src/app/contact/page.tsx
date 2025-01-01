@@ -47,25 +47,9 @@ const ContactForm: React.FC = () => {
     <div className="contact-form">
       <h1>Contact Me</h1>
 
-      {/* Hidden Static Form for Netlify Detection */}
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        hidden
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
-      </form>
-
       {/* Dynamic React Form */}
       <form
         onSubmit={handleContactSubmit}
-        data-netlify="true"
-        netlify-honeypot="bot-field"
         method="POST"
         name="contact"
       >
@@ -97,8 +81,6 @@ const ContactForm: React.FC = () => {
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="hidden" name="bot-field" />
       </form>
     </div>
   );

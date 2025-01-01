@@ -4,7 +4,8 @@
   functions = "netlify/functions" # Directory for Netlify serverless functions
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs" # Netlify plugin for Next.js support
+  package = "@netlify/plugin-nextjs"
+  inputs = { disableNextImage = false }
 
 [[redirects]]
   from = "/api/*" # Redirect API requests to serverless functions

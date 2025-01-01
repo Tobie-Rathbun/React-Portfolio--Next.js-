@@ -26,7 +26,7 @@ const RockPaperScissors: React.FC = () => {
     Paper: { Rock: 0, Paper: 0, Scissors: 0 },
     Scissors: { Rock: 0, Paper: 0, Scissors: 0 },
   });
-  const zIndMod = 6;
+  
 
   // Constants for AI behavior
   
@@ -506,15 +506,14 @@ const RockPaperScissors: React.FC = () => {
       setPositions(newPositions);
     };
   
-    // Set initial positions and add resize listener
-    updateDynamicPositions();
+    updateDynamicPositions(); // Set initial positions
     window.addEventListener('resize', updateDynamicPositions);
   
-    // Cleanup listener on component unmount
     return () => {
       window.removeEventListener('resize', updateDynamicPositions);
     };
-  }, []);
+  }, [initializePositions]);
+  
   
   
 

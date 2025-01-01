@@ -1101,6 +1101,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   gap: 20px; /* Spacing between cards */
   margin-top: 40px; /* Space above the container */
   height: 100%;
+  padding-bottom: 25%;
 }
 
 .emoji {
@@ -1120,7 +1121,7 @@ span.emoji:hover {
 #rock {
   font-size: 173%;
   position: relative;
-  top: 5%;
+  top: 6%;
 }
 
 .animated-card {

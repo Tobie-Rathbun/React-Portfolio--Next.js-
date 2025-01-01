@@ -10,9 +10,9 @@ export default function Home() {
   function handleHover() {
     animate([
       [scope.current, { rotate: -90 }],
-      [scope.current, { scale: 1.5 }],
+      [scope.current, { scale: 1.15 }],
       [scope.current, { rotate: 0 }],
-      [scope.current, { scale: 2 }]
+      [scope.current, { scale: 1.5 }]
     ]);
   }
 

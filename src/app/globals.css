@@ -234,8 +234,9 @@ a.link:hover {
   position: absolute;
   top: 100%; /* Align directly below toggle button */
   left: 0;
-  background-color: rgba(255, 255, 255, 0.2); /* Match navbar background */
-  border: none; /* Remove border */
+  background-color: var(--accent-color-dark); /* Match navbar background */
+  opacity: 0.9;
+  border: 1px solid white;
   border-radius: 8px; /* Rounded edges */
   padding: 10px; /* Inner padding */
   display: none; /* Hide by default */

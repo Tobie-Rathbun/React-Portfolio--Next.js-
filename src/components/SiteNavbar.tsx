@@ -2,7 +2,7 @@
 
 import "../app/globals.css";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname} from "next/navigation";
 import { useState, useEffect } from "react";
 
 const SiteNavbar = () => {
@@ -35,7 +35,7 @@ const SiteNavbar = () => {
   useEffect(() => {
     // Simulate the end of loading when the pathname or search params change
     setIsLoading(false); // This ensures the spinner stops after the page renders
-  }, [usePathname(), useSearchParams()]);
+  }, [usePathname()]);
 
   return (
     <div className="navbar-wrapper">

@@ -1,39 +1,47 @@
-import type { Metadata } from "next";
+import React from "react";
 import './globals.css';
 import SiteNavbar from "../components/SiteNavbar"; // Adjust the path as needed
+import AnimatedBackground from "@/components/AnimatedBackground";
 
-export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Tobie Rathbun | Developer",
   description: "Full Stack Developer Portfolio",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        {/* Include the SiteNavbar above the children */}
-        <SiteNavbar />
-        <main>{children}</main>
+        {/* Animated Background as a Client Component */}
+        <AnimatedBackground />
 
-        {/* Hidden Static Form for Netlify Detection */}
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          hidden
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <textarea name="message"></textarea>
-        </form>
+        {/* Main container for stacking context */}
+        <div className="layout-wrapper">
+          {/* Include the SiteNavbar above the children */}
+          <div className="navbar-wrapper">
+            <SiteNavbar />
+          </div>
+          <main>{children}</main>
+
+          {/* Hidden Static Form for Netlify Detection */}
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            hidden
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message"></textarea>
+          </form>
+        </div>
       </body>
     </html>
   );

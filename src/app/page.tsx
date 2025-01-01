@@ -76,7 +76,7 @@ export default function Home() {
 
         <div className="card-title">
             <h1>Rock, Paper, Scissors</h1>
-            <h1 className="card-poker">Texas Hold' Em</h1>
+            <h1 className="card-poker">Texas Hold&#39; Em</h1>
         </div>
 
 

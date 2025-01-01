@@ -13,10 +13,12 @@ const SiteNavbar = () => {
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     const target = event.currentTarget as HTMLAnchorElement;
     const href = target.getAttribute("href");
-    
   
     if (href === pathname) {
-      // Prevent unnecessary loading when clicking on the current page
+      // Force a reload or reset state even when navigating to the same page
+      if (href === "/") {
+        window.location.href = "/"; // Reload the page
+      }
       event.preventDefault();
       setIsDropdownOpen(false);
       console.log("Already on the current page");
@@ -26,6 +28,7 @@ const SiteNavbar = () => {
     setIsLoading(true);
     setIsDropdownOpen(false); // Close dropdown when a link is clicked
   };
+  
   
 
   const handleDropdownToggle = () => {

@@ -502,17 +502,19 @@ const RockPaperScissors: React.FC = () => {
 
   useEffect(() => {
     const updateDynamicPositions = () => {
-      const newPositions = initializePositions();
-      setPositions(newPositions);
+      setPositions(initializePositions());
     };
   
-    updateDynamicPositions(); // Set initial positions
+    // Set initial positions and attach event listener
+    updateDynamicPositions();
     window.addEventListener('resize', updateDynamicPositions);
   
     return () => {
+      // Clean up the event listener to avoid memory leaks
       window.removeEventListener('resize', updateDynamicPositions);
     };
-  }, [initializePositions]);
+  }, []);
+  
   
   
   

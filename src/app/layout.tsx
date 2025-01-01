@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import './globals.css';
 import SiteNavbar from "../components/SiteNavbar"; // Adjust the path as needed
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -24,7 +24,9 @@ export default function RootLayout({
         <div className="layout-wrapper">
           {/* Include the SiteNavbar above the children */}
           <div className="navbar-wrapper">
-            <SiteNavbar />
+            <Suspense fallback={<div>Loading Navbar...</div>}>
+              <SiteNavbar />
+            </Suspense>
           </div>
           <main>{children}</main>
 

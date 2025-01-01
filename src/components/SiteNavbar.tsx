@@ -35,7 +35,7 @@ const SiteNavbar = () => {
   useEffect(() => {
     // Simulate the end of loading when the pathname or search params change
     setIsLoading(false); // This ensures the spinner stops after the page renders
-  }, [usePathname()]);
+  }, [pathname]);
 
   return (
     <div className="navbar-wrapper">

@@ -10,6 +10,26 @@ export default function Home() {
   const [scope2, animate2] = useAnimate();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+  const hoverSequence = [
+    { rotate: -90 },
+    { scale: 1.15 },
+    { rotate: 0 },
+    { scale: 1.5 },
+  ];
+
+  const leaveSequence = [
+    { scale: 1, rotate: 0 },
+  ];
+
+  const floatAnimation = {
+    animation: 'float 4s ease-in-out infinite',
+  };
+
+  const staggeredFloatAnimation = (index: number) => ({
+    animation: `float 4s ease-in-out infinite`,
+    animationDelay: `${index * 2}s`,
+  });
+
   const handleHover = async (
     animate: typeof animate1,
     scope: RefObject<HTMLElement>,
@@ -17,8 +37,10 @@ export default function Home() {
   ) => {
     setHoveredCard(cardIndex);
     if (scope.current) {
-      await animate(scope.current, { rotate: -90, scale: 1.15 }, { duration: 0.2, ease: 'easeInOut' });
-      await animate(scope.current, { rotate: 0, scale: 1.5 }, { duration: 0.2, ease: 'easeInOut' });
+      await animate(scope.current, { rotate: 0, scale: 1 }, { duration: 0 }); // Reset state
+      for (const step of hoverSequence) {
+        await animate(scope.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
     }
   };
 
@@ -28,7 +50,10 @@ export default function Home() {
   ) => {
     setHoveredCard(null);
     if (scope.current) {
-      await animate(scope.current, { scale: 1, rotate: 0 }, { duration: 0.2, ease: 'easeInOut' });
+      for (const step of leaveSequence) {
+        await animate(scope.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
+      animate(scope.current, floatAnimation);
     }
   };
 
@@ -50,6 +75,7 @@ export default function Home() {
           <div
             className="animated-card"
             ref={scope1}
+            style={hoveredCard === 1 ? {} : staggeredFloatAnimation(0)}
             onMouseEnter={() => handleHover(animate1, scope1, 1)}
             onMouseLeave={() => handleLeave(animate1, scope1)}
           >
@@ -73,6 +99,7 @@ export default function Home() {
           <div
             className="animated-card"
             ref={scope2}
+            style={hoveredCard === 2 ? {} : staggeredFloatAnimation(1)}
             onMouseEnter={() => handleHover(animate2, scope2, 2)}
             onMouseLeave={() => handleLeave(animate2, scope2)}
           >
@@ -89,8 +116,24 @@ export default function Home() {
         </div>
 
         <div className="card-title">
-          <h1 style={{ color: hoveredCard === 1 ? '#bb86fc' : 'inherit' }}>Rock, Paper, Scissors</h1>
-          <h1 style={{ color: hoveredCard === 2 ? '#bb86fc' : 'inherit' }}>Texas Hold &#39;Em</h1>
+          <h1
+            style={{
+              color: hoveredCard === 1 ? '#bb86fc' : 'inherit',
+              ...staggeredFloatAnimation(0),
+              marginLeft: '-2.5%',
+            }}
+          >
+            Rock, Paper, Scissors
+          </h1>
+          <h1
+            style={{
+              color: hoveredCard === 2 ? '#bb86fc' : 'inherit',
+              ...staggeredFloatAnimation(1),
+              marginLeft: '6%',
+            }}
+          >
+            Texas Hold &#39;Em
+          </h1>
         </div>
       </div>
     </>

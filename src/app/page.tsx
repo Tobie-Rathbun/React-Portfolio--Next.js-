@@ -56,7 +56,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="-page">
         <h1>
-          Howdy <span className="emoji">&#x1F920;</span>
+          Howdy <span className="emoji" id="cowboy">&#x1F920;</span>
         </h1>
         <p>
           If you are looking for my qualifications and skillsets, check out my{' '}
@@ -100,7 +100,7 @@ export default function Home() {
           >
             <Link href="/rps" style={{ textDecoration: 'none' }}>
               <div className="card-content">
-                <h2>
+                <h2 className='emoji-flex-container'>
                   <span className="emoji">&#9824;&#65039;</span>
                   <span className="emoji" id="heart">&#9829;&#65039;</span>
                   <span className="emoji">&#9827;&#65039;</span>

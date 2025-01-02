@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.02);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -1147,7 +1147,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 span.emoji, img.emoji {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 115%;
   height: 1em;
   width: auto;
   transition: transform 0.6s ease;
@@ -1163,6 +1163,8 @@ span.emoji {
   font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 
+
+
 .emoji:hover {
   animation: pulsate 0.6s ease-in-out; /* Use pulsate keyframes on hover */
 }
@@ -1172,28 +1174,43 @@ span.emoji {
   gap: 1rem; /* Adjust spacing between emojis */
   justify-content: center;
   align-items: center;
+  margin-top: -15%;
 }
 
-/* .emoji#rock {
-  font-size: 173%;
+.emoji#cowboy {
+  margin-top: -1.35%;
+}
+.emoji#cowboy:hover {
+  animation: spin 0.6s ease-in-out;
+}
+
+.emoji#rock {
+  width: 125%;
   position: relative;
-  top: 8%;
-  right: 50%;
+  left: 5%;
+  padding-bottom: 2%;
 }
 
 .emoji#paper {
+  width: 115%;
   position: relative;
-  left: 25%;
-  bottom: 45%;
+  left: -0.7%;
+  bottom: 20%;
 }
 
 .emoji#scissors {
+  width: 115%;
   position: relative;
-  left: 25%;
-  bottom: 45%;
-} */
+  left: -5%;
+  bottom: 20%;
+}
 
-
+.emoji-flex-container {
+  display: flex;
+  justify-content: center; /* Centers the emojis horizontally */
+  align-items: center; /* Aligns them vertically */
+  gap: 6%; /* Adjust the spacing between emojis */
+}
 
 
 /* Cards Container */

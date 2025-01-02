@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, RefObject } from 'react';
+import { useState, RefObject } from 'react';
 import { useAnimate } from 'framer-motion';
 import Link from 'next/link';
 import './globals.css';
@@ -8,52 +8,32 @@ import './globals.css';
 export default function Home() {
   const [scope1, animate1] = useAnimate();
   const [scope2, animate2] = useAnimate();
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  // Properly type the parameters
-  function handleHover(
+  const handleHover = async (
     animate: typeof animate1,
-    scope: RefObject<HTMLDivElement>
-  ) {
+    scope: RefObject<HTMLElement>,
+    cardIndex: number
+  ) => {
+    setHoveredCard(cardIndex);
     if (scope.current) {
-      animate([
-        [scope.current, { rotate: -90 }],
-        [scope.current, { scale: 1.15 }],
-        [scope.current, { rotate: 0 }],
-        [scope.current, { scale: 1.5 }],
-      ]);
+      await animate(scope.current, { rotate: -90, scale: 1.15 }, { duration: 0.2, ease: 'easeInOut' });
+      await animate(scope.current, { rotate: 0, scale: 1.5 }, { duration: 0.2, ease: 'easeInOut' });
     }
-  }
+  };
 
-  function handleLeave(
+  const handleLeave = async (
     animate: typeof animate1,
-    scope: RefObject<HTMLDivElement>
-  ) {
+    scope: RefObject<HTMLElement>
+  ) => {
+    setHoveredCard(null);
     if (scope.current) {
-      animate([[scope.current, { scale: 1 }]]);
+      await animate(scope.current, { scale: 1, rotate: 0 }, { duration: 0.2, ease: 'easeInOut' });
     }
-  }
-
-  // Add the useEffect hook for Chrome-specific fallback
-  useEffect(() => {
-    if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
-      const emojiImages = [
-        { id: 'rock', src: '/images/rock-emoji.png', alt: 'Rock' },
-        { id: 'paper', src: '/images/paper-emoji.png', alt: 'Paper' },
-        { id: 'scissors', src: '/images/scissors-emoji.png', alt: 'Scissors' },
-      ];
-
-      emojiImages.forEach(({ id, src, alt }) => {
-        const container = document.querySelector(`.emoji-container#${id}`);
-        if (container) {
-          container.innerHTML = `<img src="${src}" alt="${alt}" class="emoji" />`;
-        }
-      });
-    }
-  }, []); // Runs once on component mount
+  };
 
   return (
     <>
-      {/* Main Content */}
       <div className="-page">
         <h1>
           Howdy <span className="emoji" id="cowboy">&#x1F920;</span>
@@ -67,11 +47,10 @@ export default function Home() {
         </p>
 
         <div className="cards-container">
-          {/* Card 1 */}
           <div
             className="animated-card"
             ref={scope1}
-            onMouseEnter={() => handleHover(animate1, scope1)}
+            onMouseEnter={() => handleHover(animate1, scope1, 1)}
             onMouseLeave={() => handleLeave(animate1, scope1)}
           >
             <Link href="/rps" style={{ textDecoration: 'none' }}>
@@ -91,16 +70,15 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Card 2 */}
           <div
             className="animated-card"
             ref={scope2}
-            onMouseEnter={() => handleHover(animate2, scope2)}
+            onMouseEnter={() => handleHover(animate2, scope2, 2)}
             onMouseLeave={() => handleLeave(animate2, scope2)}
           >
             <Link href="/rps" style={{ textDecoration: 'none' }}>
               <div className="card-content">
-                <h2 className='emoji-flex-container'>
+                <h2 className="emoji-flex-container">
                   <span className="emoji">&#9824;&#65039;</span>
                   <span className="emoji" id="heart">&#9829;&#65039;</span>
                   <span className="emoji">&#9827;&#65039;</span>
@@ -111,8 +89,8 @@ export default function Home() {
         </div>
 
         <div className="card-title">
-          <h1>Rock, Paper, Scissors</h1>
-          <h1 className="card-poker">Texas Hold &#39;Em</h1>
+          <h1 style={{ color: hoveredCard === 1 ? '#bb86fc' : 'inherit' }}>Rock, Paper, Scissors</h1>
+          <h1 style={{ color: hoveredCard === 2 ? '#bb86fc' : 'inherit' }}>Texas Hold &#39;Em</h1>
         </div>
       </div>
     </>

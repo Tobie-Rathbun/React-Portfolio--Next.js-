@@ -71,18 +71,17 @@ const SiteNavbar = () => {
             </button>
             {isDropdownOpen && (
               <div className="dropdown-menu">
-                
-                <Link href="/poker2d" className="nav-link" onClick={handleLinkClick}>
-                  Poker 2D
-                </Link>
-                <Link href="/pokerfrogs" className="nav-link" onClick={handleLinkClick}>
-                  Poker Frogs 3D (Demo)
-                </Link>
                 <Link href="/rps" className="nav-link" onClick={handleLinkClick}>
                   Rock, Paper, Scissors
                 </Link>
+                <Link href="/poker2d" className="nav-link" onClick={handleLinkClick}>
+                  Texas Hold &#39;Em
+                </Link>
                 <Link href="/chord-player" className="nav-link" onClick={handleLinkClick}>
                   Chord Machine 
+                </Link>
+                <Link href="/pokerfrogs" className="nav-link" onClick={handleLinkClick}>
+                  Poker Frogs 3D (Demo)
                 </Link>
               </div>
             )}

@@ -514,7 +514,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   width: 75%;
   text-align: center;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 8%;
   position: absolute;
 }
 
@@ -522,7 +522,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   color: var(--accent-color); /* Use an accent color */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s ease; /* Smooth hover effect */
-  margin-top: 50%;
+  margin-top: 40%;
 }
 
 .resume-link:hover {
@@ -1253,6 +1253,7 @@ span.emoji {
 
 .animated-card:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  animation: none; /* Pause floating animation on hover */
 }
 
 /* Remove underline from links */

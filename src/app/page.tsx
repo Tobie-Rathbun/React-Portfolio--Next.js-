@@ -8,7 +8,23 @@ import './globals.css';
 export default function Home() {
   const [scope1, animate1] = useAnimate();
   const [scope2, animate2] = useAnimate();
+  const [cardsContainerScope, animateCardsContainer] = useAnimate();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  const hoverSequence = [
+    { rotate: -90 },
+    { scale: 1.15 },
+    { rotate: 0 },
+    { scale: 1.5 },
+  ];
+
+  const leaveSequence = [
+    { scale: 1, rotate: 0 },
+  ];
+
+  const floatAnimation = {
+    animation: 'float 4s ease-in-out infinite',
+  };
 
   const handleHover = async (
     animate: typeof animate1,
@@ -17,8 +33,9 @@ export default function Home() {
   ) => {
     setHoveredCard(cardIndex);
     if (scope.current) {
-      await animate(scope.current, { rotate: -90, scale: 1.15 }, { duration: 0.2, ease: 'easeInOut' });
-      await animate(scope.current, { rotate: 0, scale: 1.5 }, { duration: 0.2, ease: 'easeInOut' });
+      for (const step of hoverSequence) {
+        await animate(scope.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
     }
   };
 
@@ -28,8 +45,48 @@ export default function Home() {
   ) => {
     setHoveredCard(null);
     if (scope.current) {
-      await animate(scope.current, { scale: 1, rotate: 0 }, { duration: 0.2, ease: 'easeInOut' });
+      for (const step of leaveSequence) {
+        await animate(scope.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
     }
+  };
+
+  const handleTitleHover = async (cardIndex: number) => {
+    setHoveredCard(cardIndex);
+    if (cardIndex === 1 && scope1.current) {
+      for (const step of hoverSequence) {
+        await animate1(scope1.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
+    } else if (cardIndex === 2 && scope2.current) {
+      for (const step of hoverSequence) {
+        await animate2(scope2.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
+    }
+  };
+
+  const handleTitleLeave = async () => {
+    setHoveredCard(null);
+    if (scope1.current) {
+      for (const step of leaveSequence) {
+        await animate1(scope1.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
+    }
+    if (scope2.current) {
+      for (const step of leaveSequence) {
+        await animate2(scope2.current, step, { duration: 0.2, ease: 'easeInOut' });
+      }
+    }
+  };
+
+  const getTitleStyle = (cardIndex: number) => {
+    const isHovered = hoveredCard === cardIndex;
+    const animationDelay = cardIndex === 1 ? '0s' : '2s';
+    const marginLeft = cardIndex === 1 ? '-2.5%' : '6%';
+
+    return {
+      color: isHovered ? '#bb86fc' : 'inherit',
+      marginLeft,
+    };
   };
 
   return (
@@ -46,7 +103,11 @@ export default function Home() {
           page.
         </p>
 
-        <div className="cards-container">
+        <div
+          className="cards-container"
+          ref={cardsContainerScope}
+          style={{ animation: 'float 4s ease-in-out infinite' }}
+        >
           <div
             className="animated-card"
             ref={scope1}
@@ -89,8 +150,24 @@ export default function Home() {
         </div>
 
         <div className="card-title">
-          <h1 style={{ color: hoveredCard === 1 ? '#bb86fc' : 'inherit' }}>Rock, Paper, Scissors</h1>
-          <h1 style={{ color: hoveredCard === 2 ? '#bb86fc' : 'inherit' }}>Texas Hold &#39;Em</h1>
+          <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1
+              style={getTitleStyle(1)}
+              onMouseEnter={() => handleTitleHover(1)}
+              onMouseLeave={handleTitleLeave}
+            >
+              Rock, Paper, Scissors
+            </h1>
+          </Link>
+          <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1
+              style={getTitleStyle(2)}
+              onMouseEnter={() => handleTitleHover(2)}
+              onMouseLeave={handleTitleLeave}
+            >
+              Texas Hold &#39;Em
+            </h1>
+          </Link>
         </div>
       </div>
     </>

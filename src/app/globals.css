@@ -100,6 +100,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 
 
 
@@ -1127,6 +1136,66 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   display: none;
 }
 
+/* Emoji */
+.emoji {
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: 500%;
+  transition: transform 0.6s ease;
+  position: relative; /* Required for floating animation */
+  
+}
+
+span.emoji, img.emoji {
+  display: inline-block;
+  font-size: 2rem;
+  height: 1em;
+  width: auto;
+  transition: transform 0.6s ease;
+  vertical-align: middle;
+}
+
+img.emoji {
+  width: 88%;
+  height: auto;
+}
+
+span.emoji {
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+}
+
+.emoji:hover {
+  animation: pulsate 0.6s ease-in-out; /* Use pulsate keyframes on hover */
+}
+
+.emoji-container {
+  display: flex;
+  gap: 1rem; /* Adjust spacing between emojis */
+  justify-content: center;
+  align-items: center;
+}
+
+/* .emoji#rock {
+  font-size: 173%;
+  position: relative;
+  top: 8%;
+  right: 50%;
+}
+
+.emoji#paper {
+  position: relative;
+  left: 25%;
+  bottom: 45%;
+}
+
+.emoji#scissors {
+  position: relative;
+  left: 25%;
+  bottom: 45%;
+} */
+
+
+
+
 /* Cards Container */
 .cards-container {
   display: flex;
@@ -1138,25 +1207,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   padding-bottom: 25%;
 }
 
-.emoji {
-  margin-top: -8%;
-}
 
-span.emoji {
-  display: inline-block;
-  font-size: 2rem; 
-  transition: transform 0.6s ease; 
-}
-
-span.emoji:hover {
-  animation: spin 0.6s ease;
-}
-
-#rock {
-  font-size: 173%;
-  position: relative;
-  top: 6%;
-}
 
 .animated-card {
   width: 150px;
@@ -1171,6 +1222,16 @@ span.emoji:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
   margin: 0 5%;
+  animation: float 4s ease-in-out infinite; /* Floating animation */
+}
+
+/* Staggered animations */
+.animated-card:nth-of-type(1) {
+  animation-delay: 0s; /* No delay for the first card title */
+}
+
+.animated-card:nth-of-type(2) {
+  animation-delay: 2s; /* Delay of 2 seconds for the second card title */
 }
 
 .animated-card:hover {
@@ -1201,14 +1262,15 @@ span.emoji:hover {
   margin: 0; /* Removes default margin */
   padding: 0; /* Ensures no padding is added */
   font-size: inherit; /* Ensures it inherits the parent font size */
+  animation: float 4s ease-in-out infinite; /* Floating animation for individual titles */
 }
 
-.card-title h1:nth-child(1) {
-  margin-left: -2.5%; /* Moves the first h1 slightly to the left */
+.card-title h1:nth-of-type(1) {
+  animation-delay: 0s; /* No delay for the first title */
 }
 
-.card-title h1:nth-child(2) {
-  margin-left: 6%; /* Moves the second h1 slightly to the left */
+.card-title h1:nth-of-type(2) {
+  animation-delay: 2s; /* Delay of 2 seconds for the second title */
 }
 
 /* Media Query for Smaller Screens */

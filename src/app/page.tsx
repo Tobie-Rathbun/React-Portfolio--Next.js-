@@ -1,25 +1,55 @@
 'use client';
 
-import { useAnimate } from "framer-motion";
-import Link from "next/link";
+import { useEffect, RefObject } from 'react';
+import { useAnimate } from 'framer-motion';
+import Link from 'next/link';
 import './globals.css';
 
 export default function Home() {
   const [scope1, animate1] = useAnimate();
   const [scope2, animate2] = useAnimate();
 
-  function handleHover(animate: typeof animate1, scope: React.RefObject<HTMLDivElement>) {
-    animate([
-      [scope.current, { rotate: -90 }],
-      [scope.current, { scale: 1.15 }],
-      [scope.current, { rotate: 0 }],
-      [scope.current, { scale: 1.5 }],
-    ]);
+  // Properly type the parameters
+  function handleHover(
+    animate: typeof animate1,
+    scope: RefObject<HTMLDivElement>
+  ) {
+    if (scope.current) {
+      animate([
+        [scope.current, { rotate: -90 }],
+        [scope.current, { scale: 1.15 }],
+        [scope.current, { rotate: 0 }],
+        [scope.current, { scale: 1.5 }],
+      ]);
+    }
   }
 
-  function handleLeave(animate: typeof animate1, scope: React.RefObject<HTMLDivElement>) {
-    animate([[scope.current, { scale: 1 }]]);
+  function handleLeave(
+    animate: typeof animate1,
+    scope: RefObject<HTMLDivElement>
+  ) {
+    if (scope.current) {
+      animate([[scope.current, { scale: 1 }]]);
+    }
   }
+
+  // Add the useEffect hook for Chrome-specific fallback
+  useEffect(() => {
+    if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
+      const emojiImages = [
+        { id: 'rock', src: '/images/rock-emoji.png', alt: 'Rock' },
+        { id: 'paper', src: '/images/paper-emoji.png', alt: 'Paper' },
+        { id: 'scissors', src: '/images/scissors-emoji.png', alt: 'Scissors' },
+      ];
+
+      emojiImages.forEach(({ id, src, alt }) => {
+        const container = document.querySelector(`.emoji-container#${id}`);
+        if (container) {
+          container.innerHTML = `<img src="${src}" alt="${alt}" class="emoji" />`;
+        }
+      });
+    }
+  }, []); // Runs once on component mount
 
   return (
     <>
@@ -46,11 +76,17 @@ export default function Home() {
           >
             <Link href="/rps" style={{ textDecoration: 'none' }}>
               <div className="card-content">
-                <h2>
-                  <span className="emoji" id="rock">&#129704;</span>
-                  <span className="emoji">&#128220;</span>
-                  <span className="emoji">&#9986;&#65039;</span>
-                </h2>
+                <div className="emoji-container">
+                  <div className="emoji" id="rock">
+                    <img src="/images/rock-emoji.png" alt="Rock" className="emoji" />
+                  </div>
+                  <div className="emoji" id="paper">
+                    <img src="/images/paper-emoji.png" alt="Paper" className="emoji" />
+                  </div>
+                  <div className="emoji" id="scissors">
+                    <img src="/images/scissors-emoji.png" alt="Scissors" className="emoji" />
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
@@ -64,9 +100,9 @@ export default function Home() {
           >
             <Link href="/rps" style={{ textDecoration: 'none' }}>
               <div className="card-content">
-              <h2>
+                <h2>
                   <span className="emoji">&#9824;&#65039;</span>
-                  <span className="emoji"id="heart">&#9829;&#65039;</span>
+                  <span className="emoji" id="heart">&#9829;&#65039;</span>
                   <span className="emoji">&#9827;&#65039;</span>
                 </h2>
               </div>
@@ -75,12 +111,9 @@ export default function Home() {
         </div>
 
         <div className="card-title">
-            <h1>Rock, Paper, Scissors</h1>
-            <h1 className="card-poker">Texas Hold&#39; Em</h1>
+          <h1>Rock, Paper, Scissors</h1>
+          <h1 className="card-poker">Texas Hold &#39;Em</h1>
         </div>
-
-
-
       </div>
     </>
   );

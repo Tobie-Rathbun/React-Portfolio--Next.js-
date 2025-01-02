@@ -1282,12 +1282,16 @@ span.emoji {
   animation: float 4s ease-in-out infinite; /* Floating animation for individual titles */
 }
 
+
+
 .card-title h1:nth-of-type(1) {
+  margin-left: -2.5%; /* Moves the first h1 slightly to the left */
   animation-delay: 0s; /* No delay for the first title */
 }
 
 .card-title h1:nth-of-type(2) {
   animation-delay: 2s; /* Delay of 2 seconds for the second title */
+  margin-left: 6%; /* Moves the second h1 slightly to the left */
 }
 
 /* Media Query for Smaller Screens */

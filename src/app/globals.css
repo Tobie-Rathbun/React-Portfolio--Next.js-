@@ -1265,12 +1265,14 @@ span.emoji {
   margin-top: -22%; /* Adjust this value to move the title higher */
   text-align: center; /* Centers the text */
   font-size: 1.5rem; /* Adjust font size as needed */
+  flex-wrap: nowrap;
 }
 
 .card-title h1 {
   margin: 0; /* Removes default margin */
   padding: 0; /* Ensures no padding is added */
   font-size: inherit; /* Ensures it inherits the parent font size */
+  white-space: nowrap;
 }
 
 

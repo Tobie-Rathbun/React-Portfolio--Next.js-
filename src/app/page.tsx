@@ -73,7 +73,7 @@ export default function Home() {
   const getTitleStyle = (cardIndex: number) => {
     const isHovered = hoveredCard === cardIndex;
     const animationDelay = cardIndex === 1 ? '0s' : '2s';
-    const marginLeft = cardIndex === 1 ? '-25%' : '6%';
+    const marginLeft = cardIndex === 1 ? '-23%' : '3.8%';
 
     return {
       color: isHovered ? '#bb86fc' : 'inherit',

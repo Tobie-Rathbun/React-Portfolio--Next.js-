@@ -1174,7 +1174,7 @@ span.emoji {
   gap: 1rem; /* Adjust spacing between emojis */
   justify-content: center;
   align-items: center;
-  margin-top: -15%;
+  margin-top: -18%;
 }
 
 .emoji#cowboy {
@@ -1210,6 +1210,7 @@ span.emoji {
   justify-content: center; /* Centers the emojis horizontally */
   align-items: center; /* Aligns them vertically */
   gap: 6%; /* Adjust the spacing between emojis */
+  margin-bottom: 30%;
 }
 
 
@@ -1219,7 +1220,7 @@ span.emoji {
   justify-content: center;
   align-items: center;
   gap: 20px; /* Spacing between cards */
-  margin-top: 40px; /* Space above the container */
+  margin-top: 4%; /* Space above the container */
   height: 100%;
   padding-bottom: 25%;
 }
@@ -1239,16 +1240,6 @@ span.emoji {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
   margin: 0 5%;
-  animation: float 4s ease-in-out infinite; /* Floating animation */
-}
-
-/* Staggered animations */
-.animated-card:nth-of-type(1) {
-  animation-delay: 0s; /* No delay for the first card title */
-}
-
-.animated-card:nth-of-type(2) {
-  animation-delay: 2s; /* Delay of 2 seconds for the second card title */
 }
 
 .animated-card:hover {
@@ -1280,20 +1271,9 @@ span.emoji {
   margin: 0; /* Removes default margin */
   padding: 0; /* Ensures no padding is added */
   font-size: inherit; /* Ensures it inherits the parent font size */
-  animation: float 4s ease-in-out infinite; /* Floating animation for individual titles */
 }
 
 
-
-.card-title h1:nth-of-type(1) {
-  margin-left: -2.5%; /* Moves the first h1 slightly to the left */
-  animation-delay: 0s; /* No delay for the first title */
-}
-
-.card-title h1:nth-of-type(2) {
-  animation-delay: 2s; /* Delay of 2 seconds for the second title */
-  margin-left: 6%; /* Moves the second h1 slightly to the left */
-}
 
 /* Media Query for Smaller Screens */
 @media (max-width: 1400px) {

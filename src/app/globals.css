@@ -8,6 +8,7 @@
   --accent-color-dark: #170138;
   --highlight-color: #bb86fc;
   --highlight-color-dark: #352745;
+  --highlight-color-light: #dfc5ff;
 
   /* Component-Specific Colors */
   --chord-player-background: #333333;
@@ -1185,7 +1186,7 @@ span.emoji {
 }
 
 .emoji#rock {
-  width: 125%;
+  width: 117%;
   position: relative;
   left: 5%;
   padding-bottom: 2%;
@@ -1230,7 +1231,7 @@ span.emoji {
 .animated-card {
   width: 150px;
   height: 150px;
-  background-color: var(--highlight-color);
+  background-color: var(--highlight-color-light);
   color: var(--primary-text-color);
   border-radius: 30px;
   display: flex;

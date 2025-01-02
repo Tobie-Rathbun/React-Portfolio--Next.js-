@@ -45,12 +45,20 @@ export default function Home() {
     startFloatingAnimation();
   }, []);
 
+  const applyBackgroundColor = (scope: HTMLElement | null, color: string) => {
+    if (scope) {
+      scope.style.transition = 'background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      scope.style.backgroundColor = color;
+    }
+  };
+
   const handleHover = async (
     animate: typeof animate1,
     scope: HTMLElement | null,
     cardIndex: number
   ) => {
     setHoveredCard(cardIndex);
+    applyBackgroundColor(scope, 'var(--highlight-color)');
     if (scope) {
       for (const step of hoverSequence) {
         await animate(scope, step, { duration: 0.2, ease: 'easeInOut' });
@@ -63,6 +71,7 @@ export default function Home() {
     scope: HTMLElement | null
   ) => {
     setHoveredCard(null);
+    applyBackgroundColor(scope, 'var(--highlight-color-light)');
     if (scope) {
       for (const step of leaveSequence) {
         await animate(scope, step, { duration: 0.2, ease: 'easeInOut' });
@@ -73,7 +82,7 @@ export default function Home() {
   const getTitleStyle = (cardIndex: number) => {
     const isHovered = hoveredCard === cardIndex;
     const animationDelay = cardIndex === 1 ? '0s' : '2s';
-    const marginLeft = cardIndex === 1 ? '-23%' : '3.8%';
+    const marginLeft = cardIndex === 1 ? '-23%' : '3%';
 
     return {
       color: isHovered ? '#bb86fc' : 'inherit',
@@ -161,8 +170,12 @@ export default function Home() {
           <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h1
               style={getTitleStyle(1)}
-              onMouseEnter={() => handleHover(animate1, scope1.current, 1)}
-              onMouseLeave={() => handleLeave(animate1, scope1.current)}
+              onMouseEnter={() => {
+                handleHover(animate1, scope1.current, 1);
+              }}
+              onMouseLeave={() => {
+                handleLeave(animate1, scope1.current);
+              }}
             >
               Rock, Paper, Scissors
             </h1>
@@ -170,8 +183,12 @@ export default function Home() {
           <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h1
               style={getTitleStyle(2)}
-              onMouseEnter={() => handleHover(animate2, scope2.current, 2)}
-              onMouseLeave={() => handleLeave(animate2, scope2.current)}
+              onMouseEnter={() => {
+                handleHover(animate2, scope2.current, 2);
+              }}
+              onMouseLeave={() => {
+                handleLeave(animate2, scope2.current);
+              }}
             >
               Texas Hold &#39;Em
             </h1>

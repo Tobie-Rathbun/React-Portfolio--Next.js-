@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, RefObject } from 'react';
+import { useState, useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
 import Link from 'next/link';
 import './globals.css';
 
 export default function Home() {
+  const [wrapper1, animateWrapper1] = useAnimate();
+  const [wrapper2, animateWrapper2] = useAnimate();
   const [scope1, animate1] = useAnimate();
   const [scope2, animate2] = useAnimate();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -21,40 +23,73 @@ export default function Home() {
     { scale: 1, rotate: 0 },
   ];
 
-  const floatAnimation = {
-    animation: 'float 4s ease-in-out infinite',
+  const startFloatingAnimation = () => {
+    animateWrapper1(
+      [
+        { y: -10 },
+        { y: 0 },
+      ],
+      { repeat: Infinity, duration: 4, ease: 'easeInOut' }
+    );
+
+    animateWrapper2(
+      [
+        { y: -10 },
+        { y: 0 },
+      ],
+      { repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 2 }
+    );
   };
 
-  const staggeredFloatAnimation = (index: number) => ({
-    animation: `float 4s ease-in-out infinite`,
-    animationDelay: `${index * 2}s`,
-  });
+  useEffect(() => {
+    startFloatingAnimation();
+  }, []);
+
+  const applyBackgroundColor = (scope: HTMLElement | null, color: string) => {
+    if (scope) {
+      scope.style.transition = 'background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      scope.style.backgroundColor = color;
+    }
+  };
 
   const handleHover = async (
     animate: typeof animate1,
-    scope: RefObject<HTMLElement>,
+    scope: HTMLElement | null,
     cardIndex: number
   ) => {
     setHoveredCard(cardIndex);
-    if (scope.current) {
-      await animate(scope.current, { rotate: 0, scale: 1 }, { duration: 0 }); // Reset state
+    applyBackgroundColor(scope, 'var(--highlight-color)');
+    if (scope) {
       for (const step of hoverSequence) {
-        await animate(scope.current, step, { duration: 0.2, ease: 'easeInOut' });
+        await animate(scope, step, { duration: 0.2, ease: 'easeInOut' });
       }
     }
   };
 
   const handleLeave = async (
     animate: typeof animate1,
-    scope: RefObject<HTMLElement>
+    scope: HTMLElement | null
   ) => {
     setHoveredCard(null);
-    if (scope.current) {
+    applyBackgroundColor(scope, 'var(--highlight-color-light)');
+    if (scope) {
       for (const step of leaveSequence) {
-        await animate(scope.current, step, { duration: 0.2, ease: 'easeInOut' });
+        await animate(scope, step, { duration: 0.2, ease: 'easeInOut' });
       }
-      animate(scope.current, floatAnimation);
     }
+  };
+
+  const getTitleStyle = (cardIndex: number) => {
+    const isHovered = hoveredCard === cardIndex;
+    const animationDelay = cardIndex === 1 ? '0s' : '2s';
+    const marginLeft = cardIndex === 1 ? '-23%' : '3%';
+
+    return {
+      color: isHovered ? '#bb86fc' : 'inherit',
+      marginLeft,
+      animation: 'float 4s ease-in-out infinite',
+      animationDelay,
+    };
   };
 
   return (
@@ -71,69 +106,93 @@ export default function Home() {
           page.
         </p>
 
-        <div className="cards-container">
+        <div className="cards-container" style={{ gap: '8%' }}>
           <div
-            className="animated-card"
-            ref={scope1}
-            style={hoveredCard === 1 ? {} : staggeredFloatAnimation(0)}
-            onMouseEnter={() => handleHover(animate1, scope1, 1)}
-            onMouseLeave={() => handleLeave(animate1, scope1)}
+            ref={wrapper1}
+            className="wrapper"
+            style={{ animation: 'float 4s ease-in-out infinite' }}
+            onMouseEnter={(e) => {
+              e.stopPropagation();
+              handleHover(animate1, scope1.current, 1);
+            }}
+            onMouseLeave={(e) => {
+              e.stopPropagation();
+              handleLeave(animate1, scope1.current);
+            }}
           >
-            <Link href="/rps" style={{ textDecoration: 'none' }}>
-              <div className="card-content">
-                <div className="emoji-container">
-                  <div className="emoji" id="rock">
-                    <img src="/images/rock-emoji.png" alt="Rock" className="emoji" />
-                  </div>
-                  <div className="emoji" id="paper">
-                    <img src="/images/paper-emoji.png" alt="Paper" className="emoji" />
-                  </div>
-                  <div className="emoji" id="scissors">
-                    <img src="/images/scissors-emoji.png" alt="Scissors" className="emoji" />
+            <div className="animated-card" ref={scope1}>
+              <Link href="/rps" style={{ textDecoration: 'none' }}>
+                <div className="card-content">
+                  <div className="emoji-container">
+                    <div className="emoji" id="rock">
+                      <img src="/images/rock-emoji.png" alt="Rock" className="emoji" />
+                    </div>
+                    <div className="emoji" id="paper">
+                      <img src="/images/paper-emoji.png" alt="Paper" className="emoji" />
+                    </div>
+                    <div className="emoji" id="scissors">
+                      <img src="/images/scissors-emoji.png" alt="Scissors" className="emoji" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
 
           <div
-            className="animated-card"
-            ref={scope2}
-            style={hoveredCard === 2 ? {} : staggeredFloatAnimation(1)}
-            onMouseEnter={() => handleHover(animate2, scope2, 2)}
-            onMouseLeave={() => handleLeave(animate2, scope2)}
+            ref={wrapper2}
+            className="wrapper"
+            style={{ animation: 'float 4s ease-in-out infinite', animationDelay: '2s' }}
+            onMouseEnter={(e) => {
+              e.stopPropagation();
+              handleHover(animate2, scope2.current, 2);
+            }}
+            onMouseLeave={(e) => {
+              e.stopPropagation();
+              handleLeave(animate2, scope2.current);
+            }}
           >
-            <Link href="/rps" style={{ textDecoration: 'none' }}>
-              <div className="card-content">
-                <h2 className="emoji-flex-container">
-                  <span className="emoji">&#9824;&#65039;</span>
-                  <span className="emoji" id="heart">&#9829;&#65039;</span>
-                  <span className="emoji">&#9827;&#65039;</span>
-                </h2>
-              </div>
-            </Link>
+            <div className="animated-card" ref={scope2}>
+              <Link href="/rps" style={{ textDecoration: 'none' }}>
+                <div className="card-content">
+                  <h2 className="emoji-flex-container">
+                    <span className="emoji">&#9824;&#65039;</span>
+                    <span className="emoji" id="heart">&#9829;&#65039;</span>
+                    <span className="emoji">&#9827;&#65039;</span>
+                  </h2>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
 
         <div className="card-title">
-          <h1
-            style={{
-              color: hoveredCard === 1 ? '#bb86fc' : 'inherit',
-              ...staggeredFloatAnimation(0),
-              marginLeft: '-2.5%',
-            }}
-          >
-            Rock, Paper, Scissors
-          </h1>
-          <h1
-            style={{
-              color: hoveredCard === 2 ? '#bb86fc' : 'inherit',
-              ...staggeredFloatAnimation(1),
-              marginLeft: '6%',
-            }}
-          >
-            Texas Hold &#39;Em
-          </h1>
+          <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1
+              style={getTitleStyle(1)}
+              onMouseEnter={() => {
+                handleHover(animate1, scope1.current, 1);
+              }}
+              onMouseLeave={() => {
+                handleLeave(animate1, scope1.current);
+              }}
+            >
+              Rock, Paper, Scissors
+            </h1>
+          </Link>
+          <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1
+              style={getTitleStyle(2)}
+              onMouseEnter={() => {
+                handleHover(animate2, scope2.current, 2);
+              }}
+              onMouseLeave={() => {
+                handleLeave(animate2, scope2.current);
+              }}
+            >
+              Texas Hold &#39;Em
+            </h1>
+          </Link>
         </div>
       </div>
     </>

@@ -8,6 +8,7 @@
   --accent-color-dark: #170138;
   --highlight-color: #bb86fc;
   --highlight-color-dark: #352745;
+  --highlight-color-light: #dfc5ff;
 
   /* Component-Specific Colors */
   --chord-player-background: #333333;
@@ -1174,7 +1175,7 @@ span.emoji {
   gap: 1rem; /* Adjust spacing between emojis */
   justify-content: center;
   align-items: center;
-  margin-top: -15%;
+  margin-top: -18%;
 }
 
 .emoji#cowboy {
@@ -1185,7 +1186,7 @@ span.emoji {
 }
 
 .emoji#rock {
-  width: 125%;
+  width: 117%;
   position: relative;
   left: 5%;
   padding-bottom: 2%;
@@ -1210,6 +1211,7 @@ span.emoji {
   justify-content: center; /* Centers the emojis horizontally */
   align-items: center; /* Aligns them vertically */
   gap: 6%; /* Adjust the spacing between emojis */
+  margin-bottom: 30%;
 }
 
 
@@ -1219,7 +1221,7 @@ span.emoji {
   justify-content: center;
   align-items: center;
   gap: 20px; /* Spacing between cards */
-  margin-top: 40px; /* Space above the container */
+  margin-top: 4%; /* Space above the container */
   height: 100%;
   padding-bottom: 25%;
 }
@@ -1229,7 +1231,7 @@ span.emoji {
 .animated-card {
   width: 150px;
   height: 150px;
-  background-color: var(--highlight-color);
+  background-color: var(--highlight-color-light);
   color: var(--primary-text-color);
   border-radius: 30px;
   display: flex;
@@ -1240,7 +1242,6 @@ span.emoji {
   transition: box-shadow 0.2s ease;
   margin: 0 5%;
 }
-
 
 .animated-card:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -1264,12 +1265,14 @@ span.emoji {
   margin-top: -22%; /* Adjust this value to move the title higher */
   text-align: center; /* Centers the text */
   font-size: 1.5rem; /* Adjust font size as needed */
+  flex-wrap: nowrap;
 }
 
 .card-title h1 {
   margin: 0; /* Removes default margin */
   padding: 0; /* Ensures no padding is added */
   font-size: inherit; /* Ensures it inherits the parent font size */
+  white-space: nowrap;
 }
 
 

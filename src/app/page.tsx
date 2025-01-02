@@ -83,10 +83,12 @@ export default function Home() {
     const isHovered = hoveredCard === cardIndex;
     const animationDelay = cardIndex === 1 ? '0s' : '2s';
     const marginLeft = cardIndex === 1 ? '-23%' : '3%';
+    const marginTop = cardIndex === 1 ? '15.5%' : '20%';
 
     return {
       color: isHovered ? '#bb86fc' : 'inherit',
       marginLeft,
+      marginTop,
       animation: 'float 4s ease-in-out infinite',
       animationDelay,
     };

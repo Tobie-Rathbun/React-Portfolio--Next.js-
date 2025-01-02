@@ -14,6 +14,15 @@
   --chord-player-background: #333333;
   --chord-element-background: #424242;
   --chord-element-border: #636363;
+
+  /* Dynamic Sizes */
+  --font-small: calc(1rem - 0.23vw);
+  --font-med: calc(1rem + 0.2vw);
+  --font-large: calc(1rem + 1vw);
+  --card-width: calc(20vw);
+  --card-height: calc(20vw);
+  --card-margin-vertical: calc(15vh);
+  --card-title-margin-vertical: calc(15vh);
 }
 
 /* General styles */
@@ -181,7 +190,7 @@ a.link:hover {
 
 
 .navbar-brand {
-  font-size: 24px;
+  font-size: var(--font-large);
   font-weight: bold;
   color: #FFFFFF; /* White text */
   text-decoration: none; /* Remove underline */
@@ -195,7 +204,7 @@ a.link:hover {
 .nav-link {
   color: #FFFFFF; /* White text */
   display: inline-block;
-  font-size: 18px;
+  font-size: var(--font-med);
   margin-right: 20px;
   text-decoration: none; /* Remove underline */
   opacity: 0.85; /* Initial opacity for non-active links */
@@ -225,7 +234,7 @@ a.link:hover {
   background: none; /* Remove background */
   border: none; /* Remove border */
   color: #FFFFFF; /* Match navbar link text color */
-  font-size: 18px; /* Match navbar link font size */
+  font-size: var(--font-med);
   cursor: pointer;
   padding: 10px 0; /* Consistent padding with other nav-links */
   text-decoration: none; /* Remove underline */
@@ -263,7 +272,7 @@ a.link:hover {
 /* Links in Dropdown Menu */
 .dropdown-menu .nav-link {
   color: #FFFFFF; /* White text */
-  font-size: 16px; /* Slightly smaller than the navbar links */
+  font-size: var(--font-small);
   margin: 5px 0; /* Spacing between links */
   text-decoration: none; /* Remove underline */
   opacity: 0.65; /* Initial opacity */
@@ -321,7 +330,7 @@ a.link:hover {
   padding: 10px 15px;
   margin: 5px 0;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: var(--font-med);
   transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
 }
 
@@ -398,7 +407,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   border: 1px solid var(--chord-element-border);
   padding: 2% 1%;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: var(--font-med);
   width: 90%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 2% auto;
@@ -418,14 +427,14 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   margin: 2% auto 5%;
   margin-left: 3.5%;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: var(--font-med);
   cursor: pointer;
   width: 92.5%;
 }
 
 .contact-form .error-message {
   color: var(--error-color, #d9534f); /* Use a variable or default to red */
-  font-size: 14px;
+  font-size: var(--font-small);
   margin: 2%;
   margin-left: 0%;
   text-align: center;
@@ -433,7 +442,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 .contact-form .success-message {
   color: var(--success-color, #5cb85c); /* Use a variable or default to green */
-  font-size: 14px;
+  font-size: var(--font-small);
   margin: 2%;
   margin-left: 0%;
   text-align: center;
@@ -535,12 +544,13 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 .-page {
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 20%;
   width: 100%; /* Adjust width as needed */
   z-index: 1;
 }
 
 .-page h1 {
-  font-size: 2em;
+  font-size: var(--font-large);
 }
 
 .-page p {
@@ -667,7 +677,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   padding: 10px;
   border-radius: 5px;
   z-index: 10; /* Ensure it overlays on top of everything */
-  font-size: 12px;
+  font-size: var(--font-small);
 }
 
 
@@ -897,7 +907,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
 
 #c1, #c3 h2 {
   color: var(--dark-background);
-  font-size: 27px;
+  font-size: var(--font-large);
 }
 
 #c1, #c3 h3 {
@@ -974,7 +984,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   }
 
   .btn, .choice-btn {
-    font-size: 14px; /* Reduce font size for smaller screens */
+    font-size: var(--font-med);
     padding: 0.4rem 0.8rem; /* Adjust padding */
   }
 }
@@ -985,7 +995,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   }
 
   .btn, .choice-btn {
-    font-size: 12px;
+    font-size: var(--font-med);
     padding: 0.3rem 0.6rem;
   }
 }
@@ -1036,7 +1046,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   justify-content: space-around;
   gap: 1rem;
   margin: 3rem 0 1rem; /* Adds spacing below the Start New Game button */
-  font-size: 1rem;
+  font-size: var(--font-small);
   font-weight: bold;
   color: var(--primary-text-color);
 }
@@ -1221,7 +1231,7 @@ span.emoji {
   justify-content: center;
   align-items: center;
   gap: 20px; /* Spacing between cards */
-  margin-top: 4%; /* Space above the container */
+  margin-top:var(--card-margin-vertical); /* Space above the container */
   height: 100%;
   padding-bottom: 25%;
 }
@@ -1229,8 +1239,8 @@ span.emoji {
 
 
 .animated-card {
-  width: 150px;
-  height: 150px;
+  width: var(--card-width);
+  height: var(--card-height);
   background-color: var(--highlight-color-light);
   color: var(--primary-text-color);
   border-radius: 30px;
@@ -1263,9 +1273,8 @@ span.emoji {
   justify-content: center; /* Centers the content horizontally */
   align-items: center; /* Aligns the items vertically on the same line */
   gap: 20px; /* Adds space between the two titles */
-  margin-top: -22%; /* Adjust this value to move the title higher */
   text-align: center; /* Centers the text */
-  font-size: 1.5rem; /* Adjust font size as needed */
+  font-size: var(--font-large);
   flex-wrap: nowrap;
 }
 
@@ -1287,7 +1296,7 @@ span.emoji {
     gap: 20px; /* Adds space between the two titles */
     margin-top: -23%; /* Adjust this value to move the title higher */
     text-align: center; /* Centers the text */
-    font-size: 1.5rem; /* Adjust font size as needed */
+    font-size: var(--font-large);
   }
   
   .card-title h1 {

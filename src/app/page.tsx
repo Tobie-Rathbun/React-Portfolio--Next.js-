@@ -37,12 +37,11 @@ export default function Home() {
 
   const hoverSequence = [
     { rotate: -90, duration: 0.2 },
-    { scale: 1.15, duration: 0.2 },
-    { rotate: 0, duration: 0.2 },
-    { scale: 1.5, duration: 0.2 },
+    { scale: 1.15, duration: 0.25 },
+    { rotate: 0, duration: 0.3 },
+    { scale: 1.5, duration: 0.35 },
   ];
 
-  const leaveSequence = [{ scale: 1, rotate: 0, duration: 0.2 }];
 
   const startFloatingAnimation = () => {
     animateWrapper1(
@@ -74,42 +73,84 @@ export default function Home() {
   ) => {
     setHoveredCard(cardIndex);
     applyBackgroundColor(scope, 'var(--highlight-color)');
+  
     if (scope) {
-      for (const step of hoverSequence) {
-        await animate(scope, step, { ease: 'easeInOut' });
+      try {
+        for (const step of hoverSequence) {
+          // Allow animations to complete in sequence
+          await animate(scope, step, { duration: step.duration, ease: 'easeInOut' });
+        }
+      } catch (e) {
+        console.warn('Hover animation interrupted:', e);
       }
     }
   };
-
+  
   const handleLeave = async (
     animate: typeof animate1,
     scope: HTMLElement | null
   ) => {
     setHoveredCard(null);
     applyBackgroundColor(scope, 'var(--highlight-color-light)');
+  
     if (scope) {
-      for (const step of leaveSequence) {
-        await animate(scope, step, { ease: 'easeInOut' });
+      try {
+        // Immediately reset to a neutral state if not already there
+        await animate(scope, { scale: 1, rotate: 0 }, { ease: 'easeInOut', duration: 0.2 });
+  
+        // Play the bounce-out animation
+        await animate(scope, { scale: 1.1, y: -10 }, { type: 'spring', stiffness: 300, damping: 15 });
+        await animate(scope, { scale: 1, y: 0 }, { duration: 0.2 });
+      } catch (e) {
+        console.warn('Leave animation interrupted:', e);
       }
     }
   };
+  
+  
+  
+  
 
   const getTitleStyle = (cardIndex: number) => {
-    const { isSmallScreen, isMediumScreen } = screenSize;
+    const { isSmallScreen, isMediumScreen, isLargeScreen } = screenSize;
     const isHovered = hoveredCard === cardIndex;
     const animationDelay = cardIndex === 1 ? '0s' : '2s';
-
+  
     let marginLeft;
     let marginTop;
-
+  
     if (cardIndex === 1) {
-      marginLeft = isSmallScreen ? '-15%' : isMediumScreen ? '-20%' : '-23%';
-      marginTop = isSmallScreen ? '10%' : isMediumScreen ? '12%' : '15.5%';
+      marginLeft = isSmallScreen
+        ? '-15%'
+        : isMediumScreen
+        ? '-20%'
+        : isLargeScreen
+        ? '-38%'
+        : '-23%';
+      marginTop = isSmallScreen
+        ? '10%'
+        : isMediumScreen
+        ? '12%'
+        : isLargeScreen
+        ? '18%'
+        : '15.5%';
     } else {
-      marginLeft = isSmallScreen ? '1%' : isMediumScreen ? '2%' : '3%';
-      marginTop = isSmallScreen ? '15%' : isMediumScreen ? '18%' : '20%';
+      marginLeft = isSmallScreen
+        ? '1%'
+        : isMediumScreen
+        ? '2%'
+        : isLargeScreen
+        ? '12%'
+        : '3%';
+      marginTop = isSmallScreen
+        ? '15%'
+        : isMediumScreen
+        ? '18%'
+        : isLargeScreen
+        ? '22%'
+        : '20%';
     }
-
+  
     return {
       color: isHovered ? '#bb86fc' : 'inherit',
       marginLeft,
@@ -118,6 +159,7 @@ export default function Home() {
       animationDelay,
     };
   };
+  
 
   return (
     <>

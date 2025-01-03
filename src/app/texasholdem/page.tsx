@@ -19,7 +19,7 @@ interface Player {
   winLikelihood: number;
 }
 
-const PokerGame: React.FC = () => {
+const TexasHoldEm: React.FC = () => {
   const SMALL_BLIND = 500;
   const BIG_BLIND = 1000;
   const STARTING_CHIPS = 100000;
@@ -641,4 +641,4 @@ const PokerGame: React.FC = () => {
   );
 };
 
-export default PokerGame;
+export default TexasHoldEm;

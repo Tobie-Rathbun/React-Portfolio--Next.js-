@@ -74,7 +74,7 @@ const SiteNavbar = () => {
                 <Link href="/rps" className="nav-link" onClick={handleLinkClick}>
                   Rock, Paper, Scissors
                 </Link>
-                <Link href="/poker2d" className="nav-link" onClick={handleLinkClick}>
+                <Link href="/texasholdem" className="nav-link" onClick={handleLinkClick}>
                   Texas Hold &#39;Em
                 </Link>
                 <Link href="/chord-player" className="nav-link" onClick={handleLinkClick}>

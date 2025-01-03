@@ -1303,6 +1303,10 @@ span.emoji {
   .card-title h1:nth-child(2) {
     margin-left: 3.5%; /* Moves the second h1 slightly to the left */
   }
+
+  .cards-container {
+    margin-top: 6%;
+  }
 }
 
 

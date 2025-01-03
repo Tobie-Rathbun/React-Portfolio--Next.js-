@@ -275,12 +275,16 @@ const TexasHoldEm: React.FC = () => {
     if (winner) {
       winner.chips += pot; // Award the pot to the winner
       setPot(0);
-      alert(`${winner.name} wins the pot of ${pot} chips!`);
+      const message =
+      winner.name === "You"
+        ? `You win the pot of ${pot} chips!`
+        : `${winner.name} wins the pot of ${pot} chips!`;
+      alert(message);
     } else {
       alert("No winner could be determined!");
     }
   
-    
+    setGameOver(true); // Set the gameOver state to true
     setCurrentPlayerIndex(-1); // Use -1 to indicate no active turn
   }
   
@@ -570,7 +574,7 @@ const TexasHoldEm: React.FC = () => {
     onClick={nextRound}
     className="start-button"
   >
-    Start New Game
+    Deal Hand
   </button>
 
   {/* Game Info in One Line */}

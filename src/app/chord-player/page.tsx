@@ -6,10 +6,10 @@ export default function Jazzbot() {
   return (
     <div className="-page">
       
-      <h1>Create different chords from individual piano note files</h1>
-      <h4>Use the dropdowns and buttons</h4>
+      <h1>Chord Player</h1>
+      <h4>Use the dropdowns and buttons and click Play Chord</h4>
       
-      <h1>Create different chords from individual piano note files</h1>
+      <h4>Create different chords from individual piano note files</h4>
       <ChordPlayer />
     </div>
   );

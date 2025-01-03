@@ -1335,7 +1335,7 @@ const PokerFrogs: React.FC = () => {
             <LoadingOverlay loading={showOverlay} />
             <canvas id="renderCanvas" style={{ width: '100%', height: '100vh' }}></canvas>
             <button onClick={handleInitializeGameClick} style={{ position: "absolute", top: "30%", left: "90%", zIndex: 1000 }}>
-                Initialize Game
+                Click me to start
             </button>
             {isSceneReady ? (
                 <>

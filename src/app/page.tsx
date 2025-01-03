@@ -184,7 +184,7 @@ export default function Home() {
             onMouseLeave={() => handleLeave(animate1, scope1.current)}
           >
             <div className="animated-card" ref={scope1}>
-              <Link href="/rps" style={{ textDecoration: 'none' }}>
+              <Link href="/rockpaperscissors" style={{ textDecoration: 'none' }}>
                 <div className="card-content">
                   <div className="emoji-container">
                     <div className="emoji" id="rock">
@@ -210,7 +210,7 @@ export default function Home() {
             onMouseLeave={() => handleLeave(animate2, scope2.current)}
           >
             <div className="animated-card" ref={scope2}>
-              <Link href="/rps" style={{ textDecoration: 'none' }}>
+              <Link href="/texasholdem" style={{ textDecoration: 'none' }}>
                 <div className="card-content">
                   <h2 className="emoji-flex-container">
                     <span className="emoji">&#9824;&#65039;</span>
@@ -224,7 +224,7 @@ export default function Home() {
         </div>
 
         <div className="card-title">
-          <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link href="/rockpaperscissors" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h1
               style={getTitleStyle(1)}
               onMouseEnter={() => handleHover(animate1, scope1.current, 1)}
@@ -233,7 +233,7 @@ export default function Home() {
               Rock, Paper, Scissors
             </h1>
           </Link>
-          <Link href="/rps" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link href="/texasholdem" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h1
               style={getTitleStyle(2)}
               onMouseEnter={() => handleHover(animate2, scope2.current, 2)}

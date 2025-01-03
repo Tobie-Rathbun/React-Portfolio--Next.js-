@@ -37,6 +37,7 @@ const TexasHoldEm: React.FC = () => {
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(-1);
   const [communityCards, setCommunityCards] = useState<string[]>([]);
   const [bettingRound, setBettingRound] = useState<number>(1);
+  const isBettingRoundProcessing = useRef(false);
   const [gameRound, setGameRound] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
   const gameOverRef = useRef(false);
@@ -299,8 +300,25 @@ const TexasHoldEm: React.FC = () => {
   }
   
   function endBettingRound() {
+    if (isBettingRoundProcessing.current) {
+      console.log("endBettingRound already processing, skipping...");
+      return;
+    }
+    isBettingRoundProcessing.current = true;
+
     setPlayersWhoActed([]); // Reset actions for the next round
-  
+    
+    const activePlayers = players.filter((player) => player.active);
+    activePlayers.forEach((player) => {
+        console.log(`${player.name} is still in the game.`);
+    });
+
+    if (activePlayers.length === 1) {
+      console.log("Only one player left during betting round, ending the game...");
+      endGame(activePlayers[0]); // End game if only one player is left
+      return;
+    }
+
     if (bettingRound === 1) {
       revealCommunityCards(1); // Flop: Reveal 3 cards
     } else if (bettingRound === 2) {
@@ -321,6 +339,7 @@ const TexasHoldEm: React.FC = () => {
     setBettingRound((prev) => prev + 1);
     console.log("Betting round updated to:", bettingRound + 1);
     setPlayersWhoActed([]); // Reset actions for the next round
+    isBettingRoundProcessing.current = false;
   }
   
   
@@ -450,7 +469,7 @@ const TexasHoldEm: React.FC = () => {
 
     // Check if only one player is left active
     if (activePlayers.length === 1) {
-      endGame(activePlayers[0]);
+      endBettingRound();
       return;
     }
   

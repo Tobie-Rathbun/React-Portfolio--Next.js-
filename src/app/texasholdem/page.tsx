@@ -51,6 +51,8 @@ const TexasHoldEm: React.FC = () => {
   const [playersWhoActed, setPlayersWhoActed] = useState<number[]>([]);
   const [lastValidBet, setLastValidBet] = useState<number>(0);
   const Hand = useRef<{ solve: (cards: string[]) => { rank: number } } | null>(null);
+  const [isSimulating, setIsSimulating] = useState(false);
+  const [simulationIterations, setSimulationIterations] = useState(0);
   function generateDeck(): string[] {
     const suits = ["♠", "♥", "♦", "♣"];
     const ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
@@ -306,28 +308,28 @@ const TexasHoldEm: React.FC = () => {
     setCurrentPlayerIndex(startingIndex);
   }
 
-  function getNextActivePlayer(startIndex: number) {
+  const getNextActivePlayer = (startIndex: number) => {
     let nextIndex = startIndex;
   
-    do {
-      nextIndex = (nextIndex + 1) % players.length; // Increment and loop
-    } while (!players[nextIndex].active); // Skip inactive players
+    for (let i = 0; i < players.length; i++) { // Prevent infinite loop
+      nextIndex = (nextIndex + 1) % players.length;
+      if (players[nextIndex].active) return nextIndex;
+    }
   
-    return nextIndex;
-  }
-
+    console.error("No active players found.");
+    return -1; // Return -1 if no active players remain
+  };
+  
   function nextTurn() {
-    const activePlayers = players.filter((player) => player.active);
-    activePlayers.forEach((player) => {
-        console.log(`${player.name} is still in the game.`);
-    });
-  
-    checkWin();
-  
-    // Find the next active player
     const nextIndex = getNextActivePlayer(currentPlayerIndex);
+    if (nextIndex === -1) {
+      console.log("No active players, ending the game.");
+      const winner = players.find((player) => player.active);
+      endGame(winner);
+      return;
+    }
     setCurrentPlayerIndex(nextIndex);
-  }
+  }  
 
   function aiTakeTurn() {
     if (gameOver) {
@@ -526,6 +528,79 @@ const TexasHoldEm: React.FC = () => {
   }
 
 
+  // Simulation Logic
+  const simulateGame = () => {
+    if (gameOver) {
+      console.log("Game over, skipping simulation.");
+      return;
+    }
+  
+    const activePlayers = players.filter((player) => player.active);
+    if (activePlayers.length <= 1) {
+      console.log("Only one active player, ending simulation.");
+      endGame(activePlayers[0]);
+      return;
+    }
+  
+    if (currentPlayerIndex < 0 || currentPlayerIndex >= players.length) {
+      console.error("Invalid currentPlayerIndex, skipping simulation.");
+      return;
+    }
+  
+    const currentPlayer = players[currentPlayerIndex];
+    if (!currentPlayer.active) {
+      nextTurn();
+      return;
+    }
+  
+    const decision = Math.random();
+  
+    if (decision < 0.3) {
+      fold();
+    } else if (decision < 0.7) {
+      call();
+    } else {
+      const maxBet = Math.max(...players.map((player) => player.totalBet));
+      let raiseAmount = maxBet + SMALL_BLIND;
+  
+      if (raiseAmount <= lastValidBet) {
+        raiseAmount = lastValidBet + SMALL_BLIND;
+      }
+  
+      raiseAmount = Math.min(raiseAmount, currentPlayer.chips);
+  
+      if (raiseAmount <= lastValidBet || raiseAmount > currentPlayer.chips) {
+        if (currentPlayer.chips >= maxBet - currentPlayer.totalBet) {
+          call();
+        } else {
+          fold();
+        }
+      } else {
+        raise(raiseAmount);
+      }
+    }
+  };
+  
+  const runSimulation = () => {
+    if (isSimulating) return;
+  
+    setIsSimulating(true);
+  
+    const interval = setInterval(() => {
+      if (!gameOver) {
+        simulateGame();
+        setSimulationIterations((prev) => prev + 1);
+      } else {
+        console.log("Simulation stopped, game over.");
+        clearInterval(interval);
+        setIsSimulating(false);
+      }
+    }, 100); // Simulate every 100ms
+  };
+  
+  
+
+  // useEffect Section
   useEffect(() => {
     import("pokersolver").then((module) => {
       Hand.current = module.Hand;
@@ -541,97 +616,122 @@ const TexasHoldEm: React.FC = () => {
 
   return (
     <div style={{ margin: "2rem", position: "relative" }}>
-  {/* Start New Game Button */}
-  <button
-    onClick={nextRound}
-    className="start-button"
-  >
-    Deal Hand
-  </button>
+    {/* Start New Game Button */}
+    <button
+      onClick={nextRound}
+      className="start-button"
+    >
+      Deal Hand
+    </button>
 
-  {/* Game Info in One Line */}
-  <div className="game-info-line">
-    <span>Pot: {pot} chips</span>
-    <span>Previous Bet: {lastValidBet !== null ? `${lastValidBet} chips` : "None"}</span>
-    <span>Round: {bettingRound}</span>
-    <span>Game: {gameRound}</span>
-    <span>
-        Current Turn: {currentPlayerIndex >= 0 ? players[currentPlayerIndex]?.name : "Nobody"}
-    </span>
-  </div>
-
-  {/* Community Cards */}
-  <div className="community-cards">
-    {communityCards.map((card, index) => (
-        <div
-        key={index}
-        className="card"
-        style={{
-            backgroundColor: card ? "white" : "gray",
-            color: card ? "black" : "transparent",
-        }}
-        >
-        {card || "?"} {/* Display placeholders as "?" */}
-        </div>
-    ))}
+    {/* Game Info in One Line */}
+    <div className="game-info-line">
+      <span>Pot: {pot} chips</span>
+      <span>Previous Bet: {lastValidBet !== null ? `${lastValidBet} chips` : "None"}</span>
+      <span>Round: {bettingRound}</span>
+      <span>Game: {gameRound}</span>
+      <span>
+          Current Turn: {currentPlayerIndex >= 0 ? players[currentPlayerIndex]?.name : "Nobody"}
+      </span>
     </div>
 
-
-  {/* Player Actions */}
-  <div className="player-actions">
-    <button
-      onClick={fold}
-      disabled={gameOver || !gameStarted || !isUserTurn}
-      className="action-button"
-    >
-      Fold
-    </button>
-    <button
-      onClick={check}
-      disabled={gameOver || !gameStarted || !isUserTurn}
-      className="action-button"
-    >
-      Check
-    </button>
-    <button
-      onClick={call}
-      disabled={gameOver || !gameStarted || !isUserTurn}
-      className="action-button"
-    >
-      Call
-    </button>
-    <button
-      onClick={() => {
-        const betAmount = prompt("Enter bet amount:");
-        if (betAmount) raise(Number(betAmount));
-      }}
-      disabled={gameOver || !gameStarted || !isUserTurn}
-      className="action-button"
-    >
-      Raise
-    </button>
-  </div>
-
-  {/* Players Container */}
-  <div className="players-container">
-    {players.map((player, index) => (
-      <div
-      key={player.name}
-      className={`player-box ${player.lastAction === "Fold" ? "player-folded" : ""} ${
-        index === currentPlayerIndex ? "player-current" : ""
-      }`}
-    >
-    
-        <h3>{player.name}</h3>
-        <p>Cards: {player.cards.length ? player.cards.join(", ") : "Not dealt"}</p>
-        <p>Chips: {player.chips}</p>
-        <p>Total Bet: {player.totalBet}</p>
-        <p>Last Action: {player.lastAction}</p>
-        <p>Win Likelihood: {(player.winLikelihood * 100).toFixed(2)}%</p>
+    {/* Community Cards */}
+    <div className="community-cards">
+      {communityCards.map((card, index) => (
+          <div
+          key={index}
+          className="card"
+          style={{
+              backgroundColor: card ? "white" : "gray",
+              color: card ? "black" : "transparent",
+          }}
+          >
+          {card || "?"} {/* Display placeholders as "?" */}
+          </div>
+      ))}
       </div>
-    ))}
+
+
+    {/* Player Actions */}
+    <div className="player-actions">
+      <button
+        onClick={fold}
+        disabled={gameOver || !gameStarted || !isUserTurn}
+        className="action-button"
+      >
+        Fold
+      </button>
+      <button
+        onClick={check}
+        disabled={gameOver || !gameStarted || !isUserTurn}
+        className="action-button"
+      >
+        Check
+      </button>
+      <button
+        onClick={call}
+        disabled={gameOver || !gameStarted || !isUserTurn}
+        className="action-button"
+      >
+        Call
+      </button>
+      <button
+        onClick={() => {
+          const betAmount = prompt("Enter bet amount:");
+          if (betAmount) raise(Number(betAmount));
+        }}
+        disabled={gameOver || !gameStarted || !isUserTurn}
+        className="action-button"
+      >
+        Raise
+      </button>
+    </div>
+
+    {/* Players Container */}
+    <div className="players-container">
+      {players.map((player, index) => (
+        <div
+        key={player.name}
+        className={`player-box ${player.lastAction === "Fold" ? "player-folded" : ""} ${
+          index === currentPlayerIndex ? "player-current" : ""
+        }`}
+      >
+      
+          <h3>{player.name}</h3>
+          <p>Cards: {player.cards.length ? player.cards.join(", ") : "Not dealt"}</p>
+          <p>Chips: {player.chips}</p>
+          <p>Total Bet: {player.totalBet}</p>
+          <p>Last Action: {player.lastAction}</p>
+          <p>Win Likelihood: {(player.winLikelihood * 100).toFixed(2)}%</p>
+        </div>
+      ))}
+    </div>
+
+    <div className="simulation-controls">
+      <button
+        onClick={runSimulation}
+        disabled={isSimulating || gameOver}
+        className="btn"
+      >
+        Start Simulation
+      </button>
+      <button
+        onClick={() => setIsSimulating(false)}
+        disabled={!isSimulating}
+        className="btn"
+      >
+        Stop Simulation
+      </button>
+      <button
+        onClick={nextRound}
+        disabled={isSimulating}
+        className="btn"
+      >
+        Reset Game
+      </button>
+    </div>
+
   </div>
-</div>
 
   );
 };

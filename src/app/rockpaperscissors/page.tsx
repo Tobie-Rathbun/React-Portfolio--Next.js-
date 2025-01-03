@@ -1,16 +1,29 @@
 "use client";
 
+// Imports
 import React, { useState, useEffect, useRef } from 'react';
-
 export const dynamic = 'force-dynamic';
 
+// Type Declarations
 interface RegretRecord {
   Rock: number;
   Paper: number;
   Scissors: number;
 }
+type Position = { x: number; y: number };
+type Positions = {
+  c1: Position;
+  c2: Position;
+  c3: Position;
+  c4: Position;
+  c5: Position;
+  c6: Position;
+};
 
+// Main Component
 const RockPaperScissors: React.FC = () => {
+
+  // Constant Declarations
   const [userChoice, setUserChoice] = useState<string | null>(null);
   const [computerChoice, setComputerChoice] = useState<string | null>(null);
   const [lastUserMove, setLastUserMove] = useState<keyof RegretRecord | null>(null);
@@ -26,30 +39,53 @@ const RockPaperScissors: React.FC = () => {
     Paper: { Rock: 0, Paper: 0, Scissors: 0 },
     Scissors: { Rock: 0, Paper: 0, Scissors: 0 },
   });
-  
-
-  // Constants for AI behavior
-  
-  const baseTransitionExp = 2.5; // Default transition exponent
-  const minTransitionExp = 1.5;  // Minimum allowable exponent
-  const maxTransitionExp = 4.0;  // Maximum allowable exponent
-  const adjustmentFactor = 0.1;  // Rate of exponent adjustment
-  const [dynamicTransitionExp, setDynamicTransitionExp] = useState(baseTransitionExp);
-
-
-  const baseUserWeight = 0.8; // Default weight for user move prediction
-  const baseAiWeight = 0.2;  // Default weight for AI response matrix
-
-  // Amplification for regret updates
-  const regretAmplification = 3;
-
-  
   const choices: (keyof RegretRecord)[] = ['Rock', 'Paper', 'Scissors'];
-
   const rewards: Record<keyof RegretRecord, Record<keyof RegretRecord, number>> = {
     Rock: { Rock: 0, Paper: -2, Scissors: 3 },
     Paper: { Rock: 3, Paper: 0, Scissors: -2 },
     Scissors: { Rock: -2, Paper: 3, Scissors: 0 },
+  };
+  const [transitionMatrix, setTransitionMatrix] = useState<Record<keyof RegretRecord, Record<keyof RegretRecord, number>>>({
+    Rock: { Rock: 0, Paper: 0, Scissors: 0 },
+    Paper: { Rock: 0, Paper: 0, Scissors: 0 },
+    Scissors: { Rock: 0, Paper: 0, Scissors: 0 },
+  });
+  const [positions, setPositions] = useState<Positions>({
+    c1: { x: 0, y: 0 },
+    c2: { x: 0, y: 0 },
+    c3: { x: 0, y: 0 },
+    c4: { x: 0, y: 0 },
+    c5: { x: 0, y: 0 },
+    c6: { x: 0, y: 0 },
+  });
+
+
+  // Constants for AI Behavior
+  const baseTransitionExp = 2.5;  // Default transition exponent
+  const minTransitionExp = 1.5;   // Minimum allowable exponent
+  const maxTransitionExp = 4.0;   // Maximum allowable exponent
+  const adjustmentFactor = 0.1;   // Rate of exponent adjustment
+  const [dynamicTransitionExp, setDynamicTransitionExp] = useState(baseTransitionExp);
+
+  const baseUserWeight = 0.8;     // Default weight for user move prediction
+  const baseAiWeight = 0.2;       // Default weight for AI response matrix
+  
+  const regretAmplification = 3;  // Amplification for regret updates
+
+  
+
+  // Gameplay Logic
+  const playGame = (userSelection: keyof RegretRecord) => {
+    const aiSelection = selectComputerMove();
+  
+    if (lastUserMove) {
+      updateTransitionMatrix(lastUserMove, userSelection);
+      updateAiResponseMatrix(aiSelection, userSelection);
+    }
+  
+    setLastUserMove(userSelection);
+    determineWinner(userSelection, aiSelection);
+    updateRegrets(userSelection);
   };
 
   const resetGame = () => {
@@ -69,20 +105,26 @@ const RockPaperScissors: React.FC = () => {
     console.log("Game has been reset");
   };
   
-
-  const playGame = (userSelection: keyof RegretRecord) => {
-    const aiSelection = selectComputerMove();
-  
-    if (lastUserMove) {
-      updateTransitionMatrix(lastUserMove, userSelection);
-      updateAiResponseMatrix(aiSelection, userSelection);
+  const determineWinner = (user: keyof RegretRecord, computer: keyof RegretRecord) => {
+    if (user === computer) {
+      setResult('It\'s a tie!');
+      setScores((prev) => ({ ...prev, ties: prev.ties + 1 }));
+    } else if (
+      (user === 'Rock' && computer === 'Scissors') ||
+      (user === 'Paper' && computer === 'Rock') ||
+      (user === 'Scissors' && computer === 'Paper')
+    ) {
+      setResult('You win!');
+      setScores((prev) => ({ ...prev, user: prev.user + 1 }));
+    } else {
+      setResult('You lose!');
+      setScores((prev) => ({ ...prev, computer: prev.computer + 1 }));
     }
-  
-    setLastUserMove(userSelection);
-    determineWinner(userSelection, aiSelection);
-    updateRegrets(userSelection);
   };
+
   
+  
+  // AI Logic
   const calculatePerformanceRatio = () => {
     const totalGames = scores.user + scores.computer + scores.ties;
     if (totalGames === 0) return 0.5; // Neutral ratio if no games played
@@ -90,7 +132,6 @@ const RockPaperScissors: React.FC = () => {
     return scores.computer / (scores.user + scores.computer);
   };
   
-
   const selectComputerMove = (): keyof RegretRecord => {
     const lastMove = lastSimulatedUserMoveRef.current || lastUserMove;
 
@@ -148,39 +189,7 @@ const RockPaperScissors: React.FC = () => {
 
     // Random fallback
     return choices[Math.floor(Math.random() * choices.length)];
-};
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  const determineWinner = (user: keyof RegretRecord, computer: keyof RegretRecord) => {
-    if (user === computer) {
-      setResult('It\'s a tie!');
-      setScores((prev) => ({ ...prev, ties: prev.ties + 1 }));
-    } else if (
-      (user === 'Rock' && computer === 'Scissors') ||
-      (user === 'Paper' && computer === 'Rock') ||
-      (user === 'Scissors' && computer === 'Paper')
-    ) {
-      setResult('You win!');
-      setScores((prev) => ({ ...prev, user: prev.user + 1 }));
-    } else {
-      setResult('You lose!');
-      setScores((prev) => ({ ...prev, computer: prev.computer + 1 }));
-    }
   };
-
-
-
-
 
   const updateAiResponseMatrix = (aiMove: keyof RegretRecord, userMove: keyof RegretRecord) => {
     setAiResponseMatrix((prevMatrix) => {
@@ -189,13 +198,6 @@ const RockPaperScissors: React.FC = () => {
       return newMatrix;
     });
   };
-  
-
-
-
-
-
-
 
   const updateRegrets = (user: keyof RegretRecord) => {
     const newRegrets = { ...regrets };
@@ -212,15 +214,6 @@ const RockPaperScissors: React.FC = () => {
   
     setRegrets(newRegrets);
   };
-  
-  
-  
-  
-  const [transitionMatrix, setTransitionMatrix] = useState<Record<keyof RegretRecord, Record<keyof RegretRecord, number>>>({
-    Rock: { Rock: 0, Paper: 0, Scissors: 0 },
-    Paper: { Rock: 0, Paper: 0, Scissors: 0 },
-    Scissors: { Rock: 0, Paper: 0, Scissors: 0 },
-  });
 
   const updateTransitionMatrix = (prevMove: keyof RegretRecord | null, currentMove: keyof RegretRecord) => {
     if (prevMove) {
@@ -238,53 +231,15 @@ const RockPaperScissors: React.FC = () => {
     }
   };
   
-  
-  
-  
-  const formatTransitionMatrix = () => {
-    return (
-      <table style={{ borderCollapse: 'collapse', margin: '1rem auto' }}>
-        <thead>
-          <tr>
-            <th style={{ border: '1px solid black', padding: '0.5rem' }}>From/To</th>
-            {choices.map((choice) => (
-              <th key={choice} style={{ border: '1px solid black', padding: '0.5rem' }}>{choice}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {choices.map((from) => (
-            <tr key={from}>
-              <td style={{ border: '1px solid black', padding: '0.5rem' }}>{from}</td>
-              {choices.map((to) => (
-                <td key={to} style={{ border: '1px solid black', padding: '0.5rem' }}>
-                  {transitionMatrix[from][to]}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  };
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
   const selectCounterMove = (predictedMove: keyof RegretRecord): keyof RegretRecord => {
     if (predictedMove === 'Rock') return 'Paper';
     if (predictedMove === 'Paper') return 'Scissors';
     return 'Rock';
   };
-  
 
+
+  
+  // Simulation Logic
   const simulateGame = () => {
     const userSelection: keyof RegretRecord = choices[Math.floor(Math.random() * choices.length)];
     const aiSelection = selectComputerMove();
@@ -301,17 +256,9 @@ const RockPaperScissors: React.FC = () => {
     setIterations((prev) => prev + 1);
   };
   
-  
-  type Position = { x: number; y: number };
-  type Positions = {
-    c1: Position;
-    c2: Position;
-    c3: Position;
-    c4: Position;
-    c5: Position;
-    c6: Position;
-  };
 
+  
+  // Draggable Container Logic
   const useDraggable = (
     id: keyof Positions,
     setPositions: React.Dispatch<React.SetStateAction<Positions>>
@@ -366,21 +313,37 @@ const RockPaperScissors: React.FC = () => {
   
     return { position: positions[id], zIndex, handleMouseDown };
   };
+
+  const formatTransitionMatrix = () => {
+    return (
+      <table style={{ borderCollapse: 'collapse', margin: '1rem auto' }}>
+        <thead>
+          <tr>
+            <th style={{ border: '1px solid black', padding: '0.5rem' }}>From/To</th>
+            {choices.map((choice) => (
+              <th key={choice} style={{ border: '1px solid black', padding: '0.5rem' }}>{choice}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {choices.map((from) => (
+            <tr key={from}>
+              <td style={{ border: '1px solid black', padding: '0.5rem' }}>{from}</td>
+              {choices.map((to) => (
+                <td key={to} style={{ border: '1px solid black', padding: '0.5rem' }}>
+                  {transitionMatrix[from][to]}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
   
 
 
-
-
-
-  const [positions, setPositions] = useState<Positions>({
-    c1: { x: 0, y: 0 },
-    c2: { x: 0, y: 0 },
-    c3: { x: 0, y: 0 },
-    c4: { x: 0, y: 0 },
-    c5: { x: 0, y: 0 },
-    c6: { x: 0, y: 0 },
-  });
-  
+  // useEffect Section
   useEffect(() => {
     setPositions(initializePositions());
   }, []);

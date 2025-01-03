@@ -71,7 +71,7 @@ const SiteNavbar = () => {
             </button>
             {isDropdownOpen && (
               <div className="dropdown-menu">
-                <Link href="/rps" className="nav-link" onClick={handleLinkClick}>
+                <Link href="/rockpaperscissors" className="nav-link" onClick={handleLinkClick}>
                   Rock, Paper, Scissors
                 </Link>
                 <Link href="/texasholdem" className="nav-link" onClick={handleLinkClick}>

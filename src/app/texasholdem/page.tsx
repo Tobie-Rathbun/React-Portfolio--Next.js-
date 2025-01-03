@@ -1,13 +1,12 @@
 
 "use client";
 
+// Imports
 import React, { useState, useEffect, useRef } from 'react';
-
-
 export const dynamic = 'force-dynamic';
 
 
-
+// Type Declarations
 interface Player {
   name: string;
   cards: string[];
@@ -19,11 +18,17 @@ interface Player {
   winLikelihood: number;
 }
 
+
+// Main Component
 const TexasHoldEm: React.FC = () => {
+
+  // Starting Gameplay Constants
   const SMALL_BLIND = 500;
   const BIG_BLIND = 1000;
   const STARTING_CHIPS = 100000;
+  const aiTurnTimer = 1000; //in ms, 1000 = 1s
 
+  // Other Constant Declarations
   const [players, setPlayers] = useState<Player[]>([
     { name: "You", cards: [], chips: STARTING_CHIPS, regrets: { fold: 0, call: 0, raise: 0 }, totalBet: 0, active: true, lastAction: "", winLikelihood: 0 },
     { name: "Opponent 1", cards: [], chips: STARTING_CHIPS, regrets: { fold: 0, call: 0, raise: 0 }, totalBet: 0, active: true, lastAction: "", winLikelihood: 0 },
@@ -31,7 +36,6 @@ const TexasHoldEm: React.FC = () => {
     { name: "Opponent 3", cards: [], chips: STARTING_CHIPS, regrets: { fold: 0, call: 0, raise: 0 }, totalBet: 0, active: true, lastAction: "", winLikelihood: 0 },
     { name: "Opponent 4", cards: [], chips: STARTING_CHIPS, regrets: { fold: 0, call: 0, raise: 0 }, totalBet: 0, active: true, lastAction: "", winLikelihood: 0 },
   ]);
-
   const [deck, setDeck] = useState<string[]>(generateDeck());
   const [pot, setPot] = useState<number>(0);
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(-1);
@@ -46,21 +50,7 @@ const TexasHoldEm: React.FC = () => {
   const isUserTurn = players[currentPlayerIndex]?.name === "You";
   const [playersWhoActed, setPlayersWhoActed] = useState<number[]>([]);
   const [lastValidBet, setLastValidBet] = useState<number>(0);
-  const aiTurnTimer = 1000;
   const Hand = useRef<{ solve: (cards: string[]) => { rank: number } } | null>(null);
-
-
-
-
-
-
-
-  useEffect(() => {
-    if (!gameOver && players[currentPlayerIndex]?.name !== "You" && players[currentPlayerIndex]?.active) {
-      setTimeout(aiTakeTurn, aiTurnTimer);
-    }
-  }, [currentPlayerIndex, gameOver]);
-
   function generateDeck(): string[] {
     const suits = ["♠", "♥", "♦", "♣"];
     const ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
@@ -73,81 +63,8 @@ const TexasHoldEm: React.FC = () => {
     return deck.sort(() => Math.random() - 0.5);
   }
 
-  function nextRound() {
-    setPlayersWhoActed([]); // Reset at the start of a new game
-    setLastValidBet(0);
-    setGameOver(false);
-    setGameStarted(true);
-    setCommunityCards(["", "", "", "", ""]); // Reset community cards
-    setPot(0);
-    setBettingRound(1);
-    setGameRound((prev) => prev + 1);
-    setBlindIndex((prev) => (prev + 1) % players.length); // Rotate blinds
-  
-    // Reset players
-    const resetPlayers = players.map((player) => ({
-      ...player,
-      active: true,
-      totalBet: 0,
-      lastAction: "",
-      cards: [],
-      winLikelihood: 0,
-    }));
-    setPlayers(resetPlayers);
-  
-    // Reset deck
-    const newDeck = generateDeck();
-    setDeck(newDeck);
-    dealCards();
-    postBlinds();
-  }
-  
 
-  function dealCards() {
-    const newPlayers = [...players];
-    const newDeck = [...deck];
-
-    newPlayers.forEach((player) => {
-      player.cards = [newDeck.pop()!, newDeck.pop()!];
-      player.totalBet = 0;
-      player.active = true;
-      player.lastAction = "";
-      player.winLikelihood = 0;
-    });
-
-    setPlayers(newPlayers);
-    setDeck(newDeck);
-  }
-
-  function postBlinds() {
-    const newPlayers = [...players];
-    const smallBlindIndex = blindIndex % players.length;
-    const bigBlindIndex = (blindIndex + 1) % players.length;
-  
-    // Assign blinds
-    newPlayers[smallBlindIndex].chips -= SMALL_BLIND;
-    newPlayers[smallBlindIndex].totalBet += SMALL_BLIND;
-    newPlayers[smallBlindIndex].lastAction = "Small Blind";
-  
-    newPlayers[bigBlindIndex].chips -= BIG_BLIND;
-    newPlayers[bigBlindIndex].totalBet += BIG_BLIND;
-    newPlayers[bigBlindIndex].lastAction = "Big Blind";
-  
-    setPot(SMALL_BLIND + BIG_BLIND);
-    setPlayers(newPlayers);
-  
-    // Set the first player to act (player after the big blind)
-    let startingIndex = (bigBlindIndex + 1) % players.length;
-  
-    // Skip folded players
-    while (!newPlayers[startingIndex].active) {
-      startingIndex = (startingIndex + 1) % players.length;
-    }
-  
-    setCurrentPlayerIndex(startingIndex);
-  }
-  
-  
+  // Poker Winrate Percentage
   
   function simulateWinLikelihood(
     playerCards: string[],
@@ -202,11 +119,6 @@ const TexasHoldEm: React.FC = () => {
   
     return wins / totalSimulations;
   }
-  
-  
-  
-  
-  
 
   function updateWinLikelihoods() {
     const newPlayers = [...players];
@@ -225,71 +137,9 @@ const TexasHoldEm: React.FC = () => {
     setPlayers(newPlayers);
   }
   
-  
 
+  // Action Logic
   
-  
-
-  function revealCommunityCards(round: number) {
-    const newCommunityCards = [...communityCards];
-    const newDeck = [...deck];
-  
-    if (round === 1) {
-      // Reveal the flop (3 cards)
-      newCommunityCards[0] = newDeck.pop()!;
-      newCommunityCards[1] = newDeck.pop()!;
-      newCommunityCards[2] = newDeck.pop()!;
-    } else if (round === 2) {
-      // Reveal the turn (1 card)
-      newCommunityCards[3] = newDeck.pop()!;
-    } else if (round === 3) {
-      // Reveal the river (1 card)
-      newCommunityCards[4] = newDeck.pop()!;
-    }
-  
-    setCommunityCards(newCommunityCards);
-    setDeck(newDeck);
-    updateWinLikelihoods(); // Update win likelihoods based on new cards
-  }
-  
-
-  function endGame(winningPlayer?: Player) {
-    
-  
-    if (gameOverRef.current) return; // Prevent duplicate execution
-    gameOverRef.current = true;
-
-    let winner: Player | undefined = winningPlayer;
-
-    // If no winner is provided, determine the winner
-    if (!winner) {
-      const activePlayers = players.filter((player) => player.active);
-      activePlayers.forEach((player) => {
-          console.log(`${player.name} is still in the game.`);
-      });
-      if (activePlayers.length === 1) {
-        winner = activePlayers[0];
-      }
-    }
-  
-    if (winner) {
-      winner.chips += pot; // Award the pot to the winner
-      setPot(0);
-      const message =
-      winner.name === "You"
-        ? `You win the pot of ${pot} chips!`
-        : `${winner.name} wins the pot of ${pot} chips!`;
-      alert(message);
-    } else {
-      alert("No winner could be determined!");
-    }
-  
-    setGameOver(true); // Set the gameOver state to true
-    setCurrentPlayerIndex(-1); // Use -1 to indicate no active turn
-  }
-  
-  
-
   function fold() {
     const newPlayers = [...players];
     const currentPlayer = newPlayers[currentPlayerIndex];
@@ -302,74 +152,6 @@ const TexasHoldEm: React.FC = () => {
     setPlayersWhoActed((prev) => [...new Set([...prev, currentPlayerIndex])]);
     nextTurn();
   }
-  
-  function endBettingRound() {
-    if (isBettingRoundProcessing.current) {
-      console.log("endBettingRound already processing, skipping...");
-      return;
-    }
-    isBettingRoundProcessing.current = true;
-
-    setPlayersWhoActed([]); // Reset actions for the next round
-    
-    const activePlayers = players.filter((player) => player.active);
-    activePlayers.forEach((player) => {
-        console.log(`${player.name} is still in the game.`);
-    });
-
-    if (activePlayers.length === 1) {
-      console.log("Only one player left during betting round, ending the game...");
-      endGame(activePlayers[0]); // End game if only one player is left
-      return;
-    }
-
-    if (bettingRound === 1) {
-      revealCommunityCards(1); // Flop: Reveal 3 cards
-    } else if (bettingRound === 2) {
-      revealCommunityCards(2); // Turn: Reveal 1 card
-    } else if (bettingRound === 3) {
-      revealCommunityCards(3); // River: Reveal 1 card
-    } else {
-      const activePlayers = players.filter((player) => player.active);
-      activePlayers.forEach((player) => {
-          console.log(`${player.name} is still in the game.`);
-      });
-      const winner = determineWinner(activePlayers);
-      endGame(winner); // Call endGame with the determined winner
-    }
-  
-    
-    console.log("Current betting round:", bettingRound);
-    setBettingRound((prev) => prev + 1);
-    console.log("Betting round updated to:", bettingRound + 1);
-    setPlayersWhoActed([]); // Reset actions for the next round
-    isBettingRoundProcessing.current = false;
-  }
-  
-  
-  function determineWinner(activePlayers: Player[]): Player | undefined {
-    if (!Hand.current || typeof Hand.current.solve !== 'function') {
-      console.error("Hand is not loaded or solve method is missing.");
-      return undefined; // Return early if Hand is not loaded
-    }
-  
-    const { solve } = Hand.current;
-  
-    const solvedHands = activePlayers.map((player) => ({
-      player,
-      hand: solve([...player.cards, ...communityCards]),
-    }));
-  
-    // Sort hands by rank (ascending, since lower rank is better in poker)
-    solvedHands.sort((a, b) => a.hand.rank - b.hand.rank);
-  
-    // Return the player with the best hand
-    return solvedHands[0]?.player;
-  }
-  
-  
-  
-  
 
   function check() {
     const currentPlayer = players[currentPlayerIndex];
@@ -413,9 +195,6 @@ const TexasHoldEm: React.FC = () => {
     }
   }
   
-  
-  
-  
   function raise(amount: number) {
     const currentPlayer = players[currentPlayerIndex];
   
@@ -450,9 +229,175 @@ const TexasHoldEm: React.FC = () => {
     // Advance to the next turn
     nextTurn();
   }
+
+
+  // Turn Logic
+
+  function nextRound() {
+    setPlayersWhoActed([]); // Reset at the start of a new game
+    setLastValidBet(0);
+    setGameOver(false);
+    setGameStarted(true);
+    setCommunityCards(["", "", "", "", ""]); // Reset community cards
+    setPot(0);
+    setBettingRound(1);
+    setGameRound((prev) => prev + 1);
+    setBlindIndex((prev) => (prev + 1) % players.length); // Rotate blinds
   
+    // Reset players
+    const resetPlayers = players.map((player) => ({
+      ...player,
+      active: true,
+      totalBet: 0,
+      lastAction: "",
+      cards: [],
+      winLikelihood: 0,
+    }));
+    setPlayers(resetPlayers);
   
+    // Reset deck
+    const newDeck = generateDeck();
+    setDeck(newDeck);
+    dealCards();
+    postBlinds();
+  }
   
+  function dealCards() {
+    const newPlayers = [...players];
+    const newDeck = [...deck];
+
+    newPlayers.forEach((player) => {
+      player.cards = [newDeck.pop()!, newDeck.pop()!];
+      player.totalBet = 0;
+      player.active = true;
+      player.lastAction = "";
+      player.winLikelihood = 0;
+    });
+
+    setPlayers(newPlayers);
+    setDeck(newDeck);
+  }
+
+  function postBlinds() {
+    const newPlayers = [...players];
+    const smallBlindIndex = blindIndex % players.length;
+    const bigBlindIndex = (blindIndex + 1) % players.length;
+  
+    // Assign blinds
+    newPlayers[smallBlindIndex].chips -= SMALL_BLIND;
+    newPlayers[smallBlindIndex].totalBet += SMALL_BLIND;
+    newPlayers[smallBlindIndex].lastAction = "Small Blind";
+  
+    newPlayers[bigBlindIndex].chips -= BIG_BLIND;
+    newPlayers[bigBlindIndex].totalBet += BIG_BLIND;
+    newPlayers[bigBlindIndex].lastAction = "Big Blind";
+  
+    setPot(SMALL_BLIND + BIG_BLIND);
+    setPlayers(newPlayers);
+  
+    // Set the first player to act (player after the big blind)
+    let startingIndex = (bigBlindIndex + 1) % players.length;
+  
+    // Skip folded players
+    while (!newPlayers[startingIndex].active) {
+      startingIndex = (startingIndex + 1) % players.length;
+    }
+  
+    setCurrentPlayerIndex(startingIndex);
+  }
+
+  function getNextActivePlayer(startIndex: number) {
+    let nextIndex = startIndex;
+  
+    do {
+      nextIndex = (nextIndex + 1) % players.length; // Increment and loop
+    } while (!players[nextIndex].active); // Skip inactive players
+  
+    return nextIndex;
+  }
+
+  function nextTurn() {
+    const activePlayers = players.filter((player) => player.active);
+    activePlayers.forEach((player) => {
+        console.log(`${player.name} is still in the game.`);
+    });
+  
+    checkWin();
+  
+    // Find the next active player
+    const nextIndex = getNextActivePlayer(currentPlayerIndex);
+    setCurrentPlayerIndex(nextIndex);
+  }
+
+  function aiTakeTurn() {
+    if (gameOver) {
+      console.log("Game over, skipping AI turn.");
+      return;
+    }
+  
+    const currentPlayer = players[currentPlayerIndex];
+    if (!currentPlayer.active) {
+      nextTurn();
+      return;
+    }
+  
+    const maxBet = Math.max(...players.map((player) => player.totalBet));
+    const decision = Math.random();
+  
+    if (decision < 0.3) {
+      fold();
+    } else if (decision < 0.7) {
+      call();
+    } else {
+      let raiseAmount = maxBet + SMALL_BLIND; // Default raise amount
+  
+      // Ensure raiseAmount is valid
+      if (raiseAmount <= lastValidBet) {
+        raiseAmount = lastValidBet + SMALL_BLIND; // Adjust to minimum valid raise
+      }
+  
+      // Cap raiseAmount to AI's chips
+      raiseAmount = Math.min(raiseAmount, currentPlayer.chips);
+  
+      // Ensure raiseAmount remains valid after adjustment
+      if (raiseAmount <= lastValidBet || raiseAmount > currentPlayer.chips) {
+        console.log("Invalid raiseAmount, falling back to call or fold.");
+        if (currentPlayer.chips >= maxBet - currentPlayer.totalBet) {
+          call();
+        } else {
+          fold();
+        }
+      } else {
+        console.log(`AI raising ${raiseAmount}`);
+        raise(raiseAmount);
+      }
+    }
+  }
+
+  function revealCommunityCards(round: number) {
+    const newCommunityCards = [...communityCards];
+    const newDeck = [...deck];
+  
+    if (round === 1) {
+      // Reveal the flop (3 cards)
+      newCommunityCards[0] = newDeck.pop()!;
+      newCommunityCards[1] = newDeck.pop()!;
+      newCommunityCards[2] = newDeck.pop()!;
+    } else if (round === 2) {
+      // Reveal the turn (1 card)
+      newCommunityCards[3] = newDeck.pop()!;
+    } else if (round === 3) {
+      // Reveal the river (1 card)
+      newCommunityCards[4] = newDeck.pop()!;
+    }
+  
+    setCommunityCards(newCommunityCards);
+    setDeck(newDeck);
+    updateWinLikelihoods(); // Update win likelihoods based on new cards
+  }
+
+
+  // Win Logic
 
   function areAllBetsEqual() {
     const activePlayers = players.filter((player) => player.active);
@@ -463,7 +408,26 @@ const TexasHoldEm: React.FC = () => {
   
     return activePlayers.every((player) => player.totalBet === maxBet);
   }
+
+  function determineWinner(activePlayers: Player[]): Player | undefined {
+    if (!Hand.current || typeof Hand.current.solve !== 'function') {
+      console.error("Hand is not loaded or solve method is missing.");
+      return undefined; // Return early if Hand is not loaded
+    }
   
+    const { solve } = Hand.current;
+  
+    const solvedHands = activePlayers.map((player) => ({
+      player,
+      hand: solve([...player.cards, ...communityCards]),
+    }));
+  
+    // Sort hands by rank (ascending, since lower rank is better in poker)
+    solvedHands.sort((a, b) => a.hand.rank - b.hand.rank);
+  
+    // Return the player with the best hand
+    return solvedHands[0]?.player;
+  }
   
   function checkWin() {
     const activePlayers = players.filter((player) => player.active);
@@ -482,71 +446,84 @@ const TexasHoldEm: React.FC = () => {
       endBettingRound();
     }
   }
-  
-  
-  
-  
-  function getNextActivePlayer(startIndex: number) {
-    let nextIndex = startIndex;
-  
-    do {
-      nextIndex = (nextIndex + 1) % players.length; // Increment and loop
-    } while (!players[nextIndex].active); // Skip inactive players
-  
-    return nextIndex;
-  }
-  
-  
 
-  function aiTakeTurn() {
-    const currentPlayer = players[currentPlayerIndex];
-    if (!currentPlayer.active) {
-      nextTurn();
+  function endBettingRound() {
+    if (isBettingRoundProcessing.current) {
+      console.log("endBettingRound already processing, skipping...");
       return;
     }
+    isBettingRoundProcessing.current = true;
 
-    const maxBet = Math.max(...players.map((player) => player.totalBet));
-    const decision = Math.random();
-
-    if (decision < 0.3) {
-      fold();
-  } else if (decision < 0.7) {
-      call();
-  } else {
-      let raiseAmount = maxBet + SMALL_BLIND; // Default raise amount
-
-      // Ensure raiseAmount is valid
-      if (raiseAmount <= lastValidBet) {
-          raiseAmount = lastValidBet + SMALL_BLIND; // Minimum valid raise
-      }
-
-      // Cap raiseAmount to AI's chips
-      raiseAmount = Math.min(raiseAmount, currentPlayer.chips);
-
-      if (raiseAmount > currentPlayer.chips) {
-          // If AI cannot make a valid raise, it should call or fold
-          call();
-      } else {
-          raise(raiseAmount);
-      }
-    }
-  }
-
-  function nextTurn() {
+    setPlayersWhoActed([]); // Reset actions for the next round
+    
     const activePlayers = players.filter((player) => player.active);
     activePlayers.forEach((player) => {
         console.log(`${player.name} is still in the game.`);
     });
+
+    if (activePlayers.length === 1) {
+      console.log("Only one player left during betting round, ending the game...");
+      endGame(activePlayers[0]); // End game if only one player is left
+      return;
+    }
+
+    if (bettingRound === 1) {
+      revealCommunityCards(1); // Flop: Reveal 3 cards
+    } else if (bettingRound === 2) {
+      revealCommunityCards(2); // Turn: Reveal 1 card
+    } else if (bettingRound === 3) {
+      revealCommunityCards(3); // River: Reveal 1 card
+    } else {
+      const activePlayers = players.filter((player) => player.active);
+      activePlayers.forEach((player) => {
+          console.log(`${player.name} is still in the game.`);
+      });
+      const winner = determineWinner(activePlayers);
+      endGame(winner); // Call endGame with the determined winner
+    }
   
-    checkWin();
-  
-    // Find the next active player
-    const nextIndex = getNextActivePlayer(currentPlayerIndex);
-    setCurrentPlayerIndex(nextIndex);
+    
+    console.log("Current betting round:", bettingRound);
+    setBettingRound((prev) => prev + 1);
+    console.log("Betting round updated to:", bettingRound + 1);
+    setPlayersWhoActed([]); // Reset actions for the next round
+    isBettingRoundProcessing.current = false;
   }
+
+  function endGame(winningPlayer?: Player) {
+    
   
+    if (gameOverRef.current) return; // Prevent duplicate execution
+    gameOverRef.current = true;
 
+    let winner: Player | undefined = winningPlayer;
 
+    // If no winner is provided, determine the winner
+    if (!winner) {
+      const activePlayers = players.filter((player) => player.active);
+      activePlayers.forEach((player) => {
+          console.log(`${player.name} is still in the game.`);
+      });
+      if (activePlayers.length === 1) {
+        winner = activePlayers[0];
+      }
+    }
+  
+    if (winner) {
+      winner.chips += pot; // Award the pot to the winner
+      setPot(0);
+      const message =
+      winner.name === "You"
+        ? `You win the pot of ${pot} chips!`
+        : `${winner.name} wins the pot of ${pot} chips!`;
+      alert(message);
+    } else {
+      alert("No winner could be determined!");
+    }
+  
+    setGameOver(true); // Set the gameOver state to true
+    setCurrentPlayerIndex(-1); // Use -1 to indicate no active turn
+  }
 
 
   useEffect(() => {
@@ -561,11 +538,6 @@ const TexasHoldEm: React.FC = () => {
       setTimeout(aiTakeTurn, aiTurnTimer);
     }
   }, [currentPlayerIndex, gameOver, players, aiTakeTurn]);
-  
-
-  
-  
-  
 
   return (
     <div style={{ margin: "2rem", position: "relative" }}>

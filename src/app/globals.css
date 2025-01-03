@@ -110,6 +110,45 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes floatDelayed {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes hoverEffect {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-90deg) scale(1.15);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(0deg) scale(1.5);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 
 
@@ -1240,6 +1279,7 @@ span.emoji {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
+  transition: background-color 0.4s ease-in-out;
   margin: 0 5%;
 }
 
@@ -1247,6 +1287,20 @@ span.emoji {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   animation: none; /* Pause floating animation on hover */
 }
+
+.animated-card.hovered {
+  animation: hoverEffect 0.8s ease-in-out forwards;
+}
+
+.animated-card-wrapper {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animated-card-wrapper.delayed-float {
+  animation-delay: 2s;
+  animation: floatDelayed 4s ease-in-out infinite;
+}
+
 
 /* Remove underline from links */
 .animated-card .card-content {
@@ -1274,9 +1328,18 @@ span.emoji {
   padding: 0; /* Ensures no padding is added */
   font-size: inherit; /* Ensures it inherits the parent font size */
   white-space: nowrap;
+  transition: transform 0.4s ease, color 0.4s ease;
 }
 
 
+.card-title h1:nth-child(1) {
+  animation: float 4s ease-in-out infinite;
+}
+
+.card-title h1:nth-child(2) {
+  animation-delay: 2s;
+  animation: floatDelayed 4s ease-in-out infinite;
+}
 
 /* Media Query for Smaller Screens */
 @media (max-width: 1400px) {

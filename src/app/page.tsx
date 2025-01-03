@@ -121,24 +121,24 @@ export default function Home() {
   
     if (cardIndex === 1) {
       marginLeft = isSmallScreen
-        ? '-15%'
+        ? '-21%'
         : isMediumScreen
-        ? '-20%'
+        ? '-40%'
         : isLargeScreen
         ? '-38%'
         : '-23%';
       marginTop = isSmallScreen
-        ? '10%'
+        ? '12%'
         : isMediumScreen
         ? '12%'
         : isLargeScreen
-        ? '18%'
+        ? '4%'
         : '15.5%';
     } else {
       marginLeft = isSmallScreen
-        ? '1%'
+        ? '-2%'
         : isMediumScreen
-        ? '2%'
+        ? '14%'
         : isLargeScreen
         ? '12%'
         : '3%';
@@ -147,7 +147,7 @@ export default function Home() {
         : isMediumScreen
         ? '18%'
         : isLargeScreen
-        ? '22%'
+        ? '10%'
         : '20%';
     }
   
@@ -175,7 +175,7 @@ export default function Home() {
           page.
         </p>
 
-        <div className="cards-container" style={{ gap: '8%' }}>
+        <div className="cards-container">
           <div
             ref={wrapper1}
             className="wrapper"

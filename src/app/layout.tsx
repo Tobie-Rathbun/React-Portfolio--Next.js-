@@ -5,8 +5,8 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 
 
 export const metadata = {
-  title: "Tobie Rathbun | Developer",
-  description: "Full Stack Developer Portfolio",
+  title: "Tobie | Projects",
+  description: "Full Stack Developer Examples",
 };
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "0.0.011",
+  "name": "games-site",
+  "version": "0.1.01",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

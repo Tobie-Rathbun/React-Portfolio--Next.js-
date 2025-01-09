@@ -15,10 +15,10 @@ export default function Home() {
  
   // Animations 
   const hoverSequence = [
-    { rotate: -90, duration: 0.2 },
-    { scale: 1.15, duration: 0.25 },
-    { rotate: 0, duration: 0.3 },
-    { scale: 1.5, duration: 0.35 },
+    { rotate: -90, duration: 0.12 },
+    { scale: 1.15, duration: 0.15 },
+    { rotate: 0, duration: 0.18 },
+    { scale: 1.5, duration: 0.21 },
   ];
 
   const startFloatingAnimation = () => {
@@ -34,8 +34,11 @@ export default function Home() {
   };
 
   useEffect(() => {
+    console.log("Wrapper1:", wrapper1.current);
+    console.log("Wrapper2:", wrapper2.current);
     startFloatingAnimation();
   }, []);
+  
 
   const applyBackgroundColor = (scope: HTMLElement | null, color: string) => {
     if (scope) {
@@ -44,6 +47,8 @@ export default function Home() {
     }
   };
 
+
+  // Input Handling
   const handleHover = async (
     animate: typeof animate1,
     scope: HTMLElement | null,
@@ -112,11 +117,11 @@ export default function Home() {
           page.
         </p>
 
-        <div className='cards-flexbox'>
-
-          <div className="card-title">
+        <div className="cards-flexbox">
+          <div className="cards-flexbox-item">
             <Link href="/rockpaperscissors" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h1
+                className="card-title"
                 style={getTitleStyle(1)}
                 onMouseEnter={() => handleHover(animate1, scope1.current, 1)}
                 onMouseLeave={() => handleLeave(animate1, scope1.current)}
@@ -124,26 +129,18 @@ export default function Home() {
                 Rock, Paper, Scissors
               </h1>
             </Link>
-            <Link href="/texasholdem" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <h1
-                style={getTitleStyle(2)}
-                onMouseEnter={() => handleHover(animate2, scope2.current, 2)}
-                onMouseLeave={() => handleLeave(animate2, scope2.current)}
-              >
-                Texas Hold &#39;Em
-              </h1>
-            </Link>
-          </div>
-
-          <div className="cards-container">
             <div
               ref={wrapper1}
               className="wrapper"
+              key="wrapper"
               style={{ animation: 'float 4s ease-in-out infinite' }}
-              onMouseEnter={() => handleHover(animate1, scope1.current, 1)}
-              onMouseLeave={() => handleLeave(animate1, scope1.current)}
             >
-              <div className="animated-card" ref={scope1}>
+              <div 
+                ref={scope1}
+                className='animated-card'
+                onMouseEnter={() => handleHover(animate1, scope1.current, 1)}
+                onMouseLeave={() => handleLeave(animate1, scope1.current)}
+              >
                 <Link href="/rockpaperscissors" style={{ textDecoration: 'none' }}>
                   <div className="card-content">
                     <div className="emoji-container">
@@ -161,15 +158,32 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
 
+          <div className="cards-flexbox-item">
+            <Link href="/texasholdem" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <h1
+                className="card-title"
+                style={getTitleStyle(2)}
+                onMouseEnter={() => handleHover(animate2, scope2.current, 2)}
+                onMouseLeave={() => handleLeave(animate2, scope2.current)}
+              >
+                Texas Hold &#39;Em
+              </h1>
+            </Link>
             <div
               ref={wrapper2}
               className="wrapper"
+              key="wrapper"
               style={{ animation: 'float 4s ease-in-out infinite', animationDelay: '2s' }}
-              onMouseEnter={() => handleHover(animate2, scope2.current, 2)}
-              onMouseLeave={() => handleLeave(animate2, scope2.current)}
+
             >
-              <div className="animated-card" ref={scope2}>
+              <div 
+                ref={scope2}
+                className='animated-card'
+                onMouseEnter={() => handleHover(animate2, scope2.current, 2)}
+                onMouseLeave={() => handleLeave(animate2, scope2.current)}  
+              >
                 <Link href="/texasholdem" style={{ textDecoration: 'none' }}>
                   <div className="card-content">
                     <h2 className="emoji-flex-container">
@@ -182,8 +196,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-
         </div>
+
+
+        
+
       </div>
     </>
   );

@@ -1216,15 +1216,23 @@ span.emoji {
 
 
 /* Animated Cards (Links to Games) */
-.cards-container {
+.cards-flexbox {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 8%; /* Spacing between cards */
-  margin-top: 30%; /* Space above the container */
-  height: 100%;
-  padding-bottom: 25%;
+  align-items: flex-start;
+  gap: 18%;
+  margin-top: 5%;
 }
+
+.cards-flexbox-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center items vertically within the group */
+  text-align: center;
+  padding-bottom: 20%;
+}
+
 
 .animated-card {
   width: 150px;
@@ -1238,7 +1246,9 @@ span.emoji {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
+  
   margin: 0 5%;
+  margin-top: 24%;
 }
 
 .animated-card:hover {
@@ -1260,10 +1270,11 @@ span.emoji {
   justify-content: center; /* Centers the content horizontally */
   align-items: center; /* Aligns the items vertically on the same line */
   gap: 20px; /* Adds space between the two titles */
-  margin-top: -22%; /* Adjust this value to move the title higher */
+  margin-top: 4%; /* Adjust this value to move the title higher */
   text-align: center; /* Centers the text */
   font-size: 1.5rem; /* Adjust font size as needed */
   flex-wrap: nowrap;
+  margin-left: 5%;
 }
 
 .card-title h1 {
@@ -1273,46 +1284,6 @@ span.emoji {
   white-space: nowrap;
 }
 
-
-
-/* Media Query for Smaller Screens */
-@media (max-width: 1400px) {
-  .card-title {
-    display: flex; /* Enables flexbox for horizontal alignment */
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center; /* Aligns the items vertically on the same line */
-    gap: 20px; /* Adds space between the two titles */
-    margin-top: -23%; /* Adjust this value to move the title higher */
-    text-align: center; /* Centers the text */
-    font-size: 1.5rem; /* Adjust font size as needed */
-  }
-  
-  .card-title h1 {
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Ensures no padding is added */
-    font-size: inherit; /* Ensures it inherits the parent font size */
-  }
-  
-  .card-title h1:nth-child(1) {
-    margin-left: -3%; /* Moves the first h1 slightly to the left */
-  }
-  
-  .card-title h1:nth-child(2) {
-    margin-left: 3.5%; /* Moves the second h1 slightly to the left */
-  }
-
-  .cards-container {
-    margin-top: 7%;
-    gap: 12%;
-  }
-}
-
-
-
-/* Media Query for Smaller Screens */
-@media (max-width: 1090px) {
-  .cards-container {
-    gap: 16%;
-    margin-top: 15%;
-  }
+.wrapper {
+  position: relative; /* Ensures animations with 'transform' work */
 }

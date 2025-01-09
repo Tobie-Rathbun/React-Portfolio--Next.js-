@@ -1137,6 +1137,7 @@ button:active, input[type="text"]:active, input[type="password"]:active {
   display: none;
 }
 
+
 /* Emoji */
 .emoji {
   font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
@@ -1163,8 +1164,6 @@ img.emoji {
 span.emoji {
   font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
-
-
 
 .emoji:hover {
   animation: pulsate 0.6s ease-in-out; /* Use pulsate keyframes on hover */
@@ -1215,18 +1214,17 @@ span.emoji {
 }
 
 
-/* Cards Container */
+
+/* Animated Cards (Links to Games) */
 .cards-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8%; /* Spacing between cards */
-  margin-top: 4%; /* Space above the container */
+  margin-top: 30%; /* Space above the container */
   height: 100%;
   padding-bottom: 25%;
 }
-
-
 
 .animated-card {
   width: 150px;

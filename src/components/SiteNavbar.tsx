@@ -44,14 +44,14 @@ const SiteNavbar = () => {
     <div className="navbar-wrapper">
       <nav className="site-navbar">
         <Link href="/" className="navbar-brand" onClick={handleLinkClick}>
-          Tobie Rathbun
+          Tobie Games
         </Link>
         <div>
           <Link href="/" className="nav-link" onClick={handleLinkClick}>
             Home
           </Link>
-          <Link href="/about" className="nav-link" onClick={handleLinkClick}>
-            About
+          <Link href="https://portfolio.tobie-developer.com" className="nav-link" onClick={handleLinkClick}>
+            Portfolio
           </Link>
           <a
             href="https://github.com/Tobie-Rathbun"

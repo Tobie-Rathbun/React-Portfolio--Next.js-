@@ -69,7 +69,8 @@ const createCard = (
 const addRotationAnimation = (
   mesh: BABYLON.Mesh,
   scene: BABYLON.Scene,
-  isAnimating: React.MutableRefObject<boolean>
+  isAnimating: React.MutableRefObject<boolean>,
+  setNewCardTexture: () => void
 ): void => {
   if (isAnimating.current) return;
 
@@ -96,12 +97,36 @@ const addRotationAnimation = (
   animation.setKeys(keys);
   mesh.animations = [animation];
 
+  // Change the card texture when the animation starts
+  setNewCardTexture();
+
   // Start the animation
   const animatable = scene.beginAnimation(mesh, 0, 60, false);
   animatable.onAnimationEnd = () => {
     isAnimating.current = false; // Reset flag when animation ends
   };
 };
+
+const changeCardTexture = (mesh: BABYLON.Mesh, scene: BABYLON.Scene) => {
+  const newCard = validCards[Math.floor(Math.random() * validCards.length)];
+  const newTexturePath = getCardImage(newCard);
+
+  const newMaterial = new BABYLON.StandardMaterial(`material_${newCard}`, scene);
+  newMaterial.diffuseTexture = new BABYLON.Texture(newTexturePath, scene);
+  newMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+
+  // Dispose the old material
+  if (mesh.material) {
+    mesh.material.dispose();
+  }
+
+  // Assign the new material to the card mesh
+  mesh.material = newMaterial;
+
+  console.log(`Changed card to ${newCard}`);
+};
+
+
 
 const Invite: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -154,29 +179,32 @@ const Invite: React.FC = () => {
 
   useEffect(() => {
     if (!scene) return;
-
+  
     // Dispose of the previous card mesh if it exists
     if (cardMeshRef.current) {
       cardMeshRef.current.dispose();
     }
-
+  
     // Create and assign the new card mesh
     const newCard = createCard(selectedCard, scene, initialRotation);
     if (newCard) {
       cardMeshRef.current = newCard;
-
+  
       // Add hover effects
       newCard.actionManager = new BABYLON.ActionManager(scene);
       newCard.actionManager.registerAction(
         new BABYLON.ExecuteCodeAction(
           BABYLON.ActionManager.OnPointerOverTrigger,
           () => {
-            addRotationAnimation(newCard, scene, isAnimating);
+            addRotationAnimation(newCard, scene, isAnimating, () => {
+              changeCardTexture(newCard, scene);
+            });
           }
         )
       );
     }
   }, [selectedCard, scene]);
+  
 
   return (
     <canvas

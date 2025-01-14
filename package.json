@@ -1,6 +1,6 @@
 {
   "name": "games-site",
-  "version": "0.1.02",
+  "version": "0.1.03.001",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -25,7 +25,6 @@
     "react-dom": "^19.0.0",
     "react-hotkeys": "^2.0.0",
     "serverless-http": "^3.2.0",
-    "three": "^0.172.0",
     "tone": "^15.0.4"
   },
   "devDependencies": {

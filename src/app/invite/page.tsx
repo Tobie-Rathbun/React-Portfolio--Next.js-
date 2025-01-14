@@ -20,7 +20,7 @@ const relDepth = 2.5;
 const relModifier = 0.66;
 
 
-const getCardImage = (card: string): string => '/images/${card}.png';
+const getCardImage = (card: string): string => `/images/${card}.png`;
 
 const createCard = (
   card: string,
@@ -40,7 +40,7 @@ const createCard = (
       new BABYLON.Vector4(59 / 114, 0, 4 / 114, 1), // Back of Card
     ];
 
-    const cardMaterial = new BABYLON.StandardMaterial('material_${card}', scene);
+    const cardMaterial = new BABYLON.StandardMaterial(`material_${card}`, scene);
     cardMaterial.diffuseTexture = new BABYLON.Texture(texturePath, scene);
     cardMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 

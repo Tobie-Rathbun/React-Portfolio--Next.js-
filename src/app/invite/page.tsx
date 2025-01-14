@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -8,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 const validCards = [
   "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "0H", "JH", "QH", "KH", "AH",
-  "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "0D", "JD", "QD", "KD", "AD",
+  "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "0D", "JD", "QD", "KD", "ADi",
   "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "0C", "JC", "QC", "KC", "AC",
   "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "0S", "JS", "QS", "KS", "AS",
 ];
@@ -19,7 +20,7 @@ const relDepth = 2.5;
 const relModifier = 0.66;
 
 
-const getCardImage = (card: string): string => `/images/${card}.png`;
+const getCardImage = (card: string): string => '/images/${card}.png';
 
 const createCard = (
   card: string,
@@ -39,7 +40,7 @@ const createCard = (
       new BABYLON.Vector4(59 / 114, 0, 4 / 114, 1), // Back of Card
     ];
 
-    const cardMaterial = new BABYLON.StandardMaterial(`material_${card}`, scene);
+    const cardMaterial = new BABYLON.StandardMaterial('material_${card}', scene);
     cardMaterial.diffuseTexture = new BABYLON.Texture(texturePath, scene);
     cardMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 
@@ -119,6 +120,7 @@ const Invite: React.FC = () => {
     const engine = new BABYLON.Engine(canvasRef.current, true);
     const sceneInstance = new BABYLON.Scene(engine);
     sceneInstance.clearColor = new BABYLON.Color4(0, 0, 0, 0); // Transparent background
+    
 
     const camera = new BABYLON.ArcRotateCamera(
       "camera",

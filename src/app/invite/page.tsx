@@ -1,18 +1,146 @@
-export default function ResumePage() {
-    return (
-      <div className="resume-page">
-        <object
-          data="/Tobie Rathbun Resume January 2025.pdf"
-          type="application/pdf"
-          width="100%"
-          height="800px"
-        >
-          <p>
-            Your browser does note support viewing PDFs.{" "}
-            <a href="/Tobie Rathbun Resume January 2025.pdf">Download the resume</a>.
-          </p>
-        </object>
-      </div>
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import * as BABYLON from "@babylonjs/core";
+import "@babylonjs/loaders/glTF";
+
+export const dynamic = "force-dynamic";
+
+const validCards = [
+  "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "0H", "JH", "QH", "KH", "AH",
+  "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "0D", "JD", "QD", "KD", "AD",
+  "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "0C", "JC", "QC", "KC", "AC",
+  "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "0S", "JS", "QS", "KS", "AS",
+];
+
+const getCardImage = (card: string): string => `/images/${card}.png`;
+
+const createCard = (
+  card: string,
+  scene: BABYLON.Scene
+): BABYLON.Mesh | null => {
+  try {
+    const texturePath = getCardImage(card);
+
+    // Define UV mapping
+    const faceUV = [
+      new BABYLON.Vector4(1 / 114, 0, 0 / 114, 1), // Front
+      new BABYLON.Vector4(2 / 114, 0, 1 / 114, 1), // Back
+      new BABYLON.Vector4(3 / 114, 0, 2 / 114, 1), // Side 1
+      new BABYLON.Vector4(4 / 114, 0, 3 / 114, 1), // Side 2
+      new BABYLON.Vector4(59 / 114, 0, 4 / 114, 1), // Top
+      new BABYLON.Vector4(1, 0, 59 / 114, 1), // Bottom
+    ];
+
+    const cardMaterial = new BABYLON.StandardMaterial(`material_${card}`, scene);
+    cardMaterial.diffuseTexture = new BABYLON.Texture(texturePath, scene);
+    cardMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+
+    const cardMesh = BABYLON.MeshBuilder.CreateBox(
+      card,
+      { width: 1, height: 0.1, depth: 1.5, faceUV },
+      scene
     );
+
+    cardMesh.material = cardMaterial;
+    cardMesh.position = new BABYLON.Vector3(0, 1, 0);
+    return cardMesh;
+  } catch (error) {
+    console.error("Error creating card:", error);
+    return null;
   }
-  
+};
+
+const Invite: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [selectedCard, setSelectedCard] = useState(
+    validCards[Math.floor(Math.random() * validCards.length)]
+  );
+  const [scene, setScene] = useState<BABYLON.Scene | null>(null);
+  const cardMeshRef = useRef<BABYLON.Mesh | null>(null);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const engine = new BABYLON.Engine(canvasRef.current, true);
+    const sceneInstance = new BABYLON.Scene(engine);
+    sceneInstance.clearColor = new BABYLON.Color4(0, 0, 0, 0); // Transparent background
+
+    const camera = new BABYLON.ArcRotateCamera(
+      "camera",
+      Math.PI / 2,
+      Math.PI / 3,
+      5,
+      BABYLON.Vector3.Zero(),
+      sceneInstance
+    );
+    camera.attachControl(canvasRef.current, true);
+    camera.wheelPrecision = 0; // Disable zoom
+    camera.inputs.removeByType("ArcRotateCameraKeyboardMoveInput");
+    camera.inputs.removeByType("ArcRotateCameraPointersInput");
+
+    new BABYLON.HemisphericLight(
+      "light",
+      new BABYLON.Vector3(0, 1, 0),
+      sceneInstance
+    );
+
+    setScene(sceneInstance);
+
+    engine.runRenderLoop(() => {
+      sceneInstance.render();
+    });
+
+    return () => {
+      engine.dispose();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!scene) return;
+
+    // Dispose of the previous card mesh if it exists
+    if (cardMeshRef.current) {
+      cardMeshRef.current.dispose();
+    }
+
+    // Create and assign the new card mesh
+    const newCard = createCard(selectedCard, scene);
+    if (newCard) {
+      cardMeshRef.current = newCard;
+
+      // Add hover effects
+      newCard.actionManager = new BABYLON.ActionManager(scene);
+      newCard.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnPointerOverTrigger,
+          () => {
+            newCard.scaling = new BABYLON.Vector3(1.2, 1.2, 1.2); // Scale up
+            scene.registerBeforeRender(() => {
+              newCard.rotation.x += 0.02; // Rotate along X-axis
+              newCard.rotation.y += 0.02; // Rotate along Y-axis
+            });
+          }
+        )
+      );
+      newCard.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnPointerOutTrigger,
+          () => {
+            newCard.scaling = new BABYLON.Vector3(1, 1, 1); // Reset scale
+            scene.unregisterBeforeRender(() => {}); // Stop rotation
+          }
+        )
+      );
+    }
+  }, [selectedCard, scene]);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{ width: "100vw", height: "100vh", display: "block" }}
+    />
+  );
+};
+
+export default Invite;

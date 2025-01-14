@@ -19,10 +19,12 @@ const relHeight = 0.05;
 const relDepth = 2.5;
 const relModifier = 0.66;
 
+const relX = Math.PI / 32;
+const relY = Math.PI / 2;
+const relZ = Math.PI / 3.7;
 
+// Textures
 const getCardImage = (card: string): string => `/images/${card}.png`;
-
-
 
 const preloadTextures = (scene: BABYLON.Scene) => {
   validCards.forEach((card) => {
@@ -31,8 +33,100 @@ const preloadTextures = (scene: BABYLON.Scene) => {
   });
 };
 
+const changeCardTexture = (mesh: BABYLON.Mesh, scene: BABYLON.Scene) => {
+  const newCard = validCards[Math.floor(Math.random() * validCards.length)];
+  const newTexturePath = getCardImage(newCard);
+
+  const newMaterial = new BABYLON.StandardMaterial(`material_${newCard}`, scene);
+  newMaterial.diffuseTexture = new BABYLON.Texture(newTexturePath, scene);
+  newMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+
+  // Dispose the old material
+  if (mesh.material) {
+    mesh.material.dispose();
+  }
+
+  // Assign the new material to the card mesh
+  mesh.material = newMaterial;
+
+  console.log(`Changed card to ${newCard}`);
+};
 
 
+// Animations
+const addRotationAnimation = (
+  mesh: BABYLON.Mesh,
+  scene: BABYLON.Scene,
+  isAnimating: React.MutableRefObject<boolean>,
+  setNewCardTexture: () => void
+): void => {
+  if (isAnimating.current) return;
+
+  isAnimating.current = true;
+
+  const animation = new BABYLON.Animation(
+    "hoverRotation",
+    "rotation.y",
+    60,
+    BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+    BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
+  );
+
+  // Define keyframes for 360-degree rotation
+  const keys = [
+    { frame: 0, value: mesh.rotation.y }, // Current rotation
+    { frame: 60, value: mesh.rotation.y + Math.PI * 2 }, // Full rotation
+  ];
+
+  // Add easing with Bezier curve
+  const easingFunction = new BABYLON.BezierCurveEase(0.42, 0, 0.58, 1);
+  animation.setEasingFunction(easingFunction);
+
+  animation.setKeys(keys);
+  mesh.animations = [animation];
+
+  // Delay texture change by 1.5 seconds
+  setTimeout(() => {
+    setNewCardTexture();
+  }, 500);
+
+  // Start the animation
+  const animatable = scene.beginAnimation(mesh, 0, 60, false);
+  animatable.onAnimationEnd = () => {
+    isAnimating.current = false; // Reset flag when animation ends
+  };
+};
+
+const addFloatingAnimation = (mesh: BABYLON.Mesh, scene: BABYLON.Scene) => {
+  const animation = new BABYLON.Animation(
+    "floatingAnimation",
+    "position.y", // Property to animate
+    60, // Frames per second
+    BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+    BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE // Loop the animation
+  );
+
+  // Define keyframes
+  const keys = [
+    { frame: 0, value: mesh.position.y },         // Starting position
+    { frame: 30, value: mesh.position.y + 0.2 }, // Move up
+    { frame: 60, value: mesh.position.y },        // Return to starting position
+  ];
+
+  animation.setKeys(keys);
+
+  // Add easing for smooth motion
+  const easingFunction = new BABYLON.SineEase();
+  easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+  animation.setEasingFunction(easingFunction);
+
+  // Add animation to the mesh
+  mesh.animations = [animation];
+  scene.beginAnimation(mesh, 0, 60, true); // Loop animation
+};
+
+
+//Objects
 const createCard = (
   card: string,
   scene: BABYLON.Scene,
@@ -77,68 +171,6 @@ const createCard = (
   }
 };
 
-const addRotationAnimation = (
-  mesh: BABYLON.Mesh,
-  scene: BABYLON.Scene,
-  isAnimating: React.MutableRefObject<boolean>,
-  setNewCardTexture: () => void
-): void => {
-  if (isAnimating.current) return;
-
-  isAnimating.current = true;
-
-  const animation = new BABYLON.Animation(
-    "hoverRotation",
-    "rotation.y",
-    60,
-    BABYLON.Animation.ANIMATIONTYPE_FLOAT,
-    BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
-  );
-
-  // Define keyframes for 360-degree rotation
-  const keys = [
-    { frame: 0, value: mesh.rotation.y }, // Current rotation
-    { frame: 60, value: mesh.rotation.y + Math.PI * 2 }, // Full rotation
-  ];
-
-  // Add easing with Bezier curve
-  const easingFunction = new BABYLON.BezierCurveEase(0.42, 0, 0.58, 1);
-  animation.setEasingFunction(easingFunction);
-
-  animation.setKeys(keys);
-  mesh.animations = [animation];
-
-  // Delay texture change by 1.5 seconds
-  setTimeout(() => {
-    setNewCardTexture();
-  }, 500);
-
-  // Start the animation
-  const animatable = scene.beginAnimation(mesh, 0, 60, false);
-  animatable.onAnimationEnd = () => {
-    isAnimating.current = false; // Reset flag when animation ends
-  };
-};
-
-const changeCardTexture = (mesh: BABYLON.Mesh, scene: BABYLON.Scene) => {
-  const newCard = validCards[Math.floor(Math.random() * validCards.length)];
-  const newTexturePath = getCardImage(newCard);
-
-  const newMaterial = new BABYLON.StandardMaterial(`material_${newCard}`, scene);
-  newMaterial.diffuseTexture = new BABYLON.Texture(newTexturePath, scene);
-  newMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
-
-  // Dispose the old material
-  if (mesh.material) {
-    mesh.material.dispose();
-  }
-
-  // Assign the new material to the card mesh
-  mesh.material = newMaterial;
-
-  console.log(`Changed card to ${newCard}`);
-};
-
 
 
 const Invite: React.FC = () => {
@@ -150,7 +182,7 @@ const Invite: React.FC = () => {
   const cardMeshRef = useRef<BABYLON.Mesh | null>(null);
   const isAnimating = useRef(false);
 
-  const initialRotation = { x: Math.PI / 32, y: Math.PI / 2, z: Math.PI / 3.7 }; // Custom starting rotation
+  const initialRotation = { x: relX, y: relY, z: relZ }; // Custom starting rotation
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -227,5 +259,7 @@ const Invite: React.FC = () => {
     />
   );
 };
+
+
 
 export default Invite;

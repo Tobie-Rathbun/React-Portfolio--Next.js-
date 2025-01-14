@@ -22,6 +22,17 @@ const relModifier = 0.66;
 
 const getCardImage = (card: string): string => `/images/${card}.png`;
 
+
+
+const preloadTextures = (scene: BABYLON.Scene) => {
+  validCards.forEach((card) => {
+    const texturePath = getCardImage(card);
+    new BABYLON.Texture(texturePath, scene); // Load and cache the texture
+  });
+};
+
+
+
 const createCard = (
   card: string,
   scene: BABYLON.Scene,
@@ -147,6 +158,7 @@ const Invite: React.FC = () => {
     const engine = new BABYLON.Engine(canvasRef.current, true);
     const sceneInstance = new BABYLON.Scene(engine);
     sceneInstance.clearColor = new BABYLON.Color4(0, 0, 0, 0); // Transparent background
+    preloadTextures(sceneInstance);
     
 
     const camera = new BABYLON.ArcRotateCamera(

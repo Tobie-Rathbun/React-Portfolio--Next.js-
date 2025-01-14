@@ -100,37 +100,98 @@ const addRotationAnimation = (
 const addFloatingAnimation = (mesh: BABYLON.Mesh, scene: BABYLON.Scene) => {
   const animation = new BABYLON.Animation(
     "floatingAnimation",
-    "position.y", // Property to animate
+    "position.y",
     60, // Frames per second
     BABYLON.Animation.ANIMATIONTYPE_FLOAT,
-    BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE // Loop the animation
+    BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE // Loop animation
   );
 
-  // Define keyframes
+  // Define keyframes for smooth up and down motion
   const keys = [
-    { frame: 0, value: mesh.position.y },         // Starting position
+    { frame: 0, value: mesh.position.y },         // Start at current position
     { frame: 30, value: mesh.position.y + 0.2 }, // Move up
-    { frame: 60, value: mesh.position.y },        // Return to starting position
+    { frame: 60, value: mesh.position.y },        // Return to start
   ];
 
   animation.setKeys(keys);
 
-  // Add easing for smooth motion
+  // Add easing for smooth transition
   const easingFunction = new BABYLON.SineEase();
   easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
   animation.setEasingFunction(easingFunction);
 
-  // Add animation to the mesh
-  mesh.animations = [animation];
-  scene.beginAnimation(mesh, 0, 60, true); // Loop animation
+  // Attach animation to the mesh
+  mesh.animations.push(animation);
+
+  // Start the animation and loop it infinitely
+  scene.beginAnimation(mesh, 0, 60, true);
 };
+
+const addHoverInteraction = (
+  mesh: BABYLON.Mesh,
+  scene: BABYLON.Scene,
+  isAnimating: React.MutableRefObject<boolean>,
+  setNewCardTexture: () => void
+) => {
+  mesh.actionManager = new BABYLON.ActionManager(scene);
+
+  mesh.actionManager.registerAction(
+    new BABYLON.ExecuteCodeAction(
+      BABYLON.ActionManager.OnPointerOverTrigger,
+      () => {
+        if (!isAnimating.current) {
+          isAnimating.current = true;
+
+          // Add rotation animation
+          const rotationAnimation = new BABYLON.Animation(
+            "hoverRotation",
+            "rotation.y",
+            60, // Frames per second
+            BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+            BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
+          );
+
+          // Keyframes for full rotation
+          const keys = [
+            { frame: 0, value: mesh.rotation.y },
+            { frame: 60, value: mesh.rotation.y + Math.PI * 2 },
+          ];
+          rotationAnimation.setKeys(keys);
+
+          const easingFunction = new BABYLON.SineEase();
+          easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+          rotationAnimation.setEasingFunction(easingFunction);
+
+          mesh.animations.push(rotationAnimation);
+          const animatable = scene.beginAnimation(mesh, 0, 60, false);
+
+          // Change UV texture halfway through the animation
+          setTimeout(() => {
+            setNewCardTexture();
+          }, 500);
+
+          animatable.onAnimationEnd = () => {
+            isAnimating.current = false; // Reset the flag
+
+            // Restart the floating animation
+            addFloatingAnimation(mesh, scene);
+          };
+        }
+      }
+    )
+  );
+};
+
+
+
 
 
 //Objects
 const createCard = (
   card: string,
   scene: BABYLON.Scene,
-  initialRotation: { x: number; y: number; z: number }
+  initialRotation: { x: number; y: number; z: number },
+  isAnimating: React.MutableRefObject<boolean> // Add isAnimating
 ): BABYLON.Mesh | null => {
   try {
     const texturePath = getCardImage(card);
@@ -141,7 +202,7 @@ const createCard = (
       new BABYLON.Vector4(2 / 114, 0, 1 / 114, 1), // Side
       new BABYLON.Vector4(3 / 114, 0, 2 / 114, 1), // Side
       new BABYLON.Vector4(4 / 114, 0, 3 / 114, 1), // Side
-      new BABYLON.Vector4(59 / 114, 0, 1, 1), // Face of Card (Front)
+      new BABYLON.Vector4(59 / 114, 0, 1, 1),      // Face of Card (Front)
       new BABYLON.Vector4(59 / 114, 0, 4 / 114, 1), // Back of Card
     ];
 
@@ -150,12 +211,16 @@ const createCard = (
     cardMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
 
     // Create card mesh
-    const cardMesh = BABYLON.MeshBuilder.CreateBox(card, {
+    const cardMesh = BABYLON.MeshBuilder.CreateBox(
+      card,
+      {
         width: relWidth * relModifier,
         height: relHeight * relModifier,
         depth: relDepth * relModifier,
-        faceUV: faceUV
-    }, scene);
+        faceUV: faceUV,
+      },
+      scene
+    );
 
     cardMesh.material = cardMaterial;
     cardMesh.position = new BABYLON.Vector3(0, 0.45, 0);
@@ -164,12 +229,26 @@ const createCard = (
       initialRotation.y,
       initialRotation.z
     );
+
+    // Add floating animation
+    addFloatingAnimation(cardMesh, scene);
+
+    // Add hover interaction
+    addHoverInteraction(
+      cardMesh,
+      scene,
+      isAnimating, // Pass isAnimating
+      () => changeCardTexture(cardMesh, scene)
+    );
+
     return cardMesh;
   } catch (error) {
     console.error("Error creating card:", error);
     return null;
   }
 };
+
+
 
 
 
@@ -232,24 +311,14 @@ const Invite: React.FC = () => {
     }
   
     // Create and assign the new card mesh
-    const newCard = createCard(selectedCard, scene, initialRotation);
+    const newCard = createCard(selectedCard, scene, initialRotation, isAnimating); // Pass isAnimating here
     if (newCard) {
       cardMeshRef.current = newCard;
-  
-      // Add hover effects
-      newCard.actionManager = new BABYLON.ActionManager(scene);
-      newCard.actionManager.registerAction(
-        new BABYLON.ExecuteCodeAction(
-          BABYLON.ActionManager.OnPointerOverTrigger,
-          () => {
-            addRotationAnimation(newCard, scene, isAnimating, () => {
-              changeCardTexture(newCard, scene);
-            });
-          }
-        )
-      );
     }
   }, [selectedCard, scene]);
+  
+  
+  
   
 
   return (

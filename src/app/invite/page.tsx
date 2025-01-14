@@ -8,7 +8,7 @@ export default function ResumePage() {
           height="800px"
         >
           <p>
-            Your browser does not support viewing PDFs.{" "}
+            Your browser does note support viewing PDFs.{" "}
             <a href="/Tobie Rathbun Resume January 2025.pdf">Download the resume</a>.
           </p>
         </object>

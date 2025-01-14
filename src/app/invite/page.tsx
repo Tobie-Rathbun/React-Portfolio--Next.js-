@@ -97,8 +97,10 @@ const addRotationAnimation = (
   animation.setKeys(keys);
   mesh.animations = [animation];
 
-  // Change the card texture when the animation starts
-  setNewCardTexture();
+  // Delay texture change by 1.5 seconds
+  setTimeout(() => {
+    setNewCardTexture();
+  }, 500);
 
   // Start the animation
   const animatable = scene.beginAnimation(mesh, 0, 60, false);

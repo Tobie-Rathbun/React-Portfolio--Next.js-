@@ -14,14 +14,20 @@ const validCards = [
   "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "0S", "JS", "QS", "KS", "AS",
 ];
 
+// Scale of card
 const relWidth = 3.5;
 const relHeight = 0.05;
 const relDepth = 2.5;
 const relModifier = 0.66;
+// Rotation of card
+const relRotX = Math.PI / 32;
+const relRotY = Math.PI / 2;
+const relRotZ = Math.PI / 3.7;
+// Position of card
+const relPosX = -2;
+const relPosY = 0.45;
+const relPosZ = 0;
 
-const relX = Math.PI / 32;
-const relY = Math.PI / 2;
-const relZ = Math.PI / 3.7;
 
 // Textures
 const getCardImage = (card: string): string => `/images/${card}.png`;
@@ -221,7 +227,7 @@ const createCard = (
     );
 
     cardMesh.material = cardMaterial;
-    cardMesh.position = new BABYLON.Vector3(0, 0.45, 0);
+    cardMesh.position = new BABYLON.Vector3(relPosX, relPosY, relPosZ);
     cardMesh.rotation = new BABYLON.Vector3(
       initialRotation.x,
       initialRotation.y,
@@ -259,7 +265,7 @@ const Invite: React.FC = () => {
   const cardMeshRef = useRef<BABYLON.Mesh | null>(null);
   const isAnimating = useRef(false);
 
-  const initialRotation = { x: relX, y: relY, z: relZ }; // Custom starting rotation
+  const initialRotation = { x: relRotX, y: relRotY, z: relRotZ }; // Custom starting rotation
 
   useEffect(() => {
     if (!canvasRef.current) return;

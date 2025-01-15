@@ -139,48 +139,46 @@ const addHoverInteraction = (
     new BABYLON.ExecuteCodeAction(
       BABYLON.ActionManager.OnPointerOverTrigger,
       () => {
-        if (!isAnimating.current) {
-          isAnimating.current = true;
+        if (isAnimating.current) return; // Prevent double triggering
+        isAnimating.current = true;
 
-          // Add rotation animation
-          const rotationAnimation = new BABYLON.Animation(
-            "hoverRotation",
-            "rotation.y",
-            60, // Frames per second
-            BABYLON.Animation.ANIMATIONTYPE_FLOAT,
-            BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
-          );
+        // Add rotation animation
+        const rotationAnimation = new BABYLON.Animation(
+          "hoverRotation",
+          "rotation.y",
+          60, // Frames per second
+          BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+          BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
+        );
 
-          // Keyframes for full rotation
-          const keys = [
-            { frame: 0, value: mesh.rotation.y },
-            { frame: 60, value: mesh.rotation.y + Math.PI * 2 },
-          ];
-          rotationAnimation.setKeys(keys);
+        // Keyframes for full rotation
+        const keys = [
+          { frame: 0, value: mesh.rotation.y },
+          { frame: 60, value: mesh.rotation.y + Math.PI * 2 },
+        ];
+        rotationAnimation.setKeys(keys);
 
-          const easingFunction = new BABYLON.SineEase();
-          easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
-          rotationAnimation.setEasingFunction(easingFunction);
+        const easingFunction = new BABYLON.SineEase();
+        easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
+        rotationAnimation.setEasingFunction(easingFunction);
 
-          mesh.animations.push(rotationAnimation);
-          const animatable = scene.beginAnimation(mesh, 0, 60, false);
+        mesh.animations.push(rotationAnimation);
 
-          // Change UV texture halfway through the animation
-          setTimeout(() => {
-            setNewCardTexture();
-          }, 500);
+        const animatable = scene.beginAnimation(mesh, 0, 60, false);
 
-          animatable.onAnimationEnd = () => {
-            isAnimating.current = false; // Reset the flag
+        // Change texture halfway through the animation
+        setTimeout(() => {
+          setNewCardTexture();
+        }, 500);
 
-            // Restart the floating animation
-            addFloatingAnimation(mesh, scene);
-          };
-        }
+        animatable.onAnimationEnd = () => {
+          isAnimating.current = false; // Reset animation state
+        };
       }
     )
   );
 };
+
 
 
 
